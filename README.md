@@ -12,7 +12,8 @@
 4. [Time Travelers & Time Machines](#time-travelers--time-machines)
 5. [Teaching People & Robots to Be Better Programmers](#teaching-people--robots-to-be-better-programmers)
 6. [Blockchain Technology Development](#blockchain-technology-development)
-7. [Contributing](#contributing)
+7. [AI Brainkits](#ai-brainkits)
+8. [Contributing](#contributing)
 
 ---
 
@@ -108,6 +109,23 @@ The blockchain pillar of this encyclopedia covers:
 - **Interoperability & bridges** — cross-chain communication protocols (IBC, LayerZero, Wormhole) as the diplomatic infrastructure of a multi-chain universe.
 - **AI + Blockchain** — using AI to audit smart contracts for vulnerabilities, optimize gas usage, and generate boilerplate protocol code.
 - **Earn-while-you-Learn on-chain** — staking educational tokens, completing on-chain certifications, and participating in learn-to-earn dApp ecosystems.
+
+---
+
+## AI Brainkits
+
+> *"An AI without context is a brain without a body — powerful in theory, lost in practice."*
+
+An **AI Brainkit** is the structured set of instructions, contextual memory, and behavioral guidelines that transform a general-purpose AI coding assistant into a highly effective, repository-aware collaborator. Key concepts explored:
+
+- **Copilot coding agent instructions** — how `.github/copilot-instructions.md` gives GitHub Copilot deep, persistent context about a repository's purpose, architecture, and conventions.
+- **Brainkit design principles** — the five layers every Brainkit needs: purpose, structure, conventions, constraints, and context links.
+- **Agent memory architecture** — in-context, external, in-weights, and cached memory; how Brainkits fit into each layer.
+- **RAG-enhanced Brainkits** — using Retrieval-Augmented Generation to extend Brainkits to large codebases without hitting context window limits.
+- **Blockchain-anchored Brainkits** — immutable ledger storage for auditable, versioned, and DAO-governed AI agent instructions.
+- **Brainkits in the Earn-while-you-Learn ecosystem** — writing Brainkits as a teachable, bounty-eligible skill that compounds value for every future AI contribution.
+
+📄 Deep dive → [`docs/ai-brainkits.md`](docs/ai-brainkits.md)
 
 ---
 
