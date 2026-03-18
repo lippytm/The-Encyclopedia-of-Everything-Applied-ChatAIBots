@@ -281,4 +281,7 @@ You cannot improve what you cannot measure.
 - [Self-Improvement & Evolutionary Evolution](self-improvement.md) — the evolutionary principles underlying all learning.
 - [Intergalactic Network](intergalactic-network.md) — multi-agent coordination and decentralized governance.
 - [Time Travelers & Time Machines](time-travelers.md) — how AI agents learn from historical data.
+- [Full Stack AI Toolkits](full-stack-ai-toolkits.md) — the complete AI engineering stack for building autonomous programming agents.
+- [Cybersecurity](cybersecurity.md) — smart contract security, AI red teaming, and adversarial robustness.
+- [Blockchain Technology Development](blockchain.md) — smart contract education, DeFi patterns, and earn-while-you-learn on-chain.
 - Back to [README](../README.md)
