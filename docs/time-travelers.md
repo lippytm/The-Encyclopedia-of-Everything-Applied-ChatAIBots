@@ -219,4 +219,6 @@ Applications:
 - [Self-Improvement & Evolutionary Evolution](self-improvement.md) — using iterative cycles to continuously improve.
 - [Intergalactic Network](intergalactic-network.md) — coordinating distributed systems across vast distances.
 - [Teaching Robots to Program](robotics-programming.md) — applying temporal learning to robotic and AI systems.
+- [Blockchain Technology Development](blockchain.md) — immutable ledgers, event sourcing, and smart contract upgrade patterns.
+- [Full Stack AI Toolkits](full-stack-ai-toolkits.md) — experiment tracking and MLOps for reproducible AI development.
 - Back to [README](../README.md)
