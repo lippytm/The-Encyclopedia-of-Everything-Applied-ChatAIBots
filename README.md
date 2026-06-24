@@ -13,7 +13,8 @@
 5. [Teaching People & Robots to Be Better Programmers](#teaching-people--robots-to-be-better-programmers)
 6. [Blockchain Technology Development](#blockchain-technology-development)
 7. [AI Brainkits](#ai-brainkits)
-8. [Contributing](#contributing)
+8. [ChatGPT](#chatgpt)
+9. [Contributing](#contributing)
 
 ---
 
@@ -126,6 +127,22 @@ An **AI Brainkit** is the structured set of instructions, contextual memory, and
 - **Brainkits in the Earn-while-you-Learn ecosystem** — writing Brainkits as a teachable, bounty-eligible skill that compounds value for every future AI contribution.
 
 📄 Deep dive → [`docs/ai-brainkits.md`](docs/ai-brainkits.md)
+
+---
+
+## ChatGPT
+
+> *"ChatGPT is not just a chatbot — it is a window into a new paradigm of human-machine collaboration, where language becomes the universal interface for computation."*
+
+**ChatGPT** is the most widely used conversational AI system in history, built by OpenAI on the GPT family of large language models. This section explores ChatGPT from first principles — architecture, training, and alignment — through to practical applications for developers, blockchain builders, and Earn-while-you-Learn practitioners:
+
+- **Architecture & training** — how Transformers, RLHF, and Constitutional AI combine to produce a trustworthy conversational assistant.
+- **Developer tools** — code generation, smart contract development, and the ChatGPT API for building AI-powered applications.
+- **Prompt engineering** — zero-shot, few-shot, chain-of-thought, and role prompting patterns for coding tasks.
+- **Multi-agent systems** — using ChatGPT as an autonomous agent in orchestration frameworks (LangChain, AutoGen, CrewAI) and connecting it to on-chain DAO governance.
+- **The future** — from assistant to autonomous collaborator; multimodality, interpretability, and value alignment.
+
+📄 Deep dive → [`docs/chatgpt.md`](docs/chatgpt.md)
 
 ---
 
