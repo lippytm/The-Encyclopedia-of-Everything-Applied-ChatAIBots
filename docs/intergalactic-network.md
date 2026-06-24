@@ -177,4 +177,6 @@ IGZ member networks can be organized in different topologies:
 - [Self-Improvement & Evolutionary Evolution](self-improvement.md) — how evolutionary principles drive individual and collective growth.
 - [Time Travelers & Time Machines](time-travelers.md) — how historical state is preserved and replayed in distributed systems.
 - [Teaching Robots to Program](robotics-programming.md) — applying multi-agent coordination to robotic programming education.
+- [Blockchain Technology Development](blockchain.md) — cross-chain bridges, DAO governance, and interoperability protocols.
+- [Cybersecurity](cybersecurity.md) — zero-trust architecture, Byzantine fault tolerance, and decentralized identity security.
 - Back to [README](../README.md)

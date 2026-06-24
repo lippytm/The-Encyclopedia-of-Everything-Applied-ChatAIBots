@@ -204,4 +204,6 @@ Treat the Brainkit as a first-class artifact with its own quality standards:
 - [Teaching People & Robots to Be Better Programmers](robotics-programming.md) — curriculum learning, code generation, and feedback-driven AI fine-tuning.
 - [Time Travelers & Time Machines](time-travelers.md) — version control and immutable history as foundations for auditable AI behavior.
 - [Intergalactic Networks](intergalactic-network.md) — multi-agent coordination and decentralized governance for AI systems.
+- [Full Stack AI Toolkits](full-stack-ai-toolkits.md) — the complete engineering stack for production AI applications.
+- [Cybersecurity](cybersecurity.md) — securing AI agents, preventing prompt injection, and safe deployment patterns.
 - Back to [README](../README.md)

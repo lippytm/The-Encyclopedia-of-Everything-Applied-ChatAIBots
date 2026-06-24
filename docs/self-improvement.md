@@ -151,4 +151,6 @@ Self-improvement is not just personal — it is architectural. The best software
 - [Intergalactic Network](intergalactic-network.md) — applying evolutionary coordination to cross-chain and multi-agent systems.
 - [Time Travelers & Time Machines](time-travelers.md) — using version control and event sourcing to learn from the past.
 - [Teaching Robots to Program](robotics-programming.md) — applying these principles to AI and robotic systems.
+- [Full Stack AI Toolkits](full-stack-ai-toolkits.md) — the complete AI engineering stack for building self-improving systems.
+- [Cybersecurity](cybersecurity.md) — evolving defenses and adversarial robustness in AI and blockchain systems.
 - Back to [README](../README.md)

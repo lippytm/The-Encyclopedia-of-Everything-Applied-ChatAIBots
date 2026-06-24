@@ -12,8 +12,10 @@
 4. [Time Travelers & Time Machines](#time-travelers--time-machines)
 5. [Teaching People & Robots to Be Better Programmers](#teaching-people--robots-to-be-better-programmers)
 6. [Blockchain Technology Development](#blockchain-technology-development)
-7. [AI Brainkits](#ai-brainkits)
-8. [Contributing](#contributing)
+7. [Full Stack AI Toolkits](#full-stack-ai-toolkits)
+8. [Cybersecurity](#cybersecurity)
+9. [AI Brainkits](#ai-brainkits)
+10. [Contributing](#contributing)
 
 ---
 
@@ -109,6 +111,44 @@ The blockchain pillar of this encyclopedia covers:
 - **Interoperability & bridges** — cross-chain communication protocols (IBC, LayerZero, Wormhole) as the diplomatic infrastructure of a multi-chain universe.
 - **AI + Blockchain** — using AI to audit smart contracts for vulnerabilities, optimize gas usage, and generate boilerplate protocol code.
 - **Earn-while-you-Learn on-chain** — staking educational tokens, completing on-chain certifications, and participating in learn-to-earn dApp ecosystems.
+
+📄 Deep dive → [`docs/blockchain.md`](docs/blockchain.md)
+
+---
+
+## Full Stack AI Toolkits
+
+> *"The full-stack developer of the AI era doesn't just build apps — they architect intelligence pipelines that learn, adapt, and compound in value over time."*
+
+The complete AI full-stack spans every layer of the technology stack — from raw data ingestion and model training through inference infrastructure, API design, front-end integration, and automated deployment pipelines. This section covers:
+
+- **Foundation models and APIs** — OpenAI, Anthropic, Google DeepMind, Meta Llama, Mistral, and Cohere; when to use hosted APIs vs. self-hosted open-weight models.
+- **Agent orchestration frameworks** — LangChain, LlamaIndex, LangGraph, CrewAI, AutoGen; building reliable, stateful autonomous agents.
+- **Retrieval-Augmented Generation (RAG)** — vector databases, hybrid search, reranking, and advanced RAG patterns that scale to enterprise knowledge bases.
+- **Model training and fine-tuning** — LoRA, QLoRA, RLHF, and PEFT techniques; when to fine-tune vs. prompt engineer.
+- **Model serving and inference** — vLLM, TGI, Ollama, TensorRT-LLM; model gateways and LLM proxies.
+- **MLOps and AI infrastructure** — experiment tracking, data versioning, pipeline orchestration, feature stores, and GPU management.
+- **On-chain AI** — AI agents that hold wallets, sign transactions, and interact with smart contracts; decentralized AI networks.
+
+📄 Deep dive → [`docs/full-stack-ai-toolkits.md`](docs/full-stack-ai-toolkits.md)
+
+---
+
+## Cybersecurity
+
+> *"In a world where code is law and AI makes decisions, security is not a feature — it is the foundation."*
+
+Cybersecurity in the AI and blockchain era requires defending against both traditional and novel threat vectors. This section covers:
+
+- **Threat modeling** — STRIDE framework, attack surface analysis, risk-based prioritization for AI and blockchain systems.
+- **Smart contract security** — reentrancy, access control failures, oracle manipulation, flash loan attacks, and the complete smart contract audit checklist.
+- **AI system security** — prompt injection, training data poisoning, adversarial examples, model extraction, and AI agent security.
+- **Web application security** — OWASP Top 10 in the AI/Web3 context; wallet and key management; secure API design.
+- **Incident response** — smart contract incident playbooks, monitoring tools, and AI system incident response workflows.
+- **Security testing and red teaming** — testing pyramids, AI red teaming techniques, and penetration testing checklists for Web3 applications.
+- **Earn-while-you-Learn in security** — bug bounty programs, competitive auditing, certifications, and building a security portfolio.
+
+📄 Deep dive → [`docs/cybersecurity.md`](docs/cybersecurity.md)
 
 ---
 
