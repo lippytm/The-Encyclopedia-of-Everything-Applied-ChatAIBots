@@ -1047,6 +1047,215 @@ echo "   cd $BASE && ls"
 
 ---
 
+## Chapter 13: How It Works — Use Cases & Applications
+
+> *"Files are not just storage. They are the state of every system — the truth that programs read, the contracts they honor, the memory that outlasts the process."*
+
+---
+
+### 📘 Ebook Explainer — How the Filesystem Works
+
+**The mechanism — what happens when you read or write a file:**
+
+```
+You run: cat ~/projects/app.py
+
+  1. Shell resolves ~/projects/app.py → absolute path
+  2. Shell calls kernel: open("/home/lippytm/projects/app.py", O_RDONLY)
+  3. Kernel checks permissions: does your UID/GID allow read on this inode?
+  4. Kernel looks up the inode (index node) — metadata structure in the filesystem
+  5. Inode contains: owner, permissions, timestamps, pointers to data blocks
+  6. Kernel reads data blocks from disk into the page cache (RAM)
+  7. cat() receives data via read() syscall
+  8. cat writes data to stdout → terminal renders it
+  9. Kernel returns file descriptor → cat closes it
+  10. Inode atime (access time) updated
+
+What an inode stores (NOT the filename):
+  ┌─────────────────────────────────────┐
+  │  inode #482901                      │
+  │  type: regular file                 │
+  │  permissions: -rw-r--r-- (644)      │
+  │  owner: lippytm (uid 1000)          │
+  │  size: 4,217 bytes                  │
+  │  blocks: 8                          │
+  │  atime: 2026-08-28 06:10:00         │
+  │  mtime: 2026-08-27 14:30:00         │
+  │  ctime: 2026-08-27 14:30:00         │
+  │  data block pointers: [4821, 4822]  │
+  └─────────────────────────────────────┘
+
+The filename lives in the DIRECTORY, not the inode.
+That's why hard links work — two filenames, one inode, one copy of data.
+```
+
+*Figure 13.1 — The filesystem is a contract between names (directories) and data (inodes + blocks). Understanding it makes every file error diagnosable.*
+
+---
+
+### 📘 Ebook Explainer — When Filesystem Knowledge Works Best
+
+| Situation | What filesystem knowledge unlocks |
+|---|---|
+| **Debugging "permission denied"** | Read `ls -la` output → identify owner/permissions → fix with `chmod` or `chown` |
+| **Disk space crisis** | `du -sh */` + `find -size +1G` → locate culprits in seconds |
+| **Config change not taking effect** | `stat config.conf` → check `mtime` — did the write actually happen? |
+| **Symlink confusion** | `ls -la` shows `→` target → `readlink -f` resolves all layers |
+| **"File not found" in a script** | `strace -e openat script.sh` → see exactly which path the kernel tried |
+| **Setting up a shared directory** | `chmod g+s dir/` → sticky group bit ensures all new files inherit group |
+| **Docker volume mounts** | Map a host path to a container path — same filesystem, different namespace |
+| **Git repository internals** | `.git/` is a directory; commits are files; branches are text files with a SHA |
+
+**When raw filesystem skills aren't the primary tool:**
+```
+❌  When you need full-text search across millions of files → use Elasticsearch
+❌  When you need version history → use Git (which uses the filesystem)
+❌  When you need ACID transactions → use a database (which uses the filesystem)
+```
+
+*Figure 13.2 — Everything interesting about software lives in files. Filesystem literacy is the foundation of all of it.*
+
+---
+
+### 📘 Ebook Explainer — Where to Use It (Cross-Domain Applications)
+
+```
+EVERY DOMAIN WHERE FILE KNOWLEDGE IS CRITICAL:
+
+Web Servers (Nginx, Apache)
+  /etc/nginx/nginx.conf    → server configuration
+  /var/log/nginx/          → access and error logs
+  /var/www/html/           → served content
+  permissions: 644 for files, 755 for directories
+
+Databases
+  /var/lib/postgresql/     → database data directory (protect this!)
+  /tmp/mysql.sock          → Unix socket for local connections
+  /etc/mysql/my.cnf        → database configuration
+
+Docker
+  Volumes: /var/lib/docker/volumes/
+  Images:  /var/lib/docker/overlay2/
+  host path:container path → same filesystem, different view
+
+Git Repository Internals
+  .git/HEAD                → current branch pointer
+  .git/refs/heads/main     → SHA of latest commit
+  .git/objects/            → all commits, trees, blobs as files
+
+CI/CD Pipelines
+  GitHub Actions workspace → /home/runner/work/
+  Artifacts saved to paths → uploaded by path
+  Cache keys map to paths  → restore by hash match
+
+Python Projects
+  venv/lib/python3.x/site-packages/ → installed packages as files
+  __pycache__/                      → compiled .pyc bytecode
+  pyproject.toml / setup.cfg        → project config files
+
+Blockchain / Smart Contracts
+  contracts/*.sol          → Solidity source files
+  artifacts/               → compiled ABI + bytecode
+  deployments/             → deployment records
+  .env                     → private keys (never commit!)
+```
+
+*Figure 13.3 — Every technology stores its state in files. Filesystem literacy is the universal key.*
+
+---
+
+### 📘 Ebook Explainer — Diversity of Applications (Flexibility Points)
+
+**Flexibility Point 1 — Files as Configuration**
+```
+# Every major software system is configured by text files
+/etc/hosts           → DNS override for your machine
+/etc/sudoers         → who can run what as root
+~/.gitconfig         → git identity and behavior
+~/.ssh/config        → SSH alias and key mapping
+~/.bashrc            → your shell's startup script
+```
+
+**Flexibility Point 2 — Files as Data**
+```python
+# JSON, CSV, YAML, TOML, XML — all files, all parseable
+import json, pathlib
+data = json.loads(pathlib.Path("config.json").read_text())
+# No database needed for small structured data
+```
+
+**Flexibility Point 3 — Files as Communication**
+```bash
+# Processes communicate via files (Unix philosophy)
+/tmp/app.lock        → lock file: "I'm running, don't run another copy"
+/tmp/app.pid         → PID file: "find me at process 14823"
+/dev/stdin           → input as a file
+/proc/1234/status    → process state as a file
+```
+
+**Flexibility Point 4 — Files as History**
+```bash
+~/.bash_history      → your command history
+/var/log/auth.log    → login history
+/var/log/syslog      → system event history
+.git/                → code change history
+```
+
+*Figure 13.4 — Files serve four roles: configuration, data, communication, and history. Mastering files means mastering all four.*
+
+---
+
+### 🎧 Audiobook Explainer
+
+> *[EXPLAINER TONE — measured, 3 minutes]*
+>
+> "Chapter 13. How the Filesystem Works. When to Use This Knowledge. Where It Applies.
+>
+> When you read a file, the kernel doesn't look up the filename first — it looks up the inode. The inode is a metadata structure that contains the file's permissions, owner, size, timestamps, and pointers to the actual data on disk. The filename lives in the directory, not the inode. That's why renaming a file is instant — you only update a directory entry, not the data. That's why hard links work — two names, one inode, one copy of data.
+>
+> Filesystem knowledge unlocks six specific problem-solving abilities. Diagnosing permission errors. Locating disk usage culprits. Verifying that config changes were actually saved. Resolving symlink confusion. Debugging file-not-found errors in scripts. And setting up proper shared directory permissions.
+>
+> Where does this apply? Everywhere. Web servers are configured by files in `/etc/nginx`. Databases store their data in `/var/lib/postgresql`. Docker containers mount host paths. Git repositories are directories full of files. CI/CD pipelines save and restore artifacts by path. Python projects install packages as files in `site-packages`. Every technology you'll ever work with stores its state, its configuration, and its history in files.
+>
+> The flexibility point is this: files serve four roles in every system — configuration, data, inter-process communication, and historical record. Understanding those roles makes you a more effective engineer in every domain, because you know where to look and what you're looking at."
+>
+> *[EXPLAINER TONE OUT]*
+
+---
+
+### 🎬 Video Explainer — Filesystem Across 5 Domains (5 Minutes)
+
+**Minute 1 — Web Server Configuration:**
+> Navigate to `/etc/nginx/sites-available/`. Show config structure. `nginx -t` validates syntax. `ls -la /var/www/html` — permissions visible. "A web server is just a program reading files. Your config is a file. Your content is files. Permissions control who can read them."
+
+**Minute 2 — Git Internals:**
+> `cat .git/HEAD` → shows `ref: refs/heads/main`. `cat .git/refs/heads/main` → shows a commit SHA. `git cat-file -p <SHA>` → shows raw commit object. "Git is a content-addressable filesystem. Every commit is a file."
+
+**Minute 3 — Docker Volumes:**
+> `docker run -v /home/lippytm/data:/app/data myapp` → host directory mounted. `ls /home/lippytm/data` — files visible from outside container too. "A Docker volume is just a path mapping. Your files, two views."
+
+**Minute 4 — Python Package Files:**
+> `find venv/lib -name "requests" -type d` → package directory. `cat venv/lib/python3.12/site-packages/requests/__init__.py` — readable source. "Every pip install puts files on disk. You can read, inspect, and understand any package."
+
+**Minute 5 — Security Implications:**
+> `ls -la ~/.ssh/` — show correct vs wrong permissions. `chmod 777 ~/.ssh/id_rsa` → SSH refuses to use it. `chmod 600` → works again. "The filesystem enforces security. Wrong permissions = broken security or broken tools."
+
+---
+
+> 🎯 **Use Cases Summary — B-003**
+>
+> File system literacy from this book applies to:
+> - ✅ Diagnosing any "permission denied" error instantly
+> - ✅ Finding disk usage culprits on any machine
+> - ✅ Understanding how Git, Docker, and databases store their data
+> - ✅ Securing sensitive files (SSH keys, `.env` files, credentials)
+> - ✅ Writing scripts that handle files reliably
+> - ✅ Debugging any "file not found" error with precision
+>
+> **Every software system is a filesystem in disguise. Reading the filesystem is reading the system.**
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/B-002-commands-that-actually-work.md`](B-002-commands-that-actually-work.md) — Commands used throughout this book

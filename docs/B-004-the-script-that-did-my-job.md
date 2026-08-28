@@ -1183,6 +1183,196 @@ show_menu
 
 ---
 
+## Chapter 13: How It Works — Use Cases & Applications
+
+> *"A script is not a shortcut. It's a decision: this process is worth automating because it will happen again. And it always does."*
+
+---
+
+### 📘 Ebook Explainer — How Shell Scripts Work
+
+**The mechanism — from file to execution:**
+
+```
+You run: ./backup.sh --target /home/lippytm
+
+  1. Shell reads the first line: #!/usr/bin/env bash (the shebang)
+  2. Kernel uses the shebang to determine the interpreter: /usr/bin/env finds bash
+  3. bash opens backup.sh, reads line by line (no compilation)
+  4. Line 1: set -euo pipefail → configures error behavior
+  5. Line 2: TARGET="${1:-}" → assigns positional parameter or empty
+  6. Each line interpreted and executed sequentially
+  7. On a function call: bash creates a subshell frame (local variables isolated)
+  8. On a command substitution: $(date +%F) → bash forks, runs date, captures stdout
+  9. On a pipe: cmd1 | cmd2 → kernel creates pipe buffer; both run concurrently
+  10. Final exit: bash returns the exit code of the last command
+  11. Parent shell receives exit code → $? is set
+
+Script execution modes:
+  ./backup.sh          → execute as a subprocess (new shell)
+  source backup.sh     → execute in current shell (env vars persist)
+  bash -x backup.sh    → debug mode: print each line before execution
+  bash -n backup.sh    → syntax check only (no execution)
+```
+
+**The difference between `set -e`, `set -u`, `set -o pipefail`:**
+
+```bash
+# WITHOUT set -euo pipefail:
+cp important.txt /nonexistent/   # fails silently
+rm ~/data/*                      # RUNS ANYWAY — catastrophic
+
+# WITH set -euo pipefail:
+cp important.txt /nonexistent/   # script stops HERE
+# rm line never reached — catastrophe prevented
+```
+
+*Figure 13.1 — `set -euo pipefail` is not a preference. It's the difference between a script that fails quietly and one that fails loudly and early.*
+
+---
+
+### 📘 Ebook Explainer — When to Write a Script (Decision Framework)
+
+| Ask yourself | If YES → write a script |
+|---|---|
+| Will I run this more than 3 times? | Any task done more than 3 times manually deserves automation |
+| Is there more than one step? | Two or more steps that must run in order = script candidate |
+| Does it need to run without me? | Cron jobs, CI/CD hooks, server automation — scripts only |
+| Is it error-prone done manually? | If a human mistake is costly, a script prevents it |
+| Will someone else need to run this? | Documentation + script = reproducible process |
+| Does the order of steps matter? | Scripts enforce order; humans forget |
+
+**The automation threshold (when NOT to script):**
+
+```
+✅  Runnable by anyone with the repo → script
+✅  Runs on a schedule → script
+✅  Has 3+ error-prone steps → script
+
+❌  One-off, never again → just run the command
+❌  5 minutes of work, never repeated → alias is fine
+❌  The problem changes every time → human judgment needed
+```
+
+*Figure 13.2 — The automation question is always: 'Will this happen again?' The answer is almost always yes.*
+
+---
+
+### 📘 Ebook Explainer — Where Scripts Are Used (Production Environments)
+
+```
+DEPLOYMENT AUTOMATION
+  deploy.sh              → pull, build, test, restart service
+  rollback.sh            → revert to previous version
+  health-check.sh        → verify deploy succeeded
+
+CI/CD PIPELINES (GitHub Actions, GitLab CI)
+  .github/workflows/*.yml → each "run:" line executes a shell command
+  scripts/test.sh         → test runner called by CI
+  scripts/build.sh        → build step called by CI
+
+SYSTEM ADMINISTRATION
+  /etc/cron.daily/*       → scripts run daily by the system
+  /etc/init.d/*           → service start/stop scripts
+  udev rules              → hardware event scripts
+
+DATA PIPELINES
+  ingest.sh               → download + validate source data
+  transform.sh            → process with awk/python/jq
+  load.sh                 → insert into database
+
+DEVELOPMENT WORKFLOWS
+  setup.sh                → onboard a new developer in one command
+  lint.sh                 → run all linters consistently
+  release.sh              → tag, changelog, build, publish
+
+INFRASTRUCTURE AS CODE
+  provision.sh            → create cloud resources via CLI
+  terraform.sh            → wrapper for terraform with env handling
+  k8s-deploy.sh           → kubectl apply with environment selection
+
+BLOCKCHAIN DEVELOPMENT
+  deploy-contract.sh      → forge build + deploy + verify
+  fund-testnet.sh         → request testnet ETH from faucet
+  run-node.sh             → start a local hardhat/anvil node
+```
+
+*Figure 13.3 — Scripts are the connective tissue of every automated system. Everything in DevOps, CI/CD, and infrastructure runs on them.*
+
+---
+
+### 📘 Ebook Explainer — Diversity of Scripting Applications
+
+**The same scripting skills applied across 8 domains:**
+
+| Domain | Script examples | Core skill used |
+|---|---|---|
+| **Web Dev** | `deploy.sh`, `build.sh`, `reset-db.sh` | Sequencing commands reliably |
+| **Data Science** | `download-dataset.sh`, `preprocess.sh` | Chaining python + bash steps |
+| **AI/ML** | `train.sh --epochs 50 --lr 0.001` | Parameterized execution |
+| **Blockchain** | `deploy-contract.sh mainnet`, `fund-wallets.sh` | Conditional logic + env vars |
+| **DevOps** | `provision.sh`, `scale.sh`, `backup.sh` | Error handling + logging |
+| **Security** | `audit.sh`, `rotate-keys.sh`, `scan.sh` | Retry logic + validation |
+| **Robotics** | `start-ros.sh`, `calibrate-sensors.sh` | Startup sequencing |
+| **Education** | `setup-student-env.sh`, `grade.sh` | Idempotency + setup |
+
+**The meta-skill:** Once you know how to write a reliable script in one domain, you can write reliable scripts in any domain. The bash patterns don't change — only the commands inside them do.
+
+*Figure 13.4 — Shell scripting is domain-agnostic automation. The syntax is universal; the application is infinite.*
+
+---
+
+### 🎧 Audiobook Explainer
+
+> *[EXPLAINER TONE — measured, 3 minutes]*
+>
+> "Chapter 13. How Shell Scripts Work. When to Write One. Where They Run.
+>
+> A shell script is not a compiled program — it's a recipe the shell reads line by line. When you run a script, bash opens the file, parses each line, and executes it as if you had typed it yourself. The shebang on line one tells the kernel which interpreter to use. `set -euo pipefail` on line two is your safety net — without it, a failing command doesn't stop the script. With it, the script stops at the first sign of trouble.
+>
+> The decision to write a script has a simple test: will this happen again? If a task is worth doing twice, it's worth automating. If it has more than one step, it's worth scripting. If it needs to run without you, it must be a script.
+>
+> Scripts run everywhere that bash runs. CI/CD pipelines are lists of scripts. Cron jobs are scripts on timers. Deployment tools call scripts. System startup runs scripts. GitHub Actions, GitLab CI, Kubernetes operators — all of them execute shell commands in controlled environments.
+>
+> And the diversity of application is the real story. You write a deploy script for a web server and a test script for a data pipeline and a provisioning script for cloud infrastructure — and the underlying pattern is the same. Argument parsing. Error handling. Logging. Retry logic. Idempotency. These patterns transfer completely between domains. Learn them once in bash, apply them everywhere."
+>
+> *[EXPLAINER TONE OUT]*
+
+---
+
+### 🎬 Video Explainer — Scripts in 5 Real Environments (5 Minutes)
+
+**Minute 1 — CI/CD Pipeline:**
+> GitHub Actions YAML file shown. Each `run:` block is a shell command. `bash -x test.sh` in CI output — debug mode shows every line before it runs. "Every CI/CD job is your scripts, running on their machines."
+
+**Minute 2 — Database Backup Cron:**
+> `crontab -l` — backup script scheduled at 2AM. Skip to next morning: `ls ~/backups/` — timestamped archive from 2AM exists. "It ran while you slept. That's automation."
+
+**Minute 3 — Onboarding Script:**
+> Fresh machine. `./setup.sh` — packages install, dotfiles link, SSH key generates, repo clones. Done in 2 minutes. "One command. New developer is productive. No manual steps, no missed steps."
+
+**Minute 4 — Smart Contract Deployment:**
+> `./deploy-contract.sh anvil ERC20` — forge builds, deploys to local Anvil node, prints contract address. "Environment-parameterized deployment. Change `anvil` to `mainnet` and it deploys to production."
+
+**Minute 5 — The Universal Pattern:**
+> Open `script-template.sh` from DFY Lesson 1. Show the sections. Voice-over: "This template works for every use case in the four minutes before this one. Same structure. Different commands inside."
+
+---
+
+> 🎯 **Use Cases Summary — B-004**
+>
+> Shell scripting from this book applies to:
+> - ✅ Every CI/CD pipeline you'll ever build (GitHub Actions, GitLab, Jenkins)
+> - ✅ Every deployment you'll ever automate
+> - ✅ Every scheduled task (cron, systemd timers)
+> - ✅ Every new machine or environment setup
+> - ✅ Every multi-step workflow that needs to be reproducible
+> - ✅ Every production process that must run without human intervention
+>
+> **A script is the lowest-cost automation that delivers the highest-value reliability.**
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/B-003-the-file-that-remembered-everything.md`](B-003-the-file-that-remembered-everything.md) — Permissions used in this script
