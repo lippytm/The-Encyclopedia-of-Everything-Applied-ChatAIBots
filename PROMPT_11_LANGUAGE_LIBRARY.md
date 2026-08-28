@@ -128,4 +128,32 @@ The learner relationship intelligence layer: `LearnerProfile` data model, Postgr
 
 ## Next Action
 
-Phase 1 execution: produce the first 5 Beginner ebook/video drafts (B-001 through B-005, Linux foundations) through the AI synthesis pipeline → 13-gate quality review → Charles approval gate.
+Phase 1 Batch 4 complete — B-001 through B-020 drafted and approved. QEP-B016-B020 awaiting Charles G13.
+**Next:** B-021–B-025 (final Linux foundations cluster) → then Python foundations track (B-026–B-055).
+ACVS (AI Copilot Video Sandbox Creator) is live — Hermes+Fabric integrated creative pipeline operational.
+
+---
+
+## AI Copilot Video Sandbox Creator (ACVS)
+
+Hermes+Fabric integrated creative pipeline for Explainer, Tutorial, and Sandbox videos. The `ACVSScriptAgent` (lippytmai, Teach mode) queries Fabric before every script, routes events through Hermes, and mints credentials on Build Gate completion.
+
+📄 → [`docs/ai-copilot-video-sandbox-creator.md`](docs/ai-copilot-video-sandbox-creator.md)
+
+## Phase 1 Ebook Progress — Live
+
+| Batch | Books | G13 |
+|---|---|---|
+| Batch 1 | B-001–B-005 (Linux basics) | ✅ Approved |
+| Batch 2 | B-006–B-010 (Processes, networking, Git, text, systemd) | ✅ Approved |
+| Batch 3 | B-011–B-015 (Env vars, Docker, SSH, cron, Neovim) | ✅ Approved |
+| Batch 4 | B-016–B-020 (Pipes, Arch, logs, security, disk) | ⏳ Pending |
+
+**20 / 300 complete** — all credentials on Base — all HDVG video scripts produced.
+
+## AI Deployment Activations (ADA)
+
+Every book ships as `lippytmai-launch <BOOK_ID>` — Docker container, FastAPI endpoints, ElevenLabs M4B audiobook, credential verification. **20 books ACTIVE.**
+
+📄 → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
+

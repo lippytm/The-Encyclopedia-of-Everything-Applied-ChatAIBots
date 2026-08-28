@@ -6,6 +6,7 @@
 
 ## Table of Contents
 
+**Foundations**
 1. [Overview](#overview)
 2. [Character–Ecosystem Educational Entertainment Delivery System](#characterecosystem-educational-entertainment-delivery-system)
 3. [Self-Improvement & Evolutionary Evolution](#self-improvement--evolutionary-evolution)
@@ -14,12 +15,41 @@
 6. [Teaching People & Robots to Be Better Programmers](#teaching-people--robots-to-be-better-programmers)
 7. [Blockchain Technology Development](#blockchain-technology-development)
 8. [AI Brainkits](#ai-brainkits)
+
+**AI Conglomerate Swarms System (ACSS)**
 9. [AI Clone Engine Swarms Systems](#ai-clone-engine-swarms-systems)
 10. [AI Agents Upgrade Manifest](#ai-agents-upgrade-manifest)
 11. [AI Model Intelligence Layer](#ai-model-intelligence-layer)
 12. [AI Trading Bots Intelligence](#ai-trading-bots-intelligence)
 13. [AI Slack CRM Systems](#ai-slack-crm-systems)
-14. [Contributing](#contributing)
+14. [Educational Environmental Ecosystems Platform (EEEP)](#educational-environmental-ecosystems-platform-eeep)
+15. [Linux Blockchain Educational Ecosystem (LBEE)](#linux-blockchain-educational-ecosystem-lbee)
+16. [Autonomous Continuous Development (ACD)](#autonomous-continuous-development-acd)
+
+**AI Copilot Video Production**
+17. [AI Copilot Video Explainer / Tutorial / Sandbox Creator (ACVS)](#ai-copilot-video-explainer--tutorial--sandbox-creator-acvs)
+
+**Prompt #11 — The 8-Engine Content Pipeline**
+18. [Prompt #11: Repository Stack Profile](#prompt-11-repository-stack-profile)
+19. [Prompt #11: Applied Chatbot Knowledge-Base Learning Path](#prompt-11-applied-chatbot-knowledge-base-learning-path)
+20. [Prompt #11: The 8 Engines](#prompt-11-the-8-engines)
+21. [Prompt #11: Curriculum Planner (Engine 3)](#prompt-11-curriculum-planner-engine-3)
+22. [Prompt #11: Awareness Engine (Engine 6)](#prompt-11-awareness-engine-engine-6)
+23. [Prompt #11: 300-Book Course Series](#prompt-11-300-book-course-series)
+24. [Prompt #11: Documentation Engine (Engine 4)](#prompt-11-documentation-engine-engine-4)
+25. [Prompt #11: Quality Review Engine (Engine 5)](#prompt-11-quality-review-engine-engine-5)
+26. [Prompt #11: HD Video Generator (HDVG)](#prompt-11-hd-video-generator-hdvg)
+27. [Prompt #11: Gamer Educational Systems Networks (GESN)](#prompt-11-gamer-educational-systems-networks-gesn)
+28. [Prompt #11: Repo Communications Engine (Engine 7)](#prompt-11-repo-communications-engine-engine-7)
+29. [Prompt #11: CRM Support Engine (Engine 8)](#prompt-11-crm-support-engine-engine-8)
+
+**AI Deployment Activations & Ebook Series**
+30. [AI Deployment Activations (ADA)](#ai-deployment-activations-ada)
+31. [Phase 1 Ebooks — Completed (B-001–B-020)](#phase-1-ebooks--completed-b-001b-020)
+32. [Quality Evidence Packets (QEPs)](#quality-evidence-packets-qeps)
+
+**Contributing**
+33. [Contributing](#contributing)
 
 ---
 
@@ -262,7 +292,82 @@ Key concepts explored:
 
 ---
 
-## AI Slack CRM Systems
+## AI Copilot Video Explainer / Tutorial / Sandbox Creator (ACVS)
+
+> *"A video is not a static artifact. It is a living lesson — aware of who is watching, what they already know, where they are struggling, and what credential they will earn when they succeed."*
+
+The **AI Copilot Video Explainer / Tutorial / Video Sandbox Creator (ACVS)** is the ACSS creative production system that merges Hermes routing and Fabric knowledge into three distinct video modes — Explainer, Tutorial, and Sandbox — forming the backbone of the Earn-while-you-Learn multimedia delivery pipeline.
+
+Key concepts explored:
+
+- **Three video modes** — Explainer (concept-first, animated, narrative), Tutorial (step-by-step build walkthroughs with terminal recordings), Sandbox (interactive build missions with GESN credential gates).
+- **Hermes creative event bus** — 9 typed events govern the full pipeline: `CREATE_VIDEO_REQUEST` → `VIDEO_SCRIPT_READY` → `SCENE_PRODUCTION_COMPLETE` → `QUALITY_GATE_PASS` → `G13_APPROVED` → `VIDEO_PUBLISHED` → `LEARNER_MILESTONE` → `IMPROVEMENT_REQUIRED` → `SCRIPT_REVISION_COMPLETE`.
+- **Fabric knowledge integration** — `FabricVideoNode` graph stores every video as a node linked to concept nodes, learner progress, quiz results, GESN drop-off data, and cross-references; ACVSScriptAgent queries Fabric before writing every script to prevent repetition and target weak spots.
+- **`ACVSScriptAgent`** — lippytmai clone in Teach mode; queries Fabric for related nodes and learner weak spots, builds GPT-4o prompts, generates scene manifest JSON, dispatches Hermes `VideoScriptReady` event.
+- **`SandboxSession`** — per-learner interactive mission: progressive challenges, hint system, build gate verification (artifact hash check), credential mint on pass.
+- **ACVS Video Taxonomy** — 10 categories (`VID-CLL-L0`, `VID-CSEL-L0`, `VID-CBSLL-L0`, `VID-ACSS-L0`, `VID-OMARCHY`, `VID-SANDBOX`, `VID-COPILOT`, `VID-GESN`, and more) stored in Fabric and surfaced in GESN.
+- **Continuous Improvement Cycle** — GESN analytics → Fabric weak spot detection → Hermes `IMPROVEMENT_REQUIRED` → ACVSScriptAgent targeted scene revision → G13 re-review (scenes only).
+- **Sandbox Docker runtime** — `docker-compose.sandbox.yml` with `acvs-sandbox` web terminal container, `acvs-challenge-api` FastAPI service, and PostgreSQL for session persistence.
+- **ACVS + HDVG relationship** — ACVS is the creative pipeline (scripts, modes, session logic, Hermes/Fabric integration); HDVG is the production pipeline (renders scene manifests into MP4/WebM/HLS). They are complementary, not competing.
+
+📄 Deep dive → [`docs/ai-copilot-video-sandbox-creator.md`](docs/ai-copilot-video-sandbox-creator.md)
+
+---
+
+## Phase 1 Ebooks — Completed (B-001–B-020)
+
+> *"Twenty books. Twenty build artifacts. Twenty on-chain credentials. Twenty steps closer to teaching the Human Race to leave the planet."*
+
+**Linux Foundations Cluster — Phase 1 · Batches 1–4 · G13 Approved (B-001–B-015) / Pending (B-016–B-020)**
+
+| Book | Title | Build Artifact | Credential |
+|---|---|---|---|
+| B-001 | *The Terminal and the Curious Mind* | `terminal-explorer.sh` | `CLL-L0-B001-TerminalApprentice` |
+| B-002 | *Commands That Actually Work* | 20-command reference script | `CLL-L0-B002-CommandBuilder` |
+| B-003 | *The File That Remembered Everything* | `permissions-fix.sh` | `CLL-L1-B003-PermissionsEngineer` |
+| B-004 | *The Script That Did My Job* | `backup.sh` | `CLL-L1-B004-BashAutomator` |
+| B-005 | *Installing Things Without Breaking Things* | Python venv + requirements.txt | `CLL-L1-B005-DevEnvironmentBuilder` |
+| B-006 | *The Process That Wouldn't Stop* | `process-monitor.sh` | `CLL-L1-B006-ProcessWrangler` |
+| B-007 | *The Network That Connected Everything* | `api-client.sh` | `CLL-L1-B007-NetworkNavigator` |
+| B-008 | *Files That Never Get Lost* | Git init → push → PR workflow | `CCSLL-L0-B008-GitPilot` |
+| B-009 | *Working With Text Like a Pro* | `log-parser.sh` | `CLL-L1-B009-TextMaster` |
+| B-010 | *The Service That Started Itself* | `backup.service` + `backup.timer` | `CLL-L1-B010-SystemdOperator` |
+| B-011 | *Environment Variables and Secrets* | `config.py` Config class + `.env` | `CCSLL-L0-B011-SecretKeeper` |
+| B-012 | *The Container That Held Everything* | `docker-compose.yml` (app + PostgreSQL) | `CSEL-L0-B012-ContainerPilot` |
+| B-013 | *SSH: The Secure Handshake* | `remote-backup.sh` + `~/.ssh/config` | `CLL-L1-B013-SSHMaster` |
+| B-014 | *Cron: The Machine That Never Forgets* | 3-job crontab (backup, health, cleanup) | `CLL-L1-B014-CronOperator` |
+| B-015 | *The Editor That Does Everything* | `~/.config/nvim/init.lua` | `CLL-L1-B015-NeovimOperator` |
+| B-016 | *Pipes, Redirects, and Composition* | `top-ips.sh` log pipeline | `CLL-L1-B016-PipelineBuilder` |
+| B-017 | *The Arch Linux Advantage* | `omarchy-bootstrap.sh` | `CLL-L1-B017-ArchOperator` |
+| B-018 | *Log Files Tell the Truth* | `log-monitor.sh` daily summary | `CLL-L1-B018-LogAnalyst` |
+| B-019 | *Securing Your Linux Machine* | `harden-server.sh` | `CLL-L2-B019-ServerGuardian` |
+| B-020 | *Disk Space: The Resource That Runs Out* | `disk-monitor.sh` + Docker cleanup | `CLL-L1-B020-DiskOperator` |
+
+All 20 books follow the standard 11-chapter format, include a proof of work section, and mint their credential on Base after G13 approval. Each book also has a HDVG scene manifest video script.
+
+**Series progress: 20 / 300 books complete** — Linux Foundations cluster 80% done (B-001–B-020 of 25).  
+**Next:** B-021–B-025 (final Linux foundations batch) → then B-026–B-055 (Python foundations).
+
+📄 Master plan → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
+
+---
+
+## Quality Evidence Packets (QEPs)
+
+Every batch of 5 books produces a **Quality Evidence Packet** — G1–G12 automated review evidence submitted to Charles for G13 HumanApprovalGate approval before credentials are minted and videos are published.
+
+| QEP | Books | G13 Status |
+|---|---|---|
+| [QEP-B001-B005](docs/QEP-B001-B005-phase1-quality-evidence-packet.md) | B-001–B-005 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B006-B010](docs/QEP-B006-B010-phase1-batch2-quality-evidence-packet.md) | B-006–B-010 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B011-B015](docs/QEP-B011-B015-phase1-batch3-quality-evidence-packet.md) | B-011–B-015 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B016-B020](docs/QEP-B016-B020-phase1-batch4-quality-evidence-packet.md) | B-016–B-020 | ⏳ Awaiting Charles G13 |
+
+📄 QEP pattern defined in → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
+
+---
+
+
 
 > *"Slack is not just a chat tool — it is the nervous system of every modern team. When your CRM lives inside that nervous system, every conversation becomes a learning event."*
 

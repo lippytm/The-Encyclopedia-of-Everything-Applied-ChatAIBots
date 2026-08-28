@@ -101,6 +101,49 @@ Use for:
 | Blockchain / on-chain | Claude + DeepSeek Coder | Nuanced + code-accurate |
 | Trading bot lessons | GPT-4o (tool mode) | Live data integration |
 | Local / private lessons | Llama 3.1 (Ollama) | Privacy-safe, offline capable |
+| ACVS scene manifest generation | GPT-4o (JSON mode) | Structured scene output |
+| Sandbox challenge design | Claude 3.5 | Pedagogically sound challenge sequencing |
+
+## 7. ACVS Teaching Loop *(v2 — Hermes + Fabric Integrated)*
+
+Use for:
+- generating video explainers, tutorials, and sandbox missions
+- personalizing script content to a learner's Fabric profile
+- continuously improving video content based on GESN analytics
+
+**Process:**
+1. Creative request enters Hermes as `CREATE_VIDEO_REQUEST { mode, book_id, audience }`
+2. `ACVSScriptAgent` (lippytmai, Teach mode) queries Fabric for related nodes and learner weak spots
+3. GPT-4o generates scene manifest JSON with narration, visual prompts, code blocks, interactive overlays
+4. Hermes dispatches `VIDEO_SCRIPT_READY` → production pipeline starts (HDVG renderer)
+5. Video passes 13-gate QEP → G13 Charles approval → Hermes `VIDEO_PUBLISHED` event
+6. GESN tracks learner engagement — drop-off scenes and quiz failures fed back to Fabric
+7. Fabric detects weak spots → Hermes `IMPROVEMENT_REQUIRED` → ACVSScriptAgent rewrites affected scenes only
+8. Revised scenes re-submitted to G13 → published → cycle continues
+
+**Sandbox sub-loop:**
+1. Learner enters ACVS Sandbox — receives progressive challenges from Fabric-personalized mission
+2. Completes challenges → Build Gate checks artifact hash
+3. Hash match → credential mint on Base → `LEARNER_MILESTONE` event → Fabric progress update
+
+## 8. ADA Deployment Loop *(v2)*
+
+Use for:
+- shipping every approved ebook as a runnable application
+- generating audiobooks via ElevenLabs
+- serving book artifacts as FastAPI endpoints for GESN integration
+
+**Process:**
+1. G13 approval triggers ADA pipeline for the batch
+2. `lippytmai-launch` CLI registers the book in `ada-registry.json`
+3. Docker image built and pushed → FastAPI endpoints live at `/run/:id`, `/quiz/:id`, `/audiobook/:id`, `/credential/:id`
+4. ElevenLabs audiobook generated → chaptered M4B file available
+5. GESN registers book as interactive mission module
+6. Hermes broadcasts `ADA_BOOK_ACTIVE` → Fabric updates ADA status node
+
+📄 ACVS full spec → [`docs/ai-copilot-video-sandbox-creator.md`](docs/ai-copilot-video-sandbox-creator.md)  
+📄 ADA system → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)  
+📄 HDVG pipeline → [`docs/P011-VIDEO-001-hd-video-generator.md`](docs/P011-VIDEO-001-hd-video-generator.md)
 
 ## Connected Repositories
 - `lippytm-lippytm.ai-tower-control-ai` — control tower and shared standards hub
