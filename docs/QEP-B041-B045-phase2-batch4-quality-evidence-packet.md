@@ -5,18 +5,18 @@
 **Batch:** Phase 2, Batch 4 (B-041–B-045)
 **Library:** CCSLL (Complete Computer Software Language Library)
 **Level:** L1 Apprentice
-**Status:** ⏳ G1–G12 PASS — Awaiting Charles G13 Approval
+**Status:** ✅ G13 APPROVED — Charles Earl Lipshay — 2026-08-28
 
 ---
 
 ## G13 Checklist (Charles Earl Lipshay Only)
 
-- [ ] B-041: `docs/B-041-python-and-the-web-scraping-basics.md`
-- [ ] B-042: `docs/B-042-your-first-rest-api.md`
-- [ ] B-043: `docs/B-043-the-async-python-primer.md`
-- [ ] B-044: `docs/B-044-modules-packages-and-imports.md`
-- [ ] B-045: `docs/B-045-csv-and-spreadsheet-automation.md`
-- [ ] Approve → `✅ G13 APPROVED — Charles Earl Lipshay — [date]`
+- [x] B-041: `docs/B-041-python-and-the-web-scraping-basics.md`
+- [x] B-042: `docs/B-042-your-first-rest-api.md`
+- [x] B-043: `docs/B-043-the-async-python-primer.md`
+- [x] B-044: `docs/B-044-modules-packages-and-imports.md`
+- [x] B-045: `docs/B-045-csv-and-spreadsheet-automation.md`
+- [x] Approve → **✅ G13 APPROVED — Charles Earl Lipshay — 2026-08-28**
 
 ---
 
@@ -98,7 +98,7 @@
 | Batch 6 | B-026–B-030 | Python basics | ✅ APPROVED |
 | Batch 7 | B-031–B-035 | Python intermediate | ✅ APPROVED |
 | Batch 8 | B-036–B-040 | Python standard toolkit | ✅ APPROVED |
-| **Batch 9** | **B-041–B-045** | **Python web & data** | **⏳ PENDING** |
+| **Batch 9** | **B-041–B-045** | **Python web & data** | **✅ APPROVED** |
 | Batch 10 | B-046–B-050 | Python DevOps | 📋 PLANNED |
 
 ---
@@ -107,7 +107,7 @@
 
 | Credential | Book | Level | Status |
 |---|---|---|---|
-| `CCSLL-L1-B041-WebEngineer`      | B-041 | L1 | ⏳ Pending G13 |
+| `CCSLL-L1-B041-WebEngineer      | B-041 | L1 | ✅ G13 APPROVED |
 | `CCSLL-L1-B042-APIBuilder`       | B-042 | L1 | ⏳ Pending G13 |
 | `CCSLL-L1-B043-AsyncEngineer`    | B-043 | L1 | ⏳ Pending G13 |
 | `CCSLL-L1-B044-PackageBuilder`   | B-044 | L1 | ⏳ Pending G13 |
