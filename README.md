@@ -351,7 +351,7 @@ Key concepts explored:
 
 All 25 books follow the standard 11-chapter format, include a proof of work section, and mint their credential on Base after G13 approval. Each book also has a HDVG scene manifest video script.
 
-**Series progress: 50 / 300 books drafted** 🐍 — Phase 1 COMPLETE ✅ + Phase 2 ALL 5 BATCHES launched (Phase 2 COMPLETE)
+**Series progress: 55 / 300 books drafted** 🐍 — Phase 1 COMPLETE ✅ + Phase 2 ALL 6 BATCHES launched 🎓 (Phase 2 COMPLETE on B-055 G13 approval)
 **Phase 2 active:** B-026–B-035 (Python Foundations) — Batch 1 G13 APPROVED · Batch 2 awaiting G13
 
 ### Phase 2 Ebooks — Launched (B-026–B-035)
@@ -396,7 +396,7 @@ All 25 books follow the standard 11-chapter format, include a proof of work sect
 | B-044 | *Modules, Packages, and Imports* | `lippytmai_utils/` package | `CCSLL-L1-B044-PackageBuilder` |
 | B-045 | *CSV and Spreadsheet Automation* | `expense_report.py` | `CCSLL-L1-B045-DataReporter` |
 
-**Python Foundations — Batch 5 · QEP-B046-B050 · ⏳ Awaiting G13** *(Phase 2 Complete on approval)*
+**Python Foundations — Batch 5 · QEP-B046-B050 · ✅ G13 APPROVED — Charles — 2026-08-28**
 
 | Book | Title | Build Artifact | Credential |
 |---|---|---|---|
@@ -405,6 +405,16 @@ All 25 books follow the standard 11-chapter format, include a proof of work sect
 | B-048 | *Environment Configuration Done Right* | `config.py` | `CCSLL-L1-B048-ConfigEngineer` |
 | B-049 | *Logging — The Program's Memory* | `log_system.py` | `CCSLL-L1-B049-LoggingEngineer` |
 | B-050 | *Python + Linux: The Power Combo* | `system_manager.py` | `CCSLL-L1-B050-SystemEngineer` + `CLL-L1-B050-LinuxPythonBridge` |
+
+**Python Foundations — Batch 6 · QEP-B051-B055 · ⏳ Awaiting G13** *(Phase 2 Capstone — SkillBadge)*
+
+| Book | Title | Build Artifact | Credential |
+|---|---|---|---|
+| B-051 | *Git with Python* | `commit_reporter.py` | `CCSLL-L1-B051-GitEngineer` |
+| B-052 | *Your First Docker Container* | `Dockerfile.reporter` | `CSEL-L1-B052-ContainerEngineer` |
+| B-053 | *Environment Variables and Security* | `secure_config.py` | `CCSLL-L1-B053-SecureConfigEngineer` |
+| B-054 | *Debugging Python Like a Professional* | `broken.py` → fixed | `CCSLL-L1-B054-DebugEngineer` |
+| B-055 | *Python Earn-while-you-Learn: Level 1 Badge* | `portfolio/` CLI package | `CCSLL-L1-BADGE-PythonFoundations` 🎓 |
 
 📄 Master plan → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
 
@@ -425,7 +435,8 @@ Every batch of 5 books produces a **Quality Evidence Packet** — G1–G12 autom
 | [QEP-B031-B035](docs/QEP-B031-B035-phase2-batch2-quality-evidence-packet.md) | B-031–B-035 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B036-B040](docs/QEP-B036-B040-phase2-batch3-quality-evidence-packet.md) | B-036–B-040 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B041-B045](docs/QEP-B041-B045-phase2-batch4-quality-evidence-packet.md) | B-041–B-045 | ✅ G13 APPROVED — Charles — 2026-08-28 |
-| [QEP-B046-B050](docs/QEP-B046-B050-phase2-batch5-quality-evidence-packet.md) | B-046–B-050 | ⏳ Awaiting Charles G13 |
+| [QEP-B046-B050](docs/QEP-B046-B050-phase2-batch5-quality-evidence-packet.md) | B-046–B-050 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B051-B055](docs/QEP-B051-B055-phase2-batch6-quality-evidence-packet.md) | B-051–B-055 | ⏳ Awaiting Charles G13 |
 
 📄 QEP pattern defined in → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
 
@@ -777,7 +788,7 @@ lippytmai-launch B-001 --quiz       # interactive chapter quiz
 docker compose -f docker-compose.ada.yml up -d  # full platform on :8000
 ```
 
-**Current ADA status:** 45 books ACTIVE (B-001–B-045) · Phase 1 COMPLETE 🎓 · Phase 2 ALL 5 BATCHES LAUNCHED 🐍 · B-046–B-050 drafted, awaiting G13
+**Current ADA status:** 50 books ACTIVE (B-001–B-050) · Phase 1 COMPLETE 🎓 · Phase 2 Batches 1–5 COMPLETE 🐍 · B-051–B-055 drafted, awaiting G13 (Phase 2 Capstone)
 
 📄 Deep dive → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
 
