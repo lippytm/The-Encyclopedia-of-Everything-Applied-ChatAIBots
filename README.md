@@ -405,6 +405,67 @@ Key concepts explored:
 
 ---
 
+## Prompt #11: Curriculum Planner (Engine 3)
+
+> *"A great curriculum watches what you already know, listens to what you are trying to build, measures where your understanding breaks down, and designs the shortest path."*
+
+The **P011-PLAN-001 Curriculum Planner** is Engine 3 of the Prompt #11 system — the intelligent design core that generates personalized, sequenced, adaptive learning plans backed by Fabric and Claude 3.5.
+
+Key concepts explored:
+
+- **Learner Profile Schema** — `ProficiencyMap` covering CCSLL (7 domains), CBSLL (6 domains), CLL (4 domains), and CSEL (5 environments); `LearningGoal`, `CompletedMilestone`, and `LearnerProfile` dataclasses.
+- **Gap Analysis** — automatic prerequisite detection (e.g., Solidity requires Python L1 + Linux L1; ZK circuits require Python L3 + Solidity L2).
+- **Claude 3.5 Plan Generation** — full system prompt + Claude user prompt builder that passes learner profile, goals, missing prerequisites, and encyclopedia KB resources.
+- **Curriculum Step Schema** — 8 step types (concept_lesson, code_build, quiz, debug_exercise, research_task, blockchain_deploy, peer_review, credential_gate).
+- **Curriculum Templates** — Beginner (L0→L2), Intermediate (L2→L3), and Advanced (L3→L5) 10-step templates matching the ebook series tracks.
+- **Plan Adjustment Loop** — `PlanAdjuster` class detects stuck learners (>3 days no progress) and fast learners (<50% estimated time) and dynamically adds/removes steps.
+- **ACSS Integration** — Hermes events for all plan lifecycle; Fabric as single source of truth; on-chain credential minting at credential gate steps.
+
+📄 Deep dive → [`docs/P011-PLAN-001-curriculum-planner.md`](docs/P011-PLAN-001-curriculum-planner.md)
+
+---
+
+## Prompt #11: Awareness Engine (Engine 6)
+
+> *"Awareness is the system paying attention to itself — knowing where learners are thriving, where pipelines are failing, and where the next improvement lives."*
+
+The **P011-AWARE-001 Awareness Engine** is Engine 6 — the continuous monitoring nervous system of the Prompt #11 ecosystem.
+
+Key concepts explored:
+
+- **Learner Engagement Signals** — 7 signals (DAU change, lesson completion rate, streak breaks, quiz pass rate, credential velocity, support case volume, dropout point) with thresholds and automated actions.
+- **Pipeline Health Signals** — CI failure rate, deploy success rate, AI review latency, RAG retrieval quality, Hermes event backlog, Fabric pattern confidence.
+- **Infrastructure Health** — Ethereum/Solana node sync, Qdrant availability, PostgreSQL connection pool, disk space across all ACSS services.
+- **Model Performance Drift** — Claude 3.5 latency, GPT-4o JSON error rate, embedding drift, fine-tune ROUGE score degradation.
+- **`AwarenessEngine` Implementation** — async Python with 4 concurrent monitoring loops (learner: 5 min, pipeline: 1 min, infra: 2 min, model: 3 min); `AwarenessSignal` dataclass; automatic HumanApprovalGate escalation for critical signals.
+- **Slack Dashboard** — `SlackAwarenessDashboard` posts hourly Block Kit report to `#acss-awareness` with learner stats, pipeline health, and infrastructure status.
+- **Awareness → Fabric Learning Loop** — every signal and resolution feeds back into Fabric to improve future signal recommendations.
+
+📄 Deep dive → [`docs/P011-AWARE-001-awareness-dashboard.md`](docs/P011-AWARE-001-awareness-dashboard.md)
+
+---
+
+## Prompt #11: 300-Book Course Series
+
+> *"The best textbook knows what you already know, adapts to how fast you learn, costs nothing to update, and earns the author a credential every time a student builds something real."*
+
+The **P011-EBOOK-000 Course Series Master Plan** defines the complete 300-book Earn-while-you-Learn series — synthesized from Claude, ChatGPT, Gemini, GitHub Copilot, and all lippytm.ai repositories.
+
+Key concepts explored:
+
+- **Three tracks:** Beginner (B-001→B-100), Intermediate (I-001→I-100), Advanced (A-001→A-100).
+- **100 Beginner titles fully planned:** 25 Linux/Bash foundations → 30 Python foundations → 25 Blockchain/Solidity → 20 AI/ACSS/Chatbots, with title, topic, build artifact, and credential for every book.
+- **Intermediate and Advanced theme clusters** defined (Python→Production, Linux→SysAdmin, Solidity→DeFi, AI→RAG+Fine-Tune, Full-Stack Blockchain App, ACSS Integration; ZK Proofs, RL Trading, Protocol Design, ACSS Architecture, Autonomous Systems, Humanoid AI).
+- **Standard book format:** 11-chapter Prompt #11 pattern (Fable → Reality → Questions → Data → Build → Tests → Review → Business → Proof → Mutation → Corrections) + 3 appendices.
+- **AI synthesis pipeline:** Claude (conceptual/ethics) + ChatGPT (procedural/code) + Gemini (diagrams/synthesis) + GitHub Copilot (code generation) + Fabric (quality gate).
+- **Audiobook specs:** lippytmai AI voice, MP3+M4B, chapter-marked, 45–360 min per title.
+- **8-phase delivery schedule:** Q4 2026 (B-001–025) through Q4 2027 (A-051–100).
+- **Revenue model:** direct sales, credential verification, teaching bounties, build submissions — with full Learning-to-Earning boundary statement.
+
+📄 Deep dive → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
+
+---
+
 ## Contributing
 
 This encyclopedia is open to intelligent contributors — human, AI, robotic, or otherwise — operating under clear identity, rights, safety, evidence, and quality controls.

@@ -72,6 +72,24 @@ All 8 engines (Intake, Classification, Planning, Documentation, Quality Review, 
 
 📄 → [`docs/P011-ENGINE-001-prompt11-engines.md`](docs/P011-ENGINE-001-prompt11-engines.md)
 
+## Curriculum Planner (Engine 3)
+
+Full Fabric-backed adaptive curriculum planner: learner profile schema, gap analysis, Claude 3.5 plan generation, beginner/intermediate/advanced curriculum templates, and the plan adjustment loop.
+
+📄 → [`docs/P011-PLAN-001-curriculum-planner.md`](docs/P011-PLAN-001-curriculum-planner.md)
+
+## Awareness Engine (Engine 6)
+
+Real-time ecosystem monitoring: learner engagement signals, pipeline health, infrastructure status, model performance drift, Slack dashboard, and the Awareness → Fabric learning loop.
+
+📄 → [`docs/P011-AWARE-001-awareness-dashboard.md`](docs/P011-AWARE-001-awareness-dashboard.md)
+
+## 300-Book Course Series Master Plan
+
+The full plan for 100 Beginner + 100 Intermediate + 100 Advanced ebooks and audiobooks on programming, blockchain development, and Linux — synthesized from Claude, ChatGPT, Gemini, GitHub, and all lippytm.ai repositories.
+
+📄 → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
+
 ## Next Action
 
-Implement Engine 3 (Planning) full curriculum planner backed by Fabric, and build the Awareness engine real-time learner engagement dashboard.
+Phase 1 execution: produce the first 5 Beginner ebook drafts (B-001 through B-005, Linux foundations) using the AI synthesis pipeline and submit for Charles review.
