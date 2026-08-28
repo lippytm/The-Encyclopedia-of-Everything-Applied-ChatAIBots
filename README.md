@@ -49,7 +49,8 @@
 32. [Quality Evidence Packets (QEPs)](#quality-evidence-packets-qeps)
 
 **Contributing**
-33. [Contributing](#contributing)
+33. [Creative Building Process](#creative-building-process)
+34. [Contributing](#contributing)
 
 ---
 
@@ -314,11 +315,11 @@ Key concepts explored:
 
 ---
 
-## Phase 1 Ebooks — Completed (B-001–B-020)
+## Phase 1 Ebooks — Complete (B-001–B-025)
 
-> *"Twenty books. Twenty build artifacts. Twenty on-chain credentials. Twenty steps closer to teaching the Human Race to leave the planet."*
+> *"Twenty-five books. Twenty-five build artifacts. Twenty-five on-chain credentials. Phase 1 of the Linux Foundations curriculum is complete. The Human Race's journey to the stars starts with a terminal."*
 
-**Linux Foundations Cluster — Phase 1 · Batches 1–4 · G13 Approved (B-001–B-015) / Pending (B-016–B-020)**
+**Linux Foundations Cluster — Phase 1 · Batches 1–5 · G13 Approved (B-001–B-020) / Pending (B-021–B-025)**
 
 | Book | Title | Build Artifact | Credential |
 |---|---|---|---|
@@ -342,11 +343,16 @@ Key concepts explored:
 | B-018 | *Log Files Tell the Truth* | `log-monitor.sh` daily summary | `CLL-L1-B018-LogAnalyst` |
 | B-019 | *Securing Your Linux Machine* | `harden-server.sh` | `CLL-L2-B019-ServerGuardian` |
 | B-020 | *Disk Space: The Resource That Runs Out* | `disk-monitor.sh` + Docker cleanup | `CLL-L1-B020-DiskOperator` |
+| B-021 | *The Linux Filesystem Explained* | `filesystem-navigator.sh` | `CLL-L1-B021-FilesystemEngineer` |
+| B-022 | *Shell Functions and Aliases* | `dev-toolkit.sh` function library | `CLL-L1-B022-ShellCrafter` |
+| B-023 | *Archives, Compression, and Backups* | `backup-system.sh` + retention | `CLL-L1-B023-BackupEngineer` |
+| B-024 | *The User Who Could Do Anything* | `user-audit.sh` | `CLL-L1-B024-UserAdmin` |
+| B-025 | *Linux on Every Platform* | `platform-bootstrap.sh` | `CLL-L1-B025-PlatformEngineer` |
 
-All 20 books follow the standard 11-chapter format, include a proof of work section, and mint their credential on Base after G13 approval. Each book also has a HDVG scene manifest video script.
+All 25 books follow the standard 11-chapter format, include a proof of work section, and mint their credential on Base after G13 approval. Each book also has a HDVG scene manifest video script.
 
-**Series progress: 20 / 300 books complete** — Linux Foundations cluster 80% done (B-001–B-020 of 25).  
-**Next:** B-021–B-025 (final Linux foundations batch) → then B-026–B-055 (Python foundations).
+**Series progress: 25 / 300 books drafted — Phase 1 COMPLETE** 🎓  
+**Next:** B-026–B-050 (Python Foundations — begins after QEP-B021-B025 G13 approval)
 
 📄 Master plan → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
 
@@ -361,11 +367,13 @@ Every batch of 5 books produces a **Quality Evidence Packet** — G1–G12 autom
 | [QEP-B001-B005](docs/QEP-B001-B005-phase1-quality-evidence-packet.md) | B-001–B-005 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B006-B010](docs/QEP-B006-B010-phase1-batch2-quality-evidence-packet.md) | B-006–B-010 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B011-B015](docs/QEP-B011-B015-phase1-batch3-quality-evidence-packet.md) | B-011–B-015 | ✅ G13 APPROVED — Charles — 2026-08-28 |
-| [QEP-B016-B020](docs/QEP-B016-B020-phase1-batch4-quality-evidence-packet.md) | B-016–B-020 | ⏳ Awaiting Charles G13 |
+| [QEP-B016-B020](docs/QEP-B016-B020-phase1-batch4-quality-evidence-packet.md) | B-016–B-020 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B021-B025](docs/QEP-B021-B025-phase1-batch5-quality-evidence-packet.md) | B-021–B-025 | ⏳ Awaiting Charles G13 |
 
 📄 QEP pattern defined in → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
 
 ---
+
 
 
 
@@ -715,6 +723,30 @@ docker compose -f docker-compose.ada.yml up -d  # full platform on :8000
 **Current ADA status:** 20 books ACTIVE (B-001–B-020) · 280 pending G13 approval
 
 📄 Deep dive → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
+
+---
+
+## Creative Building Process
+
+The **Creative Building Process** (CBP) is the unified methodology that governs how all lippytm.ai content is conceived, created, quality-reviewed, published, and continuously improved. It merges Hermes event routing, Fabric knowledge context, ACVS video production, and ADA deployment into a single repeatable loop:
+
+**8-Stage Creative Loop:**
+1. **INTENT** — Charles defines topic via P011-PLAN-001
+2. **CONTEXT** — Fabric loads prior books, learner weak spots, cross-links
+3. **CREATE** — lippytmai drafts ebook (11 chapters + build artifact)
+4. **QUALITY REVIEW** — QualityReviewEngine runs G1–G12 automated gates
+5. **HUMAN APPROVAL (G13)** — Charles reviews QEP — NEVER automated
+6. **PRODUCE** — ACVS generates Explainer, Tutorial, and Sandbox videos
+7. **DEPLOY** — ADA activates book, credential minted on Base
+8. **IMPROVE** — GESN analytics feed back into Fabric for continuous revision
+
+**Clone Assignments:**
+- `lippytmai` — all ebook drafting, video scripts, teaching content
+- `lippytm` — builds, CI/CD, ADA deployment
+- `Charles Earl Lipshay` — G13 HumanApprovalGate (always manual)
+- `Lippy Killjoy` — experimental content (requires HumanApprovalGate)
+
+📄 Deep dive → [`docs/creative-building-process.md`](docs/creative-building-process.md)
 
 ---
 
