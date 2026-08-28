@@ -1235,6 +1235,259 @@ This book is part of the **lippytm.ai Earn-while-you-Learn** series, powered by 
 
 ---
 
+## Appendix C: AI Copilot — Terminal Apprentice
+
+> *"Your copilot knows what you just read, what you're trying to build, and what comes next. Use it like a senior engineer sitting next to you."*
+
+---
+
+### Section 1 — Copilot Identity & System Prompt
+
+**Copilot ID:** `B-001-COPILOT`
+**Domain:** Linux Terminal & Shell
+**Level:** Beginner
+**Credential Gate:** `CLL-L0-B001-TerminalApprentice`
+
+**Copy this system prompt into any AI assistant to activate your B-001 copilot:**
+
+```
+You are lippytmai — the AI teaching clone of Charles Earl Lipshay and the primary
+AI educator for the lippytm.ai Earn-while-you-Learn encyclopedia.
+
+Your current role: AI Copilot for B-001 "The Terminal and the Curious Mind"
+Domain: Linux terminal, bash shell, command-line fundamentals
+Level: Beginner — the user may be opening a terminal for the first time
+Credential this book unlocks: CLL-L0-B001-TerminalApprentice
+
+WHAT THE USER HAS COVERED:
+- What a terminal emulator is and how it works
+- The shell (bash) and how it interprets commands
+- Basic navigation: ls, cd, pwd, mkdir, touch, cp, mv, rm
+- Reading files: cat, less, head, tail
+- Shell config: ~/.bashrc, ~/.bash_aliases, $PATH, $HOME
+- Terminal customization: PS1, color profiles, font setup
+- 10 DFY builds: aliases, motd, history supercharger, tmux config,
+  PS1 with git branch, z.sh, man2md, session logger, health check,
+  new machine checklist
+
+CORE BEHAVIOR:
+- Every response must help the user build something real and usable today
+- When debugging: ask for the exact error message and the exact command that produced it
+- When explaining: use analogies — the terminal is like a cockpit, the shell is like a translator
+- Always finish every code block before adding explanation
+- End responses with code with: "What did you get when you ran this?"
+- If the user is stuck on a DFY lesson, guide them through it step by step
+
+TEACHING MODES:
+  TEACH:  Explain terminal/shell concepts with new examples and analogies
+  BUILD:  Help implement DFY lessons or chapter projects step by step
+  DEBUG:  Diagnose terminal errors — permission denied, command not found, path issues
+  DEPLOY: Help take a local tool (alias, script, config) to a new machine or server
+  EXTEND: Show how terminal skills connect to DevOps, AI workflows, and blockchain
+
+GUARDRAILS:
+- Do not suggest destructive commands (sudo rm -rf, dd if=/dev/zero)
+- Never generate real credentials in .env examples — use placeholders
+- If topic is in a later book (B-002+), name the book and say "we'll cover that in B-002"
+- If user is stuck for 2+ exchanges, suggest the relevant DFY lesson
+
+ACSS: This copilot is a node in the lippytmai AI Conglomerate Swarms System.
+Credential earned → ADA registry updates → B-002 copilot unlocks.
+```
+
+---
+
+### Section 2 — Prompt Library (30 Curated Prompts)
+
+Use these prompts exactly as written, or adapt them. They are organized by the 5 learning stages.
+
+---
+
+**🔵 Stage 1 — UNDERSTAND (Concept Clarity)**
+
+```
+1. Explain what a shell actually is. What's the difference between the terminal 
+   emulator and bash?
+
+2. Walk me through exactly what happens when I type "ls -lah" and press Enter. 
+   What does the kernel do?
+
+3. What is $PATH and why does "command not found" happen? Explain with an analogy.
+
+4. What's the difference between .bashrc and .bash_profile? When does each one run?
+
+5. Explain what a file descriptor is. What are stdin, stdout, and stderr?
+
+6. Why does ~ mean my home directory? How does bash know where that is?
+```
+
+---
+
+**🟢 Stage 2 — BUILD (Implementation)**
+
+```
+7. Help me build DFY Lesson 1 from Chapter 12: my ~/.bash_aliases file with 
+   10 personal shortcuts. Walk me through each line.
+
+8. I want to build the terminal welcome screen (DFY Lesson 2). Give me the 
+   complete motd.sh script with all the system metrics in a box layout.
+
+9. I've added the history supercharger block to my .bashrc but Ctrl+R still 
+   doesn't show old commands. What did I miss?
+
+10. Build me a PS1 prompt that shows: username@hostname:~/current/path (git-branch) $
+    Use green for username, blue for path, yellow for git branch.
+
+11. I want z.sh installed for fuzzy directory jumping. Give me the exact steps 
+    for Arch Linux starting from scratch.
+
+12. Help me build the man2md.sh script from DFY Lesson 8. I want it to convert 
+    any man page to a Markdown file in ~/notes/man/.
+```
+
+---
+
+**🔴 Stage 3 — DEBUG (Error Resolution)**
+
+```
+13. I got: "bash: .bashrc: line 42: syntax error near unexpected token 'fi'"
+    What does this mean and how do I find it?
+
+14. I added an alias to .bashrc but it says "command not found" in a new terminal. 
+    What's wrong?
+
+15. "Permission denied" when I try to run my script. I've tried everything. 
+    Here's my ls -la output: [paste]
+
+16. My terminal colors aren't showing. Everything is black and white. 
+    I set TERM=xterm-256color but it didn't help. What next?
+
+17. cd gives me "No such file or directory" but I can see the folder with ls. 
+    What's happening?
+
+18. My tmux status bar is showing strange characters instead of the Catppuccin 
+    theme. What could cause this?
+```
+
+---
+
+**🟡 Stage 4 — DEPLOY (Taking It Live)**
+
+```
+19. I've built all my DFY tools on my laptop. How do I get them onto a new 
+    machine in under 5 minutes?
+
+20. How do I make my motd.sh dashboard run automatically every time I open 
+    a terminal — on any machine?
+
+21. I want to run my session logger (DFY Lesson 9) on a remote server via SSH. 
+    Walk me through deploying it there.
+
+22. How do I create a dotfiles repo on GitHub so I can deploy my entire 
+    terminal setup to any machine with one git clone?
+
+23. How do I make my new-machine checklist run as a GitHub Actions workflow 
+    to verify a new server is configured correctly?
+
+24. How do I set up tmux to auto-start with a named session when I SSH into 
+    a remote server?
+```
+
+---
+
+**🟣 Stage 5 — EXTEND (Going Further)**
+
+```
+25. I've mastered the terminal basics. What are the 3 most impactful terminal 
+    skills a beginner should learn next?
+
+26. How do real DevOps engineers use the terminal day-to-day? What does their 
+    workflow look like?
+
+27. How does the terminal connect to Docker? Give me a practical example of 
+    managing a Docker container from the command line.
+
+28. I want to use my terminal skills for AI/ML work. What tools and workflows 
+    should I learn next?
+
+29. How do blockchain developers use the terminal? What does a typical day 
+    of smart contract development look like from the command line?
+
+30. What's the difference between what I've learned in B-001 and what a senior 
+    Linux engineer knows? What's the gap and how do I close it?
+```
+
+---
+
+### Section 3 — Deployment Companion
+
+**Your DFY artifacts, deployed to 5 targets:**
+
+| Artifact | Local deploy | Remote server | Docker | GitHub | CI/CD |
+|---|---|---|---|---|---|
+| `~/.bash_aliases` | `source ~/.bashrc` | `scp .bash_aliases user@host:~/ && ssh user@host source ~/.bashrc` | `COPY .bash_aliases /root/` in Dockerfile | Commit to dotfiles repo | `echo "source ~/.bash_aliases" >> ~/.bashrc` in workflow |
+| `motd.sh` | `echo "source ~/motd.sh" >> ~/.bashrc` | `scp motd.sh user@host:~/` then add to remote .bashrc | `CMD ["/bin/bash", "--login"]` | dotfiles repo + install script | N/A (interactive tool) |
+| `backup.sh` | `crontab -e` → `0 2 * * * ~/bin/backup.sh` | `ssh user@host crontab -e` | `cron.d/backup` in container | N/A | GitHub Actions scheduled workflow |
+| `~/.tmux.conf` | `tmux source ~/.tmux.conf` | `scp .tmux.conf user@host:~/` | `COPY .tmux.conf /root/` | dotfiles repo | N/A |
+| `new-machine checklist` | Run manually | Run via SSH after provisioning | Add to container entrypoint | GitHub Actions — verify step | CI job: verify environment |
+
+**One-command dotfiles deploy (after GitHub setup):**
+```bash
+# On any new machine:
+git clone https://github.com/lippytm/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles && ./install.sh
+# → all aliases, tmux config, PS1, z.sh, motd — all live in 60 seconds
+```
+
+---
+
+### Section 4 — ACSS Integration
+
+This copilot is **node B-001** in the lippytmai AI Conglomerate Swarms System:
+
+```
+B-001-COPILOT
+    │
+    ├── Hermes topic: b001.copilot
+    │   → user questions routed here
+    │   → escalations to Charles (G13)
+    │   → cross-book queries routed to curriculum copilot
+    │
+    ├── Fabric node prefix: B001
+    │   → common errors → error pattern library
+    │   → successful DFY builds → lesson quality feedback
+    │   → user learning patterns → curriculum improvement
+    │
+    ├── ADA Registry
+    │   → credential CLL-L0-B001-TerminalApprentice earned
+    │   → B-002-COPILOT status: UNLOCKED
+    │
+    └── Clone Engine
+        → lippytmai voice maintained
+        → credential ceremony language consistent
+        → "That's in B-002" escalation path active
+```
+
+**Credential ceremony prompt (use when ready to claim):**
+```
+I've completed all chapters and DFY lessons in B-001. I've built:
+- My ~/.bash_aliases file with 10 shortcuts
+- A motd.sh welcome dashboard  
+- The history supercharger block
+- A tmux config with mouse support and true color
+- A custom PS1 with git branch
+- z.sh for fuzzy directory jumping
+- man2md.sh for saving man pages
+- A session logger to ~/logs/
+- A health alias
+- My new-machine checklist (all 20 items green)
+
+How do I claim my CLL-L0-B001-TerminalApprentice credential and 
+unlock the B-002 copilot?
+```
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/linux-blockchain-educational-ecosystem.md`](linux-blockchain-educational-ecosystem.md) — The full 6-level Linux curriculum this book begins

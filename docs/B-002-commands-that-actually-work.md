@@ -1234,6 +1234,229 @@ This one habit will save your career at least once.
 
 ---
 
+## Appendix C: AI Copilot — Command Architect
+
+> *"Commands are sentences. Your copilot is the grammar teacher, the debugger, and the architect who shows you how to compose them into something powerful."*
+
+---
+
+### Section 1 — Copilot Identity & System Prompt
+
+**Copilot ID:** `B-002-COPILOT`
+**Domain:** Linux Commands, Pipes, Flags, and Composition
+**Level:** Beginner
+**Credential Gate:** `CLL-L0-B002-CommandArchitect`
+**Prerequisite:** `CLL-L0-B001-TerminalApprentice`
+
+**Copy this system prompt into any AI assistant to activate your B-002 copilot:**
+
+```
+You are lippytmai — the AI teaching clone of Charles Earl Lipshay and the primary
+AI educator for the lippytm.ai Earn-while-you-Learn encyclopedia.
+
+Your current role: AI Copilot for B-002 "Commands That Actually Work"
+Domain: Linux commands, flags, pipes, redirection, process substitution, exit codes
+Level: Beginner-to-intermediate — user knows the terminal basics from B-001
+Credential this book unlocks: CLL-L0-B002-CommandArchitect
+
+WHAT THE USER HAS COVERED:
+- Command anatomy: executable, flags, arguments, options
+- The 15 most-used daily commands
+- Flags: short (-l) vs long (--all) forms
+- Piping: cmd1 | cmd2 | cmd3
+- Redirection: >, >>, 2>, 2>&1, /dev/null
+- Process substitution, command substitution $()
+- Exit codes and $? — what 0, 1, 2 mean
+- grep, find, awk, sed, cut, sort, uniq, wc
+- The safe-rm wrapper pattern
+- 10 DFY builds: command cheat card, safe-rm, pipe chains, benchmarking,
+  help extractor, git-aware prompt module, command-not-found handler,
+  terminal notes, health alias, personal wiki
+
+CORE BEHAVIOR:
+- When a user pastes a command, explain what each part does before suggesting changes
+- When building a pipe chain, build it incrementally — one pipe at a time
+- Always show the exit code behavior for any command you write
+- Teach flag discovery: "run [command] --help | grep [keyword]" first
+- End responses with code with: "What did you get when you ran this?"
+
+TEACHING MODES:
+  TEACH:  Explain command anatomy, flag behavior, pipe composition
+  BUILD:  Help construct complex pipe chains and command compositions step by step
+  DEBUG:  Diagnose failed commands — wrong flags, missing args, exit code confusion
+  DEPLOY: Package command sequences into aliases, functions, and scripts
+  EXTEND: Show how mastery of commands connects to data engineering, log analysis, API testing
+
+GUARDRAILS:
+- Never suggest rm -rf without first showing ls on the target path
+- Warn explicitly before any command that modifies system files
+- If the user needs a script → point to B-004
+- If the user needs networking commands → point to B-007
+```
+
+---
+
+### Section 2 — Prompt Library (30 Curated Prompts)
+
+**🔵 Stage 1 — UNDERSTAND**
+
+```
+1. Explain the anatomy of this command: grep -rn "TODO" ~/projects --include="*.py"
+   What does each part do?
+
+2. What's the difference between 2> and 2>&1 and /dev/null? When do I use each?
+
+3. Why does exit code 0 mean success but non-zero mean failure? That seems backwards.
+
+4. What's the mental model for pipes? How do I think about data flowing through them?
+
+5. Explain the difference between single quotes, double quotes, and backticks in bash.
+
+6. What's the difference between grep, awk, and sed? When should I reach for each one?
+```
+
+**🟢 Stage 2 — BUILD**
+
+```
+7. Build me a pipe chain that: reads access.log, filters lines with 404, extracts 
+   just the URL column, counts occurrences of each URL, and shows the top 10.
+
+8. Help me build the benchmarking function from DFY Lesson 4. I want it to time 
+   any command and log results to ~/logs/benchmarks.log.
+
+9. Build me a one-liner that finds all Python files modified in the last 7 days 
+   and shows their sizes sorted largest-to-smallest.
+
+10. I want to count unique IP addresses in an Nginx access log. Build the pipe chain.
+
+11. How do I build a command that processes every .json file in a directory and 
+    extracts the "name" field from each one using jq?
+
+12. Build the health alias from DFY Lesson 9 — CPU, RAM, disk, load, network in 
+    one command output.
+```
+
+**🔴 Stage 3 — DEBUG**
+
+```
+13. My pipe chain stops working after the third pipe. Here's the full command: [paste]
+    The last stage seems to get no input. What's happening?
+
+14. grep says "No such file or directory" but find shows the file exists. How?
+
+15. awk is printing nothing. My command: awk '{print $3}' file.log
+    The file has data. What am I missing?
+
+16. I used >> to append but the file keeps getting overwritten. What's wrong?
+
+17. I ran: cat file | sort | uniq | wc -l but the count seems wrong. How do I verify?
+
+18. find -name "*.py" is returning paths I don't recognize. How do I limit it 
+    to only my home directory?
+```
+
+**🟡 Stage 4 — DEPLOY**
+
+```
+19. I have a pipe chain I use every day for log analysis. How do I turn it into 
+    a reusable alias that takes a filename argument?
+
+20. How do I package my 5 most useful command compositions as a function library 
+    I can source from any script?
+
+21. I want to run my log analysis command automatically every hour and email me 
+    if it finds errors. How do I do that?
+
+22. How do I make my command compositions work in a GitHub Actions workflow?
+
+23. I want to deploy my personal command wiki (DFY Lesson 10) to a web server 
+    so I can read it from anywhere. What's the simplest approach?
+
+24. How do I share a command cheat card with my team as a living document in GitHub?
+```
+
+**🟣 Stage 5 — EXTEND**
+
+```
+25. What are the 5 commands that data engineers use most that I haven't learned yet?
+
+26. How do real security engineers use grep and awk in their daily workflow?
+
+27. I've mastered pipes. What's the next level — process substitution, coprocess, 
+    named pipes? Give me the hierarchy.
+
+28. How do command-line tools connect to APIs? Show me how to use curl and jq 
+    to query a REST API and process the response.
+
+29. How do blockchain developers use command-line tools? What does `cast` do 
+    and how does it compare to curl?
+
+30. What's the difference between what I know now and what a senior shell engineer 
+    knows about command composition?
+```
+
+---
+
+### Section 3 — Deployment Companion
+
+| Artifact | Local | Remote | Docker | GitHub | CI/CD |
+|---|---|---|---|---|---|
+| `safe-rm()` | `source ~/.bashrc` | Add to remote `.bashrc` via scp | `COPY .bashrc /root/` | dotfiles repo | Add to CI base image setup |
+| Pipe chain alias | `alias loganalysis='...'` in `.bashrc` | Deploy via dotfiles installer | ENV in Dockerfile | dotfiles commit | Define in CI step |
+| `benchmark()` | `source ~/.bashrc` | dotfiles deploy | Add to base image | dotfiles repo | Wrap CI steps in benchmark |
+| `help-extract.sh` | `chmod +x ~/bin/help-extract.sh` | scp + chmod on remote | `COPY scripts/ /usr/local/bin/` | repo scripts/ dir | Available in CI workspace |
+| Personal wiki (`~/wiki/commands.md`) | `cat ~/wiki/commands.md` | sync via rsync or git | Mount as volume | GitHub repo page | N/A |
+
+**Turning a daily pipe chain into a deployable function:**
+```bash
+# From one-liner to reusable function in 5 steps
+# Step 1: Test the pipe chain manually
+cat access.log | grep "404" | awk '{print $7}' | sort | uniq -c | sort -rn | head -10
+
+# Step 2: Wrap in a function
+analyze_404s() {
+  local logfile="${1:-access.log}"
+  cat "$logfile" | grep "404" | awk '{print $7}' | sort | uniq -c | sort -rn | head -10
+}
+
+# Step 3: Add to ~/.bashrc
+# Step 4: Add to dotfiles repo
+# Step 5: Available everywhere
+```
+
+---
+
+### Section 4 — ACSS Integration
+
+```
+B-002-COPILOT
+    ├── Prerequisite: CLL-L0-B001-TerminalApprentice (must be earned)
+    ├── Hermes topic: b002.copilot
+    ├── Fabric node prefix: B002
+    │   → common pipe chain patterns → reusable snippet library
+    │   → common command errors → error pattern database
+    └── Unlocks: B-003-COPILOT on credential earn
+```
+
+**Credential ceremony prompt:**
+```
+I've completed B-002. My DFY builds include:
+- 15-command reference card (annotated)
+- safe-rm wrapper in ~/.bashrc
+- 10-entry pipe chain reference card
+- benchmark() function with log output
+- help-extract.sh in ~/bin/
+- git-aware prompt (branch + dirty state)
+- command_not_found_handle in ~/.bashrc
+- note() and notes() functions
+- health alias
+- ~/wiki/commands.md with all DFY tools documented
+
+Ready to claim CLL-L0-B002-CommandArchitect and unlock B-003.
+```
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/B-001-the-terminal-and-the-curious-mind.md`](B-001-the-terminal-and-the-curious-mind.md) — The foundation for this book

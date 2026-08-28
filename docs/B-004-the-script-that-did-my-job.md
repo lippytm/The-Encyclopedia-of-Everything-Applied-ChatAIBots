@@ -1373,6 +1373,248 @@ BLOCKCHAIN DEVELOPMENT
 
 ---
 
+## Appendix C: AI Copilot — Script Builder
+
+> *"The scripting copilot is your pair programmer for automation. It reviews your logic, catches your edge cases, and tells you when your script is ready for production."*
+
+---
+
+### Section 1 — Copilot Identity & System Prompt
+
+**Copilot ID:** `B-004-COPILOT`
+**Domain:** Bash Shell Scripting — Automation, Reliability, Production Patterns
+**Level:** Beginner-to-Intermediate
+**Credential Gate:** `CLL-L0-B004-ScriptBuilder`
+**Prerequisite:** `CLL-L0-B003-FilesystemNavigator`
+
+**Copy this system prompt into any AI assistant:**
+
+```
+You are lippytmai — AI Copilot for B-004 "The Script That Did My Job"
+Domain: Bash shell scripting — automation, argument handling, error management, 
+        deployment, CI/CD integration
+Level: Beginner-to-intermediate — user has terminal, command, and filesystem skills
+Credential this book unlocks: CLL-L0-B004-ScriptBuilder
+
+WHAT THE USER HAS COVERED:
+- Shebang line and script execution: ./script.sh, source, bash -x, bash -n
+- set -euo pipefail — why it's mandatory and what each flag does
+- Argument handling: $1, $@, getopts, shift
+- Functions: local variables, return codes, subshell vs current shell
+- Conditionals: [[ ]], case statements, string/number/file tests
+- Loops: for, while, until — iterating files, arrays, ranges
+- Here-docs and here-strings
+- Error handling: trap, ERR signal, cleanup functions
+- 10 DFY builds: script-template.sh, backup.sh, colors.sh library,
+  selftest.sh pre-flight check, parse-config.sh, progress bar function,
+  retry() wrapper, run_logged() output logger, env-switch.sh, menu.sh
+
+CORE BEHAVIOR:
+- Always start with script-template.sh as the scaffold — never from scratch
+- When reviewing a script: check for set -euo pipefail first
+- When debugging: ask for the exact error output AND run with bash -x if unclear
+- For every script: ask "What happens when the input is empty? When the file doesn't exist?"
+- Always show the failure mode before the happy path
+- End responses with code with: "What did you get when you ran this?"
+
+TEACHING MODES:
+  TEACH:  Explain bash internals — subshells, process substitution, trap, IFS
+  BUILD:  Pair-program any script from template through working implementation
+  DEBUG:  Diagnose script failures — trace with bash -x, interpret error output
+  DEPLOY: Package scripts for cron, systemd, CI/CD, Docker, remote servers
+  EXTEND: Show how bash scripts become the foundation of deployment pipelines
+
+GUARDRAILS:
+- Always include set -euo pipefail in every script you write
+- Never generate a script that could delete data without explicit confirmation
+- If the user needs Python instead of bash → identify when complexity warrants it
+- Always show the cleanup trap pattern for scripts that create temp files
+```
+
+---
+
+### Section 2 — Prompt Library (30 Curated Prompts)
+
+**🔵 Stage 1 — UNDERSTAND**
+
+```
+1. Explain set -euo pipefail line by line. What does each flag actually prevent?
+
+2. What's the difference between running a script with ./ vs source vs bash? 
+   When does each matter?
+
+3. Why do local variables in functions matter? What happens without them?
+
+4. What's the trap command for? Show me the cleanup pattern for temp files.
+
+5. When should I write a bash script vs a Python script? 
+   What's the decision boundary?
+
+6. What does $@ vs $* vs $# mean? When do I use each?
+```
+
+**🟢 Stage 2 — BUILD**
+
+```
+7. Help me build a deployment script for my project that: pulls latest git, 
+   installs dependencies, runs tests, and restarts the service only if tests pass.
+
+8. Build backup.sh from DFY Lesson 2 — timestamped backup with log and 
+   7-backup rotation. Walk me through each section.
+
+9. I need a script that processes every .csv file in a directory, 
+   extracts column 3, and writes a summary report. Build it step by step.
+
+10. Help me build the env-switch.sh from DFY Lesson 9 — load named environment 
+    profiles from ~/.envs/ directory.
+
+11. Build me a pre-flight check script that verifies my production server has 
+    all required tools, ports, and permissions before deploying.
+
+12. I want a script that monitors a log file and sends a message if it sees 
+    "ERROR" more than 5 times in 60 seconds. Build it.
+```
+
+**🔴 Stage 3 — DEBUG**
+
+```
+13. My script exits with no error message but doesn't do what it should. 
+    How do I debug it? It starts with: [paste first 20 lines]
+
+14. I get "unbound variable" error in my script. Here's the line: [paste]
+    I thought I set it. What's happening?
+
+15. My trap isn't cleaning up my temp files. Here's my trap setup: [paste]
+    What did I miss?
+
+16. My script works when I run it but fails in cron. Same script, same user. 
+    What are the usual causes?
+
+17. getopts isn't parsing my flags correctly. Here's my usage: [paste]
+    The flags work individually but not combined.
+
+18. My script ran but deleted files I didn't want deleted. 
+    Here's the relevant section: [paste]. Help me add safeguards.
+```
+
+**🟡 Stage 4 — DEPLOY**
+
+```
+19. My backup.sh works locally. How do I deploy it to run at 2AM daily 
+    on a remote server — including the cron setup and log rotation?
+
+20. How do I package my script as a systemd service so it restarts 
+    automatically if it crashes?
+
+21. How do I add my deploy.sh to GitHub Actions so it runs automatically 
+    on every push to main?
+
+22. I want to run my script inside Docker — with access to the host filesystem 
+    but isolated from everything else. How?
+
+23. How do I make my script accept environment variables from a .env file 
+    without hard-coding credentials?
+
+24. How do I create a bash script that works on both Arch Linux (pacman) 
+    and Ubuntu (apt) without separate scripts?
+```
+
+**🟣 Stage 5 — EXTEND**
+
+```
+25. What makes a bash script production-quality? Give me the checklist.
+
+26. How do real DevOps engineers structure their script repositories? 
+    What does a mature scripts/ directory look like?
+
+27. When does a bash script need to become a Python program? 
+    Show me where the line is.
+
+28. How do CI/CD pipelines like GitHub Actions use shell scripts? 
+    What patterns do they rely on?
+
+29. How do blockchain deployment scripts work? What does a hardhat deploy 
+    script look like and how does bash orchestrate it?
+
+30. What's the gap between my scripts now and infrastructure-as-code tools 
+    like Ansible and Terraform? How do I think about the progression?
+```
+
+---
+
+### Section 3 — Deployment Companion
+
+| Artifact | Local | Remote server | Docker | GitHub | CI/CD |
+|---|---|---|---|---|---|
+| `backup.sh` | cron `0 2 * * *` | scp + remote cron | `cron.d/` + volume mount | scripts/ repo | Scheduled GH Actions workflow |
+| `run_logged()` | Source in `.bashrc` | dotfiles deploy | Add to base image | dotfiles | Wrap CI commands |
+| `retry()` | Source in `.bashrc` | dotfiles deploy | Source in build scripts | dotfiles | Use in CI steps for flaky commands |
+| `env-switch.sh` | `switch_env dev` | Deploy `~/.envs/` via scp | `--env-file .env.prod` flag | `.envs/` in private repo | GitHub Actions secrets → .env |
+| `menu.sh` | `chmod +x ~/bin/menu.sh` | SSH interactive use | N/A | scripts/ | N/A (interactive) |
+| `selftest.sh` | Run before each deploy | Run on server via SSH | Add to HEALTHCHECK in Dockerfile | scripts/check.sh | CI: first step before build |
+
+**Complete CI/CD pipeline from one script:**
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Pre-flight check
+        run: bash scripts/selftest.sh
+        
+      - name: Run tests
+        run: bash scripts/test.sh
+        
+      - name: Deploy (with retry)
+        run: |
+          source scripts/retry.sh
+          retry bash scripts/deploy.sh
+          
+      - name: Verify deployment
+        run: bash scripts/health-check.sh
+```
+
+---
+
+### Section 4 — ACSS Integration
+
+```
+B-004-COPILOT
+    ├── Prerequisite: CLL-L0-B003-FilesystemNavigator
+    ├── Hermes topic: b004.copilot
+    ├── Fabric node prefix: B004
+    │   → script patterns → reusable snippet library
+    │   → deployment patterns → CI/CD pattern database
+    │   → script errors → pre-flight check improvement loop
+    └── Unlocks: B-005-COPILOT on credential earn
+```
+
+**Credential ceremony prompt:**
+```
+I've completed B-004. My DFY builds:
+- script-template.sh (production-ready bash scaffold)
+- backup.sh (timestamped + rotation + cron)
+- ~/lib/colors.sh (color output library)
+- selftest.sh (pre-flight dependency checker)
+- parse-config.sh (key=value config loader)
+- progress_bar() function
+- retry() with exponential backoff
+- run_logged() output logger
+- env-switch.sh (named environment profiles)
+- menu.sh (interactive script launcher)
+
+Ready to claim CLL-L0-B004-ScriptBuilder.
+```
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/B-003-the-file-that-remembered-everything.md`](B-003-the-file-that-remembered-everything.md) — Permissions used in this script

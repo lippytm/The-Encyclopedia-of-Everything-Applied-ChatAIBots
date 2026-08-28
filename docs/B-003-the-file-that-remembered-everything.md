@@ -1256,6 +1256,240 @@ data = json.loads(pathlib.Path("config.json").read_text())
 
 ---
 
+## Appendix C: AI Copilot — Filesystem Navigator
+
+> *"The filesystem copilot helps you see what every tool hides: the inodes, permissions, symlinks, and block devices that underlie all software."*
+
+---
+
+### Section 1 — Copilot Identity & System Prompt
+
+**Copilot ID:** `B-003-COPILOT`
+**Domain:** Linux Filesystem — Inodes, Permissions, Paths, Links, Storage
+**Level:** Beginner
+**Credential Gate:** `CLL-L0-B003-FilesystemNavigator`
+**Prerequisite:** `CLL-L0-B002-CommandArchitect`
+
+**Copy this system prompt into any AI assistant:**
+
+```
+You are lippytmai — AI Copilot for B-003 "The File That Remembered Everything"
+Domain: Linux filesystem — inodes, permissions, symlinks, disk, file types, paths
+Level: Beginner — user has terminal and command skills from B-001 and B-002
+Credential this book unlocks: CLL-L0-B003-FilesystemNavigator
+
+WHAT THE USER HAS COVERED:
+- Filesystem hierarchy: /etc, /var, /home, /proc, /dev, /tmp and their purposes
+- Inodes: what they store, what they don't (not the filename)
+- File permissions: rwx bits, numeric modes (755, 644, 600, 700)
+- chmod, chown, chgrp — when and how to use each
+- File types: regular, directory, symlink, device, socket, pipe
+- Hard links vs symbolic links — how and when to use each
+- Finding files: find, locate, which, whereis
+- Disk usage: df, du, ncdu
+- 10 DFY builds: filesystem map, hidden-inv.sh, permissions cheat card,
+  dua.sh disk analyzer, lns.sh symlink manager, findpy/findlog aliases,
+  watchfile function, dirsnap.sh, fcheck.sh integrity monitor,
+  mkproject.sh scaffolder
+
+CORE BEHAVIOR:
+- When debugging "permission denied": immediately ask for ls -la output
+- When permissions are wrong: explain what each octet means before fixing
+- When symlinks are involved: show readlink -f first to resolve the full chain
+- When disk is full: guide through dua.sh → identify culprit → safe removal
+- End responses with code with: "What did you get when you ran this?"
+
+TEACHING MODES:
+  TEACH:  Explain inode structure, permission bits, filesystem hierarchy
+  BUILD:  Help implement DFY tools for disk management, file integrity, organization
+  DEBUG:  Diagnose permission errors, broken symlinks, disk full, file not found
+  DEPLOY: Set up shared directories, deploy dotfiles via symlinks, configure file permissions for production
+  EXTEND: Show how filesystem knowledge connects to Docker volumes, Git internals, database storage
+
+GUARDRAILS:
+- Never suggest chmod 777 without explaining the security implications
+- Always ls before rm -rf
+- Never suggest writing to /etc without sudo context and backup advice
+- If user needs disk encryption → that's beyond this book's scope
+```
+
+---
+
+### Section 2 — Prompt Library (30 Curated Prompts)
+
+**🔵 Stage 1 — UNDERSTAND**
+
+```
+1. Explain what an inode is. Why doesn't the inode store the filename?
+
+2. What's the difference between a hard link and a symbolic link? 
+   When should I use each?
+
+3. Walk me through what -rw-r--r-- means. How do I read permission strings?
+
+4. Why do some directories have a sticky bit (t)? What does it actually protect?
+
+5. What's the difference between /dev/sda, /dev/sda1, and a filesystem? 
+   How does mounting work?
+
+6. My file has the right permissions but I still can't access it. 
+   What else could be restricting access?
+```
+
+**🟢 Stage 2 — BUILD**
+
+```
+7. Help me build fcheck.sh (DFY Lesson 9) — SHA256 integrity checking for 
+   my critical config files. Walk me through each line.
+
+8. Build me mkproject.sh from DFY Lesson 10. I want it to scaffold 
+   src/tests/docs/scripts/config with a pre-filled README and .gitignore.
+
+9. I want to set up a shared directory where multiple users can write files 
+   but only the owner can delete them. What permissions do I need?
+
+10. Build me a script that finds all files in ~/projects that have been modified 
+    in the last 24 hours and lists them with sizes.
+
+11. Help me set up my dotfiles using symlinks — ~/.bashrc and ~/.tmux.conf 
+    pointing to files in ~/.dotfiles/
+
+12. Build the dirsnap.sh script from DFY Lesson 8 — directory snapshot 
+    and diff between runs.
+```
+
+**🔴 Stage 3 — DEBUG**
+
+```
+13. I get "Permission denied" on a file I created. Here's ls -la output: [paste]
+    Why can't I read my own file?
+
+14. My symlink says "No such file or directory" but the file exists. 
+    What's the diagnosis?
+
+15. df -h shows 100% on /, but du -sh /* shows only 40GB used on a 100GB disk. 
+    Where is the space?
+
+16. chmod 755 isn't working on a file on my USB drive. Why?
+
+17. My web server can't read files I put in /var/www/html/ even with 644 permissions. 
+    What's the permission matrix I'm missing?
+
+18. I ran find and it's showing files from a docker overlay filesystem. 
+    How do I exclude those?
+```
+
+**🟡 Stage 4 — DEPLOY**
+
+```
+19. I want to deploy my dotfiles to a remote server via symlinks. 
+    Walk me through the full flow from git clone to all links active.
+
+20. How do I set up a production directory structure for a web app with 
+    correct permissions for nginx and my app user?
+
+21. How do I make fcheck.sh run daily via cron and alert me if anything changes?
+
+22. I want to back up my dotfiles to GitHub and deploy them to any new machine 
+    with one command. What's the full workflow?
+
+23. How do I set permissions on a Docker bind mount so the container user 
+    can write to the host directory?
+
+24. How do I configure a shared directory on a server where 5 developers 
+    can all write but nobody can delete each other's files?
+```
+
+**🟣 Stage 5 — EXTEND**
+
+```
+25. How does Git use the filesystem internally? What are loose objects, 
+    packfiles, and the object store?
+
+26. How does Docker use the filesystem? What is an overlay filesystem 
+    and how do layers work?
+
+27. How do databases store their data on disk? What's the connection between 
+    filesystem knowledge and database administration?
+
+28. I want to understand Linux namespaces and how containers isolate the filesystem. 
+    Where do I start?
+
+29. How do blockchain nodes store their data? Is it just files on disk?
+
+30. What's the gap between what I know now and a Linux systems administrator 
+    who manages production servers?
+```
+
+---
+
+### Section 3 — Deployment Companion
+
+| Artifact | Local | Remote server | Docker | GitHub | CI/CD |
+|---|---|---|---|---|---|
+| `fcheck.sh` | `crontab -e` daily | scp + cron on remote | COPY to image, run in entrypoint check | repo scripts/ | Add as CI verification step |
+| `mkproject.sh` | `chmod +x ~/bin/mkproject.sh` | dotfiles deploy | N/A | repo template | Scaffold in CI setup |
+| Symlink dotfiles | `install-dotfiles.sh` | SSH + git clone + install | `COPY dotfiles + RUN install` | dotfiles repo | CI: verify links exist |
+| Permissions setup | `chmod` + `chown` in setup script | Same script via SSH | Set in Dockerfile: `RUN chmod` | Document in README | CI: verify permissions step |
+| `dua.sh` | Run monthly | Run on server via SSH | N/A | repo scripts/ | CI: disk usage check step |
+
+**Production permissions deploy pattern:**
+```bash
+# deploy-permissions.sh — set correct permissions for web app
+APP_DIR=/var/www/myapp
+APP_USER=www-data
+
+# Directories: 755 (owner rwx, group r-x, others r-x)
+find "$APP_DIR" -type d -exec chmod 755 {} \;
+
+# Files: 644 (owner rw-, group r--, others r--)
+find "$APP_DIR" -type f -exec chmod 644 {} \;
+
+# Scripts: 755 (executable)
+find "$APP_DIR/scripts" -name "*.sh" -exec chmod 755 {} \;
+
+# Private keys: 600 (owner only)
+find "$APP_DIR/.ssh" -name "*.pem" -exec chmod 600 {} \;
+
+# Set owner
+chown -R "$APP_USER:$APP_USER" "$APP_DIR"
+echo "✅ Permissions set for $APP_DIR"
+```
+
+---
+
+### Section 4 — ACSS Integration
+
+```
+B-003-COPILOT
+    ├── Prerequisite: CLL-L0-B002-CommandArchitect
+    ├── Hermes topic: b003.copilot
+    ├── Fabric node prefix: B003
+    │   → permission error patterns → common fixes library
+    │   → symlink patterns → dotfiles deployment patterns
+    │   → disk analysis patterns → storage optimization knowledge
+    └── Unlocks: B-004-COPILOT on credential earn
+```
+
+**Credential ceremony prompt:**
+```
+I've completed B-003. My DFY builds:
+- Annotated filesystem map
+- hidden-inv.sh (dotfile inventory)
+- Permissions cheat card (5 modes)
+- dua.sh (disk usage analyzer)
+- lns.sh (symlink create + list)
+- 5 find aliases (findpy, findlog, findlarge, findrecent, findtodo)
+- watchfile() function
+- dirsnap.sh (directory snapshot + diff)
+- fcheck.sh (SHA256 integrity monitor)
+- mkproject.sh (project scaffolder with git init)
+
+Ready to claim CLL-L0-B003-FilesystemNavigator.
+```
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/B-002-commands-that-actually-work.md`](B-002-commands-that-actually-work.md) — Commands used throughout this book
