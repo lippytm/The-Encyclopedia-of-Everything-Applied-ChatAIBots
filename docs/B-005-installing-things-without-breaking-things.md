@@ -568,6 +568,15 @@ AUDIT
 - **BUILD:** Run each command family against a real package. Annotate what each does.
 - **VERIFY:** `pacman -Qdt` → list orphaned packages. `pacman -Qe | wc -l` → count explicit installs.
 
+🤖 **Copilot Assist — DFY Lesson 1**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"pacman -Syu is showing 47 packages to upgrade including the kernel. Is it safe to upgrade the kernel right now, and what should I do before a kernel upgrade?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 2 — Python venv Workflow Cheat Card
@@ -638,6 +647,15 @@ BEST PRACTICES
 - **BUILD:** Create venv. Activate. Install package. Freeze to requirements.txt. Deactivate.
 - **VERIFY:** `which python3` outside venv → system Python. Inside venv → venv Python.
 
+🤖 **Copilot Assist — DFY Lesson 2**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I activated my venv and installed packages but `which python3` still shows /usr/bin/python3 instead of the venv path. What broke the activation?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 3 — System Package Audit Script
@@ -695,6 +713,15 @@ grep "installed" /var/log/pacman.log | tail -10
 - **SHOW:** `pkg-audit.sh` — 3 orphaned packages identified. Remove them. Re-run — clean.
 - **BUILD:** Write script section by section. Test each `pacman` command standalone.
 - **VERIFY:** Install a test package with a dependency. Uninstall it. Re-run audit — orphan appears.
+
+🤖 **Copilot Assist — DFY Lesson 3**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"pkg-audit.sh shows 12 orphaned packages. How do I safely decide which ones to remove vs which ones might still be needed?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -763,6 +790,15 @@ yay -Ps                       → print system stats
 - **SHOW:** `yay -S google-chrome` → installs from AUR with no manual steps. `google-chrome &` → browser launches.
 - **BUILD:** Clone yay. `makepkg -si`. Verify version. Install one AUR package.
 - **VERIFY:** `yay -Syu` → updates both official and AUR packages in one command.
+
+🤖 **Copilot Assist — DFY Lesson 4**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"yay -S google-chrome fails with a PGP signature error. I've never encountered this before with pacman. How do I resolve AUR signature issues safely?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -836,6 +872,15 @@ success "requirements.txt updated"
 - **BUILD:** Write script. Test on a project with requirements.txt. Test on one without.
 - **VERIFY:** `pip list` inside activated venv matches contents of requirements.txt exactly.
 
+🤖 **Copilot Assist — DFY Lesson 5**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"pip-sync.sh created the venv and installed packages but pip list --outdated shows 6 packages behind. Should I update them all now, or is there a risk of breaking something?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 6 — Installed Packages Snapshot and Diff
@@ -899,6 +944,15 @@ esac
 - **SHOW:** Take snapshot. Install a test package. Snapshot again. `pkg-snap.sh diff` → new package shows in diff.
 - **BUILD:** Write script. Test snapshot. Test diff.
 - **VERIFY:** Remove the test package. Third snapshot. Diff shows it's gone.
+
+🤖 **Copilot Assist — DFY Lesson 6**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"pkg-snap.sh diff is showing 200+ changes because pacman -Syu ran between snapshots. How do I filter the diff to only show packages I explicitly installed or removed?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -966,6 +1020,15 @@ done
 - **SHOW:** Fresh venv. Run script. All 10 tools installed. `black --version` — confirmed.
 - **BUILD:** Write script. Add your preferred tools. Test in a fresh venv.
 - **VERIFY:** `pip list` shows all 10. Each tool's `--version` responds correctly.
+
+🤖 **Copilot Assist — DFY Lesson 7**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"install-python-tools.sh runs but mypy installation fails with a dependency conflict. Here's the error: [paste]. How do I install the rest without mypy?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1039,6 +1102,15 @@ New machine setup becomes:
 - **BUILD:** Create a `~/dotfiles/` directory. Move `.bashrc`, `.tmux.conf`, `.gitconfig` into it. Write installer. Create symlinks.
 - **VERIFY:** Delete a symlink. Re-run installer — symlink recreated. Config unchanged.
 
+🤖 **Copilot Assist — DFY Lesson 8**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"install-dotfiles.sh ran but some symlinks point to the wrong location — the path is relative instead of absolute. How do I fix ln -sfv to always use absolute paths?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 9 — System Restore Point Script
@@ -1105,6 +1177,15 @@ echo "  Reinstall with: pacman -S - < $SNAP_DIR/packages-explicit.txt"
 - **SHOW:** `restore-point.sh pre-upgrade` → snapshot created. Run `pacman -Syu`. System upgrades.
 - **BUILD:** Write script. Test with a label. Open the snapshot folder — all files present.
 - **VERIFY:** `cat restore-points/*/packages-explicit.txt | wc -l` — count matches current `pacman -Qe | wc -l`.
+
+🤖 **Copilot Assist — DFY Lesson 9**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"restore-point.sh saved my package list but I already did the upgrade that broke things. How do I use the saved package list to roll back the specific package that caused the problem?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1186,6 +1267,15 @@ header "=== Setup Complete ==="
 - **SHOW:** Fresh Arch Linux VM. `./setup-machine.sh` — all 5 steps run. Machine is production-ready.
 - **BUILD:** Combine all DFY tools from B-001–B-005 into one orchestration script. Make each step idempotent.
 - **VERIFY:** Run script a second time on the same machine — all steps say "already done" or "already installed". Zero errors.
+
+🤖 **Copilot Assist — DFY Lesson 10**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"setup-machine.sh ran successfully but step 4 (dotfiles) failed silently — my dotfiles repo is private and SSH keys aren't configured yet. How do I make the script handle this gracefully?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-005 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1459,6 +1549,383 @@ pip list
 
 # Remove venv (just delete the folder)
 rm -rf venv/
+```
+
+---
+
+## Appendix C: AI Copilot — Package Master
+
+> *"The package copilot is your dependency advisor, your environment architect, and your installation debugger — for every package manager across every domain."*
+
+---
+
+### Section 1 — Copilot Identity & System Prompt (Ebook)
+
+**Copilot ID:** `B-005-COPILOT`
+**Domain:** Package Management — pacman, pip, yay, pipx, npm, cargo
+**Level:** Beginner
+**Credential Gate:** `CLL-L0-B005-PackageMaster`
+**Prerequisite:** `CLL-L0-B004-ScriptBuilder`
+
+**Copy this system prompt into any AI assistant:**
+
+```
+You are lippytmai — AI Copilot for B-005 "Installing Things Without Breaking Things"
+Domain: Package management — pacman, yay (AUR), pip, venv, pipx, npm, cargo
+Level: Beginner — user has bash scripting skills from B-004
+Credential this book unlocks: CLL-L0-B005-PackageMaster
+
+WHAT THE USER HAS COVERED:
+- pacman: install, remove, update, search, audit, orphan cleanup
+- yay: AUR setup, AUR package install, combined system update
+- pip: install, freeze, requirements.txt, pip show, pip list
+- Virtual environments: create, activate, deactivate, per-project isolation
+- pipx: global Python CLI tools in isolated environments
+- Package database: /var/lib/pacman/local/, dist-info, RECORD files
+- Security: package signature verification, AUR trust model
+- 10 DFY builds: pacman cheat card, venv workflow card, pkg-audit.sh,
+  yay install + test, pip-sync.sh, pkg-snap.sh, install-python-tools.sh,
+  install-dotfiles.sh, restore-point.sh, setup-machine.sh (full playbook)
+
+CORE BEHAVIOR:
+- When debugging package issues: ask for the exact error message and which package manager
+- Always distinguish: system package (pacman) vs Python package (pip in venv)
+- When a user pip installs into the system Python: explain why this is wrong and fix it
+- When recommending packages: always check the AUR trust model for AUR packages
+- End responses with code with: "What did you get when you ran this?"
+
+TEACHING MODES:
+  TEACH:  Explain package manager internals — dependency resolution, DB structure, venv mechanism
+  BUILD:  Help set up project environments, create management scripts, configure toolboxes
+  DEBUG:  Diagnose installation failures, version conflicts, venv activation issues
+  DEPLOY: Build reproducible environment setups for servers, Docker, CI/CD, new machines
+  EXTEND: Show how package management connects to Docker images, pyproject.toml, lockfiles
+
+GUARDRAILS:
+- Never suggest pip install outside a venv except for pipx-style global tools
+- Always recommend restore-point.sh before major system upgrades
+- Never install AUR packages without noting they require source code review
+- If user asks about containerization → point to B-012 (Docker deep dive)
+```
+
+---
+
+### Section 2 — Audiobook Copilot (🎧 Format)
+
+**For audiobook listeners — prompts designed for spoken learning sessions:**
+
+```
+AUDIOBOOK COPILOT SYSTEM PROMPT (paste before these prompts):
+"You are lippytmai, audiobook copilot for B-005. The listener is consuming
+this material via audio. Keep all responses speakable — no ASCII art, no
+code blocks. Use clear verbal descriptions, analogies, and numbered steps
+they can follow while their terminal is open beside them. Speak as if you
+are the narrator continuing the lesson."
+```
+
+**Audiobook Prompt Library — 15 prompts for listening sessions:**
+
+```
+WHILE LISTENING — understanding prompts:
+
+A1. "Explain dependency resolution as if you're describing a supply chain — 
+    what does a package manager actually do when I ask for 'requests'?"
+
+A2. "The audiobook just mentioned virtual environments. Explain the concept 
+    in plain English — what is isolation and why does it matter for Python?"
+
+A3. "I just heard about the AUR. Explain the trust model — what risks am I 
+    accepting when I install from the AUR?"
+
+A4. "What's the verbal explanation of how pip freeze and requirements.txt 
+    work together? Explain it like a recipe card."
+
+A5. "The chapter mentioned orphaned dependencies. What are they and why should 
+    I care about cleaning them up?"
+
+PAUSE AND BUILD — implementation prompts:
+
+A6. "I'm pausing the audiobook to build the pacman audit script. 
+    Read out each command slowly with a one-sentence explanation."
+
+A7. "Walk me through the pip-sync.sh workflow verbally — what does each 
+    step do in plain language before I type it?"
+
+A8. "I'm at the yay installation section. Read out the exact commands 
+    in order — I'll follow along."
+
+A9. "Describe what setup-machine.sh does step by step without code — 
+    so I understand the logic before I build it."
+
+A10. "Narrate the restore-point concept — what gets saved, where, 
+     and how I'd use it in a recovery situation."
+
+RESUME CHECK — retention prompts:
+
+A11. "Before I resume the audiobook: quiz me on the 5 pacman commands 
+     I should know cold. Ask me one at a time."
+
+A12. "Summarize what I've built so far in B-005 in 60 words or less 
+     — as if you're the narrator doing a 'previously in this chapter' recap."
+
+A13. "The audiobook is about to cover pipx. Give me a 30-second 
+     verbal primer so I'm ready for it."
+
+A14. "What's the single most important thing to remember from the 
+     virtual environments section? One sentence."
+
+A15. "I finished the audiobook. Narrate my credential claim ceremony 
+     for CLL-L0-B005-PackageMaster."
+```
+
+---
+
+### Section 3 — Video Copilot (🎬 Format)
+
+**For video learners — prompts designed for screen-based, follow-along sessions:**
+
+```
+VIDEO COPILOT SYSTEM PROMPT (paste before these prompts):
+"You are lippytmai, video copilot for B-005. The learner is watching a 
+screen tutorial and following along in their terminal. Prioritize: 
+exact commands to type, what to watch for on screen, and verification 
+commands that confirm success. Use SHOW→BUILD→VERIFY structure. 
+Flag anything that varies by OS or terminal emulator."
+```
+
+**Video Prompt Library — 15 prompts for screen-learning sessions:**
+
+```
+BEFORE PLAYING — setup prompts:
+
+V1. "I'm about to watch the pacman chapter. What should I have open 
+    before I press play? Give me the pre-flight checklist."
+
+V2. "The video is about yay installation. My system is [Arch/Ubuntu/other]. 
+    What do I need before starting?"
+
+V3. "I'm going to follow the venv workflow video. Set up my terminal 
+    so I can follow along — what should I create first?"
+
+PAUSED — implementation prompts:
+
+V4. "The video just showed the pacman -Qi command. Run it for me on 
+    nginx and explain each field I see on screen."
+
+V5. "Paused at the pip install step. My screen shows [error message]. 
+    Is this expected or did I miss a step?"
+
+V6. "The setup-machine.sh video showed the script but didn't explain 
+    the idempotent check. Show me exactly how that part works."
+
+V7. "I paused at the AUR build step. The makepkg command has flags 
+    I don't recognize. What does -si do?"
+
+V8. "The video shows a successful pip freeze output. Mine looks different. 
+    Here's what I see: [paste]. Is this a problem?"
+
+VERIFY — confirmation prompts:
+
+V9. "I just finished the yay installation. What are the 3 commands 
+    I should run to verify it worked correctly?"
+
+V10. "I completed setup-machine.sh. Run me through the verification 
+     checklist — what does a successful run look like?"
+
+V11. "My pip-sync.sh ran but I'm not sure it worked. What should 
+     I check to confirm the venv is active and packages are installed?"
+
+V12. "I installed a package with pacman. How do I verify: the package is 
+     in the database, its files are where expected, no conflicts exist?"
+
+EXTEND FROM VIDEO — next-step prompts:
+
+V13. "The video showed basic pacman usage. What do professionals do 
+     with pacman that wasn't in the video?"
+
+V14. "The venv video was the basics. Show me the advanced workflow — 
+     pyproject.toml, poetry, and lockfiles."
+
+V15. "I've watched all the B-005 videos. What should I record in my 
+     own video notes before I move to B-006?"
+```
+
+---
+
+### Section 4 — Full Prompt Library (30 Ebook Prompts)
+
+**🔵 Stage 1 — UNDERSTAND**
+
+```
+1. Explain how pacman's dependency resolution actually works — 
+   what does it do when package A requires package B version 2+ 
+   but package C requires version 1?
+
+2. What's the actual mechanism of a virtual environment? 
+   What files does it create and what does activation change?
+
+3. Why is `pip install` into the system Python dangerous? 
+   What goes wrong when you do it?
+
+4. What's the difference between a wheel (.whl) and a source distribution (.tar.gz)?
+   When does pip choose each one?
+
+5. What does pipx do differently from pip? Why would I use one vs the other?
+
+6. Explain the AUR trust model. What am I actually trusting when I 
+   install a yay package?
+```
+
+**🟢 Stage 2 — BUILD**
+
+```
+7. Help me build setup-machine.sh from DFY Lesson 10 — the full idempotent 
+   new machine playbook. Walk through each step.
+
+8. Build pip-sync.sh — create venv if missing, install requirements, 
+   check outdated, freeze updated state.
+
+9. I want to create a standard Python toolbox (black, flake8, mypy, pytest, 
+   httpx, rich) that I install into every new project venv. Build the script.
+
+10. Help me build the install-dotfiles.sh from DFY Lesson 8 — git clone 
+    then symlink all config files to their home directory locations.
+
+11. Build a script that takes a project name, creates a directory, initializes 
+    a git repo, creates a venv, and installs my standard toolbox.
+
+12. Build a package health report that shows: explicit installs, orphans, 
+    AUR packages, and the 10 largest packages.
+```
+
+**🔴 Stage 3 — DEBUG**
+
+```
+13. pip install fails with "error: externally-managed-environment". 
+    What is this and how do I fix it correctly?
+
+14. My venv is active (I can see (venv) in my prompt) but python3 --version 
+    shows the system Python. What went wrong?
+
+15. pacman -Syu is failing with "conflicting files" error. Here's the output: [paste]
+    How do I resolve this safely?
+
+16. requirements.txt install fails because one package requires a newer version 
+    of another package that's already installed. How do I debug this?
+
+17. yay won't build a package — makepkg fails with a checksum error. 
+    What are my options?
+
+18. My venv pip list shows a package but Python can't import it. 
+    How is that possible and how do I fix it?
+```
+
+**🟡 Stage 4 — DEPLOY**
+
+```
+19. How do I bake my Python venv into a Docker image so it's reproducible 
+    on any machine?
+
+20. My CI/CD pipeline needs to install my Python dependencies. What's the 
+    fastest and most reliable approach?
+
+21. How do I set up a private PyPI mirror for a team so we don't depend 
+    on external PyPI availability?
+
+22. I want my requirements.txt to work on both Arch Linux and Ubuntu 
+    without modification. What do I need to watch for?
+
+23. How do I deploy install-python-tools.sh as part of my new-machine 
+    playbook so every developer has the same toolbox?
+
+24. How do I version-pin all my system packages (not just Python) 
+    so a server is reproducible?
+```
+
+**🟣 Stage 5 — EXTEND**
+
+```
+25. What's the progression from requirements.txt to pyproject.toml to 
+    poetry.lock? When do I make each upgrade?
+
+26. How do production Python deployments handle dependencies differently 
+    from development setups?
+
+27. What are the security considerations for packages — supply chain attacks, 
+    typosquatting, dependency confusion? How do I protect against them?
+
+28. How does Docker change the package management story? When do I still 
+    need a venv inside a container?
+
+29. How do blockchain projects manage their dependencies — Foundry, Hardhat, 
+    and their lock files?
+
+30. What's the gap between what I know now and a senior engineer managing 
+    packages across 50 microservices?
+```
+
+---
+
+### Section 5 — Deployment Companion
+
+| Artifact | Local | Remote server | Docker | GitHub | CI/CD |
+|---|---|---|---|---|---|
+| `setup-machine.sh` | `./setup-machine.sh` | `scp + ssh + ./setup-machine.sh` | RUN in Dockerfile | scripts/ repo | CI matrix job |
+| `venv` + `requirements.txt` | `pip-sync.sh` | `pip-sync.sh` via SSH | `COPY + RUN pip install -r` | Auto-install in CI | Cache venv in workflow |
+| `install-dotfiles.sh` | `./install-dotfiles.sh` | SSH + git clone + install | `COPY dotfiles + RUN install` | dotfiles repo | CI verify step |
+| `restore-point.sh` | Run before upgrades | Run before server changes | N/A | N/A | Snapshot before migration |
+| `pkg-snap.sh` | Run weekly | cron weekly | N/A | N/A | CI: before/after dependency audit |
+
+**Reproducible Python environment in Docker:**
+```dockerfile
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Copy only requirements first (layer cache optimization)
+COPY requirements.txt .
+
+# Install in one layer, no cache stored
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Then copy application code
+COPY . .
+
+CMD ["python3", "app.py"]
+```
+
+---
+
+### Section 6 — ACSS Integration
+
+```
+B-005-COPILOT
+    ├── Prerequisite: CLL-L0-B004-ScriptBuilder
+    ├── Hermes topic: b005.copilot
+    ├── Fabric node prefix: B005
+    │   → dependency patterns → environment setup library
+    │   → install error patterns → debug reference database
+    │   → setup-machine.sh patterns → new machine playbook library
+    └── Unlocks: B-006-COPILOT on credential earn
+        Phase 1 completion → GESN mission GESN-B005 unlocked
+        Phase 1 complete → lippytmai Tier 1 learner status
+```
+
+**Credential ceremony prompt:**
+```
+I've completed B-005. My DFY builds:
+- pacman command reference card
+- Python venv lifecycle cheat card
+- pkg-audit.sh (package health report)
+- yay installed and verified
+- pip-sync.sh (one-command Python dependency management)
+- pkg-snap.sh (package snapshot + diff)
+- install-python-tools.sh (standard toolbox: black, flake8, mypy, pytest, rich)
+- install-dotfiles.sh (clone + symlink in one command)
+- restore-point.sh (system state snapshot)
+- setup-machine.sh (full new machine playbook — idempotent)
+
+Ready to claim CLL-L0-B005-PackageMaster and complete Phase 1.
 ```
 
 ---

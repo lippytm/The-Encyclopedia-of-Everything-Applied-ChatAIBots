@@ -475,6 +475,15 @@ alias mv='mv -i'                   # ← asks before overwriting
 - **BUILD (15s–8m):** `nano ~/.bash_aliases`. Add each alias one by one with inline explanation. `source ~/.bashrc`. Watch activation.
 - **VERIFY (8m–9m):** Run `ll`, `gs`, `..` — each works. `alias` command lists all 10 in the session.
 
+🤖 **Copilot Assist — DFY Lesson 1**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My ~/.bash_aliases is built. Can you check my 10 aliases — are any redundant, unsafe, or missing the most useful ones? Paste your aliases here."*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 2 — Terminal Welcome Screen Script
@@ -524,6 +533,15 @@ Login event → /etc/profile → ~/.bashrc → source ~/motd.sh
 - **BUILD (15s–12m):** Write `motd.sh` step by step: `hostname`, `uname -r`, `nproc`, `free -h`, `uptime`, box-drawing with `printf`. Add `source ~/motd.sh` to `~/.bashrc`.
 - **VERIFY (12m–13m):** Close terminal. Open new tab. Dashboard appears automatically.
 
+🤖 **Copilot Assist — DFY Lesson 2**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My motd.sh is running but the box drawing looks broken in my terminal. Here's what I see: [paste output]. Is this a font issue or a printf issue?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 3 — Font and Color Profile for Your Terminal
@@ -570,6 +588,15 @@ Cursor:  blinking block           Cursor:  blinking bar
 - **SHOW (0–15s):** Side-by-side: default terminal vs OMARCHY profile. The difference is immediate and striking.
 - **BUILD (15s–8m):** Open terminal preferences. Set font to JetBrains Mono 16pt. Import Catppuccin color scheme. Export profile as JSON.
 - **VERIFY (8m–9m):** Reopen terminal. Run `ls` — colors appear. Open Neovim — ligatures render.
+
+🤖 **Copilot Assist — DFY Lesson 3**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I've installed JetBrains Mono but my terminal still shows the old font. I'm using [terminal name]. What's the exact setting path to change it?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -627,6 +654,15 @@ history | grep docker   # grep your entire history for 'docker' commands
 - **SHOW (0–15s):** `Ctrl+R` → type "mkdir" → a command from last week appears instantly with its timestamp.
 - **BUILD (15s–8m):** Add each of the 6 lines to `~/.bashrc`. Explain what each export does. Run `source ~/.bashrc`.
 - **VERIFY (8m–9m):** Run 3 new commands. Open a second terminal tab. `history` shows all 3 with timestamps — synced across both tabs.
+
+🤖 **Copilot Assist — DFY Lesson 4**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I added the 6-line history block but Ctrl+R doesn't show commands from before today. Did I miss something, or does it only apply going forward?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -692,6 +728,15 @@ set -g status-style 'bg=#1e1e2e'   # ← Catppuccin Mocha status bar
 - **BUILD (15s–12m):** `nano ~/.tmux.conf`. Add each line. Explain prefix change, mouse, color. Reload with `tmux source ~/.tmux.conf`.
 - **VERIFY (12m–13m):** Create a new session. Split a pane. Click to switch (mouse works). Detach. Reattach. Everything persists.
 
+🤖 **Copilot Assist — DFY Lesson 5**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I set the prefix to Ctrl+A but it conflicts with readline's beginning-of-line shortcut. How do I handle both without losing either?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 6 — Custom PS1 Prompt with Git Branch
@@ -746,6 +791,15 @@ Result in a git repo:
 - **BUILD (15s–16m):** Build PS1 component by component: color codes, `\u`, `\h`, `\w`, `__git_ps1`. Source and test each addition.
 - **VERIFY (16m–17m):** Navigate 3 directories. Switch 2 branches. Prompt shows each correctly.
 
+🤖 **Copilot Assist — DFY Lesson 6**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My PS1 shows the git branch but it's showing the wrong color — everything is yellow including the path. Here's my PS1 string: [paste]. What's wrong?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 7 — Directory Jumping Script
@@ -796,6 +850,15 @@ z learns from your usage:
 - **SHOW (0–15s):** From `/tmp`, type `z enc` — instantly in the encyclopedia folder. No path typed.
 - **BUILD (15s–8m):** Download `z.sh` to `~/.local/bin/`. Add `source ~/.local/bin/z.sh` to `~/.bashrc`. Source. Brief explanation of the frecency algorithm.
 - **VERIFY (8m–9m):** Visit 3 directories normally. Then jump back to each using 2–3 characters with `z`. All 3 work.
+
+🤖 **Copilot Assist — DFY Lesson 7**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"z.sh is installed and sourced but `z enc` says 'no such file or directory'. I've visited the directory 5 times. What might be wrong?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -852,6 +915,15 @@ $ man2md.sh bash   → ~/notes/man/bash.md  (large — takes 2 seconds)
 - **BUILD (15s–12m):** Write script: `man $1 | col -bx | sed '...' > ~/notes/man/$1.md`. Create `~/notes/man/` directory.
 - **VERIFY (12m–13m):** Convert `man grep` → `grep.md`. Open in browser-rendered Markdown. All headings and code blocks correct.
 
+🤖 **Copilot Assist — DFY Lesson 8**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My man2md.sh creates the file but the headings aren't converting to ##. Here's my sed pattern: [paste]. What regex would match the heading lines correctly?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 9 — Terminal Session Logger
@@ -907,6 +979,15 @@ Search: grep "python" ~/logs/*.log     ← all python commands across all days
 - **SHOW (0–15s):** `grep "git" ~/logs/$(date +%F).log` — every git command from today listed with timestamps.
 - **BUILD (15s–16m):** Write `log_cmd()` function, `PROMPT_COMMAND` hook, `mkdir -p ~/logs`, add to `~/.bashrc`.
 - **VERIFY (16m–17m):** Run 5 commands. `cat ~/logs/$(date +%F).log` — all 5 appear with timestamps and working directories.
+
+🤖 **Copilot Assist — DFY Lesson 9**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My session logger is running but it's also logging the log_cmd function call itself, creating noisy output. How do I filter that out?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -983,6 +1064,15 @@ Fix it before you write a single line of code.
 - **SHOW (0–15s):** Scrolling through the checklist on a freshly configured machine — every item turns green as it's verified.
 - **BUILD (15s–4m):** Copy the checklist template. Personalize 5 items for your specific tools and workflow.
 - **VERIFY (4m–5m):** Run through it on a test machine. Two items fail — diagnose and fix them on-screen.
+
+🤖 **Copilot Assist — DFY Lesson 10**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My checklist has 3 items failing: SSH key, tmux, and timezone. Walk me through fixing all three in the right order."*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-001 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1415,6 +1505,149 @@ Use these prompts exactly as written, or adapt them. They are organized by the 5
 
 30. What's the difference between what I've learned in B-001 and what a senior 
     Linux engineer knows? What's the gap and how do I close it?
+```
+
+---
+
+### Section 2b — Audiobook Copilot (🎧 Format)
+
+**For audiobook listeners — prompts for spoken learning sessions:**
+
+```
+AUDIOBOOK COPILOT SYSTEM PROMPT:
+"You are lippytmai, audiobook copilot for B-001. The listener is consuming
+this material via audio — no screen required. Keep all responses speakable:
+no ASCII art, no code tables. Use verbal analogies and numbered steps they
+can follow with their terminal beside them. Speak as if you are the narrator
+continuing the lesson in real time."
+```
+
+**15 Audiobook Prompts:**
+
+```
+WHILE LISTENING — comprehension:
+
+A1. "The audiobook just described the terminal as a 'cockpit'. 
+    Extend that analogy — what are the instruments? What's the engine?"
+
+A2. "Explain what a shell really is in 30 seconds of spoken audio. 
+    No technical terms — pure plain English."
+
+A3. "I heard 'fork and exec' mentioned. Explain what that means in a 
+    way I can follow without looking at a screen."
+
+A4. "The chapter mentioned stdin, stdout, and stderr. Give me a 
+    verbal analogy — like water pipes or radio channels."
+
+A5. "What is $PATH and why does 'command not found' happen? 
+    Explain it like I'm asking a librarian where a book is."
+
+PAUSE AND BUILD:
+
+A6. "I'm pausing to build my ~/.bash_aliases. Read out each alias 
+    slowly with a one-sentence explanation of what it saves me."
+
+A7. "Walk me through the motd.sh script verbally — each section 
+    explained before I type a single character."
+
+A8. "Narrate the history supercharger block line by line — what each 
+    export does and why I care."
+
+A9. "Describe what tmux does in plain English before I read the config. 
+    I want the mental model first."
+
+A10. "Narrate the 20-item new machine checklist item by item — 
+     with one sentence on why each item matters."
+
+RESUME CHECK — retention quiz:
+
+A11. "Quiz me on the 5 most important terminal shortcuts before I 
+     resume. One question at a time, wait for my answer."
+
+A12. "Summarize what I've built so far in B-001 in 60 words or less 
+     — as a narrator doing a 'previously in this chapter' recap."
+
+A13. "The audiobook is moving to shell history. Give me a 20-second 
+     verbal primer so I'm ready to absorb it."
+
+A14. "I just finished the DFY lessons audiobook. What are the 3 most 
+     important things I built and why do they matter?"
+
+A15. "Narrate my B-001 credential claim ceremony for 
+     CLL-L0-B001-TerminalApprentice — including what I earned 
+     and what unlocks next."
+```
+
+---
+
+### Section 2c — Video Copilot (🎬 Format)
+
+**For video learners — prompts for screen-based, follow-along sessions:**
+
+```
+VIDEO COPILOT SYSTEM PROMPT:
+"You are lippytmai, video copilot for B-001. The learner is watching a 
+screen tutorial and following along in their own terminal. Prioritize: 
+exact commands to type next, what to watch for on screen, and verification 
+commands that confirm each step worked. Use SHOW→BUILD→VERIFY structure. 
+Flag anything that varies by terminal emulator or OS."
+```
+
+**15 Video Prompts:**
+
+```
+BEFORE PLAYING — setup:
+
+V1. "I'm about to watch the terminal setup video. What should I have 
+    open before I press play? Give me the pre-flight checklist."
+
+V2. "The video is about tmux configuration. What packages do I need 
+    installed first on Arch Linux?"
+
+V3. "I'm following the PS1 customization video. My terminal looks 
+    different from the video. What setting should I check first?"
+
+PAUSED — implementation:
+
+V4. "The video just showed the PS1 string with escape codes. Pause. 
+    Explain each \\[ \\e[32m \\] component I see on screen."
+
+V5. "I paused at the z.sh install step. My screen shows an error. 
+    Paste the error here and I'll diagnose it."
+
+V6. "The video shows .bashrc changes taking effect immediately. 
+    Mine don't. What am I missing?"
+
+V7. "The motd.sh video used printf for box drawing. Walk me through 
+    what each printf format string produces visually."
+
+V8. "The video showed tmux panes but didn't explain the key sequence. 
+    What are the 5 tmux commands I need to know right now?"
+
+VERIFY — confirmation:
+
+V9. "I finished building my ~/.bash_aliases. What are the 3 terminal 
+    commands I should run to verify every alias works?"
+
+V10. "I completed the full DFY Chapter 12 builds. Run me through 
+     the master verification checklist — what does success look like?"
+
+V11. "My tmux config is loaded but the colors aren't right. 
+     What's the verification command and what should I see?"
+
+V12. "I installed z.sh but `z enc` isn't jumping anywhere. 
+     What does a working z.sh installation look like when I test it?"
+
+EXTEND FROM VIDEO:
+
+V13. "The terminal setup video was basic. Show me what an OMARCHY-grade 
+     terminal setup looks like — what's above and beyond what we covered?"
+
+V14. "I've completed all B-001 videos. What should I capture in my 
+     own notes before moving to B-002?"
+
+V15. "What are the 3 terminal demos that would impress a hiring 
+     manager in a technical interview?"
 ```
 
 ---

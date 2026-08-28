@@ -456,6 +456,15 @@ Ten builds that give you real, working tools for navigating, managing, and under
 - **BUILD:** Learner explores their own machine, adding personal examples to each row of the map.
 - **VERIFY:** `ls /etc | wc -l` — count config files. `ls /var/log` — spot the logs.
 
+🤖 **Copilot Assist — DFY Lesson 1**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I found a directory I don't recognize at /opt/containerd/. Which directory in the filesystem map does this belong to conceptually, and is it safe to leave it alone?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 2 — Hidden Files Inventory Script
@@ -521,6 +530,15 @@ Total: 23 hidden items
 - **BUILD:** Write script. Add to `~/bin/`. `chmod +x`. Run it.
 - **VERIFY:** Compare `ls -lah ~` with `hidden-inv.sh` output — all match.
 
+🤖 **Copilot Assist — DFY Lesson 2**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My hidden-inv.sh shows ~/.config is 2.1GB. I didn't know it was that large. How do I drill down to find what's inside it taking the most space?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 3 — Permissions Cheat Card
@@ -583,6 +601,15 @@ SECURITY RULES:
 - **BUILD:** Run `stat` on 5 different file types. Interpret each permission set using the card.
 - **VERIFY:** Set a script to 755. Set a config to 644. Verify SSH key is 600. All correct.
 
+🤖 **Copilot Assist — DFY Lesson 3**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I have a shared script that needs to be executable by my user and my web server user (www-data) but not the world. What chmod and chown combination is correct?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 4 — Disk Usage Analyzer
@@ -644,6 +671,15 @@ df -h /
 - **SHOW:** `dua.sh` runs — a forgotten 2GB video file identified in seconds.
 - **BUILD:** Write script. Test each section independently. Compose.
 - **VERIFY:** Delete a test file. Run `dua.sh` again — file is gone from the list.
+
+🤖 **Copilot Assist — DFY Lesson 4**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"dua.sh shows ~/. cache is 4GB. Is it safe to delete the cache? What's in it and how do I selectively clear it without breaking anything?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -709,6 +745,15 @@ lns-list() {
 - **BUILD:** Write script. Create a test symlink. Intentionally break one. Run `lns-list`.
 - **VERIFY:** Fix the broken link. Run `lns-list` again — all green ✅.
 
+🤖 **Copilot Assist — DFY Lesson 5**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"lns-create linked my ~/.bashrc to ~/.dotfiles/.bashrc but now bash says 'no such file' on login. The dotfiles directory exists. What went wrong?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 6 — File Search Toolkit
@@ -763,6 +808,15 @@ Usage examples:
 - **SHOW:** `findtodo` in a project directory — 12 files with TODO comments identified instantly.
 - **BUILD:** Add each alias. Test each on a real directory.
 - **VERIFY:** Confirm `findpy` excludes `__pycache__`. Confirm `findlarge` skips permission errors silently.
+
+🤖 **Copilot Assist — DFY Lesson 6**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"findtodo found 47 files but I want to exclude the venv/ directory and node_modules/. How do I modify the findtodo alias to skip those paths?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -830,6 +884,15 @@ Usage:
 - **BUILD:** Write function. Test on a static file. Then test with a background writer.
 - **VERIFY:** Use `tail -f /var/log/syslog` to stream a system log live.
 
+🤖 **Copilot Assist — DFY Lesson 7**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"watchfile works but it clears the terminal on every refresh, which makes it hard to see the diff. How do I make it show only the changed lines instead?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 8 — Directory Snapshot and Diff
@@ -891,6 +954,15 @@ fi
 - **SHOW:** Run `dirsnap.sh /etc`. Create a new file. Run again — the new file appears in the diff.
 - **BUILD:** Write script. Test snapshot rotation. Test diff output.
 - **VERIFY:** Delete a file. Snapshot again — deletion appears in the diff.
+
+🤖 **Copilot Assist — DFY Lesson 8**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"dirsnap.sh diff is showing hundreds of changes in /proc/ because I snapshotted the wrong directory. How do I scope it to only track my project directories?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -959,6 +1031,15 @@ esac
 - **SHOW:** `fcheck.sh generate`. Add one space to `~/.bashrc`. `fcheck.sh verify` — change detected.
 - **BUILD:** Write script. Run generate. Modify a file. Verify.
 - **VERIFY:** Restore original file. `fcheck.sh verify` — all intact.
+
+🤖 **Copilot Assist — DFY Lesson 9**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"fcheck.sh verify shows one file FAILED but I didn't change it. Could this be a mtime update without content change, or does SHA256 catch only content changes?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1038,6 +1119,15 @@ echo "   cd $BASE && ls"
 - **SHOW:** `mkproject.sh my-new-api` → project created. `tree my-new-api` → full structure visible.
 - **BUILD:** Write script. Test with a demo project name.
 - **VERIFY:** `cd ~/projects/my-new-api && git log` — initial commit exists. All 5 directories present.
+
+🤖 **Copilot Assist — DFY Lesson 10**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"mkproject.sh scaffolds the structure but I want to add a default Python venv creation and requirements.txt at the same time. How do I extend the script?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-003 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1419,6 +1509,141 @@ GUARDRAILS:
 
 30. What's the gap between what I know now and a Linux systems administrator 
     who manages production servers?
+```
+
+---
+
+### Section 2b — Audiobook Copilot (🎧 Format)
+
+```
+AUDIOBOOK COPILOT SYSTEM PROMPT:
+"You are lippytmai, audiobook copilot for B-003. The listener is learning
+filesystem concepts via audio. Keep responses speakable — use structural
+analogies (cities, buildings, libraries) not ASCII diagrams."
+```
+
+**15 Audiobook Prompts:**
+
+```
+WHILE LISTENING:
+
+A1. "The audiobook described an inode. Give me a physical world analogy 
+    — something I can visualize without looking at a screen."
+
+A2. "Explain file permissions using a hotel key card analogy — 
+    who has which key to which room."
+
+A3. "I heard 'hard link vs symbolic link'. Explain both in one sentence 
+    each using real-world objects."
+
+A4. "What's the verbal explanation of how mounting works? 
+    Like physically attaching something to the filesystem tree."
+
+A5. "Explain /proc and /sys — why are they called virtual filesystems? 
+    What are they really?"
+
+PAUSE AND BUILD:
+
+A6. "Walk me through fcheck.sh verbally — what SHA256 does, why it 
+    matters, and what I'm protecting against."
+
+A7. "Narrate the permissions cheat card — each of the 5 modes, 
+    when to use it, and one real example."
+
+A8. "Walk me through mkproject.sh logic before I build it — 
+    directory by directory, why each folder exists."
+
+A9. "Narrate the symlink strategy for dotfiles — why it's better 
+    than copying files to each machine."
+
+A10. "Read out the disk usage analyzer logic — what each find command 
+     is looking for and what big files mean."
+
+RESUME CHECK:
+
+A11. "Quiz me: I'll describe a permission problem, you tell me 
+     the chmod command. Three scenarios."
+
+A12. "What are the 4 roles a file can play in a system? 
+     Give me one sentence each."
+
+A13. "Before I resume: what's the difference between mtime, atime, 
+     and ctime in plain English?"
+
+A14. "Summarize the filesystem map — the 12 key directories — 
+     in 60 words. No directory paths, just purposes."
+
+A15. "Narrate my CLL-L0-B003-FilesystemNavigator credential ceremony."
+```
+
+---
+
+### Section 2c — Video Copilot (🎬 Format)
+
+```
+VIDEO COPILOT SYSTEM PROMPT:
+"You are lippytmai, video copilot for B-003. The learner is watching
+filesystem commands execute on screen. Prioritize: what to look for in
+ls -la output, what stat reveals, and what permission changes look like
+visually. SHOW→BUILD→VERIFY."
+```
+
+**15 Video Prompts:**
+
+```
+BEFORE PLAYING:
+
+V1. "I'm about to watch the permissions video. What should I create 
+    to practice on — a safe test directory structure?"
+
+V2. "The video covers symlinks. What's the one-line prerequisite 
+    I need to understand before watching?"
+
+V3. "I'm following the disk usage video. What's on my system 
+    that I should analyze so the video is relevant to me?"
+
+PAUSED:
+
+V4. "The video shows ls -la output with special characters in the 
+    permission column. What does each character mean?"
+
+V5. "Paused: stat shows mtime changed but I didn't modify the file. 
+    What could have changed the mtime without changing content?"
+
+V6. "The video shows a broken symlink in red. How do I see that 
+    in my terminal and how do I fix it?"
+
+V7. "I paused at the lns-list output. One symlink shows a broken 
+    arrow. Walk me through the diagnosis and fix."
+
+V8. "The dua.sh video shows a file I don't recognize taking 2GB. 
+    How do I safely investigate before deleting it?"
+
+VERIFY:
+
+V9. "I set permissions on a web directory. What ls -la output 
+    proves it's configured correctly for nginx?"
+
+V10. "I ran fcheck.sh generate. How do I verify the manifest 
+     was written correctly before I trust it?"
+
+V11. "I created a symlink with lns-create. What 3 commands 
+     confirm the link is valid, points to the right place, 
+     and has correct permissions?"
+
+V12. "mkproject.sh ran successfully. What does the tree output 
+     look like for a correctly scaffolded project?"
+
+EXTEND:
+
+V13. "The permissions video covered basics. What's the setuid, 
+     setgid, and sticky bit — show me a real use case for each."
+
+V14. "I've completed all B-003 videos. What's the most important 
+     filesystem concept I haven't seen yet?"
+
+V15. "Show me what a senior sysadmin sees in ls -la that a 
+     beginner misses."
 ```
 
 ---

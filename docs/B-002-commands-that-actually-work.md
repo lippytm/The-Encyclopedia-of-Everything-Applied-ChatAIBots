@@ -470,6 +470,15 @@ TIER 4: Process & System
 - **BUILD:** Learner opens their own terminal and runs each command, filling in the cheat-sheet as they go.
 - **VERIFY:** Learner runs `man ls | head -20` to confirm the reference tool works for any command on the list.
 
+🤖 **Copilot Assist — DFY Lesson 1**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I've been using these 15 commands for a week. Which 5 should I practice most deliberately to build real command-line fluency? And what's missing from this list for my specific workflow: [describe workflow]?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 2 — The rm Safety Wrapper
@@ -528,6 +537,15 @@ Workflow:
 - **BUILD:** Add `safe-rm()` function and alias to `~/.bashrc`. Source. Explain each line.
 - **VERIFY:** Delete a test file. Recover it. Then permanently delete with the explicit command.
 
+🤖 **Copilot Assist — DFY Lesson 2**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My safe-rm is working but sometimes I need the real rm for scripts that expect standard behavior. How do I call the original rm when I need it without removing the alias?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 3 — Pipe Chain Cheat Card
@@ -579,6 +597,15 @@ journalctl -n 100 | grep ERROR        last 100 errors
 - **SHOW:** A large log file. One pipe chain extracts the error count by hour in 10 seconds.
 - **BUILD:** Run each of the 10 pipe patterns against real output. Explain what each piece does.
 - **VERIFY:** Learner builds one new pipe chain using only tools from the table.
+
+🤖 **Copilot Assist — DFY Lesson 3**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"Build me a pipe chain for my specific problem: I have a JSON access log and I need to count unique user IDs per hour. Here's a sample line: [paste]."*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -637,6 +664,15 @@ Usage:
 - **BUILD:** Add function to `~/.bashrc`, source, explain `$SECONDS` vs nanosecond precision.
 - **VERIFY:** Run 3 benchmarks, open `~/logs/benchmarks.log`, see all 3 entries with times.
 
+🤖 **Copilot Assist — DFY Lesson 4**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My benchmark function shows 0ms for fast commands. Is that a resolution issue with date +%s%N on my system, and what's the fix?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 5 — CLI Help Extractor
@@ -690,6 +726,15 @@ Usage:
 - **SHOW:** `cat ~/notes/help/rsync.txt` — rsync options visible without running rsync.
 - **BUILD:** Write script. `chmod +x`. Add `~/bin` to PATH. Test.
 - **VERIFY:** Extract help for 3 commands. `ls ~/notes/help/` shows all 3 files.
+
+🤖 **Copilot Assist — DFY Lesson 5**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"help-extract.sh works for most tools but `ffmpeg --help` crashes it because ffmpeg outputs to stderr. How do I capture both stdout and stderr?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -745,6 +790,15 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 - **SHOW:** Edit a file in a git repo — prompt immediately shows `(main *)`. Stage it — shows `(main +)`.
 - **BUILD:** Source `git-prompt.sh`, set env vars, test each state.
 - **VERIFY:** Unstage, stage, commit — prompt accurately reflects each state transition.
+
+🤖 **Copilot Assist — DFY Lesson 6**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My git prompt shows the branch but not the dirty state symbols even though GIT_PS1_SHOWDIRTYSTATE=1 is set. Is the git-prompt.sh file loaded in the wrong order?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -816,6 +870,15 @@ After:
 - **BUILD:** Add handler, test with 3 typos. Confirm `return 127` for script compatibility.
 - **VERIFY:** Verify that scripts using `command || exit` still work correctly with the handler in place.
 
+🤖 **Copilot Assist — DFY Lesson 7**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My command_not_found_handle is installed but when I run `foo` I still get the default bash error. How do I verify the handler is actually being called?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 8 — Quick Note from the Terminal
@@ -885,6 +948,15 @@ Usage:
 - **BUILD:** Add both functions, create `~/notes/quick/`, source, test.
 - **VERIFY:** Save 5 notes. Retrieve today's. Retrieve yesterday's with date argument.
 
+🤖 **Copilot Assist — DFY Lesson 8**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My note() function works but I want to add tags — so I can do `note +devops discovered that...` and then `notes --tag devops`. How do I extend the function?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 9 — One-Line System Health Check
@@ -943,6 +1015,15 @@ NET:   TCP: 24 (estab 8, ...)
 - **SHOW:** `health` runs in under one second. All five metrics visible.
 - **BUILD:** Build alias piece by piece. Test each metric command standalone first, then compose.
 - **VERIFY:** Run `health` during a file copy operation — CPU and disk numbers change.
+
+🤖 **Copilot Assist — DFY Lesson 9**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My health alias works but the CPU percentage shows as 0 in a fresh terminal. The value is correct after the first prompt. Why the delay and how do I fix it?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1008,6 +1089,15 @@ NET:   TCP: 24 (estab 8, ...)
 - **SHOW:** `grep "docker" ~/wiki/commands.md` — docker commands found instantly without web search.
 - **BUILD:** Create `~/wiki/commands.md` with the template. Populate with all 9 DFY tools from this chapter.
 - **VERIFY:** Reboot. `grep "health" ~/wiki/commands.md` — the alias definition is there.
+
+🤖 **Copilot Assist — DFY Lesson 10**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I have 50 commands in my wiki now. How do I add a fuzzy search function so I can do `wikisearch docker` and get all docker-related entries instantly?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-002 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1393,6 +1483,139 @@ GUARDRAILS:
 
 30. What's the difference between what I know now and what a senior shell engineer 
     knows about command composition?
+```
+
+---
+
+### Section 2b — Audiobook Copilot (🎧 Format)
+
+```
+AUDIOBOOK COPILOT SYSTEM PROMPT:
+"You are lippytmai, audiobook copilot for B-002. The listener is learning
+commands via audio. Keep responses speakable — no ASCII tables. Use verbal
+analogies. Speak as if narrating the next lesson in a podcast."
+```
+
+**15 Audiobook Prompts:**
+
+```
+WHILE LISTENING:
+
+A1. "The audiobook mentioned exit codes. Explain 0=success using a 
+    real-world analogy I can remember without looking at a screen."
+
+A2. "Explain pipe composition verbally — like water flowing through 
+    pipes or assembly line workers passing work along."
+
+A3. "I heard 'process substitution' mentioned. What is it in 30 seconds 
+    of plain English?"
+
+A4. "Describe the difference between grep, awk, and sed using job titles 
+    — what job does each one do?"
+
+A5. "What is stdin and why does it matter for pipes? Explain it as if 
+    describing a conveyor belt."
+
+PAUSE AND BUILD:
+
+A6. "Walk me through building the pipe chain for log analysis verbally — 
+    each pipe stage explained before I type it."
+
+A7. "Narrate the safe-rm wrapper line by line — what each line does 
+    and why it's there."
+
+A8. "Read out the 10 pipe patterns from the cheat card slowly, with 
+    one sentence on when I'd use each one."
+
+A9. "Walk me through the benchmark function verbally — what it measures 
+    and how it logs the result."
+
+A10. "Narrate the health alias construction — each metric, where it 
+     comes from, and what it means."
+
+RESUME CHECK:
+
+A11. "Quiz me on when to use grep vs awk vs sed. Three questions, 
+     one at a time."
+
+A12. "Summarize the pipe chain section in 3 sentences for a resume 
+     — what skill did I just learn?"
+
+A13. "Give me a 20-second verbal primer on redirection before I 
+     resume — I want to be ready for 2> and 2>&1."
+
+A14. "What are the 3 most powerful commands I learned in B-002? 
+     One sentence each, no code."
+
+A15. "Narrate my CLL-L0-B002-CommandArchitect credential ceremony."
+```
+
+---
+
+### Section 2c — Video Copilot (🎬 Format)
+
+```
+VIDEO COPILOT SYSTEM PROMPT:
+"You are lippytmai, video copilot for B-002. The learner is watching
+commands execute and following along. Prioritize: exact commands to
+type, what to watch for, and verification steps. Use SHOW→BUILD→VERIFY."
+```
+
+**15 Video Prompts:**
+
+```
+BEFORE PLAYING:
+
+V1. "I'm about to watch the pipe chains video. What test data 
+    should I create first so I have something to process?"
+
+V2. "The video covers grep with regex. What regex knowledge 
+    do I need before watching?"
+
+V3. "I'm following the awk tutorial. My awk version is different 
+    from the video. Will the commands still work?"
+
+PAUSED:
+
+V4. "The video shows `awk '{print $7}'` but I don't understand 
+    field splitting. Explain it with what I see on screen."
+
+V5. "Paused: the sort | uniq -c | sort -rn chain is running but 
+    my output is different. Here's what I see: [paste]"
+
+V6. "The video used process substitution diff <(cmd1) <(cmd2). 
+    Explain what the screen shows step by step."
+
+V7. "The benchmark function is being built. Pause — explain the 
+    nanosecond timestamp math I see in the script."
+
+V8. "The video shows grep with --color=auto. My output has no color. 
+    What setting do I check?"
+
+VERIFY:
+
+V9. "I built my 10-entry pipe cheat card. How do I test that each 
+    pattern actually works on real data?"
+
+V10. "The safe-rm function is installed. What 3 tests prove it's 
+     working correctly and safely?"
+
+V11. "I added all 5 find aliases. What's the quickest way to verify 
+     each one actually filters correctly?"
+
+V12. "My health alias is installed. Run me through what each line 
+     should output and how I know if it's wrong."
+
+EXTEND:
+
+V13. "The video showed basic awk. What's the next awk skill — 
+     BEGIN/END blocks, multi-file processing, built-in variables?"
+
+V14. "I've completed all B-002 videos. What command should every 
+     developer know that B-002 didn't cover?"
+
+V15. "Demonstrate a real-world log analysis scenario using only 
+     the tools from B-002 — no Python, no database."
 ```
 
 ---

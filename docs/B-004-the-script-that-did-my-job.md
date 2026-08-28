@@ -578,6 +578,15 @@ echo "✅ Processing: $INPUT"
 - **BUILD:** Build each section of the template one block at a time. Explain `set -euo pipefail`.
 - **VERIFY:** Introduce a command that fails — script stops immediately with the error. Without `set -e` it would have continued.
 
+🤖 **Copilot Assist — DFY Lesson 1**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"I copied the template and added my logic but getopts isn't parsing --long-flags. I thought getopts handles long options. How do I add support for --verbose alongside -v?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 2 — Automated Backup Script
@@ -643,6 +652,15 @@ crontab -e
 - **SHOW:** `ls ~/backups/` → 7 timestamped archives. 8th run → oldest is deleted automatically.
 - **BUILD:** Write script. Add to `~/bin/`. Test. Add cron entry.
 - **VERIFY:** Check backup log. Verify archive size and contents with `tar -tzf archive.tar.gz | head`.
+
+🤖 **Copilot Assist — DFY Lesson 2**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"backup.sh ran last night but the archive is 0 bytes and the log shows no errors. The SOURCE_DIRS paths exist. What would cause a silent empty archive?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -710,6 +728,15 @@ error   "Deployment failed — rolling back"
 - **SHOW:** A script without colors vs with `colors.sh` sourced — green success, red error, yellow warning.
 - **BUILD:** Write library. Source in a test script. Add `success`, `error`, `warning`, `header` calls.
 - **VERIFY:** Run with all 4 output types. All render with correct colors and symbols.
+
+🤖 **Copilot Assist — DFY Lesson 3**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My colors.sh works in interactive terminals but when the script runs in CI the color codes show as literal escape characters. How do I detect CI and disable colors automatically?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -783,6 +810,15 @@ echo "✅ All checks passed. Proceeding."
 - **BUILD:** Write check functions. Add to an existing script at the top.
 - **VERIFY:** Deliberately unset one required command. Confirm early exit with clear error message.
 
+🤖 **Copilot Assist — DFY Lesson 4**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"selftest.sh passes locally but fails in CI with 'command not found: jq' even though jq is installed on the CI runner. What's the PATH issue and how do I fix it?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 5 — Config File Parser
@@ -853,6 +889,15 @@ load_config() {
 - **BUILD:** Write loader. Create test config. Source and echo all loaded vars.
 - **VERIFY:** Add a comment line and blank line to config — both are skipped cleanly.
 
+🤖 **Copilot Assist — DFY Lesson 5**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"parse-config.sh loads my config but values with spaces break — API_KEY=my key here becomes API_KEY=my. How do I handle values with spaces correctly?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 6 — Progress Bar Function
@@ -916,6 +961,15 @@ done
 - **SHOW:** Script iterates through 20 files — progress bar fills in real time.
 - **BUILD:** Write function. Add to a loop. Test at different totals.
 - **VERIFY:** Script completes at 20/20 — bar is full, newline appears cleanly.
+
+🤖 **Copilot Assist — DFY Lesson 6**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"My progress bar renders correctly but in CI logs it shows ^M characters on every line. This is a carriage return issue. How do I make it CI-safe?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -982,6 +1036,15 @@ RETRY_MAX=5 retry git push origin main
 - **BUILD:** Write retry function. Test with a command that fails. Test with one that succeeds on attempt 2.
 - **VERIFY:** `RETRY_MAX=5 retry ls /tmp` — succeeds on attempt 1. Count env var overrides default.
 
+🤖 **Copilot Assist — DFY Lesson 7**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"retry() works but the exponential backoff goes to 128 seconds on the 7th attempt. I want to cap it at 30 seconds. How do I add a max delay?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
+
 ---
 
 ### DFY Lesson 8 — Script Output Logger
@@ -1040,6 +1103,15 @@ run_logged() {
 - **SHOW:** `run_logged ./backup.sh` — output shown on screen. `cat ~/logs/scripts/backup-*.log` — same output in file.
 - **BUILD:** Write function. Add to `~/.bashrc`. Test on backup.sh from DFY-02.
 - **VERIFY:** Run a script that fails. Log file contains the error message.
+
+🤖 **Copilot Assist — DFY Lesson 8**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"run_logged() captures output but my script uses printf without newlines for progress updates and the log file shows nothing until the script finishes. Why?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1106,6 +1178,15 @@ list_envs() {
 - **SHOW:** `switch_env dev` → API_URL is localhost. `switch_env prod` → API_URL is production domain.
 - **BUILD:** Create `.envs/` directory. Write dev.env and prod.env files. Write `switch_env` function.
 - **VERIFY:** `list_envs` shows both, with the active one marked. `echo $API_URL` confirms the correct one loaded.
+
+🤖 **Copilot Assist — DFY Lesson 9**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"switch_env prod loaded but echo $API_URL still shows the dev value. I used source to run the script. Why didn't the variables persist?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1174,6 +1255,15 @@ show_menu
 - **SHOW:** `menu.sh` → numbered list appears → press `1` → backup runs → menu reappears.
 - **BUILD:** Write menu with `case` statement. Source `colors.sh`. Test each option.
 - **VERIFY:** Add a 6th option (a script from a future chapter). Menu expands cleanly.
+
+🤖 **Copilot Assist — DFY Lesson 10**
+
+> **Use this prompt with your book copilot right now:**
+>
+> *"menu.sh works but after running an option that takes 30 seconds, the menu reappears before the output finishes printing. How do I wait for completion before showing the menu again?"*
+>
+> 💡 *Paste this into any AI assistant loaded with the B-004 system prompt from Appendix C. Your copilot knows this lesson and will guide you through the exact fix or extension.*
+
 
 ---
 
@@ -1538,6 +1628,140 @@ GUARDRAILS:
 
 30. What's the gap between my scripts now and infrastructure-as-code tools 
     like Ansible and Terraform? How do I think about the progression?
+```
+
+---
+
+### Section 2b — Audiobook Copilot (🎧 Format)
+
+```
+AUDIOBOOK COPILOT SYSTEM PROMPT:
+"You are lippytmai, audiobook copilot for B-004. The listener is learning
+bash scripting via audio while following along in their editor. Keep all
+responses speakable. Narrate code logic verbally — what each section 
+intends, not the syntax characters."
+```
+
+**15 Audiobook Prompts:**
+
+```
+WHILE LISTENING:
+
+A1. "The audiobook mentioned 'set -euo pipefail'. Explain what would 
+    go wrong without it using a real disaster scenario."
+
+A2. "Explain getopts in plain English — what problem does it solve 
+    and what's the alternative?"
+
+A3. "I heard 'trap' mentioned. What is it and what analogy helps 
+    me remember when to use it?"
+
+A4. "Explain the difference between running a script and sourcing it 
+    using a door vs walking into a room analogy."
+
+A5. "What is idempotency? Give me a real-world analogy I'll remember."
+
+PAUSE AND BUILD:
+
+A6. "Walk me through backup.sh verbally — each section's purpose 
+    before I type a single character."
+
+A7. "Narrate the retry() function logic — attempt, failure, backoff, 
+    retry — like a persistence story."
+
+A8. "Walk me through the selftest.sh pre-flight pattern — why each 
+    check exists and what happens without it."
+
+A9. "Narrate the env-switch.sh concept — what a named environment 
+    profile is and why I'd want multiple."
+
+A10. "Read the colors.sh library purpose — what 5 output states does 
+     it handle and why each matters."
+
+RESUME CHECK:
+
+A11. "Quiz me: I'll describe a script failure, you tell me which 
+     set flag would have caught it. Three scenarios."
+
+A12. "What makes a script 'production-quality'? Give me the list 
+     in spoken sentences I can recite."
+
+A13. "Before I resume: explain the difference between $@ and $* — 
+     when does it matter which one I use?"
+
+A14. "Summarize the automation decision framework — when to write a 
+     script — in 30 spoken seconds."
+
+A15. "Narrate my CLL-L0-B004-ScriptBuilder credential ceremony."
+```
+
+---
+
+### Section 2c — Video Copilot (🎬 Format)
+
+```
+VIDEO COPILOT SYSTEM PROMPT:
+"You are lippytmai, video copilot for B-004. The learner is watching
+bash scripts being written and run on screen. Prioritize: what each
+code block does visually, how to use bash -x to trace execution,
+and SHOW→BUILD→VERIFY for every script build."
+```
+
+**15 Video Prompts:**
+
+```
+BEFORE PLAYING:
+
+V1. "I'm about to watch the backup.sh video. What directories 
+    should I create first so I can test safely?"
+
+V2. "The video builds the retry() function. What behavior should 
+    I create to test it — a command that fails a predictable way?"
+
+V3. "I'm following the env-switch video. Set up my ~/.envs/ directory 
+    with a dev and prod profile before I press play."
+
+PAUSED:
+
+V4. "The video shows bash -x output. Walk me through reading the 
+    trace — what does + mean? What does ++ mean?"
+
+V5. "Paused: the script is failing silently. The video uses bash -x 
+    to find it. What am I looking for in the trace output?"
+
+V6. "The colors.sh library is being sourced. What should I see 
+    on screen after running `source ~/lib/colors.sh`?"
+
+V7. "The video shows the trap ERR pattern. Pause — explain what 
+    happens on screen when the trap fires."
+
+V8. "The menu.sh is running. The selection isn't working. 
+    What does the read -rp line look like when it's broken vs correct?"
+
+VERIFY:
+
+V9. "I built backup.sh. What are the 4 verification commands 
+    that prove it works correctly — before I add it to cron?"
+
+V10. "The retry() function is installed. Build me a test scenario 
+     that exercises the exponential backoff."
+
+V11. "setup-machine.sh ran on my machine. What does a successful 
+     second run look like — all steps should be idempotent."
+
+V12. "I ran run_logged() on a script. What does the log file look 
+     like for a successful run vs a failed run?"
+
+EXTEND:
+
+V13. "The scripting videos covered bash. When does a bash script 
+     need to become a Python script? Show me the tipping point."
+
+V14. "I've completed all B-004 videos. What shell feature would 
+     make my scripts 10x more powerful that we didn't cover?"
+
+V15. "Show me what a production deploy.sh from a real open-source 
+     project looks like — what patterns does it use?"
 ```
 
 ---
