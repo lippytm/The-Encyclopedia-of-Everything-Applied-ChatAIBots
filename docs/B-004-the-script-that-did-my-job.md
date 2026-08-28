@@ -492,6 +492,697 @@ crontab -e
 
 ---
 
+## Chapter 12: Done-For-You Lessons
+
+> *"A script is a promise: this process, done exactly this way, every time, without you having to remember it."*
+
+Ten builds that take you from writing your first script to having a fully automated personal toolbox.
+
+| Icon | Format | What it is |
+|---|---|---|
+| 📘 | **Ebook** | Annotated script or flow diagram |
+| 🎧 | **Audiobook** | Narrator script — pause and build |
+| 🎬 | **Video** | SHOW→BUILD→VERIFY terminal scene |
+
+---
+
+### DFY Lesson 1 — Script Template with Argument Handling
+
+**What you'll have:** `script-template.sh` — a reusable starter script with help text, argument parsing, and error handling.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# script-template.sh — production-ready bash script starter
+# Usage: ./script-template.sh [-v] [-h] INPUT_FILE
+set -euo pipefail   # e=exit on error, u=error on unset var, o pipefail=pipe errors caught
+
+SCRIPT_NAME="$(basename "$0")"
+VERBOSE=false
+
+usage() {
+  echo "Usage: $SCRIPT_NAME [-v] [-h] INPUT_FILE"
+  echo "  -v    Verbose mode"
+  echo "  -h    Show this help"
+  exit 0
+}
+
+log() { [[ "$VERBOSE" == true ]] && echo "[LOG] $*"; }
+error() { echo "❌ ERROR: $*" >&2; exit 1; }
+
+while getopts ":vh" opt; do
+  case $opt in
+    v) VERBOSE=true ;;
+    h) usage ;;
+    ?) error "Unknown flag: -$OPTARG" ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+INPUT="${1:-}"
+[[ -z "$INPUT" ]] && error "INPUT_FILE is required."
+[[ ! -f "$INPUT" ]] && error "File not found: $INPUT"
+
+log "Starting $SCRIPT_NAME on: $INPUT"
+echo "✅ Processing: $INPUT"
+# --- your logic goes here ---
+```
+
+*Figure 12.1 — `set -euo pipefail` is the seatbelt of bash scripting. Every script starts here.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 1: Script Template with Argument Handling.
+>
+> Every professional bash script shares the same bones: a shebang, `set -euo pipefail`, argument parsing, a help flag, and error functions. Without them, your script will happily continue running after a command fails. This template is your scaffold — copy it for every new script, fill in your logic, and you've already handled 80% of what makes scripts fail in production.
+>
+> Your deliverable is: `script-template.sh` — the starting point for every script you'll ever write.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Run script with no args → clean error message. Run with `-h` → usage shown. Run with valid file → processes it.
+- **BUILD:** Build each section of the template one block at a time. Explain `set -euo pipefail`.
+- **VERIFY:** Introduce a command that fails — script stops immediately with the error. Without `set -e` it would have continued.
+
+---
+
+### DFY Lesson 2 — Automated Backup Script
+
+**What you'll have:** `backup.sh` — daily timestamped backup of specified directories to a chosen destination.
+**Time:** 20 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# backup.sh — timestamped backup with rotation
+
+SOURCE_DIRS=("$HOME/projects" "$HOME/.config" "$HOME/.ssh")
+DEST="$HOME/backups"
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+ARCHIVE="$DEST/backup-$TIMESTAMP.tar.gz"
+LOG="$DEST/backup.log"
+
+mkdir -p "$DEST"
+echo "[$(date +%F\ %T)] Starting backup → $ARCHIVE" | tee -a "$LOG"
+
+tar -czf "$ARCHIVE" "${SOURCE_DIRS[@]}" 2>> "$LOG"
+SIZE=$(du -sh "$ARCHIVE" | cut -f1)
+echo "[$(date +%F\ %T)] ✅ Done: $ARCHIVE ($SIZE)" | tee -a "$LOG"
+
+# Keep only last 7 backups
+ls -t "$DEST"/backup-*.tar.gz | tail -n +8 | xargs -r rm --
+echo "[$(date +%F\ %T)] Old backups cleaned." | tee -a "$LOG"
+```
+
+```
+# Add to cron for daily 2AM backup:
+crontab -e
+0 2 * * * /home/lippytm/bin/backup.sh
+```
+
+*Figure 12.2 — A backup that doesn't run automatically isn't a backup — it's a good intention.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 2: Automated Backup Script.
+>
+> The most common backup failure is human: we forget. This script automates the entire process — timestamped archive, logged results, automatic rotation of old backups, cron-scheduled to run at 2AM every day. After today, your projects, config, and SSH keys are backed up without you ever thinking about it again.
+>
+> Your deliverable is: `backup.sh` — automated daily backup with log and rotation.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `ls ~/backups/` → 7 timestamped archives. 8th run → oldest is deleted automatically.
+- **BUILD:** Write script. Add to `~/bin/`. Test. Add cron entry.
+- **VERIFY:** Check backup log. Verify archive size and contents with `tar -tzf archive.tar.gz | head`.
+
+---
+
+### DFY Lesson 3 — Color Output Library
+
+**What you'll have:** `colors.sh` — a sourceable file with color functions for all your scripts.
+**Time:** 10 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+# ~/lib/colors.sh — color output library for bash scripts
+# Usage: source ~/lib/colors.sh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+RESET='\033[0m'
+
+success() { echo -e "${GREEN}✅ $*${RESET}"; }
+error()   { echo -e "${RED}❌ $*${RESET}" >&2; }
+warning() { echo -e "${YELLOW}⚠️  $*${RESET}"; }
+info()    { echo -e "${BLUE}ℹ️  $*${RESET}"; }
+header()  { echo -e "${BOLD}${CYAN}=== $* ===${RESET}"; }
+```
+
+```bash
+# In any script:
+source ~/lib/colors.sh
+
+header "Starting Deploy"
+info   "Connecting to server..."
+success "Connection established"
+warning "Disk usage at 82%"
+error   "Deployment failed — rolling back"
+```
+
+*Figure 12.3 — Color-coded output is not decoration. It's the difference between seeing an error and missing it.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 3: Color Output Library.
+>
+> Scripts that print monochrome walls of text get ignored. Scripts with green success messages, red errors, and yellow warnings get acted on. This library adds 5 color functions to any script with one `source` line. Once built, every script you write from here forward can have professional, color-coded terminal output.
+>
+> Your deliverable is: `~/lib/colors.sh` — a sourceable color library for all your scripts.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** A script without colors vs with `colors.sh` sourced — green success, red error, yellow warning.
+- **BUILD:** Write library. Source in a test script. Add `success`, `error`, `warning`, `header` calls.
+- **VERIFY:** Run with all 4 output types. All render with correct colors and symbols.
+
+---
+
+### DFY Lesson 4 — Script Health Check and Self-Test
+
+**What you'll have:** `selftest.sh` — a script that tests its own dependencies before running.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# selftest.sh — dependency checks before running
+
+REQUIRED_CMDS=("curl" "jq" "git" "python3")
+REQUIRED_FILES=("$HOME/.config/myapp/config.json")
+REQUIRED_ENV=("HOME" "USER")
+ERRORS=0
+
+check_cmd() {
+  if command -v "$1" &>/dev/null; then
+    echo "  ✅ command: $1"
+  else
+    echo "  ❌ command: $1 (not found)"
+    ERRORS=$((ERRORS+1))
+  fi
+}
+
+check_file() {
+  if [[ -f "$1" ]]; then
+    echo "  ✅ file: $1"
+  else
+    echo "  ❌ file: $1 (not found)"
+    ERRORS=$((ERRORS+1))
+  fi
+}
+
+echo "=== Pre-flight Check ==="
+for cmd in "${REQUIRED_CMDS[@]}";  do check_cmd  "$cmd"; done
+for f   in "${REQUIRED_FILES[@]}"; do check_file "$f";   done
+[[ $ERRORS -gt 0 ]] && echo "❌ $ERRORS checks failed. Fix above." && exit 1
+echo "✅ All checks passed. Proceeding."
+```
+
+*Figure 12.4 — A script that checks its own prerequisites is a script that fails early, clearly, and fixably.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 4: Script Health Check and Self-Test.
+>
+> Nothing wastes time like a script that fails 90% of the way through because a dependency wasn't installed. A pre-flight check runs at the very start and verifies everything the script needs — commands, files, env vars — before doing any real work. If something's missing, it tells you exactly what. This pattern is used in every professional deployment script.
+>
+> Your deliverable is: `selftest.sh` — a pre-flight dependency checker pattern for any script.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `selftest.sh` with `jq` missing — ❌ one error, script exits. Install `jq`. Run again — all green.
+- **BUILD:** Write check functions. Add to an existing script at the top.
+- **VERIFY:** Deliberately unset one required command. Confirm early exit with clear error message.
+
+---
+
+### DFY Lesson 5 — Config File Parser
+
+**What you'll have:** `parse-config.sh` — reads key=value config files safely into bash variables.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# parse-config.sh — safe key=value config file loader
+# Usage: source parse-config.sh /path/to/config.conf
+
+load_config() {
+  local config_file="$1"
+  [[ ! -f "$config_file" ]] && echo "❌ Config not found: $config_file" && return 1
+
+  while IFS='=' read -r key value; do
+    # Skip comments and empty lines
+    [[ "$key" =~ ^#.*$ ]] && continue
+    [[ -z "$key" ]] && continue
+    # Trim whitespace
+    key="${key// /}"
+    value="${value// /}"
+    export "$key=$value"
+    echo "  📋 Loaded: $key"
+  done < "$config_file"
+}
+
+# Example config file (~/.myapp.conf):
+# APP_NAME=lippytmai
+# API_PORT=8080
+# DEBUG=false
+# DB_HOST=localhost
+
+# Usage:
+# source parse-config.sh
+# load_config ~/.myapp.conf
+# echo "Starting $APP_NAME on port $API_PORT"
+```
+
+*Figure 12.5 — Config files separate values from logic. This loader makes the separation clean and safe.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 5: Config File Parser.
+>
+> Hard-coding values into scripts is the root cause of most 'it works on my machine' problems. A config file separates what changes — ports, hostnames, feature flags — from the logic that doesn't. This loader parses key=value files safely, skips comments, trims whitespace, and exports every key as an environment variable. Drop it into any script that needs external configuration.
+>
+> Your deliverable is: `parse-config.sh` — safe config file loading for any bash script.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Edit config file — change API port from 8080 to 9000. Script picks up the new value with no code change.
+- **BUILD:** Write loader. Create test config. Source and echo all loaded vars.
+- **VERIFY:** Add a comment line and blank line to config — both are skipped cleanly.
+
+---
+
+### DFY Lesson 6 — Progress Bar Function
+
+**What you'll have:** `progress.sh` — an ASCII progress bar for any loop in your scripts.
+**Time:** 10 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+# progress.sh — ASCII progress bar function
+progress_bar() {
+  local current="$1"
+  local total="$2"
+  local label="${3:-Progress}"
+  local width=40
+  local filled=$(( (current * width) / total ))
+  local empty=$(( width - filled ))
+  local bar
+  bar="$(printf '#%.0s' $(seq 1 $filled))$(printf ' %.0s' $(seq 1 $empty))"
+  printf "\r  %s: [%s] %d/%d" "$label" "$bar" "$current" "$total"
+  [[ "$current" -eq "$total" ]] && echo ""
+}
+
+# Usage in a loop:
+TOTAL=10
+for i in $(seq 1 $TOTAL); do
+  sleep 0.3   # your work here
+  progress_bar "$i" "$TOTAL" "Processing"
+done
+```
+
+```
+  Processing: [################        ] 7/10
+```
+
+*Figure 12.6 — A progress bar transforms a silent black box into a visible, trusted process.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 6: Progress Bar Function.
+>
+> A script that runs silently for 30 seconds feels broken. The same script with a progress bar feels fast. Visual feedback is not just aesthetic — it tells users whether to wait or interrupt. This function adds an ASCII progress bar to any loop with two lines of code. Add it to your backup script, your deployment script, anywhere you iterate.
+>
+> Your deliverable is: `progress.sh` — an ASCII progress bar for any loop.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Script iterates through 20 files — progress bar fills in real time.
+- **BUILD:** Write function. Add to a loop. Test at different totals.
+- **VERIFY:** Script completes at 20/20 — bar is full, newline appears cleanly.
+
+---
+
+### DFY Lesson 7 — Retry Wrapper Function
+
+**What you'll have:** `retry.sh` — wraps any command with configurable retry logic and backoff.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+# retry.sh — retry any command with backoff
+retry() {
+  local max_attempts="${RETRY_MAX:-3}"
+  local delay="${RETRY_DELAY:-2}"
+  local attempt=1
+
+  while [[ $attempt -le $max_attempts ]]; do
+    echo "  ⟳ Attempt $attempt/$max_attempts: $*"
+    if "$@"; then
+      echo "  ✅ Succeeded on attempt $attempt"
+      return 0
+    fi
+    echo "  ⚠️  Failed. Retrying in ${delay}s..."
+    sleep "$delay"
+    attempt=$((attempt + 1))
+    delay=$((delay * 2))   # exponential backoff
+  done
+
+  echo "  ❌ All $max_attempts attempts failed: $*"
+  return 1
+}
+
+# Usage:
+retry curl -sf https://api.example.com/health
+RETRY_MAX=5 retry git push origin main
+```
+
+*Figure 12.7 — Networks fail, APIs timeout, services restart. A retry wrapper makes any command resilient.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 7: Retry Wrapper Function.
+>
+> In the real world, network requests fail, APIs return 503, and services take time to start. A script that gives up after one failure is fragile. This retry wrapper adds exponential backoff to any command — 3 attempts by default, doubling the wait time after each failure. Add it to any script that touches a network or an external service.
+>
+> Your deliverable is: `retry()` function — configurable retry with exponential backoff.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `retry curl https://unreachable-host.local` — 3 attempts with increasing delays, clean failure message.
+- **BUILD:** Write retry function. Test with a command that fails. Test with one that succeeds on attempt 2.
+- **VERIFY:** `RETRY_MAX=5 retry ls /tmp` — succeeds on attempt 1. Count env var overrides default.
+
+---
+
+### DFY Lesson 8 — Script Output Logger
+
+**What you'll have:** `logged.sh` — wraps any script to simultaneously display and log all output.
+**Time:** 10 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# logged.sh — run any script with automatic log capture
+LOG_DIR="$HOME/logs/scripts"
+mkdir -p "$LOG_DIR"
+
+run_logged() {
+  local cmd_name
+  cmd_name=$(basename "$1")
+  local logfile="$LOG_DIR/${cmd_name}-$(date +%Y%m%d-%H%M%S).log"
+  echo "[START] $(date +%F\ %T) — $*" | tee "$logfile"
+  "$@" 2>&1 | tee -a "$logfile"
+  local exit_code="${PIPESTATUS[0]}"
+  echo "[END]   $(date +%F\ %T) — exit code: $exit_code" | tee -a "$logfile"
+  return "$exit_code"
+}
+
+# Usage:
+# run_logged ./backup.sh
+# run_logged python3 deploy.py --env prod
+```
+
+*Figure 12.8 — `tee` is the Y-splitter of output: to screen AND to file, simultaneously, in one pipe.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 8: Script Output Logger.
+>
+> When a script fails at 3AM, the output that tells you why is gone the moment the terminal closes. This wrapper captures all output — stdout and stderr — to a dated log file while still displaying it live. Wrap any script with `run_logged` and you always have a post-mortem record. This is how professional deployment pipelines work.
+>
+> Your deliverable is: `run_logged()` function — simultaneous screen and file output capture.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `run_logged ./backup.sh` — output shown on screen. `cat ~/logs/scripts/backup-*.log` — same output in file.
+- **BUILD:** Write function. Add to `~/.bashrc`. Test on backup.sh from DFY-02.
+- **VERIFY:** Run a script that fails. Log file contains the error message.
+
+---
+
+### DFY Lesson 9 — Environment Switcher
+
+**What you'll have:** `env-switch.sh` — loads named environment profiles (dev/staging/prod) from config files.
+**Time:** 20 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# env-switch.sh — load named environment profiles
+ENV_DIR="$HOME/.envs"
+mkdir -p "$ENV_DIR"
+
+switch_env() {
+  local env_name="$1"
+  local env_file="$ENV_DIR/${env_name}.env"
+  [[ ! -f "$env_file" ]] && echo "❌ No profile: $env_name (checked $env_file)" && return 1
+  set -a                 # auto-export all variables
+  source "$env_file"
+  set +a
+  export CURRENT_ENV="$env_name"
+  echo "✅ Environment: $env_name"
+}
+
+list_envs() {
+  echo "Available environments:"
+  ls "$ENV_DIR"/*.env 2>/dev/null | xargs -I{} basename {} .env | while read -r e; do
+    [[ "$e" == "$CURRENT_ENV" ]] && echo "  ➤ $e (active)" || echo "    $e"
+  done
+}
+
+# ~/.envs/dev.env:     API_URL=http://localhost:8080
+# ~/.envs/staging.env: API_URL=https://staging.api.lippytm.ai
+# ~/.envs/prod.env:    API_URL=https://api.lippytm.ai
+```
+
+*Figure 12.9 — Environment variables separate config from code. Profiles separate environments from each other.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 9: Environment Switcher.
+>
+> Dev, staging, and production environments need different settings — different URLs, different credentials, different feature flags. The worst way to switch between them is editing files manually. This script loads a named profile from a directory of `.env` files with one command: `switch_env dev` or `switch_env prod`. Clean, explicit, auditable.
+>
+> Your deliverable is: `env-switch.sh` — named environment profiles for dev/staging/prod.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `switch_env dev` → API_URL is localhost. `switch_env prod` → API_URL is production domain.
+- **BUILD:** Create `.envs/` directory. Write dev.env and prod.env files. Write `switch_env` function.
+- **VERIFY:** `list_envs` shows both, with the active one marked. `echo $API_URL` confirms the correct one loaded.
+
+---
+
+### DFY Lesson 10 — Master Script Menu
+
+**What you'll have:** `menu.sh` — an interactive numbered menu that runs your most-used scripts.
+**Time:** 20 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# menu.sh — interactive script launcher
+source ~/lib/colors.sh
+
+show_menu() {
+  header "lippytmai Script Menu"
+  echo "  1) Run backup"
+  echo "  2) System health check"
+  echo "  3) Switch environment"
+  echo "  4) Project inventory"
+  echo "  5) File integrity check"
+  echo "  q) Quit"
+  echo ""
+  read -rp "  Select: " choice
+  case "$choice" in
+    1) ~/bin/backup.sh ;;
+    2) health ;;
+    3) read -rp "  Environment name: " env; switch_env "$env" ;;
+    4) ~/bin/project-inv.sh ;;
+    5) ~/bin/fcheck.sh verify ;;
+    q) echo "Bye." && exit 0 ;;
+    *) warning "Unknown option: $choice" ;;
+  esac
+  echo ""
+  show_menu   # recursive: show menu again after action
+}
+
+show_menu
+```
+
+*Figure 12.10 — A personal script menu turns a collection of tools into a cohesive personal CLI application.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 10: Master Script Menu.
+>
+> You've built 9 powerful tools in this chapter. A menu ties them together into a personal CLI application you can navigate without remembering file names or paths. Type `menu.sh`, press a number, and your tool runs. This is the capstone build of B-004 — and the foundation of the automation mindset you'll take into every future project.
+>
+> Your deliverable is: `menu.sh` — an interactive numbered menu for all your personal scripts.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `menu.sh` → numbered list appears → press `1` → backup runs → menu reappears.
+- **BUILD:** Write menu with `case` statement. Source `colors.sh`. Test each option.
+- **VERIFY:** Add a 6th option (a script from a future chapter). Menu expands cleanly.
+
+---
+
+> 🎓 **All 10 DFY lessons complete.** You've built: a reusable template, an automated backup system, color output, dependency checks, config parsing, a progress bar, retry logic, output logging, environment switching, and a personal script menu. That's a complete personal automation toolkit.
+>
+> **Next:** Claim your `CLL-L0-B004-ScriptBuilder` credential, then continue to B-005.
+
+---
+
 ## Further Reading
 
 - 📄 [`docs/B-003-the-file-that-remembered-everything.md`](B-003-the-file-that-remembered-everything.md) — Permissions used in this script

@@ -404,6 +404,594 @@ du -sh ~/my-first-project
 
 ---
 
+## Chapter 12: Done-For-You Lessons
+
+> *"You don't just learn the terminal here. You leave with 10 working tools — each one built while you read, listened, or watched."*
+
+Each DFY lesson in this chapter is presented in three integrated formats. Use whichever matches how you're consuming this book right now — or use all three for deep retention.
+
+---
+
+### 🏷️ How to Read This Chapter
+
+| Icon | Format | What it is |
+|---|---|---|
+| 📘 | **Ebook** | Annotated figure, diagram, or code block to read and reference |
+| 🎧 | **Audiobook** | Word-for-word narrator script — pause and build, then resume |
+| 🎬 | **Video** | SHOW→BUILD→VERIFY scene description — follow along in your terminal |
+
+---
+
+### DFY Lesson 1 — Your First Terminal Alias File
+
+**What you'll have:** `~/.bash_aliases` — 10 personal shortcuts that save keystrokes for the rest of your life.
+**Time to build:** 10 minutes.
+
+---
+
+📘 **Ebook Figure — Annotated Code Block**
+
+```bash
+# ~/.bash_aliases — your personal terminal remote control
+# Every line here is a shortcut you'll use hundreds of times
+
+alias ll='ls -lah --color=auto'    # ← human-readable sizes + hidden files + colors
+alias gs='git status'              # ← 9 characters instead of 10
+alias ..='cd ..'                   # ← go up one directory
+alias ...='cd ../..'               # ← go up two directories
+alias grep='grep --color=auto'     # ← highlights every match
+alias mkdir='mkdir -pv'            # ← creates parent dirs automatically + confirms
+alias df='df -h'                   # ← human-readable disk usage
+alias du='du -sh'                  # ← summarized human-readable size
+alias cp='cp -i'                   # ← asks before overwriting
+alias mv='mv -i'                   # ← asks before overwriting
+```
+
+**To activate:** add `source ~/.bash_aliases` to your `~/.bashrc`, then run `source ~/.bashrc`.
+
+*Figure 12.1 — An alias is a time contract: you invest 1 minute, and save keystrokes every day forever.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 1: Your First Terminal Alias File.
+>
+> Imagine having a personal remote control for your terminal — every button does exactly what you need, nothing more. An alias file is that remote control. Every line you add saves keystrokes for the rest of your programming life.
+>
+> Your deliverable is: `~/.bash_aliases` with 10 shortcuts that match how you work.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** Terminal split — left shows typing `git status`, right shows typing `gs`. Right wins in half the keystrokes.
+- **BUILD (15s–8m):** `nano ~/.bash_aliases`. Add each alias one by one with inline explanation. `source ~/.bashrc`. Watch activation.
+- **VERIFY (8m–9m):** Run `ll`, `gs`, `..` — each works. `alias` command lists all 10 in the session.
+
+---
+
+### DFY Lesson 2 — Terminal Welcome Screen Script
+
+**What you'll have:** `motd.sh` — a login dashboard that shows system state the moment your terminal opens.
+**Time to build:** 15 minutes.
+
+---
+
+📘 **Ebook Figure — Data Flow Map**
+
+```
+Login event → /etc/profile → ~/.bashrc → source ~/motd.sh
+                                                 ↓
+┌─────────────────────────────────────────────────────┐
+│  🤖  lippytmai        ║  Host:   archbox             │
+│  ─────────────────    ║  Kernel: 6.9.3-arch1-1       │
+│  OS:     Arch Linux   ║  CPUs:   8 cores             │
+│  Uptime: 3d 4h 12m    ║  RAM:    3.2G / 16G free     │
+│  Load:   0.42         ║  Disk:   47G / 200G used     │
+└─────────────────────────────────────────────────────┘
+```
+
+*Figure 12.2 — `motd.sh` turns every login into a situational-awareness moment. No commands needed.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 2: Terminal Welcome Screen Script.
+>
+> Imagine your terminal greeting you like a cockpit dashboard — the moment you open it, you see your machine's state without running a single command. hostname, OS, uptime, CPU load, RAM free, disk used — all formatted in a box.
+>
+> Your deliverable is: `motd.sh` — a login dashboard that auto-runs every time you open a terminal.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** A new terminal tab opens — the dashboard appears instantly, zero commands typed.
+- **BUILD (15s–12m):** Write `motd.sh` step by step: `hostname`, `uname -r`, `nproc`, `free -h`, `uptime`, box-drawing with `printf`. Add `source ~/motd.sh` to `~/.bashrc`.
+- **VERIFY (12m–13m):** Close terminal. Open new tab. Dashboard appears automatically.
+
+---
+
+### DFY Lesson 3 — Font and Color Profile for Your Terminal
+
+**What you'll have:** A saved terminal profile — JetBrains Mono, 256-color scheme, Powerline symbols.
+**Time to build:** 10 minutes.
+
+---
+
+📘 **Ebook Figure — Before/After Split**
+
+```
+BEFORE (system default):          AFTER (OMARCHY terminal profile):
+──────────────────────────────    ──────────────────────────────────
+Font:    Monospace 11pt           Font:    JetBrains Mono 16pt
+Colors:  8-color palette          Colors:  256-color Catppuccin Mocha
+Ligatures: none                   Ligatures: → ≠ ≥ ← rendered as symbols
+PS1:     $ (plain)                PS1:     lippytm@arch:~/projects (main) $
+Cursor:  blinking block           Cursor:  blinking bar
+```
+
+*Figure 12.3 — Your terminal is your studio. A professional setup reduces eye strain and makes errors visually distinct.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 3: Font and Color Profile for Your Terminal.
+>
+> Think of spending 8 hours a day in a room. Would you choose one with harsh lighting and an uncomfortable chair, or one designed for focus and comfort? Your terminal is that room. A proper font and color profile reduces fatigue, makes code errors visually distinct, and makes your workspace one you want to return to.
+>
+> Your deliverable is: a terminal profile export — saved and importable to any machine.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** Side-by-side: default terminal vs OMARCHY profile. The difference is immediate and striking.
+- **BUILD (15s–8m):** Open terminal preferences. Set font to JetBrains Mono 16pt. Import Catppuccin color scheme. Export profile as JSON.
+- **VERIFY (8m–9m):** Reopen terminal. Run `ls` — colors appear. Open Neovim — ligatures render.
+
+---
+
+### DFY Lesson 4 — Shell History Supercharger
+
+**What you'll have:** Six lines in `~/.bashrc` that make your shell history unlimited, timestamped, and always synced.
+**Time to build:** 10 minutes.
+
+---
+
+📘 **Ebook Figure — Annotated Code Block**
+
+```bash
+# ~/.bashrc — shell history supercharger block
+# Add these 6 lines together as one block
+
+export HISTSIZE=100000            # ← keep 100k commands in memory
+export HISTFILESIZE=200000        # ← keep 200k commands on disk
+export HISTCONTROL=ignoredups     # ← skip consecutive duplicate commands
+export HISTTIMEFORMAT="%F %T "    # ← prefix every entry: 2026-08-28 14:23:01
+shopt -s histappend               # ← append to history file, never overwrite
+
+# Sync history across all open terminals in real time
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+```
+
+```bash
+# After sourcing, search with:
+Ctrl+R          # reverse-search — type any part of a past command
+history | grep docker   # grep your entire history for 'docker' commands
+```
+
+*Figure 12.4 — Your history is a logbook. These 6 lines make it searchable back to day one.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 4: Shell History Supercharger.
+>
+> Imagine being able to recall any command you've ever run — with the exact date and time it ran — even after reboots, across all open terminal windows, going back years. Your shell history is the most underused productivity tool in Linux. Six lines transform it from a 500-line buffer into a lifelong searchable logbook.
+>
+> Your deliverable is: six lines in `~/.bashrc` — unlimited, timestamped, synced history.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** `Ctrl+R` → type "mkdir" → a command from last week appears instantly with its timestamp.
+- **BUILD (15s–8m):** Add each of the 6 lines to `~/.bashrc`. Explain what each export does. Run `source ~/.bashrc`.
+- **VERIFY (8m–9m):** Run 3 new commands. Open a second terminal tab. `history` shows all 3 with timestamps — synced across both tabs.
+
+---
+
+### DFY Lesson 5 — Terminal Multiplexer Starter Config
+
+**What you'll have:** `~/.tmux.conf` — 6 settings that make tmux immediately comfortable with mouse support, better prefix, and true color.
+**Time to build:** 15 minutes.
+
+---
+
+📘 **Ebook Figure — Architecture Map**
+
+```
+tmux session: "dev"
+┌──────────────────────────────────────────────────────┐
+│ Window 0: editor          │ Window 1: server          │
+│ ┌────────────┬──────────┐ │ ┌──────────────────────┐ │
+│ │  nvim      │ terminal │ │ │  python3 -m uvicorn  │ │
+│ │  main.py   │ $ ls     │ │ │  Ctrl+C to stop      │ │
+│ └────────────┴──────────┘ │ └──────────────────────┘ │
+│   split-pane (Prefix + ")  │   single pane             │
+├──────────────────────────────────────────────────────┤
+│ [dev] 0:editor  1:server  ← status bar at bottom     │
+└──────────────────────────────────────────────────────┘
+  Prefix: Ctrl+a   Detach: d   Reattach: tmux a -t dev
+```
+
+```bash
+# ~/.tmux.conf — the 6 essential settings
+set -g prefix C-a                  # ← change prefix from Ctrl+b to Ctrl+a
+unbind C-b
+bind C-a send-prefix
+set -g mouse on                    # ← click to switch panes, scroll with wheel
+set -g default-terminal "tmux-256color"  # ← true 256-color support
+set -sg escape-time 0              # ← no delay after pressing Escape
+set -g history-limit 50000         # ← 50k lines of scrollback per pane
+set -g status-style 'bg=#1e1e2e'   # ← Catppuccin Mocha status bar
+```
+
+*Figure 12.5 — tmux: multiple terminals in one, sessions that survive disconnects, windows you name.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 5: Terminal Multiplexer Starter Config.
+>
+> Imagine your entire development environment — editor, server, log tail, test runner — all running in named windows you switch between with a keystroke. Now imagine detaching from that environment, closing your laptop, opening it again the next day, reattaching, and finding everything exactly as you left it. That's tmux. This config gives you the 6 settings that make it comfortable from day one.
+>
+> Your deliverable is: `~/.tmux.conf` — 6 settings, mouse on, sane prefix, true color.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** A tmux session with 2 windows and 2 panes — switching between them with `Ctrl+a` + number.
+- **BUILD (15s–12m):** `nano ~/.tmux.conf`. Add each line. Explain prefix change, mouse, color. Reload with `tmux source ~/.tmux.conf`.
+- **VERIFY (12m–13m):** Create a new session. Split a pane. Click to switch (mouse works). Detach. Reattach. Everything persists.
+
+---
+
+### DFY Lesson 6 — Custom PS1 Prompt with Git Branch
+
+**What you'll have:** A PS1 in `~/.bashrc` showing username, host, path, and live git branch in color.
+**Time to build:** 20 minutes.
+
+---
+
+📘 **Ebook Figure — Data Flow Map**
+
+```
+PS1 assembly (left to right):
+
+  \[\e[32m\]\u        → green username
+  \[\e[0m\]@          → reset + @ symbol
+  \[\e[32m\]\h        → green hostname
+  \[\e[0m\]:          → reset + colon
+  \[\e[34m\]\w        → blue working directory
+  \[\e[33m\]$(__git_ps1 " (%s)")  → yellow git branch (if in repo)
+  \[\e[0m\]\$         → reset + $ prompt
+
+Result in a git repo:
+  lippytm@arch:~/projects/encyclopedia (main) $
+  ──────   ────  ───────────────────── ──────
+  user    host       path              branch
+```
+
+*Figure 12.6 — A good prompt is GPS. You always know exactly where you are and which branch you're on.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 6: Custom PS1 Prompt with Git Branch.
+>
+> Imagine a GPS that always shows your location — not on a map, but in your filesystem. Your username, machine, current directory, and active git branch, visible at every single prompt, without running a single command. When you switch branches, the prompt updates instantly. This is one of those small changes that compounds every single day.
+>
+> Your deliverable is: a color PS1 in `~/.bashrc` — user, host, path, and live git branch.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** Type `cd ~/projects && git checkout main` — prompt shows branch. `git checkout -b feature/test` — prompt updates live.
+- **BUILD (15s–16m):** Build PS1 component by component: color codes, `\u`, `\h`, `\w`, `__git_ps1`. Source and test each addition.
+- **VERIFY (16m–17m):** Navigate 3 directories. Switch 2 branches. Prompt shows each correctly.
+
+---
+
+### DFY Lesson 7 — Directory Jumping Script
+
+**What you'll have:** `z.sh` configured in `~/.bashrc` — fuzzy frecency-based directory jumping.
+**Time to build:** 10 minutes.
+
+---
+
+📘 **Ebook Figure — Before/After Split**
+
+```
+WITHOUT z.sh:                          WITH z.sh (after 1 day of use):
+──────────────────────────────────     ──────────────────────────────────
+cd ~/projects/acss/encyclopedia/docs   z docs
+cd ~/work/lippytm/repositories/enc     z enc
+cd ../../../../../../home/lippytm      z ~
+
+  ↑ type the full path every time        ↑ type 2–5 chars and jump
+
+z learns from your usage:
+  Most visited → highest weight → wins fuzzy match
+  "enc" matches ~/projects/encyclopedia/docs (most visited)
+```
+
+*Figure 12.7 — `z` uses frecency (frequency × recency). The more you visit a directory, the shorter the jump command.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 7: Directory Jumping Script.
+>
+> Imagine typing `z enc` from anywhere on your filesystem and landing directly in your encyclopedia project. The `z` tool learns which directories you visit most. After one day of normal use, you'll almost never type a full path again. It's one of those tools that, once installed, you can't imagine working without.
+>
+> Your deliverable is: `z.sh` sourced in `~/.bashrc` — fuzzy directory jumping from anywhere.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** From `/tmp`, type `z enc` — instantly in the encyclopedia folder. No path typed.
+- **BUILD (15s–8m):** Download `z.sh` to `~/.local/bin/`. Add `source ~/.local/bin/z.sh` to `~/.bashrc`. Source. Brief explanation of the frecency algorithm.
+- **VERIFY (8m–9m):** Visit 3 directories normally. Then jump back to each using 2–3 characters with `z`. All 3 work.
+
+---
+
+### DFY Lesson 8 — Man Page to Markdown Exporter
+
+**What you'll have:** `man2md.sh` — converts any man page to a clean `.md` file with one command.
+**Time to build:** 15 minutes.
+
+---
+
+📘 **Ebook Figure — Flow Diagram**
+
+```
+man2md.sh ls
+
+  man ls                  → raw troff/groff format (unreadable)
+      ↓
+  col -bx                 → strips backspace control characters
+      ↓
+  sed 's/^[A-Z].*$/## &/' → converts HEADINGS to Markdown ##
+      ↓
+  awk for code blocks     → wraps indented blocks in ``` fences
+      ↓
+  ~/notes/man/ls.md       ← clean Markdown, searchable forever
+
+$ man2md.sh grep   → ~/notes/man/grep.md
+$ man2md.sh find   → ~/notes/man/find.md
+$ man2md.sh bash   → ~/notes/man/bash.md  (large — takes 2 seconds)
+```
+
+*Figure 12.8 — Man pages contain decades of knowledge. This script makes that knowledge searchable in your notes.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 8: Man Page to Markdown Exporter.
+>
+> Every command you'll ever learn has a man page — a detailed reference written by the people who built the tool. The problem is man pages are hard to search, hard to annotate, and disappear when your terminal closes. This script converts any man page to clean Markdown, saved permanently in your notes folder, searchable from anywhere.
+>
+> Your deliverable is: `man2md.sh` — converts any man page to a `.md` file with one command.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** `man2md.sh ls` runs. `cat ~/notes/man/ls.md` — clean, formatted, readable.
+- **BUILD (15s–12m):** Write script: `man $1 | col -bx | sed '...' > ~/notes/man/$1.md`. Create `~/notes/man/` directory.
+- **VERIFY (12m–13m):** Convert `man grep` → `grep.md`. Open in browser-rendered Markdown. All headings and code blocks correct.
+
+---
+
+### DFY Lesson 9 — Terminal Session Logger
+
+**What you'll have:** `tlog.sh` — every command auto-logged with timestamp and directory to `~/logs/YYYY-MM-DD.log`.
+**Time to build:** 20 minutes.
+
+---
+
+📘 **Ebook Figure — Architecture Map**
+
+```
+~/.bashrc
+  └── PROMPT_COMMAND="log_cmd; $PROMPT_COMMAND"
+        ↓
+  log_cmd() {
+    echo "[$(date +%F\ %T)] [$(pwd)] $BASH_COMMAND" >> ~/logs/$(date +%F).log
+  }
+        ↓
+  ~/logs/
+  ├── 2026-08-28.log
+  │     [2026-08-28 14:23:01] [~/projects/enc] git status
+  │     [2026-08-28 14:23:08] [~/projects/enc] cat README.md
+  │     [2026-08-28 14:24:45] [~/tmp] python3 hello.py
+  ├── 2026-08-27.log
+  └── 2026-08-26.log
+
+Search: grep "python" ~/logs/*.log     ← all python commands across all days
+```
+
+*Figure 12.9 — Every command, every directory, every timestamp — your complete terminal diary, automatic.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 9: Terminal Session Logger.
+>
+> Imagine being able to answer 'What did I actually do last Tuesday at 3 PM?' by running one grep command. Every terminal action you took — command, directory, exact time — logged automatically, without you doing anything different. A month later, that log is an audit trail, a debugging reference, and a record of how you actually spend your time.
+>
+> Your deliverable is: `tlog.sh` — every terminal command auto-logged to dated files in `~/logs/`.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** `grep "git" ~/logs/$(date +%F).log` — every git command from today listed with timestamps.
+- **BUILD (15s–16m):** Write `log_cmd()` function, `PROMPT_COMMAND` hook, `mkdir -p ~/logs`, add to `~/.bashrc`.
+- **VERIFY (16m–17m):** Run 5 commands. `cat ~/logs/$(date +%F).log` — all 5 appear with timestamps and working directories.
+
+---
+
+### DFY Lesson 10 — "First Day on a New Machine" Checklist
+
+**What you'll have:** A personal 20-item checklist — every new machine is production-ready before you write a line of code.
+**Time to build:** 5 minutes.
+
+---
+
+📘 **Ebook Figure — Checklist Visual**
+
+```
+B-001 New Machine Readiness Checklist
+════════════════════════════════════════════════
+
+SHELL & TERMINAL
+  ✅  Default shell is bash/zsh (not sh)
+  ✅  ~/.bashrc sourced and working
+  ✅  Aliases file created and active
+  ✅  Terminal color profile installed
+  ✅  PS1 prompt shows path and git branch
+
+TOOLS
+  ✅  git installed: git --version
+  ✅  git name + email configured
+  ✅  nano/nvim installed and launches
+  ✅  tmux installed and config present
+  ✅  z.sh (directory jumping) active
+
+NETWORK & SECURITY
+  ✅  ping 8.8.8.8 succeeds
+  ✅  DNS resolves: nslookup github.com
+  ✅  SSH key generated: ls ~/.ssh/id_ed25519.pub
+  ✅  SSH key added to GitHub
+
+SYSTEM
+  ✅  Clock correct: date
+  ✅  Timezone set: timedatectl
+  ✅  Package manager updated
+  ✅  Dotfiles cloned and deployed
+
+HISTORY & LOGGING
+  ✅  HISTSIZE=100000 in .bashrc
+  ✅  ~/logs/ directory exists
+
+══════════════════════════════════════════════
+Any ❌ = machine is not ready for real work.
+Fix it before you write a single line of code.
+```
+
+*Figure 12.10 — A checklist takes 5 minutes. A missing tool discovered mid-project costs 2 hours.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 10: First Day on a New Machine Checklist.
+>
+> Pilots don't trust their memory before takeoff — they run a checklist. Every. Single. Time. Because the cost of missing one item is too high. Your development machine is the same. This 20-item checklist verifies everything you've built in this chapter is working before you move on to any serious project. Five minutes now prevents two hours of mystery errors later.
+>
+> Your deliverable is: your personal new-machine checklist — 20 items, all green, before you begin.
+>
+> Time to build: 5 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene — SHOW→BUILD→VERIFY**
+
+- **SHOW (0–15s):** Scrolling through the checklist on a freshly configured machine — every item turns green as it's verified.
+- **BUILD (15s–4m):** Copy the checklist template. Personalize 5 items for your specific tools and workflow.
+- **VERIFY (4m–5m):** Run through it on a test machine. Two items fail — diagnose and fix them on-screen.
+
+---
+
+> 🎓 **All 10 DFY lessons complete.** Every artifact above is real, deployable, and yours. Your terminal is no longer a blank cursor — it's a configured, logged, personalized workstation.
+>
+> **Next:** Claim your `CLL-L0-B001-TerminalApprentice` credential, then continue to B-002.
+
+---
+
 ## Appendix A: Essential Commands Reference Card
 
 ```bash

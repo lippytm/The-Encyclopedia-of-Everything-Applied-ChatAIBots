@@ -487,6 +487,716 @@ Each layer isolates and controls the layer above it. This is the foundation ever
 
 ---
 
+## Chapter 12: Done-For-You Lessons
+
+> *"The best tool setup is the one you never have to think about again — because it just works, on every machine, every time."*
+
+Ten builds that turn package management from a source of confusion into a superpower you own and control.
+
+| Icon | Format | What it is |
+|---|---|---|
+| 📘 | **Ebook** | Annotated command or architecture diagram |
+| 🎧 | **Audiobook** | Narrator script — pause and build |
+| 🎬 | **Video** | SHOW→BUILD→VERIFY terminal scene |
+
+---
+
+### DFY Lesson 1 — The pacman Cheat Card
+
+**What you'll have:** A personal `pacman` quick-reference card covering install, remove, search, update, and audit.
+**Time:** 10 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```
+pacman Quick Reference (Arch Linux / OMARCHY)
+═══════════════════════════════════════════════
+
+INSTALL
+  pacman -S package          → install a package
+  pacman -S pkg1 pkg2        → install multiple
+  pacman -U file.pkg.tar.zst → install from local file
+
+REMOVE
+  pacman -R package          → remove (keep deps)
+  pacman -Rs package         → remove + unused deps
+  pacman -Rns package        → remove + deps + config files
+
+UPDATE
+  pacman -Syu                → sync + update all packages
+  pacman -Sy                 → sync database only
+  pacman -Su                 → update (database pre-synced)
+
+SEARCH & INFO
+  pacman -Ss keyword         → search repos
+  pacman -Qs keyword         → search installed
+  pacman -Si package         → info from repo
+  pacman -Qi package         → info from installed
+  pacman -Ql package         → list installed files
+
+AUDIT
+  pacman -Qe                 → explicitly installed packages
+  pacman -Qdt                → orphaned dependencies
+  pacman -Qo /path/to/file   → which package owns this file?
+```
+
+*Figure 12.1 — pacman is one of the most powerful package managers ever built. This card covers everything you'll need daily.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 1: The pacman Cheat Card.
+>
+> `pacman -Syu` keeps your entire system up to date. `pacman -Rs` removes a package AND everything it pulled in. `pacman -Qo` tells you which package owns any file on your system. These aren't obscure flags — they're the 20 commands that cover everything you'll do with your package manager for the next ten years. Build this card, keep it close, refer to it until they're automatic.
+>
+> Your deliverable is: a personal `pacman` reference card — install, remove, search, update, audit.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `pacman -Qo /usr/bin/git` → tells you exactly which package owns `git`. Instant.
+- **BUILD:** Run each command family against a real package. Annotate what each does.
+- **VERIFY:** `pacman -Qdt` → list orphaned packages. `pacman -Qe | wc -l` → count explicit installs.
+
+---
+
+### DFY Lesson 2 — Python venv Workflow Cheat Card
+
+**What you'll have:** A printed or saved reference for the complete Python virtual environment lifecycle.
+**Time:** 10 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```
+Python Virtual Environment Lifecycle
+══════════════════════════════════════
+
+CREATE
+  python3 -m venv venv           → create in ./venv/
+  python3 -m venv .venv          → hidden venv (preferred for projects)
+  python3 -m venv --upgrade venv → upgrade in-place
+
+ACTIVATE / DEACTIVATE
+  source venv/bin/activate       → Linux/macOS
+  deactivate                     → exit venv
+
+INSPECT
+  which python3                  → should show venv path when active
+  python3 --version              → confirm Python version
+  pip list                       → all installed packages
+  pip show requests              → info for one package
+
+INSTALL / MANAGE
+  pip install requests           → install latest
+  pip install requests==2.31.0   → install specific version
+  pip install -r requirements.txt → install from file
+  pip freeze > requirements.txt  → export all installed versions
+  pip uninstall requests         → uninstall
+
+BEST PRACTICES
+  ✅  One venv per project
+  ✅  Add venv/ and .venv/ to .gitignore
+  ✅  Always pip freeze > requirements.txt before committing
+  ❌  Never pip install into the system Python
+```
+
+*Figure 12.2 — A virtual environment is a bubble: everything inside stays inside, nothing leaks out.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 2: Python venv Workflow Cheat Card.
+>
+> The rule is simple: every Python project gets its own virtual environment, and you never install packages into the system Python. This card covers the complete lifecycle — create, activate, install, freeze, deactivate — in one reference you can print, pin to your wall, and refer to until the workflow is automatic. After this lesson, dependency conflicts stop being your problem.
+>
+> Your deliverable is: a Python venv lifecycle reference card — the complete workflow in one place.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Two projects with conflicting `requests` versions — each in its own venv — both run without conflict.
+- **BUILD:** Create venv. Activate. Install package. Freeze to requirements.txt. Deactivate.
+- **VERIFY:** `which python3` outside venv → system Python. Inside venv → venv Python.
+
+---
+
+### DFY Lesson 3 — System Package Audit Script
+
+**What you'll have:** `pkg-audit.sh` — shows all explicitly installed packages, orphans, and package age.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# pkg-audit.sh — system package health report
+echo "=== PACKAGE AUDIT REPORT — $(date +%F) ==="
+echo ""
+echo "--- Explicitly Installed ---"
+pacman -Qe | wc -l
+echo "  packages explicitly installed"
+echo ""
+echo "--- Orphaned Dependencies (safe to remove) ---"
+pacman -Qdt 2>/dev/null || echo "  None. Clean."
+echo ""
+echo "--- Largest Packages ---"
+pacman -Qi $(pacman -Qq) 2>/dev/null \
+  | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' \
+  | sort -rh | head -10
+echo ""
+echo "--- Recently Installed (last 10) ---"
+grep "installed" /var/log/pacman.log | tail -10
+```
+
+*Figure 12.3 — Regular package audits keep your system lean, intentional, and free of forgotten dependencies.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 3: System Package Audit Script.
+>
+> Over time, systems accumulate packages: orphaned dependencies from software you removed, giant packages you forgot were installed, experimental tools you never cleaned up. This audit script gives you a full picture in one run — how many explicit installs, which packages are orphaned, which are the largest, and what was installed recently. Run it monthly as part of system maintenance.
+>
+> Your deliverable is: `pkg-audit.sh` — a complete system package health report.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `pkg-audit.sh` — 3 orphaned packages identified. Remove them. Re-run — clean.
+- **BUILD:** Write script section by section. Test each `pacman` command standalone.
+- **VERIFY:** Install a test package with a dependency. Uninstall it. Re-run audit — orphan appears.
+
+---
+
+### DFY Lesson 4 — AUR Helper Setup (yay)
+
+**What you'll have:** `yay` installed and configured — access to 85,000+ community packages with one command.
+**Time:** 20 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+# Install yay (Arch User Repository helper)
+# Step 1: Install dependencies
+sudo pacman -S --needed base-devel git
+
+# Step 2: Clone yay
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+cd /tmp/yay
+
+# Step 3: Build and install
+makepkg -si
+
+# Step 4: Verify
+yay --version
+
+# Usage (same as pacman + AUR):
+yay -S google-chrome         → AUR package
+yay -S code                  → VS Code from AUR
+yay -Syu                     → update pacman + AUR packages together
+yay -Ps                       → print system stats
+```
+
+```
+┌──────────────────────────────────────────────────┐
+│ Official repos (pacman -S):  ~15,000 packages    │
+│ AUR (yay -S):               ~85,000+ packages    │
+│                              ──────────────────  │
+│ Total with yay:             ~100,000+ packages   │
+└──────────────────────────────────────────────────┘
+```
+
+*Figure 12.4 — yay is pacman with the AUR unlocked. Nearly any software you'll ever need is one command away.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 4: AUR Helper Setup (yay).
+>
+> The Arch User Repository contains over 85,000 packages — everything from niche developer tools to popular software like Google Chrome, VS Code, and Slack. yay is the bridge: it combines official repo packages and AUR packages into one unified `pacman`-style interface. After this lesson, software installation on Arch Linux becomes more powerful than any other distribution.
+>
+> Your deliverable is: `yay` installed and confirmed — the full AUR unlocked.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `yay -S google-chrome` → installs from AUR with no manual steps. `google-chrome &` → browser launches.
+- **BUILD:** Clone yay. `makepkg -si`. Verify version. Install one AUR package.
+- **VERIFY:** `yay -Syu` → updates both official and AUR packages in one command.
+
+---
+
+### DFY Lesson 5 — pip Requirements Management Script
+
+**What you'll have:** `pip-sync.sh` — installs, audits, and cleans pip packages for a project in one command.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# pip-sync.sh — install, audit, and clean a Python project's dependencies
+source ~/lib/colors.sh 2>/dev/null || true
+
+PROJECT_DIR="${1:-.}"
+VENV="$PROJECT_DIR/venv"
+REQ="$PROJECT_DIR/requirements.txt"
+
+# Activate or create venv
+if [[ ! -d "$VENV" ]]; then
+  info "Creating venv at $VENV..."
+  python3 -m venv "$VENV"
+fi
+source "$VENV/bin/activate"
+
+# Install from requirements.txt if it exists
+if [[ -f "$REQ" ]]; then
+  info "Installing from $REQ..."
+  pip install -q -r "$REQ"
+  success "All packages installed"
+else
+  warning "No requirements.txt found at $REQ"
+fi
+
+# Audit: check for outdated packages
+info "Checking for outdated packages..."
+pip list --outdated 2>/dev/null | tail -n +3 || echo "  All up to date."
+
+# Freeze current state
+pip freeze > "$REQ"
+success "requirements.txt updated"
+```
+
+*Figure 12.5 — Reproducible environments start with a requirements.txt that's always current and always committed.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 5: pip Requirements Management Script.
+>
+> Running a Python project on a new machine should take one command. This script makes that true: create or activate the venv, install all dependencies from requirements.txt, check for outdated packages, and freeze the current state back to requirements.txt. Run it on every new machine and after every dependency change — and your Python environments stay reproducible.
+>
+> Your deliverable is: `pip-sync.sh` — one-command Python dependency management.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Fresh machine, no venv. `pip-sync.sh ./my-project` → venv created, packages installed, requirements.txt updated.
+- **BUILD:** Write script. Test on a project with requirements.txt. Test on one without.
+- **VERIFY:** `pip list` inside activated venv matches contents of requirements.txt exactly.
+
+---
+
+### DFY Lesson 6 — Installed Packages Snapshot and Diff
+
+**What you'll have:** `pkg-snap.sh` — save a package list snapshot and diff between any two dates.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+# pkg-snap.sh — snapshot and diff installed packages
+SNAP_DIR="$HOME/.pkg-snapshots"
+mkdir -p "$SNAP_DIR"
+
+snapshot() {
+  local snap="$SNAP_DIR/$(date +%Y%m%d).txt"
+  pacman -Qe | sort > "$snap"
+  echo "✅ Snapshot: $snap ($(wc -l < "$snap") packages)"
+}
+
+diff_snaps() {
+  local files=($(ls -t "$SNAP_DIR"/*.txt 2>/dev/null))
+  [[ ${#files[@]} -lt 2 ]] && echo "Need at least 2 snapshots" && return 1
+  echo "=== Changes since ${files[1]} ==="
+  diff "${files[1]}" "${files[0]}" | grep "^[<>]"
+  echo "  < removed  |  > added"
+}
+
+case "${1:-snapshot}" in
+  snapshot) snapshot ;;
+  diff)     diff_snaps ;;
+  *) echo "Usage: pkg-snap.sh [snapshot|diff]" ;;
+esac
+```
+
+*Figure 12.6 — A package diff tells you exactly what changed between any two points in time — invaluable for debugging system behavior changes.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 6: Installed Packages Snapshot and Diff.
+>
+> 'My system was working fine last week, now this stops working' — that's when you need a package diff. This script saves a dated list of all explicitly installed packages. Run the diff and you'll see exactly what was installed or removed between then and now. Run a snapshot weekly and you'll always have a clean baseline to compare against.
+>
+> Your deliverable is: `pkg-snap.sh` — package snapshots with auditable diffs.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Take snapshot. Install a test package. Snapshot again. `pkg-snap.sh diff` → new package shows in diff.
+- **BUILD:** Write script. Test snapshot. Test diff.
+- **VERIFY:** Remove the test package. Third snapshot. Diff shows it's gone.
+
+---
+
+### DFY Lesson 7 — Python Tool Installer Script
+
+**What you'll have:** `install-python-tools.sh` — installs your standard Python toolbox in any new venv.
+**Time:** 10 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# install-python-tools.sh — standard Python developer toolbox
+# Run after creating a new venv to get a consistent dev environment
+
+TOOLS=(
+  "black"          # code formatter
+  "isort"          # import sorter
+  "flake8"         # linter
+  "mypy"           # type checker
+  "pytest"         # test runner
+  "pytest-cov"     # test coverage
+  "ipython"        # interactive Python shell
+  "httpx"          # HTTP client (modern requests)
+  "python-dotenv"  # .env file support
+  "rich"           # beautiful terminal output
+)
+
+echo "Installing Python developer toolbox..."
+pip install -q "${TOOLS[@]}"
+echo "✅ Installed: ${TOOLS[*]}"
+echo ""
+echo "Versions:"
+for tool in black isort flake8 mypy pytest ipython; do
+  version=$($tool --version 2>&1 | head -1)
+  echo "  $tool: $version"
+done
+```
+
+*Figure 12.7 — A consistent Python toolbox means every project starts with the same quality guardrails. black, flake8, mypy, pytest — these are the non-negotiables.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 7: Python Tool Installer Script.
+>
+> Every Python developer should have a standard toolbox: a formatter, a linter, a type checker, a test runner. This script installs all 10 of them into any venv in one command. When you start a new project, you run `install-python-tools.sh` right after creating the venv. Code quality infrastructure, installed before you write your first line of code.
+>
+> Your deliverable is: `install-python-tools.sh` — your complete Python toolbox in one command.
+>
+> Time to build: 10 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Fresh venv. Run script. All 10 tools installed. `black --version` — confirmed.
+- **BUILD:** Write script. Add your preferred tools. Test in a fresh venv.
+- **VERIFY:** `pip list` shows all 10. Each tool's `--version` responds correctly.
+
+---
+
+### DFY Lesson 8 — Dotfiles Installer
+
+**What you'll have:** `install-dotfiles.sh` — clones your dotfiles repo and creates all symlinks in one command.
+**Time:** 20 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# install-dotfiles.sh — clone dotfiles and link them to home directory
+DOTFILES_REPO="https://github.com/lippytm/dotfiles.git"
+DOTFILES_DIR="$HOME/.dotfiles"
+
+# Clone
+if [[ ! -d "$DOTFILES_DIR" ]]; then
+  git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+  echo "✅ Cloned to $DOTFILES_DIR"
+fi
+
+# Link
+declare -A LINKS=(
+  ["$DOTFILES_DIR/.bashrc"]="$HOME/.bashrc"
+  ["$DOTFILES_DIR/.tmux.conf"]="$HOME/.tmux.conf"
+  ["$DOTFILES_DIR/.gitconfig"]="$HOME/.gitconfig"
+  ["$DOTFILES_DIR/nvim/"]="$HOME/.config/nvim"
+)
+
+for source in "${!LINKS[@]}"; do
+  target="${LINKS[$source]}"
+  ln -sfv "$source" "$target"
+done
+echo "✅ All dotfiles linked"
+```
+
+```
+New machine setup becomes:
+  1. pacman -S git bash
+  2. ./install-dotfiles.sh
+  3. Done — your exact environment, everywhere.
+```
+
+*Figure 12.8 — A dotfiles installer is a time machine: your exact environment on any machine in under 2 minutes.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 8: Dotfiles Installer.
+>
+> Setting up a new machine manually is a half-day project. With a dotfiles installer, it's two minutes. Clone the repo, run the script — every config file is in place, every alias is active, every tool is configured exactly the way you like it. This is the goal of everything you've built in B-001 through B-004: a single command that makes any machine yours.
+>
+> Your deliverable is: `install-dotfiles.sh` — your entire environment installed on any machine in 2 minutes.
+>
+> Time to build: 20 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Fresh machine. `./install-dotfiles.sh` runs. Terminal opens — all aliases, colors, and config are there.
+- **BUILD:** Create a `~/dotfiles/` directory. Move `.bashrc`, `.tmux.conf`, `.gitconfig` into it. Write installer. Create symlinks.
+- **VERIFY:** Delete a symlink. Re-run installer — symlink recreated. Config unchanged.
+
+---
+
+### DFY Lesson 9 — System Restore Point Script
+
+**What you'll have:** `restore-point.sh` — saves a full system state snapshot (packages + config) before major changes.
+**Time:** 15 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# restore-point.sh — system state snapshot before major changes
+LABEL="${1:-manual}"
+SNAP_DIR="$HOME/restore-points/$(date +%Y%m%d-%H%M%S)-$LABEL"
+mkdir -p "$SNAP_DIR"
+
+echo "📸 Creating restore point: $SNAP_DIR"
+
+# Package lists
+pacman -Qe > "$SNAP_DIR/packages-explicit.txt"
+pacman -Qm > "$SNAP_DIR/packages-aur.txt" 2>/dev/null || true
+echo "  ✅ Package list saved"
+
+# Key config files
+cp ~/.bashrc   "$SNAP_DIR/bashrc.bak"
+cp ~/.gitconfig "$SNAP_DIR/gitconfig.bak" 2>/dev/null || true
+cp ~/.tmux.conf "$SNAP_DIR/tmux.conf.bak" 2>/dev/null || true
+echo "  ✅ Config files saved"
+
+# System info
+uname -a > "$SNAP_DIR/system-info.txt"
+df -h    > "$SNAP_DIR/disk-usage.txt"
+echo "  ✅ System info saved"
+
+echo "✅ Restore point complete: $SNAP_DIR"
+echo "  Reinstall with: pacman -S - < $SNAP_DIR/packages-explicit.txt"
+```
+
+*Figure 12.9 — A restore point takes 30 seconds. Recovering from a bad system update without one takes hours.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 9: System Restore Point Script.
+>
+> Before every major system update, before installing experimental software, before making any change you're not 100% sure about — run this script. It captures your package list, config files, and system state in a dated snapshot folder. If anything goes wrong, you have a complete record of what the system looked like before. 30 seconds of prevention for hours of recovery.
+>
+> Your deliverable is: `restore-point.sh` — a system state snapshot before any major change.
+>
+> Time to build: 15 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** `restore-point.sh pre-upgrade` → snapshot created. Run `pacman -Syu`. System upgrades.
+- **BUILD:** Write script. Test with a label. Open the snapshot folder — all files present.
+- **VERIFY:** `cat restore-points/*/packages-explicit.txt | wc -l` — count matches current `pacman -Qe | wc -l`.
+
+---
+
+### DFY Lesson 10 — New Machine Setup Playbook
+
+**What you'll have:** `setup-machine.sh` — end-to-end new machine configuration in one idempotent script.
+**Time:** 30 minutes.
+
+---
+
+📘 **Ebook Figure**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+# setup-machine.sh — new machine playbook (idempotent)
+# Run repeatedly — only does work that hasn't been done yet
+source ~/lib/colors.sh 2>/dev/null || true
+
+header "=== lippytmai Machine Setup ==="
+
+# 1. System update
+info "Step 1: System update..."
+sudo pacman -Syu --noconfirm -q
+success "System updated"
+
+# 2. Install core tools
+info "Step 2: Core tools..."
+PACKAGES=(git neovim tmux htop ripgrep fd tree wget curl jq)
+sudo pacman -S --needed --noconfirm "${PACKAGES[@]}" -q
+success "Core tools installed"
+
+# 3. Python setup
+info "Step 3: Python..."
+sudo pacman -S --needed --noconfirm python python-pip -q
+success "Python ready"
+
+# 4. Dotfiles
+info "Step 4: Dotfiles..."
+[[ ! -d "$HOME/.dotfiles" ]] && git clone https://github.com/lippytm/dotfiles.git "$HOME/.dotfiles"
+~/bin/install-dotfiles.sh
+success "Dotfiles linked"
+
+# 5. SSH key
+info "Step 5: SSH key..."
+if [[ ! -f "$HOME/.ssh/id_ed25519.pub" ]]; then
+  ssh-keygen -t ed25519 -C "lippytm@$(hostname)" -f "$HOME/.ssh/id_ed25519" -N ""
+  success "SSH key generated: $(cat "$HOME/.ssh/id_ed25519.pub")"
+  warning "Add above key to GitHub before pushing"
+else
+  success "SSH key exists"
+fi
+
+header "=== Setup Complete ==="
+```
+
+*Figure 12.10 — An idempotent setup script is safe to run repeatedly: it only does what hasn't been done. The mark of professional infrastructure.*
+
+---
+
+🎧 **Audiobook Callout**
+
+> *[CALLOUT TONE]*
+>
+> "Done-For-You Moment. Lesson 10: New Machine Setup Playbook.
+>
+> This is the capstone build of B-005 and the culmination of everything in Phase 1's first five books. A single idempotent script that takes a fresh machine to fully configured — updated, core tools installed, Python ready, dotfiles linked, SSH key generated. Idempotent means safe to run multiple times: it checks what's already done and skips it. This is infrastructure-as-code for your personal workstation.
+>
+> Your deliverable is: `setup-machine.sh` — your complete new machine playbook in one command.
+>
+> Time to build: 30 minutes. Pause here. Build it. Then resume."
+>
+> *[CALLOUT TONE × 2]*
+
+---
+
+🎬 **Video Scene**
+
+- **SHOW:** Fresh Arch Linux VM. `./setup-machine.sh` — all 5 steps run. Machine is production-ready.
+- **BUILD:** Combine all DFY tools from B-001–B-005 into one orchestration script. Make each step idempotent.
+- **VERIFY:** Run script a second time on the same machine — all steps say "already done" or "already installed". Zero errors.
+
+---
+
+> 🎓 **All 10 DFY lessons complete for B-005.** You've built: a `pacman` reference, a venv workflow card, a package auditor, `yay` (AUR access), pip sync automation, package snapshots, a Python toolbox installer, a dotfiles deployer, a restore point system, and a complete new machine setup playbook.
+>
+> **Together, B-001 through B-005 give you 50 real, working tools.** This is Phase 1 of the Earn-while-you-Learn track.
+>
+> **Next:** Claim your `CLL-L0-B005-PackageMaster` credential, then continue to B-006.
+
+---
+
 ## Appendix A: Quick Reference — Python Environment Commands
 
 ```bash
