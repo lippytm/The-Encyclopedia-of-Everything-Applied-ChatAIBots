@@ -1314,6 +1314,353 @@ ssh lippytm@my-server.lippytm.ai "tail -f /var/log/api.log"
 
 ---
 
+
+## Chapter 14: ACSS Explainer Series — Commands That Actually Work
+
+> *"You're not just learning Core CLI Commands. You're building a node in an intelligence network that spans 300 books, 15 platforms, and the entire lippytm.ai ecosystem." — lippytmai*
+
+This chapter contains 10 explainer lessons connecting Commands That Actually Work to the full AI Conglomerate Swarms System (ACSS). Each explainer includes all three formats plus a copilot prompt.
+
+---
+
+### Explainer 1: ACSS Overview
+*intelligence network*
+
+**📘 Ebook Explanation:**
+
+Commands That Actually Work teaches the Core CLI Commands layer that runs beneath all 8 ACSS systems. Cli commands are how every acss system is built, deployed, and debugged — fluency with commands is the foundation of all acss operations.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+ACSS Overview Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to ACSS Overview: Commands That Actually Work teaches the Core CLI Commands layer that runs beneath all 8 ACSS systems..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show ACSS Overview in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to ACSS Overview
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Explain how Core CLI Commands fits the ACSS architecture. What role does B-002 play in the system?"*
+
+---
+### Explainer 2: Hermes Event Routing
+*cross-system message bus*
+
+**📘 Ebook Explanation:**
+
+Hermes routes Core CLI Commands practice events between ACSS components. Every terminal session generates Hermes events.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+Hermes Event Routing Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to Hermes Event Routing: Hermes routes Core CLI Commands practice events between ACSS components. Every terminal session gene..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Hermes Event Routing in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to Hermes Event Routing
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Show the Hermes event schema for a B-002 skill-complete event."*
+
+---
+### Explainer 3: Fabric Knowledge Graph
+*pattern synthesis*
+
+**📘 Ebook Explanation:**
+
+Fabric stores Core CLI Commands concepts as knowledge nodes. Every command you master becomes a connected node in the graph.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+Fabric Knowledge Graph Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to Fabric Knowledge Graph: Fabric stores Core CLI Commands concepts as knowledge nodes. Every command you master becomes a conn..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Fabric Knowledge Graph in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to Fabric Knowledge Graph
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Generate the Fabric node definition for the core concept of B-002. Include 5 relationships."*
+
+---
+### Explainer 4: Clone Engine Identity
+*AI persona system*
+
+**📘 Ebook Explanation:**
+
+lippytmai teaches Commands That Actually Work in Teach mode, using clear analogies and the Earn-while-you-Learn voice.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+Clone Engine Identity Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to Clone Engine Identity: lippytmai teaches Commands That Actually Work in Teach mode, using clear analogies and the Earn-whil..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Clone Engine Identity in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to Clone Engine Identity
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"As lippytmai, explain Core CLI Commands to a complete beginner. Use the B-002 teaching style."*
+
+---
+### Explainer 5: CLL/CCSLL/CBSLL
+*Complete Language Libraries*
+
+**📘 Ebook Explanation:**
+
+`CLL-L0-B002-CommandArchitect` is registered in the Complete Linux Library (CLL). This credential is the foundation of the entire 300-book Linux pathway.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+CLL/CCSLL/CBSLL Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to CLL/CCSLL/CBSLL: `CLL-L0-B002-CommandArchitect` is registered in the Complete Linux Library (CLL). This credential is..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show CLL/CCSLL/CBSLL in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to CLL/CCSLL/CBSLL
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Show where CLL-L0-B002-CommandArchitect fits in the CLL hierarchy and what it unlocks next."*
+
+---
+### Explainer 6: ADA Activation
+*deployment system*
+
+**📘 Ebook Explanation:**
+
+`lippytmai-launch run B-002` activates Commands That Actually Work through the ADA FastAPI backend — quiz, copilot prompts, and credential generation in one command.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+ADA Activation Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to ADA Activation: `lippytmai-launch run B-002` activates Commands That Actually Work through the ADA FastAPI backend —..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show ADA Activation in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to ADA Activation
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Write the ADA activation manifest for B-002. Include endpoints and outputs."*
+
+---
+### Explainer 7: ACVS Video Pipeline
+*video creator*
+
+**📘 Ebook Explanation:**
+
+Every Commands That Actually Work video uses ACVS SHOW→BUILD→VERIFY structure. The terminal recording format was designed for exactly this kind of content.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+ACVS Video Pipeline Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to ACVS Video Pipeline: Every Commands That Actually Work video uses ACVS SHOW→BUILD→VERIFY structure. The terminal recordin..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show ACVS Video Pipeline in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to ACVS Video Pipeline
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Generate the ACVS scene manifest for B-002 Lesson 1."*
+
+---
+### Explainer 8: OMARCHY Workstation
+*Arch Linux standard*
+
+**📘 Ebook Explanation:**
+
+All Commands That Actually Work exercises assume OMARCHY — the Arch Linux workstation with Neovim, tmux, and the full lippytm.ai dev toolchain.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+OMARCHY Workstation Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to OMARCHY Workstation: All Commands That Actually Work exercises assume OMARCHY — the Arch Linux workstation with Neovim, t..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show OMARCHY Workstation in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to OMARCHY Workstation
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"What OMARCHY packages and configs are needed to complete all B-002 exercises?"*
+
+---
+### Explainer 9: Cross-Platform Copilot
+*15-platform deployment*
+
+**📘 Ebook Explanation:**
+
+The Commands That Actually Work AI Copilot deploys across ChatGPT, Gemini, Claude, GitHub, Slack, LinkedIn, and 9 more platforms via the ACSS deployment guide.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+Cross-Platform Copilot Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to Cross-Platform Copilot: The Commands That Actually Work AI Copilot deploys across ChatGPT, Gemini, Claude, GitHub, Slack, Li..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Cross-Platform Copilot in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to Cross-Platform Copilot
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Adapt the B-002 copilot system prompt for a Slack DM teaching context."*
+
+---
+### Explainer 10: Earn-While-You-Learn
+*revenue system*
+
+**📘 Ebook Explanation:**
+
+Completing Commands That Actually Work earns `{cred}`. This credential is proof of Core CLI Commands mastery — deployable on LinkedIn, GitHub, and in the lippytm.ai ecosystem for paid opportunities.
+
+**📘 Connection Map:**
+
+```
+B-002 (Core CLI Commands)
+    ↕
+Earn-While-You-Learn Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Commands That Actually Work connects to Earn-While-You-Learn: Completing Commands That Actually Work earns `{cred}`. This credential is proof of Core CLI Commands..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Earn-While-You-Learn in the ACSS architecture overview
+- **10–35s:** Zoom in where B-002 / Core CLI Commands connects to Earn-While-You-Learn
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-002 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"I just earned CLL-L0-B002-CommandArchitect. Generate my LinkedIn announcement post with the EWYL philosophy."*
+
+---
+
+### Your ACSS Node Is Now Active
+
+Completing B-002 adds a live node to the ACSS knowledge graph.
+**Activate:** `lippytmai-launch run B-002`
+
+---
+
 ## Appendix A: The rm -rf Rule
 
 > *Never run `rm -rf` on a path you typed from memory. Always:*

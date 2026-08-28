@@ -1520,6 +1520,353 @@ pipx uninstall httpie          # completely isolated removal
 
 ---
 
+
+## Chapter 14: ACSS Explainer Series — Installing Things Without Breaking Things
+
+> *"You're not just learning Package Management. You're building a node in an intelligence network that spans 300 books, 15 platforms, and the entire lippytm.ai ecosystem." — lippytmai*
+
+This chapter contains 10 explainer lessons connecting Installing Things Without Breaking Things to the full AI Conglomerate Swarms System (ACSS). Each explainer includes all three formats plus a copilot prompt.
+
+---
+
+### Explainer 1: ACSS Overview
+*intelligence network*
+
+**📘 Ebook Explanation:**
+
+Installing Things Without Breaking Things teaches the Package Management layer that runs beneath all 8 ACSS systems. Package management is how every acss python venv, docker image, and omarchy workstation gets assembled and kept up to date.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+ACSS Overview Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to ACSS Overview: Installing Things Without Breaking Things teaches the Package Management layer that runs beneath all..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show ACSS Overview in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to ACSS Overview
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Explain how Package Management fits the ACSS architecture. What role does B-005 play in the system?"*
+
+---
+### Explainer 2: Hermes Event Routing
+*cross-system message bus*
+
+**📘 Ebook Explanation:**
+
+Hermes routes Package Management practice events between ACSS components. Every terminal session generates Hermes events.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+Hermes Event Routing Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to Hermes Event Routing: Hermes routes Package Management practice events between ACSS components. Every terminal session gen..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Hermes Event Routing in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to Hermes Event Routing
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Show the Hermes event schema for a B-005 skill-complete event."*
+
+---
+### Explainer 3: Fabric Knowledge Graph
+*pattern synthesis*
+
+**📘 Ebook Explanation:**
+
+Fabric stores Package Management concepts as knowledge nodes. Every command you master becomes a connected node in the graph.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+Fabric Knowledge Graph Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to Fabric Knowledge Graph: Fabric stores Package Management concepts as knowledge nodes. Every command you master becomes a con..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Fabric Knowledge Graph in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to Fabric Knowledge Graph
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Generate the Fabric node definition for the core concept of B-005. Include 5 relationships."*
+
+---
+### Explainer 4: Clone Engine Identity
+*AI persona system*
+
+**📘 Ebook Explanation:**
+
+lippytmai teaches Installing Things Without Breaking Things in Teach mode, using clear analogies and the Earn-while-you-Learn voice.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+Clone Engine Identity Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to Clone Engine Identity: lippytmai teaches Installing Things Without Breaking Things in Teach mode, using clear analogies and..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Clone Engine Identity in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to Clone Engine Identity
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"As lippytmai, explain Package Management to a complete beginner. Use the B-005 teaching style."*
+
+---
+### Explainer 5: CLL/CCSLL/CBSLL
+*Complete Language Libraries*
+
+**📘 Ebook Explanation:**
+
+`CLL-L0-B005-PackageManager` is registered in the Complete Linux Library (CLL). This credential is the foundation of the entire 300-book Linux pathway.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+CLL/CCSLL/CBSLL Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to CLL/CCSLL/CBSLL: `CLL-L0-B005-PackageManager` is registered in the Complete Linux Library (CLL). This credential is t..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show CLL/CCSLL/CBSLL in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to CLL/CCSLL/CBSLL
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Show where CLL-L0-B005-PackageManager fits in the CLL hierarchy and what it unlocks next."*
+
+---
+### Explainer 6: ADA Activation
+*deployment system*
+
+**📘 Ebook Explanation:**
+
+`lippytmai-launch run B-005` activates Installing Things Without Breaking Things through the ADA FastAPI backend — quiz, copilot prompts, and credential generation in one command.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+ADA Activation Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to ADA Activation: `lippytmai-launch run B-005` activates Installing Things Without Breaking Things through the ADA Fas..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show ADA Activation in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to ADA Activation
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Write the ADA activation manifest for B-005. Include endpoints and outputs."*
+
+---
+### Explainer 7: ACVS Video Pipeline
+*video creator*
+
+**📘 Ebook Explanation:**
+
+Every Installing Things Without Breaking Things video uses ACVS SHOW→BUILD→VERIFY structure. The terminal recording format was designed for exactly this kind of content.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+ACVS Video Pipeline Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to ACVS Video Pipeline: Every Installing Things Without Breaking Things video uses ACVS SHOW→BUILD→VERIFY structure. The ter..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show ACVS Video Pipeline in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to ACVS Video Pipeline
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Generate the ACVS scene manifest for B-005 Lesson 1."*
+
+---
+### Explainer 8: OMARCHY Workstation
+*Arch Linux standard*
+
+**📘 Ebook Explanation:**
+
+All Installing Things Without Breaking Things exercises assume OMARCHY — the Arch Linux workstation with Neovim, tmux, and the full lippytm.ai dev toolchain.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+OMARCHY Workstation Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to OMARCHY Workstation: All Installing Things Without Breaking Things exercises assume OMARCHY — the Arch Linux workstation ..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show OMARCHY Workstation in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to OMARCHY Workstation
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"What OMARCHY packages and configs are needed to complete all B-005 exercises?"*
+
+---
+### Explainer 9: Cross-Platform Copilot
+*15-platform deployment*
+
+**📘 Ebook Explanation:**
+
+The Installing Things Without Breaking Things AI Copilot deploys across ChatGPT, Gemini, Claude, GitHub, Slack, LinkedIn, and 9 more platforms via the ACSS deployment guide.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+Cross-Platform Copilot Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to Cross-Platform Copilot: The Installing Things Without Breaking Things AI Copilot deploys across ChatGPT, Gemini, Claude, Git..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Cross-Platform Copilot in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to Cross-Platform Copilot
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"Adapt the B-005 copilot system prompt for a Slack DM teaching context."*
+
+---
+### Explainer 10: Earn-While-You-Learn
+*revenue system*
+
+**📘 Ebook Explanation:**
+
+Completing Installing Things Without Breaking Things earns `{cred}`. This credential is proof of Package Management mastery — deployable on LinkedIn, GitHub, and in the lippytm.ai ecosystem for paid opportunities.
+
+**📘 Connection Map:**
+
+```
+B-005 (Package Management)
+    ↕
+Earn-While-You-Learn Layer
+    ↕
+ACSS Ecosystem
+```
+
+**🎧 30-Second Audiobook Callout (lippytmai voice):**
+
+> *"lippytmai here. Installing Things Without Breaking Things connects to Earn-While-You-Learn: Completing Installing Things Without Breaking Things earns `{cred}`. This credential is proof of Pac..."*
+
+**🎬 60-Second Video Walkthrough:**
+
+- **0–10s:** Show Earn-While-You-Learn in the ACSS architecture overview
+- **10–35s:** Zoom in where B-005 / Package Management connects to Earn-While-You-Learn
+- **35–55s:** Live example of the connection in action
+- **55–60s:** CTA to complete B-005 and activate the connection
+
+**🤖 Copilot Prompt:**
+
+> *"I just earned CLL-L0-B005-PackageManager. Generate my LinkedIn announcement post with the EWYL philosophy."*
+
+---
+
+### Your ACSS Node Is Now Active
+
+Completing B-005 adds a live node to the ACSS knowledge graph.
+**Activate:** `lippytmai-launch run B-005`
+
+---
+
 ## Appendix A: Quick Reference — Python Environment Commands
 
 ```bash
