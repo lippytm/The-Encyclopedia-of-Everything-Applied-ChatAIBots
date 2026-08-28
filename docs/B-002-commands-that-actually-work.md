@@ -1680,6 +1680,442 @@ Ready to claim CLL-L0-B002-CommandArchitect and unlock B-003.
 
 ---
 
+---
+
+
+## Appendix D: Quick Quiz & Self-Assessment — Command Architect
+
+> *"A command you can compose is more powerful than a command you can only remember."*
+
+---
+
+### 📘 Ebook Quiz — 20 Questions
+
+**Section A — Concepts**
+
+1. In a pipe `cmd1 | cmd2`, the output of cmd1 becomes the ______________ of cmd2.
+2. Exit code `0` means ______________; any non-zero exit code means ______________.
+3. The `grep -v` flag means: show lines that do ______________ match the pattern.
+4. `sort -u` is equivalent to `sort | ______________`.
+5. `wc -l` counts the number of ______________ in its input.
+
+**Section B — Read the Command**
+
+6. What does `ls /nonexistent 2>/dev/null` do with the error message?
+   > a) Shows it on screen  b) Saves it to a file called /dev/null  c) Silently discards it  d) Sends it to stdout
+
+7. What does `cat file.txt | grep "error" | wc -l` count?
+   > a) Lines in file.txt  b) Lines containing "error"  c) Characters containing "error"  d) Files named "error"
+
+8. What does `command -v htop && htop || echo "htop not installed"` do?
+   > a) Installs htop  b) Runs htop if installed, prints message if not  c) Always runs htop  d) Crashes if htop missing
+
+9. What does `echo $?` print immediately after a successful command?
+   > a) The command output  b) 0  c) 1  d) The command name
+
+10. `awk '{print $2}' file` prints which column?
+    > a) First  b) Second  c) Last  d) All columns
+
+**Section C — Debugging**
+
+11. You run `grep "Error" /var/log/app.log | sort | uniq -c` and get no output. What are two possible explanations?
+    ```
+    1. ___________________________________________
+    2. ___________________________________________
+    ```
+
+12. A pipe chain hangs and never returns output. What is the most likely cause?
+    ```
+    ___________________________________________
+    ```
+
+13. `sort file.txt | uniq` produces duplicates. Why?
+    ```
+    ___________________________________________
+    ```
+
+**Section D — Application**
+
+14. Write a one-liner to count how many unique IP addresses appear in `/var/log/nginx/access.log`:
+    ```
+    ___________________________________________
+    ```
+
+15. Write a pipe chain that shows the 10 most common words in a file called `notes.txt`:
+    ```
+    ___________________________________________
+    ```
+
+16. Which command shows the 5 largest files in the current directory?
+    ```
+    ___________________________________________
+    ```
+
+17. Write a one-liner that checks if a process named `nginx` is running, prints "running" or "not running":
+    ```
+    ___________________________________________
+    ```
+
+**Section E — Build Reflection**
+
+18. Name the DFY artifact from Chapter 12 that saves you the most time composing pipes:
+    ```
+    ___________________________________________
+    ```
+
+19. What is the difference between `>` and `>>`?
+    ```
+    ___________________________________________
+    ```
+
+20. In one sentence, explain why pipe composition is more powerful than writing individual scripts:
+    ```
+    ___________________________________________
+    ```
+
+---
+
+**Scoring:** 18–20 = claim credential · 14–17 = review chapters · < 14 = redo DFY lessons 1–5
+
+<details>
+<summary>Answer Key</summary>
+
+1. stdin
+2. success; failure/error
+3. NOT
+4. `uniq`
+5. lines
+6. c) Silently discards it
+7. b) Lines containing "error"
+8. b) Runs htop if installed, prints message if not
+9. b) 0
+10. b) Second
+11. (1) The file has no lines matching "Error" with capital E — case sensitive; (2) The log file doesn't exist or is empty
+12. The first command is waiting for stdin (e.g., `cat` without a filename)
+13. `uniq` only removes adjacent duplicates — input must be sorted first
+14. `awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -rn | head`
+15. `tr -s ' ' '\n' < notes.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn | head -10`
+16. `du -sh * | sort -rh | head -5`
+17. `pgrep nginx >/dev/null && echo "running" || echo "not running"`
+18. (personal — likely the pipe-chains card from DFY Lesson 3)
+19. `>` overwrites the file; `>>` appends to it
+20. (personal answer — key idea: composability lets you build complex data transformations without writing code)
+
+</details>
+
+---
+
+### 🎧 Audiobook Quiz — 10 Spoken Questions
+
+> "Ten questions about commands and pipes. Pause, think, then resume."
+
+**Q1:** "What is stdin, and how does a pipe connect it to another command?"
+*[5-second pause]*
+> "Stdin is a command's input stream — file descriptor zero. A pipe takes stdout of the left command and feeds it directly to stdin of the right command."
+
+**Q2:** "What does a non-zero exit code tell you about a command?"
+*[5-second pause]*
+> "It failed, or it returned a non-success result. What 'failure' means depends on the command — `grep` returns 1 when no matches are found, not because of an error."
+
+**Q3:** "Name three commands that are almost always used with pipes rather than alone."
+*[5-second pause]*
+> "grep, sort, uniq, wc, awk, head, tail — any filter or counting tool."
+
+**Q4:** "What does `2>/dev/null` do and when would you use it?"
+*[5-second pause]*
+> "It redirects stderr — error messages — to /dev/null, discarding them silently. Use it when you expect some commands to fail and don't want noise in the output."
+
+**Q5:** "What is the difference between `|` and `||`?"
+*[5-second pause]*
+> "Single pipe connects stdout to stdin. Double pipe is a logical OR — the right side runs only if the left side fails with a non-zero exit code."
+
+**Q6:** "How would you test whether a command is available before using it in a script?"
+*[5-second pause]*
+> "`command -v toolname` returns 0 if it exists, non-zero if not — use it in an `if` statement or with `&&`."
+
+**Q7:** "What does `awk '{print $NF}'` print?"
+*[5-second pause]*
+> "The last field of each line — NF is the built-in variable for Number of Fields."
+
+**Q8:** "You need to find lines in a log that contain both 'ERROR' and '404'. Write the pipe."
+*[5-second pause]*
+> "`grep ERROR log.txt | grep 404`"
+
+**Q9:** "What is the DFY tool from this book that gives you a card of your 15 most useful pipes?"
+*[5-second pause]*
+> "The pipe-chains reference card — a file in your dotfiles with categorized one-liners ready to copy."
+
+**Q10:** "What is your credential for this book?"
+*[5-second pause]*
+> "CLL-L0-B002-CommandArchitect. It proves you can compose complex data pipelines from simple UNIX tools."
+
+---
+
+### 🎬 Video Challenges — 5 Terminal Tasks
+
+**Challenge 1:** Count unique error types in a log file using pipes only.
+**Challenge 2:** Find all processes using more than 10% CPU — output only their names and PIDs.
+**Challenge 3:** Write a one-liner that shows you the 5 most recently modified files in `/etc`.
+**Challenge 4:** Build a pipe that extracts all email addresses from a text file.
+**Challenge 5:** Recreate the 15-command reference card from DFY Lesson 1 from memory.
+
+---
+
+
+---
+
+## Appendix E: Glossary & Error Encyclopedia
+
+---
+
+### 📘 Glossary — Command Architect Edition
+
+**awk** — A text-processing language for column-based data. `awk '{print $1}'` prints the first field of each line. *B-002 Ch. 4*
+
+**exit code** — An integer (0–255) returned by every command. `0` = success. Check with `echo $?`. Used to control script flow with `&&`, `||`, and `if`. *B-002 Ch. 3*
+
+**fd (file descriptor)** — An integer representing an open I/O channel. `0` = stdin, `1` = stdout, `2` = stderr. Redirect with `>`, `2>`, `&>`. *B-002 Ch. 5*
+
+**grep** — Global Regular Expression Print. Filters lines matching a pattern. Common flags: `-i` (case-insensitive), `-v` (invert), `-r` (recursive), `-n` (line numbers), `-c` (count). *B-002 Ch. 2*
+
+**head / tail** — Print the first or last N lines of input. `head -20` / `tail -20`. `tail -f` follows a file as it grows. *B-002 Ch. 6*
+
+**pipe** — `|` operator. Connects stdout of one command to stdin of the next. Zero disk I/O — data streams in memory. *B-002 Ch. 1*
+
+**redirect** — Send a command's output to a file or from a file. `>` overwrites, `>>` appends, `<` reads from file, `2>` redirects stderr. *B-002 Ch. 5*
+
+**sed** — Stream Editor. Transforms text line by line. Most common use: `sed 's/old/new/g'` (global substitution). *B-002 Ch. 4*
+
+**sort** — Sorts lines alphabetically or numerically (`-n`), in reverse (`-r`), uniquely (`-u`). Must sort before `uniq`. *B-002 Ch. 7*
+
+**stdin / stdout / stderr** — The three standard streams. stdin=input, stdout=normal output, stderr=error output. Pipes connect stdout to stdin. *B-002 Ch. 5*
+
+**tee** — Splits stdout to both the screen and a file simultaneously. `command | tee file.log`. *B-002 Ch. 8*
+
+**uniq** — Removes adjacent duplicate lines. Must be preceded by `sort`. `-c` adds a count prefix. *B-002 Ch. 7*
+
+**wc** — Word Count. `-l` counts lines, `-w` words, `-c` characters. *B-002 Ch. 6*
+
+**xargs** — Takes lines from stdin and passes them as arguments to another command. Bridges pipes to commands that don't read stdin. *B-002 Ch. 9*
+
+**`&&` / `||`** — Logical AND/OR for command chaining. `cmd1 && cmd2`: run cmd2 only if cmd1 succeeds. `cmd1 || cmd2`: run cmd2 only if cmd1 fails. *B-002 Ch. 3*
+
+
+---
+
+### 📘 Error Encyclopedia — Top 10 Command + Pipe Errors
+
+#### Error 1 — `grep` returns no output (but you expected matches)
+**Why:** Pattern is case-sensitive by default. Use `-i` for case-insensitive matching.
+**Fix:** `grep -i "error" log.txt`
+
+#### Error 2 — `uniq` doesn't remove all duplicates
+**Why:** `uniq` only removes *adjacent* duplicates. Input must be sorted first.
+**Fix:** `sort file.txt | uniq` or `sort -u file.txt`
+
+#### Error 3 — `sort -n` gives wrong order on mixed numbers/text
+**Why:** `-n` treats non-numeric lines as 0. Use `-V` for version/natural sort.
+**Fix:** `sort -V file.txt` for mixed alphanumeric; `sort -k2,2n` for specific column
+
+#### Error 4 — Pipe chain hangs (no output, no prompt)
+**Why:** A command in the chain is waiting for stdin (e.g., `cat` without a filename, or `read`).
+**Fix:** Press `Ctrl+C`. Identify which command expects interactive input and provide a file or `/dev/stdin`.
+
+#### Error 5 — `awk '{print $1}'` prints blank lines
+**Why:** The file uses a different field separator (e.g., comma or colon).
+**Fix:** `awk -F',' '{print $1}'` or `awk -F':' '{print $1}'`
+
+#### Error 6 — Redirect `>` destroys file before reading it
+**Why:** The shell creates the output file (truncating it) before running the command.
+**Fix:** Never redirect to the same file you're reading. Use a temp file or `sponge` (from moreutils).
+```bash
+# WRONG — destroys input before sort reads it
+sort file.txt > file.txt
+
+# RIGHT
+sort file.txt > file_sorted.txt && mv file_sorted.txt file.txt
+```
+
+#### Error 7 — `2>/dev/null` hides useful error messages during debugging
+**Why:** Redirecting stderr discards all errors including ones you need to see.
+**Fix:** Only add `2>/dev/null` after the command is working. During debugging, let stderr print.
+
+#### Error 8 — `wc -l` counts one less line than expected
+**Why:** The last line of the file has no trailing newline.
+**Fix:** Add a trailing newline: `echo "" >> file.txt` or use `printf`.
+
+#### Error 9 — `xargs` fails with "argument list too long"
+**Why:** The list of arguments exceeds the OS limit.
+**Fix:** Add `-n` to limit arguments per invocation: `cat list.txt | xargs -n 100 rm`
+
+#### Error 10 — Exit code is always 0 even when the pipeline failed
+**Why:** By default, a pipeline's exit code is the exit code of the *last* command.
+**Fix:** Use `set -o pipefail` in your script, or check `${PIPESTATUS[@]}` to inspect each command's exit code.
+
+
+---
+
+## Appendix F: Instructor & Accessibility Guide
+
+### Teaching This Book
+
+| Format | Duration | Pace |
+|---|---|---|
+| Self-study | 1–2 weeks | 1 chapter per day |
+| Bootcamp | 2–3 days | 3–4 chapters + DFY |
+| Classroom | 4–6 hours | Chs 1–6 in session, 7–11 as homework |
+
+**Session pattern per chapter:** Pre-activation (5 min) → Read/Watch (25 min) → DFY Build (25 min) → Copilot debug (15 min) → Mini-quiz (5 min)
+
+**Assessment rubric for CLL-L0-B002-CommandArchitect:**
+
+| Skill | Not Ready | Ready | Proficient |
+|---|---|---|---|
+| Core concepts | Can't explain them | Can define 80%+ from the glossary | Can teach them to someone else |
+| DFY builds | Did not attempt | Built 3+ artifacts | Built all 10 and can explain each |
+| Error handling | Confused by errors in App. E | Can fix 7 of the 10 listed errors | Can diagnose unfamiliar errors using the same patterns |
+| Capstone project | Did not attempt | Built it with guidance | Built it from scratch, then extended it |
+
+**Accessibility Standards:**
+- Screen reader: all code blocks use fenced Markdown · all ASCII diagrams have text descriptions
+- Color-blind: all status markers use emoji + text (✅/❌/⏳) · no color-only indicators
+- Dyslexia-friendly: max 20-word sentences · numbered steps in groups of ≤ 3 · all terms bolded on first use
+- Low-bandwidth: all exercises work offline in a text terminal · audiobook available as M4B
+
+---
+
+## Appendix G: Your Learning Path
+
+### Where You Are Now
+
+```
+  PHASE 1: Linux Foundations (B-001–B-025)
+  ─────────────────────────────────────────────────────
+  ✅ B-001  Terminal Apprentice
+  ★ B-002  Command Architect          ← YOU ARE HERE
+  ○ B-003  Filesystem Navigator
+  ○ B-004  Script Automator
+  ○ B-005  Package Master
+  ... (20 more books in Phase 1)
+
+  Phase 1 Progress:  ██░░░░░░░░░░░░░░░░░░░░░░░  2/25
+```
+
+### Credential Chain
+```
+  CLL-L0-B001-TerminalApprentice
+       ↓
+  ★ CLL-L0-B002-CommandArchitect   ← CLAIM THIS NOW
+       ↓
+  CLL-L0-B003-FilesystemNavigator
+```
+
+### Cross-Phase Connections
+| Skill from B-002 | Grows into (Phase 2) | Grows into (Phase 3) |
+|---|---|---|
+| Pipes + grep | Python subprocess + filter chains (B-040) | Log parsing for blockchain events (B-075+) |
+| Exit codes + `&&`/`||` | Python try/except + return codes (B-031) | Smart contract revert codes (B-065+) |
+| awk for column parsing | Python csv + pandas (B-045) | Blockchain data extraction (B-073+) |
+
+### 🎧 Audio Path Recap
+> *"You've mastered the building blocks — individual commands. Now you've learned to compose them. A pipeline is not just a shortcut; it is a different way of thinking about data. Every Python script, every data pipeline, every CI/CD check you write from here will use this same mental model: output flows through transformations into results. Next: the filesystem."*
+
+---
+
+
+---
+
+## Appendix H: Real Project Showcase
+
+> *"One great pipe chain is worth a hundred lines of imperative code."*
+
+### Project: `realtime-log-alerter.sh` — Log Pattern Monitor with Desktop Alerts
+
+**Built with:** B-002 skills only (pipes, grep, awk, exit codes, tail -f, loops)
+**Time to build:** 30–60 minutes
+**Who would use this:** Any developer or sysadmin who wants instant notification when errors appear
+**Portfolio value:** Demonstrates pipe composition, process monitoring, and practical system automation
+
+---
+
+#### Complete Code
+
+```bash
+#!/usr/bin/env bash
+# realtime-log-alerter.sh — monitors a log file for patterns and alerts
+# B-002 Capstone · CLL-L0-B002-CommandArchitect
+set -euo pipefail
+
+LOG_FILE="${1:-/var/log/syslog}"
+PATTERN="${2:-ERROR}"
+COOLDOWN=5       # seconds between repeated alerts for same line
+LAST_ALERT=""
+
+usage() {
+    echo "Usage: $0 [log_file] [pattern]"
+    echo "  Default log:     /var/log/syslog"
+    echo "  Default pattern: ERROR"
+    exit 1
+}
+
+alert() {
+    local msg="$1"
+    echo "[ALERT $(date '+%H:%M:%S')] $msg"
+    # Desktop notification if available
+    command -v notify-send >/dev/null && notify-send "Log Alert" "$msg" || true
+}
+
+[[ ! -f "$LOG_FILE" ]] && { echo "File not found: $LOG_FILE"; usage; }
+
+echo "Monitoring: $LOG_FILE"
+echo "Pattern:    $PATTERN"
+echo "Press Ctrl+C to stop."
+echo "───────────────────────────────────"
+
+tail -f "$LOG_FILE" | grep --line-buffered -i "$PATTERN" | while IFS= read -r line; do
+    # Skip duplicate consecutive alerts
+    [[ "$line" == "$LAST_ALERT" ]] && continue
+    LAST_ALERT="$line"
+    
+    # Extract timestamp and message using awk
+    timestamp=$(echo "$line" | awk '{print $1, $2, $3}')
+    message=$(echo "$line"   | awk '{$1=$2=$3=""; print substr($0,4)}')
+    
+    alert "$timestamp — $message"
+    sleep "$COOLDOWN"
+done
+```
+
+#### How to Deploy
+```bash
+chmod +x realtime-log-alerter.sh
+# Watch system log for errors
+./realtime-log-alerter.sh /var/log/syslog ERROR
+# Watch nginx log for 500s
+./realtime-log-alerter.sh /var/log/nginx/access.log " 500 "
+```
+
+#### How to Extend (B-003+)
+1. **B-003:** Add `find /var/log -name "*.log"` to watch multiple log files
+2. **B-004:** Add `--slack-webhook` argument to post alerts to Slack
+3. **B-007:** Add `curl` to POST alerts to a webhook URL
+
+---
+
+#### 🎧 Audiobook
+> *"The capstone for Commands is a real-time log alerter. It uses tail -f to follow the log as it grows, pipes each new line through grep to match your pattern, and uses awk to extract the timestamp. It alerts you on screen and optionally sends a desktop notification. Every command in this book is inside it."*
+
+#### 🎬 Video Build Scene
+1. (0:00) Explain the problem — you can't watch log files manually
+2. (1:30) Write `tail -f | grep` skeleton
+3. (3:00) Add `while IFS= read -r line` loop
+4. (5:00) Add awk timestamp extraction
+5. (7:00) Add alert function + `notify-send` fallback
+6. (8:30) Test against a log file — trigger a real match
+7. (10:00) Credential claim
+
+
+
 ## Further Reading
 
 - 📄 [`docs/B-001-the-terminal-and-the-curious-mind.md`](B-001-the-terminal-and-the-curious-mind.md) — The foundation for this book

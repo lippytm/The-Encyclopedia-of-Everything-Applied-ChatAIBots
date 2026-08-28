@@ -1715,6 +1715,384 @@ Ready to claim CLL-L0-B003-FilesystemNavigator.
 
 ---
 
+---
+
+
+## Appendix D: Quick Quiz & Self-Assessment — Filesystem Navigator
+
+> *"The filesystem is not a drawer — it is a living graph of relationships."*
+
+---
+
+### 📘 Ebook Quiz — 20 Questions
+
+**Section A — Concepts**
+
+1. An inode stores a file's metadata (permissions, size, timestamps) but NOT its ______________.
+2. The command to show inode numbers alongside file listings is `ls ______________`.
+3. A hard link points to the same ______________ as the original file.
+4. A symbolic (soft) link stores the ______________ to the target, not the data.
+5. The sticky bit on a directory (e.g., `/tmp`) means only the file ______________ can delete their own files.
+
+**Section B — Read the Command**
+
+6. What does `ls -lah` show that `ls` alone does not?
+   > a) Only hidden files  b) Long format with human-readable sizes including hidden files  c) File inodes  d) Disk usage
+
+7. What does `chmod 755 script.sh` set?
+   > a) Owner: rwx · Group: r-x · Others: r-x  b) Owner: rwx · Group: rwx · Others: r-x  c) Owner: rw- · Group: r-- · Others: r--  d) All: rwx
+
+8. What does `find /home -name "*.log" -mtime +7` find?
+   > a) Log files modified in the last 7 days  b) Log files NOT modified in the last 7 days  c) Log files larger than 7MB  d) Log files in subdirectory level 7
+
+9. What does `ln -s /etc/nginx/nginx.conf ~/nginx.conf` create?
+   > a) A hard link  b) A copy  c) A symbolic link  d) A backup
+
+10. What does `du -sh /var/log` output?
+    > a) Number of files in /var/log  b) Disk usage of /var/log in human-readable form  c) Last modification time  d) Inode count
+
+**Section C — Debugging**
+
+11. You delete a file but `df` shows disk space wasn't freed. Why?
+    ```
+    ___________________________________________
+    ```
+
+12. A symlink shows in red or with an arrow when you `ls -lah`. What does this indicate?
+    ```
+    ___________________________________________
+    ```
+
+13. `find / -name config.yaml` is very slow. What flag would limit it to your home directory?
+    ```
+    ___________________________________________
+    ```
+
+**Section D — Application**
+
+14. Write a command to find all files in `/etc` that are world-writable (security risk):
+    ```
+    ___________________________________________
+    ```
+
+15. How do you show which process has a file open (preventing deletion)?
+    ```
+    ___________________________________________
+    ```
+
+16. Write a command that takes a snapshot of all files in a directory with their sizes and timestamps:
+    ```
+    ___________________________________________
+    ```
+
+17. What `find` command would locate all files larger than 500MB on the system?
+    ```
+    ___________________________________________
+    ```
+
+**Section E — Build Reflection**
+
+18. Name the DFY artifact that monitors a directory for unexpected file changes.
+    ```
+    ___________________________________________
+    ```
+
+19. What is the difference between a hard link and a symbolic link in one sentence?
+    ```
+    ___________________________________________
+    ```
+
+20. Why does Linux treat everything (files, devices, sockets, pipes) as a file?
+    ```
+    ___________________________________________
+    ```
+
+---
+
+**Scoring:** 18–20 = claim credential · 14–17 = review · < 14 = redo DFY lessons 1–5
+
+<details>
+<summary>Answer Key</summary>
+
+1. filename (the filename is stored in the directory entry, not the inode)
+2. `-i` (e.g., `ls -lai`)
+3. inode (the same data blocks on disk)
+4. path (the symbolic link is a file that contains the target path as text)
+5. owner
+6. b) Long format with human-readable sizes including hidden files
+7. a) Owner: rwx · Group: r-x · Others: r-x
+8. b) Log files NOT modified in the last 7 days (-mtime +7 = more than 7 days ago)
+9. c) A symbolic link
+10. b) Disk usage of /var/log in human-readable form
+11. Another process still has the file open — the inode link count drops to 0 only when all file descriptors are closed
+12. The symlink is broken — its target no longer exists
+13. `find ~ -name config.yaml` (search from home) or add `-maxdepth` to limit depth
+14. `find /etc -perm -o+w -type f`
+15. `lsof /path/to/file` or `fuser /path/to/file`
+16. `ls -lah /path/ > snapshot_$(date +%Y%m%d).txt`
+17. `find / -size +500M -type f 2>/dev/null`
+18. `watchfile.sh` or `dirsnap.sh` from DFY Lesson 8
+19. A hard link is another name pointing to the same inode/data; a symlink is a file containing the path to the target.
+20. Uniform interface — one set of tools (read, write, permissions) works on all resources
+
+</details>
+
+---
+
+### 🎧 Audiobook Quiz
+
+> "Ten questions about the filesystem. Pause at each."
+
+**Q1:** "What is an inode, in plain English?" → "A numbered metadata record that describes a file's properties — everything except its name."
+**Q2:** "Why can a file persist after deletion?" → "Because deletion only removes the directory entry. Data remains until the inode's link count reaches zero and the space is reclaimed."
+**Q3:** "What permission octet represents owner=rwx, group=r-x, others=---?" → "750"
+**Q4:** "When would you use a symbolic link vs a hard link?" → "Symlink: when you need cross-filesystem links or links to directories. Hard link: when you want a true second name for the same data within one filesystem."
+**Q5:** "What does `chmod +x` vs `chmod 755` do differently?" → "`+x` adds execute without changing other bits. `755` sets exact bits: owner rwx, group rx, others rx."
+**Q6:** "Find command flag for files modified in the last 24 hours?" → "`-mtime -1`"
+**Q7:** "What does the sticky bit do on /tmp?" → "Only the file owner (or root) can delete their own files, even if others have write permission on the directory."
+**Q8:** "What shows disk usage per directory?" → "`du -sh */` in the parent directory, or `du -sh /path`"
+**Q9:** "Name the DFY tool that detects unexpected file changes using checksums." → "`fcheck.sh` — hashes all files in a directory and alerts on differences"
+**Q10:** "Your credential?" → "CLL-L0-B003-FilesystemNavigator"
+
+---
+
+### 🎬 Video Challenges
+
+**Challenge 1:** Show inode numbers for all files in `/tmp`. Identify a file with multiple hard links.
+**Challenge 2:** Create a file, set permissions to 640, verify with `ls -lah`, then change it to 755.
+**Challenge 3:** Create a symlink to `/etc/hosts` in your home directory. Verify it works. Then delete the symlink only.
+**Challenge 4:** Find all `.log` files in `/var/log` larger than 10MB. Pipe the result to `du -sh`.
+**Challenge 5:** Recreate `dirsnap.sh` from DFY Lesson 8 from memory — snapshot a directory and compare two snapshots.
+
+---
+
+
+---
+
+## Appendix E: Glossary & Error Encyclopedia
+
+---
+
+### 📘 Glossary — Filesystem Navigator Edition
+
+**block** — The smallest allocatable unit of disk storage (typically 4KB). Files occupy one or more blocks. A 1-byte file uses one full block. *B-003 Ch. 2*
+
+**chmod** — Change file mode bits. Numeric (`chmod 755`) or symbolic (`chmod +x`, `chmod go-w`). *B-003 Ch. 4*
+
+**chown** — Change file owner and/or group. `chown user:group file`. Requires root to change to another user. *B-003 Ch. 4*
+
+**directory** — A special file containing a table of filename→inode mappings. Removing a directory entry reduces the inode's link count by one. *B-003 Ch. 1*
+
+**du** — Disk Usage. Reports how much space a file or directory tree occupies on disk. `-s` summarizes, `-h` makes it human-readable. *B-003 Ch. 8*
+
+**find** — Searches the filesystem for files matching criteria (name, size, age, permissions, type). Returns matching paths. *B-003 Ch. 6*
+
+**FHS** — Filesystem Hierarchy Standard. Defines what belongs in `/bin`, `/etc`, `/home`, `/tmp`, `/var`, `/usr`, etc. *B-003 Ch. 3*
+
+**hard link** — A directory entry pointing to an existing inode. Multiple filenames can share the same inode. All hard links are equal — there is no "original". *B-003 Ch. 5*
+
+**inode** — Index node. A data structure on disk storing a file's metadata: permissions, owner, size, timestamps, and pointers to data blocks. Does NOT store the filename. *B-003 Ch. 2*
+
+**ln** — Create a link. `ln file link` (hard link) or `ln -s target link` (symbolic link). *B-003 Ch. 5*
+
+**lsof** — List Open Files. Shows every file currently open by any process. Essential for debugging "device busy" errors. *B-003 Ch. 9*
+
+**mount** — Attach a filesystem to a mount point in the directory tree. `mount /dev/sdb1 /mnt/backup`. *B-003 Ch. 7*
+
+**permission bits** — Three groups (owner, group, others) × three bits (read=4, write=2, execute=1). Combined: `chmod 755` = `rwxr-xr-x`. *B-003 Ch. 4*
+
+**sticky bit** — A permission bit on directories (shown as `t` in `ls`) that restricts file deletion to the file owner, root, or directory owner. Standard on `/tmp`. *B-003 Ch. 4*
+
+**symlink (symbolic link)** — A file whose content is a path to another file or directory. If the target is deleted, the symlink becomes "broken". Cross-filesystem links are possible. *B-003 Ch. 5*
+
+
+---
+
+### 📘 Error Encyclopedia — Filesystem Errors
+
+#### Error 1 — Disk full but `df` shows space available
+**Why:** Inodes exhausted. You can run out of inodes (maximum number of files) before running out of disk blocks.
+**Fix:** `df -i` to check inode usage. Clear many small files (like log fragments or temp files).
+
+#### Error 2 — `rm` succeeds but disk space not freed
+**Why:** Another process has the file open. The inode persists until all file descriptors are closed.
+**Fix:** `lsof /path/to/file` to find the process. Restart or kill it to release the handle.
+
+#### Error 3 — `Permission denied` despite being the file owner
+**Why:** You might be missing execute permission on a parent directory, or the filesystem is mounted read-only.
+**Fix:** Check the full path with `ls -lah` at each level. Check `mount` for `ro` flag.
+
+#### Error 4 — Broken symlink (shown in red by `ls`)
+**Why:** The symlink target was moved or deleted.
+**Fix:** `ls -la symlink` to see what it points to. Recreate with `ln -sf new_target link_name`.
+
+#### Error 5 — `find` searches too slowly or too broadly
+**Why:** Searching from `/` includes all mounted filesystems, network drives, and /proc.
+**Fix:** Add `-xdev` to stay on one filesystem, or narrow the search root: `find /home/user -name ...`
+
+#### Error 6 — `chmod` doesn't change a file I own
+**Why:** The filesystem is mounted with `noexec`, `nosuid`, or `ro` options, or you're on an NFS mount.
+**Fix:** Check `mount | grep $(df . | tail -1 | awk '{print $1}')` for mount options.
+
+#### Error 7 — Hard link to a directory fails
+**Why:** Hard links to directories are not permitted on most Linux filesystems — they would break `..` traversal.
+**Fix:** Use a symbolic link instead: `ln -s /target/dir linkname`
+
+#### Error 8 — `du` and `df` show different amounts of used space
+**Why:** `df` shows filesystem-level usage including deleted files held open by processes. `du` only counts accessible files.
+**Fix:** `lsof +L1` shows deleted files still held open. Restart the holding process to reclaim space.
+
+#### Error 9 — Wrong file modified — confused two files with similar names
+**Why:** Tab completion selected the wrong file, or you're in the wrong directory.
+**Fix:** Always verify path before destructive operations: `ls -lah` first, then act. Use absolute paths in scripts.
+
+#### Error 10 — `find -exec rm {} \;` deletes wrong files
+**Why:** The pattern was too broad, or the find ran from the wrong directory.
+**Fix:** Always run `find ... -print` first to preview the results before adding `-exec rm`. Or use `-exec echo rm {} \;` as a dry-run.
+
+
+---
+
+## Appendix F: Instructor & Accessibility Guide
+
+### Teaching This Book
+
+| Format | Duration | Pace |
+|---|---|---|
+| Self-study | 1–2 weeks | 1 chapter per day |
+| Bootcamp | 2–3 days | 3–4 chapters + DFY |
+| Classroom | 4–6 hours | Chs 1–6 in session, 7–11 as homework |
+
+**Session pattern per chapter:** Pre-activation (5 min) → Read/Watch (25 min) → DFY Build (25 min) → Copilot debug (15 min) → Mini-quiz (5 min)
+
+**Assessment rubric for CLL-L0-B003-FilesystemNavigator:**
+
+| Skill | Not Ready | Ready | Proficient |
+|---|---|---|---|
+| Core concepts | Can't explain them | Can define 80%+ from the glossary | Can teach them to someone else |
+| DFY builds | Did not attempt | Built 3+ artifacts | Built all 10 and can explain each |
+| Error handling | Confused by errors in App. E | Can fix 7 of the 10 listed errors | Can diagnose unfamiliar errors using the same patterns |
+| Capstone project | Did not attempt | Built it with guidance | Built it from scratch, then extended it |
+
+**Accessibility Standards:**
+- Screen reader: all code blocks use fenced Markdown · all ASCII diagrams have text descriptions
+- Color-blind: all status markers use emoji + text (✅/❌/⏳) · no color-only indicators
+- Dyslexia-friendly: max 20-word sentences · numbered steps in groups of ≤ 3 · all terms bolded on first use
+- Low-bandwidth: all exercises work offline in a text terminal · audiobook available as M4B
+
+---
+
+## Appendix G: Your Learning Path
+
+```
+  PHASE 1:
+  ✅ B-001  Terminal Apprentice
+  ✅ B-002  Command Architect
+  ★ B-003  Filesystem Navigator   ← YOU ARE HERE
+  ○ B-004  Script Automator
+  ○ B-005  Package Master
+  ... (20 more)
+  Phase 1: ███░░░░░░░░░░░░░░░░░░░░░░  3/25
+```
+
+### Credential Chain
+```
+  CLL-L0-B002-CommandArchitect
+       ↓
+  ★ CLL-L0-B003-FilesystemNavigator   ← CLAIM THIS
+       ↓
+  CLL-L0-B004-ScriptAutomator
+```
+
+### Cross-Phase Connections
+| Skill | Phase 2 | Phase 3 |
+|---|---|---|
+| find + permissions | Python `pathlib` + `os.chmod` (B-030) | Smart contract file storage (B-060+) |
+| Inodes + hard links | Python file handles + gc (B-030) | IPFS content addressing (B-075+) |
+| Checksums | Python `hashlib` (B-031) | Blockchain hashing + Merkle trees (B-062+) |
+
+### 🎧 Audio Path Recap
+> *"You now understand what files really are — not names, but inodes. This matters everywhere: in Python when you open file handles, in Docker when you mount volumes, in blockchain when you hash content. The filesystem is the substrate everything else runs on. Next: B-004 — scripting."*
+
+---
+
+
+---
+
+## Appendix H: Real Project Showcase
+
+### Project: `file-integrity-monitor.sh` — SHA256 Checkpoint System
+
+**Built with:** B-003 skills (find, permissions, checksums, symlinks, disk tools)
+**Time to build:** 45–75 minutes
+**Portfolio value:** Shows filesystem mastery, security awareness, automation
+
+```bash
+#!/usr/bin/env bash
+# file-integrity-monitor.sh — baseline + compare file checksums
+# B-003 Capstone · CLL-L0-B003-FilesystemNavigator
+set -euo pipefail
+
+TARGET="${1:-$HOME}"
+BASELINE_DIR="$HOME/.fcheck_baselines"
+BASENAME="$(echo "$TARGET" | tr '/' '_')"
+BASELINE="$BASELINE_DIR/${BASENAME}_baseline.sha256"
+REPORT="$BASELINE_DIR/${BASENAME}_report_$(date +%Y%m%d_%H%M).txt"
+
+mkdir -p "$BASELINE_DIR"
+
+create_baseline() {
+    echo "Creating baseline for: $TARGET"
+    find "$TARGET" -type f -not -path '*/.git/*' 2>/dev/null       | sort | xargs sha256sum 2>/dev/null > "$BASELINE"
+    echo "Baseline saved: $BASELINE ($(wc -l < "$BASELINE") files)"
+}
+
+compare_to_baseline() {
+    [[ ! -f "$BASELINE" ]] && { echo "No baseline found. Run: $0 $TARGET --baseline"; exit 1; }
+    echo "Comparing against baseline..."
+    local current="/tmp/fcheck_current_$$.sha256"
+    find "$TARGET" -type f -not -path '*/.git/*' 2>/dev/null       | sort | xargs sha256sum 2>/dev/null > "$current"
+    
+    echo "" > "$REPORT"
+    
+    # Files changed (different hash)
+    comm -13 <(sort "$BASELINE") <(sort "$current") | awk '{print "CHANGED: "$2}' >> "$REPORT"
+    # Files removed
+    comm -23 <(sort "$BASELINE" | awk '{print $2}') <(sort "$current" | awk '{print $2}')       | awk '{print "REMOVED: "$1}' >> "$REPORT"
+    # Files added
+    comm -13 <(sort "$BASELINE" | awk '{print $2}') <(sort "$current" | awk '{print $2}')       | awk '{print "ADDED: "$1}' >> "$REPORT"
+    
+    rm -f "$current"
+    
+    local changes=$(wc -l < "$REPORT")
+    if [[ "$changes" -eq 0 ]]; then
+        echo "✅ No changes detected."
+    else
+        echo "⚠️  $changes change(s) detected. Report: $REPORT"
+        cat "$REPORT"
+    fi
+}
+
+case "${2:---compare}" in
+    --baseline) create_baseline ;;
+    --compare)  compare_to_baseline ;;
+    *) echo "Usage: $0 [directory] [--baseline|--compare]" ;;
+esac
+```
+
+#### 🎧 Audiobook
+> *"The capstone for the filesystem book is a file integrity monitor. It takes a SHA256 hash snapshot of every file in a directory, then lets you compare against it later to detect any changes, additions, or deletions. This is the same technique used by professional security tools. It uses find, xargs, sha256sum, sort, and comm — every core tool from this book."*
+
+#### 🎬 Video
+1. (0:00) Why file integrity monitoring matters
+2. (2:00) Write baseline creation (find | sort | sha256sum)
+3. (5:00) Write comparison logic (comm -13 / -23 / -12)
+4. (9:00) Test: create baseline, modify a file, run compare
+5. (11:00) Report shown, changes detected
+6. (12:00) Credential claim
+
+
+
 ## Further Reading
 
 - 📄 [`docs/B-002-commands-that-actually-work.md`](B-002-commands-that-actually-work.md) — Commands used throughout this book

@@ -1930,6 +1930,398 @@ Ready to claim CLL-L0-B005-PackageMaster and complete Phase 1.
 
 ---
 
+---
+
+
+## Appendix D: Quick Quiz & Self-Assessment — Package Master
+
+> *"The machine that installs cleanly is the machine that runs reliably."*
+
+---
+
+### 📘 Ebook Quiz — 20 Questions
+
+**Section A — Concepts**
+
+1. A virtual environment isolates Python packages to prevent ______________ between projects.
+2. `pacman -Syu` does what three things?
+   ```
+   1. ___________  2. ___________  3. ___________
+   ```
+3. `pip install -r requirements.txt` installs all packages listed in the ______________ file.
+4. `pipx` installs Python CLI tools in ______________ virtual environments so they don't conflict.
+5. The `yay` AUR helper wraps pacman and adds support for packages from the ______________.
+
+**Section B — Read the Command**
+
+6. What does `pacman -Qi git` show?
+   > a) Installs git  b) Shows installed info about git  c) Queries remote git version  d) Removes git
+
+7. What does `python -m venv .venv && source .venv/bin/activate` do?
+   > a) Installs Python  b) Creates and activates a virtual environment  c) Upgrades pip  d) Lists installed packages
+
+8. What does `pip freeze > requirements.txt` do?
+   > a) Installs all packages  b) Exports currently installed packages with exact versions  c) Updates all packages  d) Removes packages
+
+9. What does `pacman -Qs nginx` do?
+   > a) Installs nginx  b) Searches for nginx in remote repos  c) Searches installed packages for nginx  d) Shows nginx version
+
+10. What does `python -m pip install --upgrade pip` do?
+    > a) Installs Python  b) Upgrades pip itself  c) Installs all packages  d) Creates a venv
+
+**Section C — Debugging**
+
+11. `pip install requests` installs to the wrong Python. How do you ensure you're installing to the right one?
+    ```
+    ___________________________________________
+    ```
+
+12. After `pacman -Syu` an application crashes. How do you roll back?
+    ```
+    ___________________________________________
+    ```
+
+13. `pip install` succeeds but you get `ModuleNotFoundError` when importing. Why?
+    ```
+    ___________________________________________
+    ```
+
+**Section D — Application**
+
+14. Write the commands to create a new Python project with isolated dependencies:
+    ```bash
+    ___________________________________________
+    ___________________________________________
+    ___________________________________________
+    ```
+
+15. How do you install a package for all future venvs as a template (not into the system Python)?
+    ```
+    ___________________________________________
+    ```
+
+16. How do you audit your Arch system for packages no longer needed (orphans)?
+    ```
+    ___________________________________________
+    ```
+
+17. Write a one-liner to install all packages from `packages.txt` with pacman:
+    ```
+    ___________________________________________
+    ```
+
+**Section E — Build Reflection**
+
+18. Name the DFY artifact that installs your full Python + system toolbox in one command:
+    ```
+    ___________________________________________
+    ```
+
+19. Why should you never install Python packages globally with sudo pip?
+    ```
+    ___________________________________________
+    ```
+
+20. What is the difference between `pacman -S` and `yay -S`?
+    ```
+    ___________________________________________
+    ```
+
+---
+
+**Scoring:** 18–20 = claim · 14–17 = review · < 14 = redo DFY 1–5
+
+<details>
+<summary>Answer Key</summary>
+
+1. conflicts (dependency conflicts)
+2. Sync package database, upgrade all installed packages, and confirm changes
+3. requirements.txt
+4. isolated (separate)
+5. AUR (Arch User Repository)
+6. b) Shows installed info about git
+7. b) Creates and activates a virtual environment
+8. b) Exports currently installed packages with exact versions
+9. c) Searches installed packages for nginx
+10. b) Upgrades pip itself
+11. Use `python3 -m pip install requests` or activate the correct venv first, then `pip install requests`
+12. `sudo pacman -U /var/cache/pacman/pkg/packagename-version.pkg.tar.zst` to downgrade using cached package
+13. You installed it to a different Python than the one you're running — either the global vs venv, or python2 vs python3
+14. `mkdir myproject && cd myproject` / `python -m venv .venv` / `source .venv/bin/activate`
+15. Use a requirements file — copy it to new projects: `pip install -r ~/templates/base-requirements.txt`
+16. `pacman -Qtdq` lists orphan packages; remove with `sudo pacman -Rs $(pacman -Qtdq)`
+17. `sudo pacman -S --needed - < packages.txt`
+18. `python-toolbox-installer.sh` or `setup-machine.sh` (DFY Lesson 10)
+19. It can overwrite or conflict with system Python packages managed by pacman, breaking system tools
+20. `pacman -S` installs from official repos; `yay -S` can install from both official repos AND the AUR (community-maintained packages)
+
+</details>
+
+---
+
+### 🎧 Audiobook Quiz
+
+> "Ten questions on package management."
+
+**Q1:** "What is the purpose of a Python virtual environment?" → "To isolate a project's packages so they don't conflict with other projects or the system Python."
+**Q2:** "What does `pip freeze` output?" → "All currently installed packages with their exact versions — the output format is suitable for requirements.txt."
+**Q3:** "When would you use pipx instead of pip?" → "For CLI tools you want available system-wide — like black, httpie, or poetry — without polluting any project's venv."
+**Q4:** "What is the AUR and why does it exist?" → "The Arch User Repository — a community-maintained collection of package build scripts for software not in official repos."
+**Q5:** "How do you update all outdated pip packages in a venv?" → "`pip list --outdated | awk 'NR>2 {print $1}' | xargs pip install --upgrade` or use `pip-review --auto`"
+**Q6:** "What does `--needed` do in pacman?" → "Skips reinstalling packages that are already up to date — makes scripts idempotent."
+**Q7:** "What is a requirements.txt and why pin exact versions?" → "A file listing dependencies with versions. Pinning prevents 'worked on my machine' bugs — everyone installs identical versions."
+**Q8:** "How do you clean the pacman package cache?" → "`sudo pacman -Sc` removes all but the latest version. `paccache -rk2` keeps the last 2 versions."
+**Q9:** "Name the DFY tool that backs up your installed package list." → "`pkg-snap.sh` — DFY Lesson 6"
+**Q10:** "Your credential?" → "CLL-L0-B005-PackageMaster"
+
+---
+
+### 🎬 Video Challenges
+
+**Challenge 1:** Install a package with pacman, verify it's installed with `-Qi`, then remove it cleanly.
+**Challenge 2:** Create a Python project with a venv, install 3 packages, freeze requirements, deactivate, then recreate the environment from the requirements file.
+**Challenge 3:** Install `httpie` with pipx. Use it. Show it's isolated from the system Python.
+**Challenge 4:** Find and remove all orphaned packages from your Arch system.
+**Challenge 5:** Build `setup-machine.sh` from DFY Lesson 10 from memory — it should install a list of pacman packages and set up a Python venv in one run.
+
+---
+
+
+---
+
+## Appendix E: Glossary & Error Encyclopedia
+
+---
+
+### 📘 Glossary — Package Master Edition
+
+**AUR** — Arch User Repository. A community-driven repository of PKGBUILD scripts for building packages not in official Arch repos. Use with `yay` or `paru`. *B-005 Ch. 6*
+
+**dependency** — A package required by another package. Package managers resolve and install all dependencies automatically. *B-005 Ch. 2*
+
+**freeze** — `pip freeze` outputs all installed packages with pinned versions, suitable for `requirements.txt`. *B-005 Ch. 4*
+
+**orphan** — A package installed as a dependency that is no longer required by anything. Found with `pacman -Qtdq`. *B-005 Ch. 5*
+
+**pacman** — The Arch Linux package manager. Installs/removes/upgrades packages from official repos. Core commands: `-S` (install), `-R` (remove), `-U` (upgrade from file), `-Q` (query), `-Syu` (full system upgrade). *B-005 Ch. 3*
+
+**pip** — Python's package installer. Installs from PyPI (Python Package Index). Always use inside a venv for project work. *B-005 Ch. 4*
+
+**pipx** — Installs Python CLI tools in isolated venvs automatically. Each tool gets its own isolated environment. *B-005 Ch. 7*
+
+**PKGBUILD** — An Arch Linux shell script that describes how to build a package from source. AUR packages are distributed as PKGBUILDs. *B-005 Ch. 6*
+
+**PyPI** — Python Package Index (pypi.org). The official registry of Python packages, searchable and installable via pip. *B-005 Ch. 4*
+
+**requirements.txt** — A file listing Python package dependencies with versions. `pip install -r requirements.txt` installs them all. *B-005 Ch. 4*
+
+**venv** — Python virtual environment. An isolated directory containing its own Python interpreter and package set. Created with `python -m venv dirname`. *B-005 Ch. 4*
+
+**yay** — Yet Another Yogurt. An AUR helper written in Go that wraps pacman and adds AUR support. `yay -S package` works for both official and AUR packages. *B-005 Ch. 6*
+
+
+---
+
+### 📘 Error Encyclopedia — Package Management Errors
+
+#### Error 1 — `error: target not found: packagename`
+**Why:** Package doesn't exist in the official repos. It may be in the AUR.
+**Fix:** Search: `yay packagename` or check https://aur.archlinux.org. Use `yay -S packagename`.
+
+#### Error 2 — `pip install` succeeds but `import` fails
+**Why:** You installed to the system Python, but your script runs in a venv (or vice versa).
+**Fix:** Activate the correct venv before running pip. Check with `which python` and `which pip`.
+
+#### Error 3 — Pacman says "conflicting files" during install
+**Why:** A file from another package already exists at the target path.
+**Fix:** `sudo pacman -S --overwrite '*' packagename` (with caution) or remove the conflicting package first.
+
+#### Error 4 — `venv` not found (`python -m venv` fails)
+**Why:** The `venv` module isn't included in your Python install (common on Debian/Ubuntu minimal).
+**Fix:** `sudo apt install python3-venv` or `sudo pacman -S python` (Arch includes venv by default).
+
+#### Error 5 — Dependencies conflict between two packages
+**Why:** Package A requires `library==1.0`, package B requires `library==2.0`.
+**Fix:** Use separate virtual environments for projects with conflicting deps. Use `pip install --constraint` for complex cases.
+
+#### Error 6 — AUR build fails with "missing dependencies"
+**Why:** The PKGBUILD's `makedepends` are not installed.
+**Fix:** `yay` auto-installs makedepends. If using `makepkg` manually: `sudo pacman -S base-devel` then retry.
+
+#### Error 7 — `pip install` is very slow
+**Why:** No binary wheel available — pip is compiling from source. Missing system build dependencies.
+**Fix:** `sudo pacman -S base-devel` installs the C compiler and headers needed for most builds.
+
+#### Error 8 — System upgrade (`pacman -Syu`) breaks a Python package
+**Why:** The system Python version changed, invalidating compiled `.pyc` files or C extensions in the venv.
+**Fix:** Delete and recreate the venv: `rm -rf .venv && python -m venv .venv && pip install -r requirements.txt`.
+
+#### Error 9 — Removed a package but its config files remain
+**Why:** `pacman -R` removes the package but not config files. `pacman -Rs` is needed to also remove deps.
+**Fix:** `pacman -Rns packagename` — n removes config files (if marked as backups), s removes unused deps.
+
+#### Error 10 — pip upgrade fails with "externally managed environment"
+**Why:** Python 3.11+ and some distros enforce PEP 668 — prohibiting pip installs outside venvs.
+**Fix:** This is correct behavior. Always use a venv: `python -m venv .venv && source .venv/bin/activate && pip install ...`. Or use `pipx` for global CLI tools.
+
+
+---
+
+## Appendix F: Instructor & Accessibility Guide
+
+### Teaching This Book
+
+| Format | Duration | Pace |
+|---|---|---|
+| Self-study | 1–2 weeks | 1 chapter per day |
+| Bootcamp | 2–3 days | 3–4 chapters + DFY |
+| Classroom | 4–6 hours | Chs 1–6 in session, 7–11 as homework |
+
+**Session pattern per chapter:** Pre-activation (5 min) → Read/Watch (25 min) → DFY Build (25 min) → Copilot debug (15 min) → Mini-quiz (5 min)
+
+**Assessment rubric for CLL-L0-B005-PackageMaster:**
+
+| Skill | Not Ready | Ready | Proficient |
+|---|---|---|---|
+| Core concepts | Can't explain them | Can define 80%+ from the glossary | Can teach them to someone else |
+| DFY builds | Did not attempt | Built 3+ artifacts | Built all 10 and can explain each |
+| Error handling | Confused by errors in App. E | Can fix 7 of the 10 listed errors | Can diagnose unfamiliar errors using the same patterns |
+| Capstone project | Did not attempt | Built it with guidance | Built it from scratch, then extended it |
+
+**Accessibility Standards:**
+- Screen reader: all code blocks use fenced Markdown · all ASCII diagrams have text descriptions
+- Color-blind: all status markers use emoji + text (✅/❌/⏳) · no color-only indicators
+- Dyslexia-friendly: max 20-word sentences · numbered steps in groups of ≤ 3 · all terms bolded on first use
+- Low-bandwidth: all exercises work offline in a text terminal · audiobook available as M4B
+
+---
+
+## Appendix G: Your Learning Path
+
+```
+  PHASE 1:
+  ✅ B-001  Terminal Apprentice
+  ✅ B-002  Command Architect
+  ✅ B-003  Filesystem Navigator
+  ✅ B-004  Script Automator
+  ★ B-005  Package Master         ← YOU ARE HERE
+  ○ B-006  Process Wrangler
+  ○ B-007  Network Navigator
+  ... (20 more)
+  Phase 1: █████░░░░░░░░░░░░░░░░░░░░  5/25
+```
+
+### Credential Chain
+```
+  CLL-L0-B004-ScriptAutomator
+       ↓
+  ★ CLL-L0-B005-PackageMaster   ← CLAIM THIS
+       ↓
+  CLL-L0-B006-ProcessWrangler
+```
+
+### Cross-Phase Connections
+| Skill | Phase 2 Python | Phase 3 Blockchain |
+|---|---|---|
+| pip + venv | Python project structure (B-035) | Node.js / npm for Hardhat (B-056+) |
+| requirements.txt | Python packaging + pyproject.toml (B-044) | Smart contract dependencies (B-065+) |
+| pacman idempotent installs | Docker image layer caching (B-052) | Container-based node deployment (B-080+) |
+
+### 🎧 Audio Path Recap
+> *"You've completed the first five books. You can navigate, compose commands, understand the filesystem, write scripts, and manage packages. That is the full foundation. Every developer on earth uses these five skills every single day. Phase 1 continues — next: processes and signals. But first: claim B-005 and celebrate the milestone."*
+
+---
+
+
+---
+
+## Appendix H: Real Project Showcase
+
+### Project: `setup-machine.sh` — Complete New Machine Bootstrapper
+
+**Built with:** B-005 skills (pacman, pip, venv, pipx, pkg snapshots, idempotent installs)
+**Time to build:** 45–75 minutes
+**Portfolio value:** The first script any engineer runs on a new machine
+
+```bash
+#!/usr/bin/env bash
+# setup-machine.sh — idempotent new machine bootstrapper
+# B-005 Capstone · CLL-L0-B005-PackageMaster
+set -euo pipefail
+
+log()     { echo "  [INFO] $*"; }
+success() { echo "  [OK]   $*"; }
+warn()    { echo "  [WARN] $*"; }
+
+# ── System packages (pacman) ──────────────────────────────────
+PACMAN_PACKAGES=(
+    git curl wget neovim tmux htop
+    python python-pip base-devel
+    docker docker-compose
+    ripgrep fd bat jq
+)
+
+log "Installing system packages..."
+sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"   && success "System packages installed"   || warn "Some packages failed — check output"
+
+# ── AUR tools (yay) ──────────────────────────────────────────
+if ! command -v yay &>/dev/null; then
+    log "Installing yay AUR helper..."
+    git clone https://aur.archlinux.org/yay.git /tmp/yay_install
+    (cd /tmp/yay_install && makepkg -si --noconfirm)
+    rm -rf /tmp/yay_install
+fi
+
+AUR_PACKAGES=(kitty-bin nerd-fonts-meslo)
+yay -S --needed --noconfirm "${AUR_PACKAGES[@]}" 2>/dev/null   && success "AUR packages installed"   || warn "AUR packages: some may have failed"
+
+# ── Python CLI tools (pipx) ──────────────────────────────────
+PIPX_TOOLS=(httpie black ruff poetry)
+
+command -v pipx &>/dev/null || python -m pip install --user pipx
+for tool in "${PIPX_TOOLS[@]}"; do
+    pipx install "$tool" 2>/dev/null && success "pipx: $tool"       || warn "pipx: $tool already installed or failed"
+done
+
+# ── Python project template venv ─────────────────────────────
+TEMPLATE_DIR="$HOME/.venv_template"
+if [[ ! -d "$TEMPLATE_DIR" ]]; then
+    log "Creating template venv..."
+    python -m venv "$TEMPLATE_DIR"
+    source "$TEMPLATE_DIR/bin/activate"
+    pip install --quiet requests pytest python-dotenv rich
+    deactivate
+    pip freeze > "$HOME/.pip_template_requirements.txt"
+    success "Template venv ready: $TEMPLATE_DIR"
+fi
+
+# ── Save package snapshot ─────────────────────────────────────
+SNAP_DIR="$HOME/.pkg_snapshots"
+mkdir -p "$SNAP_DIR"
+pacman -Qqe > "$SNAP_DIR/explicit_$(date +%Y%m%d).txt"
+success "Package snapshot saved: $SNAP_DIR"
+
+echo ""
+echo "  ────── Setup complete ──────"
+echo "  System: $(pacman -Q | wc -l) packages"
+echo "  pipx:   $(pipx list 2>/dev/null | grep -c 'package' || echo 0) tools"
+echo "  ★ Credential: CLL-L0-B005-PackageMaster"
+```
+
+#### 🎧 Audiobook
+> *"The capstone for package management is a new machine bootstrapper. Run it once on a fresh Arch install and it configures everything: system packages, AUR tools, pipx CLI utilities, a Python template venv, and a snapshot of your package state. Every machine you configure from now on starts with this script."*
+
+#### 🎬 Video
+1. (0:00) The problem: new machine setup takes hours manually
+2. (2:00) Write the pacman install block with `--needed` flag
+3. (5:00) Write the yay install check + AUR block
+4. (8:00) Write the pipx tools loop
+5. (11:00) Write the venv template creation
+6. (13:00) Run it on a fresh system — watch everything install
+7. (15:00) Credential claim
+
+
+
 ## Further Reading
 
 - 📄 [`docs/B-004-the-script-that-did-my-job.md`](B-004-the-script-that-did-my-job.md) — Bash skills used to set up this environment

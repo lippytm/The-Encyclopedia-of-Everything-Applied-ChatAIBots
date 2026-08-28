@@ -1839,6 +1839,381 @@ Ready to claim CLL-L0-B004-ScriptBuilder.
 
 ---
 
+---
+
+
+## Appendix D: Quick Quiz & Self-Assessment — Script Automator
+
+> *"A script you trust is a colleague who never takes a day off."*
+
+---
+
+### 📘 Ebook Quiz — 20 Questions
+
+**Section A — Concepts**
+
+1. `set -e` tells bash to ______________ if any command returns a non-zero exit code.
+2. `set -u` causes the script to fail if it references a ______________ variable.
+3. The special variable `$0` contains the ______________ of the script.
+4. `$#` holds the number of ______________ passed to the script.
+5. `${VAR:-default}` means: use VAR if set, otherwise use ______________.
+
+**Section B — Read the Code**
+
+6. What does `[[ -f "$FILE" ]]` test?
+   > a) File exists and is a directory  b) File exists and is a regular file  c) File has execute permission  d) File is not empty
+
+7. What does `trap cleanup EXIT` do?
+   > a) Exits the script immediately  b) Runs the `cleanup` function when the script exits for any reason  c) Traps all errors silently  d) Prevents the script from exiting
+
+8. What does `"$@"` expand to?
+   > a) All arguments as one string  b) All arguments as separate quoted strings  c) The first argument  d) The script name
+
+9. What does `local var="value"` inside a function do?
+   > a) Creates a global variable  b) Creates a variable scoped to that function  c) Exports the variable  d) Deletes the variable on exit
+
+10. What does `command -v git || { echo "git not found"; exit 1; }` do?
+    > a) Installs git  b) Exits with error if git is not installed  c) Runs git  d) Checks git version
+
+**Section C — Debugging**
+
+11. Your script fails silently on line 15 — it just moves on with wrong data. What `set` option would have caught it?
+    ```
+    ___________________________________________
+    ```
+
+12. A function returns the wrong value. How do you capture the return value correctly in bash?
+    ```
+    ___________________________________________
+    ```
+
+13. The script works manually but fails in cron. Name two common causes.
+    ```
+    1. ___________________________________________
+    2. ___________________________________________
+    ```
+
+**Section D — Application**
+
+14. Write a bash function that takes a filename as argument and returns 0 if it exists and is non-empty, 1 otherwise:
+    ```bash
+    ___________________________________________
+    ```
+
+15. How do you add a 3-second spinner/progress indicator while a long command runs?
+    ```
+    ___________________________________________
+    ```
+
+16. Write the `set` line you should put at the top of every serious bash script:
+    ```
+    ___________________________________________
+    ```
+
+17. How do you parse a YAML-like config file where each line is `KEY=VALUE`?
+    ```
+    ___________________________________________
+    ```
+
+**Section E — Build Reflection**
+
+18. Name the DFY artifact that tests every other DFY artifact you built:
+    ```
+    ___________________________________________
+    ```
+
+19. In one sentence, what is the most important safety practice when writing a script that deletes files?
+    ```
+    ___________________________________________
+    ```
+
+20. What makes a script "idempotent", and why does it matter for automation?
+    ```
+    ___________________________________________
+    ```
+
+---
+
+**Scoring:** 18–20 = claim · 14–17 = review · < 14 = redo DFY 1–5
+
+<details>
+<summary>Answer Key</summary>
+
+1. exit immediately (abort)
+2. unset (undefined)
+3. name/path
+4. arguments (positional parameters)
+5. "default" (the literal string "default" or the default value you specify)
+6. b) File exists and is a regular file
+7. b) Runs the `cleanup` function when the script exits for any reason
+8. b) All arguments as separate quoted strings
+9. b) Creates a variable scoped to that function
+10. b) Exits with error if git is not installed
+11. `set -e` or `set -euo pipefail`
+12. Use command substitution: `result=$(function_name)`. Note: bash functions return exit codes (0-255), not arbitrary values. Use echo to "return" strings.
+13. (1) PATH is minimal in cron — tools aren't found; (2) Working directory is wrong — relative paths fail
+14. `file_exists_nonempty() { [[ -f "$1" && -s "$1" ]]; }`
+15. `your_command & pid=$!; while kill -0 $pid 2>/dev/null; do echo -n "."; sleep 1; done; wait $pid`
+16. `set -euo pipefail`
+17. `while IFS='=' read -r key value; do export "$key=$value"; done < config.env`
+18. `selftest.sh` (DFY Lesson 4)
+19. Always test with `echo rm` (dry-run) and add a `--dry-run` flag before writing the actual `rm`.
+20. An idempotent script produces the same result whether run once or ten times — it checks before creating/installing/writing, so repeated runs don't duplicate or corrupt. Essential for automation because scripts run in CI, cron, and bootstrap environments where you can't guarantee they haven't run before.
+
+</details>
+
+---
+
+### 🎧 Audiobook Quiz
+
+> "Ten questions on scripting. Pause at each."
+
+**Q1:** "What does `set -euo pipefail` do?" → "e: exit on error. u: error on unset var. o pipefail: pipeline exit code is the first failure. Together they make scripts fail loudly."
+**Q2:** "What is a trap and when would you use one?" → "A trap runs code when a signal or event occurs — EXIT, ERR, INT, TERM. Use it for cleanup: delete temp files, restore state, send alerts."
+**Q3:** "Difference between `$*` and `$@`?" → "$* expands all args as one string. $@ expands each arg as a separate quoted entity — use $@ in loops."
+**Q4:** "What is the difference between a function's return code and its 'output'?" → "Return code is 0-255, checked with $? or if. Output is captured with $( ) command substitution."
+**Q5:** "How do you make a script argument optional with a default value?" → "${1:-default_value}"
+**Q6:** "How do you prevent a script from running as root?" → `[[ $EUID -eq 0 ]] && { echo "Do not run as root"; exit 1; }`
+**Q7:** "Name two places where you must use double quotes around variables." → "In conditionals ([[ "$VAR" ]]) and in command arguments where the value might contain spaces."
+**Q8:** "How do you time how long a script takes?" → "`time ./script.sh` or use `date +%s` before and after and subtract."
+**Q9:** "Name the DFY artifact that wraps any command with logging and exit code tracking." → "`run_logged` — DFY Lesson 8"
+**Q10:** "Your credential?" → "CLL-L0-B004-ScriptAutomator"
+
+---
+
+### 🎬 Video Challenges
+
+**Challenge 1:** Write a script from scratch with `set -euo pipefail`, at least one function, argument parsing, and a trap on EXIT.
+**Challenge 2:** Create a `retry` wrapper that re-runs a command up to 3 times before failing.
+**Challenge 3:** Write a color-coded `log()` function with INFO, WARN, and ERROR levels.
+**Challenge 4:** Build a config parser that reads `KEY=VALUE` lines and exports them as environment variables.
+**Challenge 5:** Write a script that backs up a directory, names the backup with the current timestamp, and verifies the backup exists.
+
+---
+
+
+---
+
+## Appendix E: Glossary & Error Encyclopedia
+
+---
+
+### 📘 Glossary — Script Automator Edition
+
+**`$#`** — Number of positional arguments passed to the script or function. `[[ $# -eq 0 ]] && echo "no args"`. *B-004 Ch. 3*
+
+**`$?`** — Exit code of the last command. `0` = success. Checked immediately after the command. *B-004 Ch. 4*
+
+**`$@`** — All positional arguments, each as a separate quoted string. Safe to use in `for arg in "$@"`. *B-004 Ch. 3*
+
+**exit code** — Integer returned by every command and script (0–255). Convention: 0 = success, non-zero = failure type. Scripts exit with `exit 0` or `exit 1`. *B-004 Ch. 4*
+
+**function** — A named block of bash code. Called by name. Accepts positional parameters. Returns an exit code (0–255) — use `echo` + command substitution to "return" strings. *B-004 Ch. 5*
+
+**idempotent** — Producing the same result when run multiple times. A script is idempotent if it checks whether an action is already complete before performing it. *B-004 Ch. 9*
+
+**local** — Keyword that scopes a variable to the current function. Without it, all bash variables are global. *B-004 Ch. 5*
+
+**set -e** — Exit immediately if any command returns a non-zero exit code. Essential for production scripts. *B-004 Ch. 2*
+
+**set -u** — Treat unset variables as errors. Prevents bugs from silent empty-string substitutions. *B-004 Ch. 2*
+
+**shebang** — `#!/usr/bin/env bash` on line 1. Tells the OS which interpreter to use. Always present in production scripts. *B-004 Ch. 1*
+
+**trap** — Register a command to run when a signal or event occurs. `trap cleanup EXIT` runs `cleanup()` when the script exits for any reason. *B-004 Ch. 7*
+
+**`${VAR:-default}`** — Parameter expansion: use VAR if set and non-empty, otherwise substitute "default". Variants: `:=` (also assign), `:?` (error if unset), `:+` (use default if set). *B-004 Ch. 3*
+
+
+---
+
+### 📘 Error Encyclopedia — Scripting Errors
+
+#### Error 1 — Script works manually but fails in cron
+**Why:** Cron uses a minimal PATH; many tools aren't found. Working directory is different.
+**Fix:** Use absolute paths for all commands. Set `PATH` at the top of the script. Add `cd /expected/dir || exit 1`.
+
+#### Error 2 — Variable expansion splits on spaces (`$VAR` without quotes)
+**Why:** Unquoted `$VAR` undergoes word splitting — spaces create separate arguments.
+**Fix:** Always quote: `"$VAR"`. Exception: inside `[[ ]]` (but still good practice).
+
+#### Error 3 — Script continues after a failed command
+**Why:** `set -e` is not set (or was unset). Individual command failures are silent.
+**Fix:** Add `set -euo pipefail` to the top of every script.
+
+#### Error 4 — `local` variables leak into calling scope
+**Why:** You forgot `local` inside a function — all bash variables are global by default.
+**Fix:** Prefix every function-internal variable with `local`.
+
+#### Error 5 — Trap doesn't run on `kill -9`
+**Why:** `SIGKILL` (signal 9) cannot be caught or ignored by any process.
+**Fix:** This is by design. Use `SIGTERM` (signal 15) for graceful shutdown. Document that `kill -9` bypasses cleanup.
+
+#### Error 6 — `[ ]` vs `[[ ]]` causes unexpected behavior
+**Why:** `[ ]` is the POSIX `test` command — it doesn't support `&&`, `||`, `=~`, or pattern matching. `[[ ]]` is a bash keyword with these features.
+**Fix:** Always use `[[ ]]` in bash scripts. Only use `[ ]` when writing POSIX sh.
+
+#### Error 7 — Script reads wrong config because working directory is unexpected
+**Why:** Relative paths in scripts depend on where the script is called from, not where it lives.
+**Fix:** Use `SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"` at the top to get the script's directory.
+
+#### Error 8 — Function "returns" wrong value
+**Why:** Bash function return codes are 0–255 only. You can't return a string via `return`.
+**Fix:** Use `echo` inside the function and capture with `result=$(function_name)`.
+
+#### Error 9 — Globbing in script deletes wrong files
+**Why:** `rm /path/*` with an empty PATH variable expands to `rm /path/` — dangerous.
+**Fix:** Use `set -u` to catch empty variables. Always echo the command first (`echo rm /path/*`).
+
+#### Error 10 — Race condition in parallel script (two instances run simultaneously)
+**Why:** No locking mechanism — two cron jobs start before the first finishes.
+**Fix:** Use a lockfile: `exec 9>/tmp/script.lock; flock -n 9 || { echo "Already running"; exit 1; }`
+
+
+---
+
+## Appendix F: Instructor & Accessibility Guide
+
+### Teaching This Book
+
+| Format | Duration | Pace |
+|---|---|---|
+| Self-study | 1–2 weeks | 1 chapter per day |
+| Bootcamp | 2–3 days | 3–4 chapters + DFY |
+| Classroom | 4–6 hours | Chs 1–6 in session, 7–11 as homework |
+
+**Session pattern per chapter:** Pre-activation (5 min) → Read/Watch (25 min) → DFY Build (25 min) → Copilot debug (15 min) → Mini-quiz (5 min)
+
+**Assessment rubric for CLL-L0-B004-ScriptAutomator:**
+
+| Skill | Not Ready | Ready | Proficient |
+|---|---|---|---|
+| Core concepts | Can't explain them | Can define 80%+ from the glossary | Can teach them to someone else |
+| DFY builds | Did not attempt | Built 3+ artifacts | Built all 10 and can explain each |
+| Error handling | Confused by errors in App. E | Can fix 7 of the 10 listed errors | Can diagnose unfamiliar errors using the same patterns |
+| Capstone project | Did not attempt | Built it with guidance | Built it from scratch, then extended it |
+
+**Accessibility Standards:**
+- Screen reader: all code blocks use fenced Markdown · all ASCII diagrams have text descriptions
+- Color-blind: all status markers use emoji + text (✅/❌/⏳) · no color-only indicators
+- Dyslexia-friendly: max 20-word sentences · numbered steps in groups of ≤ 3 · all terms bolded on first use
+- Low-bandwidth: all exercises work offline in a text terminal · audiobook available as M4B
+
+---
+
+## Appendix G: Your Learning Path
+
+```
+  PHASE 1:
+  ✅ B-001  Terminal Apprentice
+  ✅ B-002  Command Architect
+  ✅ B-003  Filesystem Navigator
+  ★ B-004  Script Automator       ← YOU ARE HERE
+  ○ B-005  Package Master
+  ... (21 more)
+  Phase 1: ████░░░░░░░░░░░░░░░░░░░░░  4/25
+```
+
+### Credential Chain
+```
+  CLL-L0-B003-FilesystemNavigator
+       ↓
+  ★ CLL-L0-B004-ScriptAutomator   ← CLAIM THIS
+       ↓
+  CLL-L0-B005-PackageMaster
+```
+
+### Cross-Phase Connections
+| Skill | Phase 2 Python | Phase 3 Blockchain |
+|---|---|---|
+| `set -euo pipefail` | Python `try/except` + exit codes (B-031) | Transaction revert guards (B-065+) |
+| Trap + cleanup | Python `atexit` + context managers (B-033) | Smart contract fallback functions (B-068+) |
+| Deploy pipeline | Python `subprocess` + CI/CD (B-051) | Hardhat deploy scripts (B-066+) |
+
+### 🎧 Audio Path Recap
+> *"Scripting is the multiplier. Everything you learned in B-001 through B-003 is now composable into automated pipelines. You can backup, test, and deploy anything. Next book: package management — because your pipeline needs to install its own dependencies."*
+
+---
+
+
+---
+
+## Appendix H: Real Project Showcase
+
+### Project: `deploy-pipeline.sh` — Backup → Test → Deploy Automation
+
+**Built with:** B-004 skills (functions, trap, set -euo pipefail, error handling, logging)
+**Time to build:** 60–90 minutes
+**Portfolio value:** Real CI/CD pipeline pattern used in production
+
+```bash
+#!/usr/bin/env bash
+# deploy-pipeline.sh — automated backup→test→deploy
+# B-004 Capstone · CLL-L0-B004-ScriptAutomator
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DEPLOY_DIR="${1:-$SCRIPT_DIR}"
+BACKUP_DIR="${HOME}/.backups/$(basename "$DEPLOY_DIR")"
+LOG_FILE="/tmp/deploy_$(date +%Y%m%d_%H%M%S).log"
+STEP=0
+
+log()     { echo "  [$(date +%H:%M:%S)] STEP $STEP | $*" | tee -a "$LOG_FILE"; }
+success() { echo "  ✅ $*" | tee -a "$LOG_FILE"; }
+fail()    { echo "  ❌ FAILED: $*" | tee -a "$LOG_FILE"; exit 1; }
+
+cleanup() {
+    local rc=$?
+    [[ $rc -ne 0 ]] && echo "" && echo "  Pipeline failed. Log: $LOG_FILE"
+}
+trap cleanup EXIT
+
+step() {
+    STEP=$((STEP+1))
+    log "$*"
+}
+
+# Step 1: Backup
+step "Creating backup of $DEPLOY_DIR"
+mkdir -p "$BACKUP_DIR"
+BACKUP_FILE="$BACKUP_DIR/backup_$(date +%Y%m%d_%H%M%S).tar.gz"
+tar -czf "$BACKUP_FILE" -C "$(dirname "$DEPLOY_DIR")" "$(basename "$DEPLOY_DIR")"
+[[ -f "$BACKUP_FILE" ]] && success "Backup: $BACKUP_FILE" || fail "Backup failed"
+
+# Step 2: Run tests (if test script exists)
+step "Running tests"
+if [[ -f "$DEPLOY_DIR/test.sh" ]]; then
+    bash "$DEPLOY_DIR/test.sh" >> "$LOG_FILE" 2>&1       && success "Tests passed"       || fail "Tests failed — deployment aborted. See $LOG_FILE"
+else
+    log "No test.sh found — skipping (add one for production use)"
+fi
+
+# Step 3: Deploy (sync to target)
+step "Deploying"
+TARGET="${DEPLOY_TARGET:-$DEPLOY_DIR}"
+rsync -av --checksum "$DEPLOY_DIR/" "$TARGET/" >> "$LOG_FILE" 2>&1   && success "Deploy complete → $TARGET"   || fail "rsync failed"
+
+echo ""
+echo "  Pipeline complete. $(date '+%Y-%m-%d %H:%M:%S')"
+echo "  Log: $LOG_FILE · Backup: $BACKUP_FILE"
+echo "  ★ Credential: CLL-L0-B004-ScriptAutomator"
+```
+
+#### 🎧 Audiobook
+> *"The capstone for the scripting book is a deploy pipeline. Three stages: backup, test, deploy. Each stage uses a bash function with full error handling. If any stage fails, the trap catches it, logs the failure, and the deployment stops. This is exactly how real CI/CD pipelines work — the difference is that real ones run on servers instead of your laptop."*
+
+#### 🎬 Video
+1. (0:00) Why every deployment needs backup first
+2. (2:00) Write the log/fail/success helper functions
+3. (4:00) Write the cleanup trap
+4. (6:00) Write backup stage (tar -czf)
+5. (8:00) Write test stage with existence check
+6. (10:00) Write deploy stage (rsync)
+7. (12:00) Test: run it, cause a failure, see the trap work
+8. (14:00) Credential claim
+
+
+
 ## Further Reading
 
 - 📄 [`docs/B-003-the-file-that-remembered-everything.md`](B-003-the-file-that-remembered-everything.md) — Permissions used in this script
