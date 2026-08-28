@@ -48,9 +48,13 @@
 31. [Phase 1 Ebooks — Completed (B-001–B-020)](#phase-1-ebooks--completed-b-001b-020)
 32. [Quality Evidence Packets (QEPs)](#quality-evidence-packets-qeps)
 
+**10-Layer Product Excellence System**
+33. [AI Copilot System (3-Format)](#ai-copilot-system-3-format)
+34. [Product Excellence Framework](#product-excellence-framework)
+35. [Creative Building Process](#creative-building-process)
+
 **Contributing**
-33. [Creative Building Process](#creative-building-process)
-34. [Contributing](#contributing)
+36. [Contributing](#contributing)
 
 ---
 
@@ -817,7 +821,58 @@ docker compose -f docker-compose.ada.yml up -d  # full platform on :8000
 
 ---
 
-## Creative Building Process
+## AI Copilot System (3-Format)
+
+Every book in the 300-title series ships with a complete **3-format AI Copilot** — a fully configured AI teaching partner for the ebook, audiobook, and video experience. This is not a generic assistant: each copilot has a custom system prompt, a role title, and 60+ curated prompts tuned to that book's domain and learning stage.
+
+**Copilot modes per book:**
+
+| Format | Prompts | Stages | Purpose |
+|---|---|---|---|
+| 📘 Ebook Copilot | 30 | Understand → Build → Debug → Deploy → Extend | Chapter-by-chapter guidance + build assistance |
+| 🎧 Audiobook Copilot | 15 | While Listening → Pause and Build → Resume Check | Deepens passive listening into active learning |
+| 🎬 Video Copilot | 15 | Before Playing → Paused → Verify → Extend | Transforms screen-watching into hands-on building |
+| 🤖 DFY Inline | 10 | Per DFY lesson (one per Chapter 12 lesson) | Debug, extend, and ship each DFY artifact |
+
+**Total per book:** 70 curated prompts across 4 modes.
+**Total across Phase 1+2 (55 books):** 3,850 prompts.
+
+**Usage options:**
+1. **GitHub Copilot Chat** — paste system prompt from Appendix C, Section 1, then use the prompt library
+2. **ChatGPT / Claude / Gemini** — same process, model-agnostic
+3. **ADA API** — automated via `lippytmai-launch run B-001 --copilot`
+4. **Inline DFY blocks** — `🤖 Copilot Assist` blocks embedded directly in Chapter 12 lessons
+
+📄 Deep dive → [`docs/AI-COPILOT-SYSTEM.md`](docs/AI-COPILOT-SYSTEM.md)
+
+---
+
+## Product Excellence Framework
+
+The **10-Layer Product Excellence Framework** defines the complete architecture every book must meet to qualify as a finished product. B-001 is the gold-standard implementation; all 300 books in the series follow this structure.
+
+**The 10 Layers:**
+
+| Layer | Name | What It Contains |
+|---|---|---|
+| 1 | Core Content | Chapters 1–11, Learning Objectives, Proof of Work artifacts |
+| 2 | Done-For-You Lessons | Chapter 12: 10 DFY lessons × 3 formats + inline Copilot blocks |
+| 3 | Use Cases & Applications | Chapter 13: mechanism, conditions, domain map, 5-domain video |
+| 4 | AI Copilot System | Appendix C: 3-format copilot, 60+ prompts, deployment companion |
+| 5 | Quick Quiz & Self-Assessment | Appendix D: 20-Q ebook quiz, 10-Q audiobook, 5 video challenges |
+| 6 | Glossary & Error Encyclopedia | Appendix E: 20–30 terms + top 10 errors with 3-format fixes |
+| 7 | Cheat Sheet & Reference Card | Appendix A (enhanced): print-optimized + verbal + thumbnail spec |
+| 8 | Real Project Showcase | Appendix H: full working capstone project, deploy + extend guide |
+| 9 | Instructor & Accessibility Guide | Appendix F: teaching schedule, rubric, screen reader + color-blind |
+| 10 | Learning Path & Progress Map | Appendix G: 300-book map, credential chain, cross-phase connections |
+
+**Current status:** B-001 is fully implemented (all 10 layers). B-002–B-055 implement Layers 1–4. Layers 5–10 are being merged batch by batch.
+
+📄 Deep dive → [`docs/PRODUCT-EXCELLENCE-FRAMEWORK.md`](docs/PRODUCT-EXCELLENCE-FRAMEWORK.md)
+
+---
+
+
 
 The **Creative Building Process** (CBP) is the unified methodology that governs how all lippytm.ai content is conceived, created, quality-reviewed, published, and continuously improved. It merges Hermes event routing, Fabric knowledge context, ACVS video production, and ADA deployment into a single repeatable loop:
 

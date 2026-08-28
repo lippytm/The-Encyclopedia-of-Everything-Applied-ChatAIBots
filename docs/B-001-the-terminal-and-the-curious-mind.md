@@ -1721,6 +1721,967 @@ unlock the B-002 copilot?
 
 ---
 
+---
+
+## Appendix D: Quick Quiz & Self-Assessment — Terminal Apprentice
+
+> *"If you can explain it to someone else, you own it."*
+
+Before claiming credential **CLL-L0-B001-TerminalApprentice**, complete this self-assessment. It covers every chapter in this book.
+
+---
+
+### 📘 Ebook Quiz — 20 Questions
+
+**Section A — Concepts (fill in the blank or short answer)**
+
+1. The shell is the ______________ between you and the Linux kernel.
+2. When you type `ls -lah`, the `-l` flag stands for ______________.
+3. The file `~/.bashrc` is loaded every time you open a ______________.
+4. A shell alias is stored as `alias name='______________'` in your config.
+5. Running `history | grep ssh` lets you find ______________ in your history.
+
+**Section B — Read the Command**
+
+6. What does `cd -` do?
+   > a) Go to the home directory  b) Go to the previous directory  c) Clear the terminal  d) Delete the current directory
+
+7. What does `echo $SHELL` print?
+   > a) The current directory  b) The path to your shell executable  c) Your username  d) All shell variables
+
+8. Which command shows only the last 20 lines of a file?
+   > a) `head -20 file`  b) `tail -20 file`  c) `less -20 file`  d) `cut -20 file`
+
+9. What does `chmod +x script.sh` do?
+   > a) Makes the file hidden  b) Deletes the script  c) Makes the script executable  d) Changes the file owner
+
+10. What is the result of `alias ll='ls -lah'` in `.bashrc`?
+    > a) Permanently removes the `ls` command  b) Creates `ll` as a shortcut that persists across sessions  c) Creates a temporary alias only for this session  d) Creates a new terminal window
+
+**Section C — Debugging**
+
+11. You run `./setup.sh` and get `bash: ./setup.sh: Permission denied`. What is the fix?
+    ```
+    ___________________________________________
+    ```
+
+12. You type `cd Documents` and get `bash: cd: Documents: No such file or directory`. Name two possible causes.
+    ```
+    1. ___________________________________________
+    2. ___________________________________________
+    ```
+
+13. Your `.bashrc` alias is not loading after you add it. What command makes it take effect immediately?
+    ```
+    ___________________________________________
+    ```
+
+**Section D — Application**
+
+14. Which command would you use to find every `.log` file larger than 100MB in `/var`?
+    ```
+    ___________________________________________
+    ```
+
+15. You want to run a command and save both stdout and stderr to a file named `output.log`. Write the command:
+    ```
+    your_command _____________________________ output.log
+    ```
+
+16. You are setting up a new machine and want to recreate your terminal environment quickly. Which DFY tool from Chapter 12 handles this?
+    ```
+    ___________________________________________
+    ```
+
+17. What does `set -euo pipefail` do at the top of a bash script?
+    ```
+    ___________________________________________
+    ```
+
+**Section E — Build Reflection**
+
+18. Name the DFY artifact from Chapter 12 that you are most likely to use every day:
+    ```
+    ___________________________________________
+    ```
+
+19. What credential does completing this book unlock, and where do you claim it?
+    ```
+    Credential: ___________________________________________
+    Claim at: ___________________________________________
+    ```
+
+20. In one sentence, explain what the terminal is and why it matters:
+    ```
+    ___________________________________________
+    ```
+
+---
+
+**Scoring:**
+- **18–20** → You are ready to claim CLL-L0-B001. Proceed to Appendix C credential ceremony.
+- **14–17** → Almost there. Review the chapters noted next to any wrong answers, then retake.
+- **< 14** → Revisit Chapters 1–5 and redo at least three DFY lessons from Chapter 12.
+
+**Answer Key** *(cover this until you've answered all 20)*
+
+<details>
+<summary>Reveal Answers</summary>
+
+1. interface (or: translator, interpreter)
+2. long listing format
+3. new interactive terminal session (shell)
+4. the command you want the alias to run
+5. previous SSH commands
+6. b) Go to the previous directory
+7. b) The path to your shell executable
+8. b) `tail -20 file`
+9. c) Makes the script executable
+10. b) Creates `ll` as a shortcut that persists across sessions
+11. `chmod +x setup.sh`
+12. (1) You are in the wrong directory; (2) The folder name is spelled differently or has a capital letter
+13. `source ~/.bashrc` or `. ~/.bashrc`
+14. `find /var -name "*.log" -size +100M`
+15. `your_command > output.log 2>&1`
+16. `new-machine-checklist.sh` (DFY Lesson 10)
+17. Exits on any error, on unset variable references, and on pipe failures — making the script fail loudly instead of silently continuing
+18. (personal answer — no wrong answer)
+19. CLL-L0-B001-TerminalApprentice · claim via Appendix C copilot prompt or ADA API
+20. (personal answer)
+
+</details>
+
+---
+
+### 🎧 Audiobook Quiz — 10 Spoken Questions
+
+*Narrator voice: lippytmai · Pace: measured, with 5-second pauses*
+
+---
+
+> "Before you close this book, let's confirm you've got the core concepts. I'll ask ten questions. Pause me, think it through, then resume to hear the answer. Ready?"
+
+**Q1:** "What is the difference between the terminal and the shell?"
+*[5-second pause]*
+> "The terminal is the window you see. The shell — like bash or zsh — is the program running inside it, interpreting your commands."
+
+**Q2:** "If you type a command and get 'command not found', what are two possible causes?"
+*[5-second pause]*
+> "Either the program is not installed, or the directory containing it is not in your PATH variable."
+
+**Q3:** "What does the tilde `~` symbol represent in a file path?"
+*[5-second pause]*
+> "Your home directory — the shorthand for `/home/yourusername` on Linux."
+
+**Q4:** "Name three things you can customize in your `.bashrc` file."
+*[5-second pause]*
+> "Aliases, environment variables, shell prompt appearance, PATH additions, and custom functions are all common."
+
+**Q5:** "A script runs but produces wrong output. No error was shown. What shell setting would have caught the problem earlier?"
+*[5-second pause]*
+> "`set -e` or the full `set -euo pipefail` — it makes the script exit the moment something goes wrong instead of silently continuing."
+
+**Q6:** "What command shows you the last 10 commands you ran?"
+*[5-second pause]*
+> "`history | tail` — or just `history` to see all of them."
+
+**Q7:** "What is the purpose of `chmod +x` on a file?"
+*[5-second pause]*
+> "It adds the execute permission, allowing the file to be run as a program."
+
+**Q8:** "You have an alias called `ll` in your `.bashrc` but it doesn't work in your current terminal. Why?"
+*[5-second pause]*
+> "Because `.bashrc` is sourced when a new shell starts. You need to run `source ~/.bashrc` to reload it in the current session."
+
+**Q9:** "What is the one DFY tool from this book that sets up your entire terminal environment on a new machine?"
+*[5-second pause]*
+> "The new machine checklist script — `new-machine-checklist.sh` — built in DFY Lesson 10."
+
+**Q10:** "What is your credential for completing this book, and what does it prove?"
+*[5-second pause]*
+> "CLL-L0-B001-TerminalApprentice. It proves you can navigate the Linux terminal, customize your shell environment, and build at least one deployable automation tool."
+
+---
+
+> "If you answered eight or more of those confidently — you are ready. Go claim your credential."
+
+---
+
+### 🎬 Video Terminal Challenges — 5 Pause-and-Complete
+
+*On-screen text appears. Viewer pauses, completes the task, then resumes to see solution.*
+
+---
+
+**Challenge 1 — Navigate and Inspect**
+> Screen shows: fresh terminal, home directory.
+> Task shown: "List all files in your home directory including hidden ones, sorted by modification time. Then show the last 5 commands in your history."
+> Expected: `ls -lath ~` then `history | tail -5`
+
+**Challenge 2 — Alias Drill**
+> Screen shows: `.bashrc` open in editor.
+> Task shown: "Add an alias called `myip` that prints your external IP address using `curl`. Save and reload your `.bashrc`."
+> Expected: `alias myip='curl -s ifconfig.me'` → save → `source ~/.bashrc` → `myip`
+
+**Challenge 3 — Permission Fix**
+> Screen shows: `./deploy.sh: Permission denied`
+> Task shown: "Fix the error. Then verify the fix worked."
+> Expected: `chmod +x deploy.sh` → `./deploy.sh`
+
+**Challenge 4 — History Power User**
+> Screen shows: empty terminal.
+> Task shown: "Find every `git clone` command you've run in the last 500 history entries, without re-typing any of them."
+> Expected: `history | grep "git clone"` — optionally `!N` to re-run
+
+**Challenge 5 — Full Rebuild (no peeking)**
+> Screen shows: fresh home directory.
+> Task shown: "Recreate the alias file from DFY Lesson 1. Create `~/.bash_aliases`, add at least 5 aliases, source it from `.bashrc`, and verify all aliases load."
+> Expected: full DFY Lesson 1 reproduction — `~/.bash_aliases` created, populated, sourced, verified with `alias`
+
+---
+
+> *Narrator: "If you completed all five without looking back at the book, you have earned this credential. Go get it."*
+
+---
+
+## Appendix E: Glossary & Error Encyclopedia
+
+---
+
+### 📘 Glossary — Terminal Apprentice Edition
+
+**alias** — A short custom name that maps to a longer command. Defined with `alias name='command'` in `.bashrc`. Persists across sessions when saved to the file. *B-001 Ch. 2*
+
+**bash** — Bourne Again SHell. The most common default shell on Linux. Interprets commands, runs scripts, and manages the environment. Located at `/bin/bash`. *B-001 Ch. 1*
+
+**bashrc** — `~/.bashrc`. A script that runs every time you open an interactive non-login shell. The standard place to put aliases, PATH changes, and shell customizations. *B-001 Ch. 3*
+
+**chmod** — Change file mode bits. `chmod +x file` adds execute permission; `chmod 755 file` sets owner read/write/execute, group and others read/execute. *B-001 Ch. 5*
+
+**environment variable** — A key-value pair stored in the shell session, accessible by any process started from that session. Set with `export KEY=value`. Common examples: `PATH`, `HOME`, `SHELL`. *B-001 Ch. 6 · See B-011*
+
+**exit code** — An integer returned by every command. `0` means success. Non-zero means failure. Check the exit code of the last command with `echo $?`. *B-001 Ch. 4*
+
+**history** — The shell's record of every command you've typed, stored in `~/.bash_history`. Searchable with `history | grep pattern` or `Ctrl+R`. *B-001 Ch. 8*
+
+**home directory** — `~` or `/home/yourusername`. Your personal working space. Default location when you open a terminal. *B-001 Ch. 1*
+
+**interactive shell** — A shell session with a human at the keyboard. Loads `.bashrc`. Distinct from a non-interactive shell (such as a script invocation). *B-001 Ch. 3*
+
+**kernel** — The core of the operating system. Manages hardware resources, memory, and processes. The shell communicates with the kernel via system calls. *B-001 Ch. 1*
+
+**PATH** — An environment variable containing a colon-separated list of directories where the shell looks for executable programs. If a command isn't found, its directory isn't in PATH. *B-001 Ch. 6*
+
+**permission** — A setting on every file and directory that controls read (`r`), write (`w`), and execute (`x`) access for three groups: owner, group, others. *B-001 Ch. 5 · See B-003*
+
+**prompt** — The text the shell displays to indicate it's ready for input. Customized via the `PS1` variable. Common format: `user@host:directory$`. *B-001 Ch. 7*
+
+**script** — A text file containing a sequence of shell commands, run by the shell as a batch. Must have `#!/bin/bash` on line one (shebang) and execute permission. *B-001 Ch. 9 · See B-004*
+
+**shell** — The command interpreter running inside your terminal. Examples: bash, zsh, fish. Reads your commands, talks to the kernel, returns output. *B-001 Ch. 1*
+
+**shebang** — `#!/bin/bash` or `#!/usr/bin/env bash`. The first line of a script. Tells the OS which interpreter to use when the file is executed directly. *B-001 Ch. 9*
+
+**source** — A shell built-in (`source file` or `. file`) that runs a script in the current shell session instead of a subshell. Required to make alias and variable changes take effect without restarting the terminal. *B-001 Ch. 3*
+
+**stdin / stdout / stderr** — Standard input (file descriptor 0), output (1), and error (2). Redirect with `>` (stdout), `2>` (stderr), `>>` (append). Combine with `2>&1`. *B-001 Ch. 10*
+
+**terminal** — The application window where you interact with the shell. Examples: Kitty, Alacritty, GNOME Terminal. The terminal is the glass; the shell is the program behind it. *B-001 Ch. 1*
+
+**tmux** — Terminal multiplexer. Splits one terminal window into multiple panes, persists sessions after disconnect, enables session naming. *B-001 Ch. 12 (DFY Lesson 4)*
+
+**zsh** — Z Shell. An extended version of bash with better completion, prompt customization, and plugin support. Default on macOS. Configures via `~/.zshrc`. *B-001 Ch. 1*
+
+---
+
+### 📘 Error Encyclopedia — 10 Most Common Errors for Terminal Beginners
+
+---
+
+#### Error 1 — `bash: command: command not found`
+
+**When you see it:** You type a command and bash says it doesn't exist.
+
+**Why it happens:** Either the program is not installed, or its directory is not in your `PATH` variable.
+
+**How to fix it:**
+```bash
+# Step 1: Check if it's installed
+which python3        # shows the path if installed
+type python3         # alternative
+
+# Step 2: If not installed, install it
+sudo pacman -S python   # Arch
+sudo apt install python3  # Debian/Ubuntu
+
+# Step 3: If installed but not found, check PATH
+echo $PATH
+# If the binary's directory isn't listed, add it:
+export PATH="$PATH:/path/to/binary"
+# Make it permanent by adding to ~/.bashrc
+```
+
+**How to prevent it:** Always verify a tool is installed before scripting it: `command -v toolname || echo "not installed"`.
+
+**🎧 Audiobook:** *"Command not found means one of two things: not installed, or not in your PATH. Check with `which`, install with your package manager, or extend PATH in `.bashrc`."*
+
+**🎬 Video:** Screen shows the error → `which` check → `pacman -S` install → command works.
+
+---
+
+#### Error 2 — `Permission denied`
+
+**When you see it:** `bash: ./script.sh: Permission denied` or `mkdir: cannot create directory: Permission denied`
+
+**Why it happens:** Either the file lacks execute permission, or you don't have write access to the target directory.
+
+**How to fix it:**
+```bash
+# For a script you own — add execute bit
+chmod +x script.sh
+./script.sh
+
+# For a directory you don't own — use sudo (carefully)
+sudo mkdir /etc/myapp
+```
+
+**How to prevent it:** Always `chmod +x` your scripts immediately after creating them. Never give scripts `777` permissions.
+
+**🎧 Audiobook:** *"Permission denied on a script means it can't be executed. `chmod +x` followed by the filename is almost always the fix."*
+
+**🎬 Video:** Error shown → `ls -lah` reveals missing `x` bit → `chmod +x` → success.
+
+---
+
+#### Error 3 — `No such file or directory`
+
+**When you see it:** `cd: Documents: No such file or directory` or `cat: file.txt: No such file or directory`
+
+**Why it happens:** The path is wrong, the file doesn't exist, you're in the wrong directory, or a capitalization mismatch (Linux is case-sensitive).
+
+**How to fix it:**
+```bash
+# Verify where you are
+pwd
+
+# List what actually exists
+ls -lah
+
+# Check capitalization
+ls | grep -i documents
+
+# Use tab completion to avoid typos
+cd Doc<TAB>
+```
+
+**How to prevent it:** Always use tab completion. Always `ls` before operating on a directory you haven't visited recently.
+
+**🎧 Audiobook:** *"No such file or directory is almost always a path or spelling problem. `pwd` and `ls` together will reveal the truth."*
+
+**🎬 Video:** Error → `pwd` → `ls` shows the actual capitalization → corrected command succeeds.
+
+---
+
+#### Error 4 — Alias not working after adding to `.bashrc`
+
+**When you see it:** You add an alias to `.bashrc`, type the alias, and get `command not found`.
+
+**Why it happens:** `.bashrc` is only sourced when a new shell session starts. Your current session hasn't loaded the new alias yet.
+
+**How to fix it:**
+```bash
+source ~/.bashrc
+# or
+. ~/.bashrc
+```
+
+**How to prevent it:** After every `.bashrc` edit, immediately run `source ~/.bashrc`. Some people add an alias for it: `alias reload='source ~/.bashrc'`.
+
+**🎧 Audiobook:** *"Alias changes in `.bashrc` don't take effect until you source the file. `source ~/.bashrc` applies them instantly without opening a new terminal."*
+
+**🎬 Video:** Alias added → command fails → `source ~/.bashrc` → alias works.
+
+---
+
+#### Error 5 — `sudo: command not found` or `sudo: user is not in sudoers file`
+
+**When you see it:** Either sudo itself isn't found, or you get a sudoers permission error.
+
+**Why it happens:** On minimal Arch installs, sudo may not be installed. On multi-user systems, your account may not have sudo privileges.
+
+**How to fix it:**
+```bash
+# Install sudo (as root)
+su -
+pacman -S sudo
+
+# Add yourself to the wheel group (Arch)
+usermod -aG wheel yourusername
+
+# Uncomment wheel line in /etc/sudoers using visudo
+visudo
+# Uncomment: %wheel ALL=(ALL:ALL) ALL
+```
+
+**How to prevent it:** After any fresh Linux install, install sudo and configure your user before doing anything else.
+
+**🎧 Audiobook:** *"No sudo access means you either haven't installed it or haven't added your user to the sudo group. On Arch that's the wheel group — configure it with visudo."*
+
+---
+
+#### Error 6 — Terminal colors look wrong or missing
+
+**When you see it:** The terminal shows only plain text — no color highlighting for files, no colored prompt.
+
+**Why it happens:** The `TERM` variable is not set correctly, color support isn't enabled in `.bashrc`, or the terminal emulator doesn't support 256 colors.
+
+**How to fix it:**
+```bash
+# Check current TERM
+echo $TERM
+
+# Enable colors in ls (add to .bashrc)
+alias ls='ls --color=auto'
+export TERM=xterm-256color
+
+# Enable color prompt (add to .bashrc)
+force_color_prompt=yes
+```
+
+**How to prevent it:** Set `TERM=xterm-256color` and color aliases in `.bashrc` on every new system.
+
+---
+
+#### Error 7 — `history` shows nothing or is truncated
+
+**When you see it:** `history` returns an empty list, or only shows a few entries.
+
+**Why it happens:** `HISTSIZE` or `HISTFILESIZE` variables are set too small (or to 0).
+
+**How to fix it:**
+```bash
+# Add to .bashrc
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+```
+
+**How to prevent it:** Set history variables in `.bashrc` on every machine you configure.
+
+---
+
+#### Error 8 — Script runs with `bash script.sh` but not with `./script.sh`
+
+**When you see it:** `bash script.sh` works, but `./script.sh` gives an error or wrong behavior.
+
+**Why it happens:** Missing shebang (`#!/bin/bash`) at the top of the script, or missing execute bit.
+
+**How to fix it:**
+```bash
+# Check the first line
+head -1 script.sh
+
+# Fix: add shebang
+# Line 1 of script.sh:
+#!/usr/bin/env bash
+
+# Fix: add execute permission
+chmod +x script.sh
+```
+
+**How to prevent it:** Every script should start with `#!/usr/bin/env bash` and be `chmod +x` immediately after creation.
+
+---
+
+#### Error 9 — `source` vs `./` confusion causing variables not to persist
+
+**When you see it:** A script sets variables, but after it runs, the variables are gone.
+
+**Why it happens:** Running `./script.sh` starts a subshell. Variables set inside it are lost when the subshell exits.
+
+**How to fix it:**
+```bash
+# Wrong — variables die with the subshell
+./set_vars.sh
+
+# Right — variables live in the current shell
+source set_vars.sh
+```
+
+**How to prevent it:** Use `source` for scripts that set environment variables. Use `./` for scripts that do work and exit.
+
+---
+
+#### Error 10 — Infinite loop or frozen terminal from a bad script
+
+**When you see it:** Terminal freezes, cursor blinks, nothing responds. A `while true` or runaway loop is running.
+
+**How to stop it:**
+```bash
+# First try — interrupt
+Ctrl+C
+
+# If that doesn't work — background and kill
+Ctrl+Z            # suspend the process
+jobs              # see job ID
+kill %1           # kill job 1
+
+# Nuclear option — kill by PID
+Ctrl+Z
+ps aux | grep script_name
+kill -9 PID
+```
+
+**How to prevent it:** Always test loops with a counter limit first. `while true; do ... sleep 1; done` should always have a kill condition when used in production scripts.
+
+---
+
+## Appendix F: Instructor & Accessibility Guide
+
+---
+
+### Teaching This Book — Classroom · Bootcamp · 1-on-1
+
+**Recommended Schedule:**
+
+| Format | Duration | Pace |
+|---|---|---|
+| Self-study (individual) | 1–2 weeks | 1 chapter per day |
+| Bootcamp intensive | 2–3 days | 3–4 chapters per day + DFY build |
+| Classroom module | 4–6 hours | Chapters 1–6 in session, assign 7–11 as homework |
+| Paired learning | 1 week | One person reads/explains, other types — switch per chapter |
+
+---
+
+**Session Structure (per chapter):**
+
+1. **Pre-chapter activation (5 min):** Ask "What do you already know about [topic]?" — surface existing mental models before introducing new ones.
+2. **Read or watch the chapter (20–30 min):** Ebook for self-study, video for classroom projection.
+3. **Guided DFY build (20–30 min):** Everyone builds the Chapter 12 artifact for that topic simultaneously. Instructor walks the room.
+4. **Copilot debug session (10–15 min):** Use the inline `🤖 Copilot Assist` prompt. Students try to break their own build, then fix it using the copilot.
+5. **Chapter quiz mini-check (5 min):** Instructor asks 2–3 verbal questions from Appendix D Section A before moving on.
+
+---
+
+**Top 5 Concepts Where Students Consistently Struggle:**
+
+| Concept | Common Mistake | Teaching Fix |
+|---|---|---|
+| `source` vs `./` | Running `./set_vars.sh` and wondering why vars disappeared | Demonstrate both in real time — show `echo $VAR` after each |
+| PATH vs installed | Assuming a tool works when it's installed but not in PATH | Show `which`, `echo $PATH`, and the fix together |
+| `.bashrc` not reloading | Expecting changes to appear immediately | Always `source ~/.bashrc` — make it a reflex |
+| `chmod +x` forgetting | Getting permission denied on every new script | Make `chmod +x` the first thing you do after `nano script.sh` |
+| Home directory paths | Hardcoding `/home/username/` instead of `~/` | Always use `~` — show what happens when the username changes |
+
+---
+
+**Assessment Rubric — Credential Readiness:**
+
+| Skill | Not Ready | Ready | Proficient |
+|---|---|---|---|
+| Navigation | Can't `cd` reliably | Navigates with `cd`, `ls`, `pwd` | Uses `cd -`, `pushd`/`popd`, auto-completion |
+| Shell config | `.bashrc` empty | Has aliases and PATH edits | Has PS1 customized, history configured, functions defined |
+| Permissions | Confused by `rwx` | Can `chmod +x` a script | Can read `ls -lah` output and fix any permission issue |
+| Scripting basics | Can't write a script | Writes scripts with shebang and `set -euo pipefail` | Scripts include error handling, logging, and arguments |
+| DFY build | Did not attempt | Built one DFY artifact | Built 5+ DFY artifacts and can explain each one |
+
+---
+
+### Accessibility Standards
+
+**Screen Reader Compatibility:**
+- All code blocks are wrapped in fenced Markdown (` ``` `) — renders as `<pre><code>` in HTML, accessible to screen readers
+- All ASCII diagrams have a text description in brackets immediately following: `[Diagram: flowchart showing command → shell → kernel → hardware → shell → output]`
+- All tables have column headers — never use ASCII-art tables without Markdown table equivalent
+
+**Color-Blind Mode:**
+- All `rwx` permission diagrams use letter notation — never color-only
+- Status indicators use both emoji AND text: ✅ PASS · ❌ FAIL · ⏳ PENDING
+- Terminal screenshots are accompanied by typed-out text equivalents
+
+**Dyslexia-Friendly:**
+- Target sentence length: 20 words maximum in explanatory text
+- Numbered steps are grouped in blocks of no more than 3
+- All technical terms are **bolded** on first use and added to the glossary
+- OpenDyslexic font is available in the HTML/EPUB export setting
+
+**Low-Bandwidth / Offline:**
+- All code examples run in a plain text terminal — no GUI, no browser, no internet required
+- Audiobook is produced as a downloadable M4B file — works completely offline
+- Video works at 144p — terminal-only content, no animation overhead
+
+---
+
+## Appendix G: Your Learning Path
+
+---
+
+### Where You Are Now
+
+```
+THE 300-BOOK EARN-WHILE-YOU-LEARN JOURNEY
+══════════════════════════════════════════════════════
+
+  PHASE 1: Linux Foundations (B-001–B-025)
+  ─────────────────────────────────────────────────────
+  ★ B-001  Terminal Apprentice          ← YOU ARE HERE
+  ○ B-002  Command Architect
+  ○ B-003  Filesystem Navigator
+  ○ B-004  Script Automator
+  ○ B-005  Package Master
+  ○ B-006  Process Wrangler
+  ○ B-007  Network Navigator
+  ○ B-008  Git Foundation
+  ○ B-009  Text Processor
+  ○ B-010  Service Manager
+  ○ B-011  Secrets Keeper
+  ○ B-012  Container Pilot
+  ○ B-013  SSH Engineer
+  ○ B-014  Scheduler
+  ○ B-015  Neovim Artisan
+  ○ B-016  Pipeline Builder
+  ○ B-017  Arch Architect
+  ○ B-018  Log Reader
+  ○ B-019  Security Hardener
+  ○ B-020  Disk Manager
+  ○ B-021  Filesystem Expert
+  ○ B-022  Shell Function Master
+  ○ B-023  Backup Engineer
+  ○ B-024  User Administrator
+  ○ B-025  Cross-Platform Developer
+  
+  Phase 1 Progress:  █░░░░░░░░░░░░░░░░░░░░░░░░  1/25
+
+  PHASE 2: Python (B-026–B-055) — 30 books
+  PHASE 3: Blockchain (B-056–B-080) — 25 books
+  PHASE 4–6: Advanced tracks — 220 books remaining
+```
+
+---
+
+### What You've Unlocked
+
+```
+CREDENTIAL CHAIN:
+  [No prerequisite]
+       ↓
+  ★ CLL-L0-B001-TerminalApprentice   ← CLAIM THIS NOW
+       ↓
+  CLL-L0-B002-CommandArchitect (unlocks with B-002)
+       ↓
+  CLL-L1-B025-LinuxFoundationsGraduate (Phase 1 capstone)
+       ↓
+  CCSLL-P1-B055-PythonFoundationsGraduate (Phase 2 capstone)
+```
+
+---
+
+### Recommended Next Steps
+
+1. **Right now:** Claim your CLL-L0-B001 credential using the prompt in Appendix C, Section 4.
+2. **This week:** Build one real project from Appendix H using only the skills from this book — no looking ahead.
+3. **Next book:** Start **B-002 — Commands That Actually Work** (Command Architect credential).
+
+**B-002 prerequisites you already have after finishing B-001:**
+- ✅ Can open and navigate a terminal
+- ✅ Have a configured `.bashrc` with aliases
+- ✅ Can create and run a bash script
+- ✅ Understand exit codes
+
+---
+
+### Phase 1 Learning Path — All 25 Books
+
+| Book | Title | Credential | Core Skill |
+|---|---|---|---|
+| **B-001** | **Terminal Apprentice** ← *you* | CLL-L0-B001 | Shell navigation + config |
+| B-002 | Commands That Actually Work | CLL-L0-B002 | Pipes + composition |
+| B-003 | The File That Remembered Everything | CLL-L0-B003 | Filesystem + inodes |
+| B-004 | The Script That Did My Job | CLL-L0-B004 | Bash scripting + automation |
+| B-005 | Installing Things Without Breaking Things | CLL-L0-B005 | Package management |
+| B-006 | The Process That Wouldn't Stop | CLL-L0-B006 | Processes + signals |
+| B-007 | The Network That Connected Everything | CLL-L0-B007 | Networking + diagnostics |
+| B-008 | Files That Never Get Lost | CLL-L0-B008 | Git version control |
+| B-009 | Working With Text Like a Pro | CLL-L0-B009 | grep, awk, sed |
+| B-010 | The Service That Started Itself | CLL-L0-B010 | systemd + services |
+| B-011 | Environment Variables & Secrets | CLL-L1-B011 | Secrets management |
+| B-012 | The Container That Held Everything | CLL-L1-B012 | Docker containers |
+| B-013 | SSH: The Secure Handshake | CLL-L1-B013 | Remote access |
+| B-014 | Cron: The Machine That Never Forgets | CLL-L1-B014 | Task scheduling |
+| B-015 | The Editor That Does Everything | CLL-L1-B015 | Neovim mastery |
+| B-016 | Pipes, Redirects & Composition | CLL-L1-B016 | Advanced piping |
+| B-017 | The Arch Linux Advantage | CLL-L1-B017 | Arch + OMARCHY |
+| B-018 | Log Files Tell the Truth | CLL-L1-B018 | Log analysis |
+| B-019 | Securing Your Linux Machine | CLL-L1-B019 | System hardening |
+| B-020 | Disk Space: The Resource That Runs Out | CLL-L1-B020 | Disk management |
+| B-021 | The Linux Filesystem Explained | CLL-L2-B021 | FHS + deep filesystem |
+| B-022 | Shell Functions & Aliases | CLL-L2-B022 | Advanced shell config |
+| B-023 | Archives, Compression & Backups | CLL-L2-B023 | Backup systems |
+| B-024 | The User Who Could Do Everything | CLL-L2-B024 | User + group admin |
+| B-025 | Linux on Every Platform | CLL-L2-B025 | Cross-platform Linux |
+
+---
+
+### Cross-Phase Connections — How B-001 Skills Extend Forward
+
+| Skill from B-001 | Grows into (Phase 2 Python) | Grows into (Phase 3 Blockchain) |
+|---|---|---|
+| Terminal navigation | Python CLI tools (B-046) | Blockchain node management (B-056+) |
+| Bash scripts + `set -euo pipefail` | Python subprocess + argparse (B-028) | Smart contract deployment scripts (B-060+) |
+| `.bashrc` env config | Python dotenv + `.env` files (B-048) | Wallet private key env management (B-070+) |
+| `chmod` + permissions | Python file security (B-030) | Smart contract access control (B-062+) |
+| History + reproducibility | Python logging (B-049) | Blockchain transaction audit logs (B-075+) |
+| DFY new-machine script | Python project scaffolding (B-044) | Hardhat/Foundry project setup (B-065+) |
+
+---
+
+### 🎧 Audiobook Learning Path Recap
+
+> *"Here is where this book fits in your journey. You've just completed the foundation — the terminal, the shell, the environment. Without this, nothing else in this series would work. Every Python script, every Docker container, every blockchain node you deploy in the future will be run from a terminal just like this one. You've earned your first credential. From here, B-002 teaches you to compose commands into pipelines, B-003 teaches you the filesystem in depth, and B-004 teaches you to automate anything. Phase 1 is 25 books. You've completed one. Keep going."*
+
+---
+
+### 🎬 Video Path Map Scene
+
+*Visual: Animated 300-book grid. B-001 lights up gold. Arrow pulses to B-002. Phase 1 row glows green.*
+
+*Narrator: "You're one book into a 300-book system. The credential you just earned is the key that unlocks the next door. Same time tomorrow — B-002."*
+
+---
+
+## Appendix H: Real Project Showcase
+
+> *"The measure of mastery is what you build when no one is watching."*
+
+---
+
+### Project: `dotfiles-installer.sh` — Personal Terminal Environment Deployer
+
+**Built with:** Skills from B-001 only (no B-002+ required)
+**Time to build:** 45–90 minutes
+**Who would use this:** Anyone who works on multiple machines or reinstalls Linux regularly
+**Portfolio value:** Demonstrates shell scripting, environment config, idempotency, and professional automation habits
+
+---
+
+#### What It Does
+
+`dotfiles-installer.sh` is a single-script solution that sets up your complete terminal environment on any new Linux machine in under 60 seconds. Run it once and you have:
+
+- Your aliases loaded
+- Your history configured
+- Your PS1 prompt set
+- Your tmux config in place
+- A health check confirming everything worked
+
+It is **idempotent** — safe to run multiple times without duplicating entries. It is **self-testing** — it verifies its own work before exiting.
+
+---
+
+#### Complete Code
+
+```bash
+#!/usr/bin/env bash
+# dotfiles-installer.sh — Personal terminal environment deployer
+# B-001 Capstone Project · CLL-L0-B001-TerminalApprentice
+# Usage: bash dotfiles-installer.sh
+
+set -euo pipefail
+
+# ──────────────────────────────────────────────────────────────
+# Config — edit these to match your preferences
+# ──────────────────────────────────────────────────────────────
+DOTFILES_DIR="$HOME/.dotfiles"
+BASHRC="$HOME/.bashrc"
+BASH_ALIASES="$HOME/.bash_aliases"
+HISTSIZE_TARGET=10000
+
+# ──────────────────────────────────────────────────────────────
+# Helpers
+# ──────────────────────────────────────────────────────────────
+log()     { echo "  [INFO] $*"; }
+success() { echo "  [OK]   $*"; }
+warn()    { echo "  [WARN] $*"; }
+
+append_once() {
+    # append_once "text" "file" — appends only if line not already present
+    local text="$1" file="$2"
+    grep -qF "$text" "$file" 2>/dev/null || echo "$text" >> "$file"
+}
+
+# ──────────────────────────────────────────────────────────────
+# Step 1: Create alias file
+# ──────────────────────────────────────────────────────────────
+log "Creating $BASH_ALIASES ..."
+cat > "$BASH_ALIASES" << 'ALIASES'
+# lippytmai Terminal Environment — generated by dotfiles-installer.sh
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -lah --color=auto'
+alias la='ls -A --color=auto'
+alias lt='ls -lath --color=auto'
+
+# Safety nets
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate'
+
+# System info
+alias myip='curl -s ifconfig.me'
+alias ports='ss -tulpn'
+alias mem='free -h'
+alias disk='df -h'
+alias top='htop 2>/dev/null || top'
+
+# Productivity
+alias reload='source ~/.bashrc && echo "Reloaded."'
+alias bashrc='${EDITOR:-nano} ~/.bashrc && source ~/.bashrc'
+alias aliases='${EDITOR:-nano} ~/.bash_aliases && source ~/.bashrc'
+ALIASES
+success "Alias file created: $BASH_ALIASES"
+
+# ──────────────────────────────────────────────────────────────
+# Step 2: Source alias file from .bashrc
+# ──────────────────────────────────────────────────────────────
+log "Ensuring .bash_aliases is sourced from $BASHRC ..."
+append_once "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" "$BASHRC"
+success ".bash_aliases sourced"
+
+# ──────────────────────────────────────────────────────────────
+# Step 3: Configure history
+# ──────────────────────────────────────────────────────────────
+log "Configuring history settings ..."
+append_once "export HISTSIZE=$HISTSIZE_TARGET" "$BASHRC"
+append_once "export HISTFILESIZE=$((HISTSIZE_TARGET * 2))" "$BASHRC"
+append_once "export HISTCONTROL=ignoredups:erasedups" "$BASHRC"
+append_once "shopt -s histappend" "$BASHRC"
+success "History configured (size: $HISTSIZE_TARGET)"
+
+# ──────────────────────────────────────────────────────────────
+# Step 4: Set prompt
+# ──────────────────────────────────────────────────────────────
+log "Setting PS1 prompt ..."
+append_once "export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" "$BASHRC"
+success "Prompt configured"
+
+# ──────────────────────────────────────────────────────────────
+# Step 5: MOTD greeting
+# ──────────────────────────────────────────────────────────────
+log "Setting up MOTD greeting ..."
+MOTD_SCRIPT="$HOME/.motd.sh"
+cat > "$MOTD_SCRIPT" << 'MOTD'
+#!/usr/bin/env bash
+echo ""
+echo "  ┌────────────────────────────────────┐"
+echo "  │  $(date '+%A, %B %d %Y — %H:%M')    │"
+echo "  │  $(hostname) · $(whoami)             │"
+echo "  │  $(df -h / | awk 'NR==2{print "Disk: "$5" used"}')               │"
+echo "  │  CLL-L0-B001-TerminalApprentice ✓  │"
+echo "  └────────────────────────────────────┘"
+echo ""
+MOTD
+chmod +x "$MOTD_SCRIPT"
+append_once "source ~/.motd.sh" "$BASHRC"
+success "MOTD configured"
+
+# ──────────────────────────────────────────────────────────────
+# Step 6: Health check
+# ──────────────────────────────────────────────────────────────
+echo ""
+echo "  ────────────── HEALTH CHECK ──────────────"
+source "$BASHRC" 2>/dev/null || true
+
+[[ -f "$BASH_ALIASES" ]]   && success "Alias file:    $BASH_ALIASES"                            || warn    "Alias file:    NOT FOUND"
+
+grep -q "HISTSIZE" "$BASHRC" && success "History:       configured"                              || warn    "History:       not configured"
+
+grep -q "PS1" "$BASHRC"      && success "Prompt (PS1):  configured"                              || warn    "Prompt:        not configured"
+
+[[ -x "$MOTD_SCRIPT" ]]     && success "MOTD script:   executable"                              || warn    "MOTD script:   not executable"
+
+echo "  ───────────────────────────────────────────"
+echo ""
+echo "  Installation complete. Run: source ~/.bashrc"
+echo ""
+echo "  ★ Credential: CLL-L0-B001-TerminalApprentice"
+echo "  Claim at: lippytm.ai/credentials"
+echo ""
+```
+
+---
+
+#### How to Deploy It
+
+```bash
+# 1. Download or create the file
+curl -O https://raw.githubusercontent.com/lippytm/dotfiles/main/dotfiles-installer.sh
+# or: nano dotfiles-installer.sh  (paste the code above)
+
+# 2. Make it executable
+chmod +x dotfiles-installer.sh
+
+# 3. Run it
+bash dotfiles-installer.sh
+
+# 4. Reload your shell
+source ~/.bashrc
+
+# 5. Verify
+ll        # your new alias should work
+reload    # tests the reload alias
+myip      # tests the curl alias
+```
+
+---
+
+#### How to Extend It (using B-002+ skills)
+
+Once you've completed more books in the series, extend this project with:
+
+1. **B-002 (Pipes):** Add a `check_deps()` function that pipes `pacman -Qq` through `grep` to verify required tools are installed
+2. **B-004 (Scripting):** Add CLI arguments (`--dry-run`, `--uninstall`, `--update`) using `case` statement
+3. **B-007 (Networking):** Add `ping 8.8.8.8 -c 1 || warn "No internet"` connectivity check at the start
+
+---
+
+#### 📘 Ebook
+
+Full code above — copy, customize, deploy.
+
+#### 🎧 Audiobook — Capstone Narration
+
+> *"Here is the capstone project for this book. A dotfiles installer — one script that recreates your entire terminal environment on any machine in under 60 seconds. It creates your alias file, configures your history, sets your prompt, adds a greeting message, and verifies that everything worked. It uses every major skill from every chapter. If you can write this from scratch without looking, you have mastered this book. The credential is waiting."*
+
+#### 🎬 Video — Full Build Walkthrough Scene
+
+**Duration:** 12 minutes
+**Scene:** Fresh terminal, blank home directory.
+1. (0:00) Narrator explains what we're building and why
+2. (1:30) Create the file with `nano dotfiles-installer.sh`
+3. (2:30) Write the shebang and `set -euo pipefail`
+4. (3:30) Add the alias file creation block (live typing)
+5. (5:00) Add the `append_once` function — explain idempotency
+6. (6:30) Add history and PS1 config
+7. (7:30) Add MOTD block
+8. (8:30) Add the health check section
+9. (9:30) `chmod +x` then run it
+10. (10:30) `source ~/.bashrc` — watch aliases and prompt appear
+11. (11:30) Run `ll`, `myip`, `reload` — all work
+12. (12:00) Credential claim prompt shown on screen
+
+---
+
+
 ## Further Reading
 
 - 📄 [`docs/linux-blockchain-educational-ecosystem.md`](linux-blockchain-educational-ecosystem.md) — The full 6-level Linux curriculum this book begins
