@@ -283,6 +283,67 @@ Key concepts explored:
 
 ---
 
+## Educational Environmental Ecosystems Platform (EEEP)
+
+> *"The classroom of the future has no walls. It has a terminal, a blockchain node, a ROS2 robot arm, and an AI tutor that never sleeps."*
+
+The **Educational Environmental Ecosystems Platform (EEEP)** is the lippytm.ai master learning infrastructure — a 5-layer nested environment that teaches humans, robots, and humanoid AIs to become blockchain developers, Linux engineers, and AI architects.
+
+Key concepts explored:
+
+- **5-Layer Architecture** — Futuristic AI Universe → Blockchain Layer → AI Systems (ACSS) → Linux Substrate (OMARCHY/CLL) → Learner Environment, supporting humans, robots, and humanoid AIs.
+- **Robot and Humanoid Learners** — `RobotLearner` Python dataclass + EEEP API client; ROS2 `LearningProgressNode` that publishes lesson completions and subscribes to curriculum assignments.
+- **Linux Integration Map** — 10 platform types × 6 proficiency levels, OMARCHY compatibility checks, and automated Linux environment provisioning per learner type.
+- **Blockchain Curriculum Path** — from running a local Anvil node to writing Foundry-tested EVM contracts to deploying full autonomous on-chain protocols.
+- **`EEEPCredential` Smart Contract** — ERC-721 on Base, `AccessControl`, with `learnerType` field supporting `"human"`, `"robot"`, and `"humanoid_ai"` — Level 4+ requires HumanApprovalGate (Charles review).
+- **Futuristic AI Learning Scenarios** — Great Departure protocol, AI-to-AI teaching chains, multi-species curriculum orchestration, interplanetary learning networks.
+- **ACSS Integration** — all learner progress events published to Hermes; Fabric builds per-learner knowledge graphs; AMIL selects teaching models by learner type.
+
+📄 Deep dive → [`docs/educational-environmental-ecosystems.md`](docs/educational-environmental-ecosystems.md)
+
+---
+
+## Linux Blockchain Educational Ecosystem (LBEE)
+
+> *"Every blockchain node runs on Linux. Every validator is a Linux server. Every smart contract was written in a terminal."*
+
+The **Linux Blockchain Educational Ecosystem (LBEE)** is the deepest integration of the CLL and CBSLL — mapping the complete learning path from bare-metal Linux to autonomous on-chain systems.
+
+Key concepts explored:
+
+- **Linux-to-Blockchain Matrix** — 9 blockchain component types and why each one demands Linux (systemd, performance, native tooling, ZK GPU compute).
+- **OMARCHY Blockchain Bootstrap** — full Bash script installing Rust, Foundry, Solana CLI, Anchor, Geth, web3.py, Circom, and Ganache on Arch Linux in one run.
+- **Ethereum + Solana Node Operation** — Geth + Lighthouse client configuration, Solana validator setup with Linux performance tuning (`sysctl` network parameters), Cosmos SDK node bootstrap.
+- **Smart Contract Development on Linux** — Foundry as the OMARCHY-native EVM toolkit; `LBEEToken.sol` ERC-20 with earn-while-you-learn rewards; Forge test suite with fuzz testing; ZK proof pipeline (Circom + snarkjs on GPU Linux).
+- **Curriculum Map by Linux Level** — 6-level table mapping Linux proficiency to blockchain content, tools, and Earn-while-you-Learn rewards.
+- **Autonomous Node Monitoring** — Bash health-check script that publishes to Hermes every 5 minutes; automated Foundry CI/CD pipeline with Slither + Echidna security scanning.
+- **ACSS Integration Points** — all 6 LBEE subsystems and their Hermes/Fabric integration patterns.
+
+📄 Deep dive → [`docs/linux-blockchain-educational-ecosystem.md`](docs/linux-blockchain-educational-ecosystem.md)
+
+---
+
+## Autonomous Continuous Development (ACD)
+
+> *"The greatest CI pipeline is one that improves itself. The future of software engineering is autonomous systems that evolve faster than any human team."*
+
+**Autonomous Continuous Development (ACD)** is the operational spine of the lippytm.ai ecosystem — the closed-loop evolutionary system that builds, tests, deploys, reviews, and improves every repository, every agent, and every AI model in the ACSS without constant human intervention.
+
+Key concepts explored:
+
+- **ACD Architecture** — 8-phase loop: Trigger → Build & Test → AI Review → Deploy → Observe → Learn → Improve → Gate; Fabric as the learning layer; Hermes as the event backbone.
+- **Universal ACSS CI Pipeline** — GitHub Actions workflow with CSEL auto-detection (automatically identifies blockchain, web, ML, Rust, or docs environment); AMIL-powered PR analysis; Hermes event reporting on every run.
+- **Fabric-Triggered Auto-Improvement** — `repository_dispatch` workflow that fetches Fabric improvement proposals, applies patches with confidence ≥ 85%, and opens draft PRs for human review.
+- **Self-Healing Pipelines** — `PipelineGuardian` class (async Python) that monitors CI failure patterns, applies healing strategies (revert, retry, rollback-deploy), and escalates to Charles via HumanApprovalGate after 5 failures.
+- **Autonomous PR Reviewer** — `AutonomousPRReviewer` class with parallel review passes (security via Claude 3.5, logic via Claude, style via GPT-4o-mini, optimization via DeepSeek Coder); Fabric feedback loop learns from accepted/rejected suggestions.
+- **ACSS Self-Evolution Loop** — 8-step loop (Observe → Pattern → Generate → Validate → Gate → Deploy → Measure → Loop); `FabricEvolutionEngine` detects CI failures, model routing inefficiencies, and infrastructure drift; auto-applies safe changes (confidence ≥ 90%) or opens human-gate proposals for complex ones.
+- **Multi-Stage Deployment with Auto-Rollback** — blue/green staging + production; 5-minute bake-time error rate monitoring; auto-rollback if error rate > 5% with Hermes notification.
+- **ACD Earn-while-you-Learn Credentials** — 6-level table from writing a GitHub Actions workflow (CCSLL L1) to designing the full ACSS self-evolution engine (ACSS Architect, Charles review required).
+
+📄 Deep dive → [`docs/autonomous-continuous-development.md`](docs/autonomous-continuous-development.md)
+
+---
+
 ## Contributing
 
 This encyclopedia is open to intelligent contributors — human, AI, robotic, or otherwise — operating under clear identity, rights, safety, evidence, and quality controls.

@@ -281,4 +281,6 @@ You cannot improve what you cannot measure.
 - [Self-Improvement & Evolutionary Evolution](self-improvement.md) — the evolutionary principles underlying all learning.
 - [Intergalactic Network](intergalactic-network.md) — multi-agent coordination and decentralized governance.
 - [Time Travelers & Time Machines](time-travelers.md) — how AI agents learn from historical data.
+- [Educational Environmental Ecosystems Platform](educational-environmental-ecosystems.md) — EEEP: human, robot, and humanoid AI learning architecture built on top of these robotics programming foundations.
+- [Linux Blockchain Educational Ecosystem](linux-blockchain-educational-ecosystem.md) — Linux as the universal substrate for all robotic and blockchain developer education.
 - Back to [README](../README.md)
