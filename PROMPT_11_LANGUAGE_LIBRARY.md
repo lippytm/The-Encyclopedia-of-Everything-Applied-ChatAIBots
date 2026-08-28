@@ -72,6 +72,30 @@ All 8 engines (Intake, Classification, Planning, Documentation, Quality Review, 
 
 📄 → [`docs/P011-ENGINE-001-prompt11-engines.md`](docs/P011-ENGINE-001-prompt11-engines.md)
 
+## Documentation Engine (Engine 4)
+
+Autonomous encyclopedia generation: DocTrigger classification, encyclopedia format standard enforcement, `DocumentationEngine` Python class, scheduled nightly refresh pipeline, and multi-format content generation (ebooks, audiobook scripts, video scripts, quizzes, slides).
+
+📄 → [`docs/P011-DOC-001-documentation-engine.md`](docs/P011-DOC-001-documentation-engine.md)
+
+## Quality Review Engine (Engine 5)
+
+The complete 13-gate quality pipeline — `QualityReviewEngine` Python class with all gate implementations (G1 Originality through G12 Correction), `QualityReport` dataclass, Quality Evidence Packet (QEP) generator, and G13 HumanApprovalGate triggering.
+
+📄 → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
+
+## HD Video Generator (HDVG)
+
+AI-powered HD video production pipeline: `SceneManifest` schema, `ManifestGenerator` (Claude + GPT-4o), FFmpeg video composer, interactive GESN player integration, and multi-format export (MP4/WebM/HLS).
+
+📄 → [`docs/P011-VIDEO-001-hd-video-generator.md`](docs/P011-VIDEO-001-hd-video-generator.md)
+
+## Gamer Educational Systems Networks (GESN)
+
+The interactive video learning platform — GESN architecture, mission structure (maps to P011 12-step pattern), skill tree, `GESNVideoPlayer` React component, `GESNMissionBadge` ERC-721 contract, GESN advertising books (B-099/B-100, I-097–I-100, A-093–A-100), and GESN network economics.
+
+📄 → [`docs/P011-GESN-001-gamer-educational-systems-networks.md`](docs/P011-GESN-001-gamer-educational-systems-networks.md)
+
 ## Curriculum Planner (Engine 3)
 
 Full Fabric-backed adaptive curriculum planner: learner profile schema, gap analysis, Claude 3.5 plan generation, beginner/intermediate/advanced curriculum templates, and the plan adjustment loop.
@@ -86,10 +110,16 @@ Real-time ecosystem monitoring: learner engagement signals, pipeline health, inf
 
 ## 300-Book Course Series Master Plan
 
-The full plan for 100 Beginner + 100 Intermediate + 100 Advanced ebooks and audiobooks on programming, blockchain development, and Linux — synthesized from Claude, ChatGPT, Gemini, GitHub, and all lippytm.ai repositories.
+The full plan for 100 Beginner + 100 Intermediate + 100 Advanced ebooks and audiobooks on programming, blockchain development, and Linux — synthesized from Claude, ChatGPT, Gemini, GitHub, and all lippytm.ai repositories. B-099/B-100 = GESN advertising (Beginner); I-097–I-100 = GESN advertising + build (Intermediate); A-093–A-100 = GESN Networks (Advanced).
 
 📄 → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
 
+## Repo Communications Engine (Engine 7)
+
+The broadcast and coordination layer: `RepoCommsEngine` Python class, 10-message-type routing table, GitHub Issues/PR/comment handlers, Slack ops/review/GESN/Charles-DM handlers, Hermes relay, GESN push notification handlers, G13 HumanApprovalGate triple-channel protocol, retry/resilience design, and Docker deployment.
+
+📄 → [`docs/P011-REPOCOMMS-001-repo-communications-engine.md`](docs/P011-REPOCOMMS-001-repo-communications-engine.md)
+
 ## Next Action
 
-Phase 1 execution: produce the first 5 Beginner ebook drafts (B-001 through B-005, Linux foundations) using the AI synthesis pipeline and submit for Charles review.
+Phase 1 execution: produce the first 5 Beginner ebook/video drafts (B-001 through B-005, Linux foundations) through the AI synthesis pipeline → 13-gate quality review → Charles approval gate.

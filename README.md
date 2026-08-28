@@ -466,7 +466,100 @@ Key concepts explored:
 
 ---
 
-## Contributing
+## Prompt #11: Documentation Engine (Engine 4)
+
+> *"Documentation is not a side effect of building — it is the build artifact itself."*
+
+The **P011-DOC-001 Documentation Engine** is Engine 4 — the automated encyclopedia content generation system that transforms pipeline events into living documents.
+
+Key concepts explored:
+
+- **DocTrigger Classification** — 6 trigger types (NewConcept, ContentUpdate, EbookDraft, VideoScript, QuizGeneration, AuditLog) with routing logic.
+- **Encyclopedia Format Standard** — enforced template: title + epigraph → `---` → numbered `##` sections → `Further Reading`; auto-insertion of truth labels, tables, and fenced code blocks.
+- **`DocumentationEngine` Python class** — async Claude 3.5 orchestrated content generation, multi-format output (`.md` ebook draft, `.txt` audiobook script, `.json` quiz, `.md` slide outline), and Fabric provenance registration.
+- **Nightly Scheduled Refresh** — APScheduler-powered cron that pulls fresh Fabric patterns, updates stale doc sections, and regenerates audiobook scripts when source content changes.
+- **Multi-Format Content Generation** — `generate_ebook_chapter()`, `generate_audiobook_script()`, `generate_video_script()`, `generate_quiz()` — each wired to the HDVG and GESN pipelines.
+- **Quality gate handoff** — every generated document is submitted directly to Engine 5 (QualityReviewEngine) for 13-gate review before commit.
+
+📄 Deep dive → [`docs/P011-DOC-001-documentation-engine.md`](docs/P011-DOC-001-documentation-engine.md)
+
+---
+
+## Prompt #11: Quality Review Engine (Engine 5)
+
+> *"Thirteen gates stand between a draft and the world. Every gate is a promise to the learner."*
+
+The **P011-QR-001 Quality Review Engine** is Engine 5 — the 13-gate pipeline that every piece of P011 content must pass before it can be published, deployed, or minted.
+
+Key concepts explored:
+
+- **13 Quality Gates** — G1 Originality, G2 FictionBoundary, G3 Rights, G4 Source, G5 CodeTests, G6 LearningOutcome, G7 Accessibility, G8 Privacy, G9 Security, G10 Environmental, G11 RevenueIntegrity, G12 Correction (all automated), G13 HumanApprovalGate (always manual — Charles only).
+- **`QualityReviewEngine` Python class** — full implementation of all 13 gates, `GateResult` dataclass, parallel execution of G1–G12, `QualityReport` dataclass.
+- **Quality Evidence Packet (QEP)** — Markdown report generator with per-gate results, evidence traces, and overall recommendation (PASS / CONDITIONAL_PASS / BLOCKED / ESCALATE).
+- **G13 HumanApprovalGate** — never automated; always routes to Charles via Engine 7 (triple-channel notification: GitHub PR + Slack DM + optional email).
+- **Integration with Engine 7** — QEP_COMPLETE or QEP_BLOCKED events broadcast automatically on pipeline completion.
+- **Retry logic** — blocked documents are held in a review queue; retry triggered when source issue is resolved.
+
+📄 Deep dive → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
+
+---
+
+## Prompt #11: HD Video Generator (HDVG)
+
+> *"A video is a document that knows how to move."*
+
+The **P011-VIDEO-001 HD Video Generator** is the AI-powered production pipeline that converts any P011 ebook chapter or documentation draft into a fully composed HD video — narrated, visually illustrated, and embedded with GESN interactive overlays.
+
+Key concepts explored:
+
+- **`SceneManifest` schema** — typed JSON structure for a complete video: metadata, intro, content scenes (narration + visual_prompt + code_block + interactive_overlay), and outro.
+- **`ManifestGenerator` Python class** — Claude 3.5 + GPT-4o orchestrated scene planning; ElevenLabs lippytmai-voice narration generation; AI image generation for each scene visual.
+- **FFmpeg composer pipeline** — Bash script that assembles narration audio + generated visuals + code overlays + subtitle track + interactive quiz markers into MP4/WebM/HLS output.
+- **GESN interactive overlays** — quiz questions embedded at scene boundaries; learner must answer to advance; quiz data feeds back to Fabric learner profile.
+- **HDVG → GESN integration** — every generated video is automatically registered as a GESN mission module; Engine 7 broadcasts `GESN_MISSION_LIVE` on completion.
+- **Advertising content pipeline** — B-099/B-100, I-097–I-100, A-093–A-100 GESN advertising videos generated through the same HDVG pipeline.
+
+📄 Deep dive → [`docs/P011-VIDEO-001-hd-video-generator.md`](docs/P011-VIDEO-001-hd-video-generator.md)
+
+---
+
+## Prompt #11: Gamer Educational Systems Networks (GESN)
+
+> *"The best game you can play is one where leveling up makes you actually smarter."*
+
+The **P011-GESN-001 Gamer Educational Systems Networks** is the interactive video learning platform that transforms every P011 ebook, audiobook, and HDVG video into a playable educational mission — with on-chain credentials, skill trees, and a franchise network for node operators.
+
+Key concepts explored:
+
+- **GESN Architecture** — 6-layer platform: Content Ingestion → Mission Builder → Interactive Video Player → Credential Engine → Learner Profile → Network Layer; all powered by ACSS Fabric and Engine 7.
+- **Mission Structure** — 12-step pattern (maps to P011 chapters): World Setup → Character Introduction → Core Conflict → Skill Challenge → Boss Battle → Reflection; each step linked to HDVG scene.
+- **`GESNVideoPlayer` React/TypeScript component** — interactive video player with quiz gate, skill XP tracking, badge unlock animation, and GESN API integration.
+- **`GESNMissionBadge` ERC-721 contract** — Solidity implementation with `missionId`, `learnerLevel`, `completionTimestamp`, `ipfsContentHash`; Level 4+ minting requires CharlesRole.
+- **GESN Economy** — SkillBadge market value, teaching bounties (earn by creating missions), node operator revenue share, credential verification fees.
+- **GESN Advertising Books** — B-099/B-100 (Beginner: platform tour + first badge); I-097–I-100 (Intermediate: architecture, economy, mission building, node launch); A-093–A-100 (Advanced: network architecture, DAO governance, AI mission generator, cross-chain credentials, trading bot integration, humanoid AI teachers, franchise system, Genesis deployment).
+- **Franchise Network** — node operator licensing, quality gates (13-gate QEP required for all missions), community governance via GESN DAO.
+
+📄 Deep dive → [`docs/P011-GESN-001-gamer-educational-systems-networks.md`](docs/P011-GESN-001-gamer-educational-systems-networks.md)
+
+---
+
+## Prompt #11: Repo Communications Engine (Engine 7)
+
+> *"Communication is not the transmission of data — it is the transmission of meaning."*
+
+The **P011-REPOCOMMS-001 Repo Communications Engine** is Engine 7 — the broadcast and coordination layer that routes every ACSS event to the right audience through the right channel.
+
+Key concepts explored:
+
+- **10 Message Types** — `PIPELINE_START`, `PLAN_READY`, `DOC_DRAFT_READY`, `QEP_COMPLETE`, `QEP_BLOCKED`, `AWARENESS_ALERT`, `GESN_MISSION_LIVE`, `BADGE_MINTED`, `HUMAN_GATE_REQUIRED`, `ACSS_EVOLUTION`.
+- **`ChannelRouter`** — maps each message type to its target channels (GitHub Issues/PRs/comments, Slack ops/review/GESN/DM, Hermes relay, GESN push, GESN badge notification).
+- **`RepoCommsEngine` Python class** — full async implementation of all handlers: GitHub issue + PR creation, Slack Block Kit posting, Charles DM, GESN push + badge notification, Hermes relay, Fabric failure logging.
+- **G13 HumanApprovalGate triple-channel protocol** — GitHub PR + Slack DM + optional email; PR held in `draft=True` until Charles approves.
+- **Engine 7 → Engine 8 handoff** — `BADGE_MINTED` events carry `crm_learner_id`; Engine 8 autonomously updates CRM and evaluates upsell eligibility.
+- **Retry and resilience** — all dispatches fire-and-forget; failures logged to Fabric; Engine 6 retries on 5m/10m/20m backoff; after 3 failures a CRITICAL alert opens a GitHub issue.
+- **Docker deployment** — sidecar to the P011 pipeline orchestrator with Hermes and GESN push service dependencies.
+
+📄 Deep dive → [`docs/P011-REPOCOMMS-001-repo-communications-engine.md`](docs/P011-REPOCOMMS-001-repo-communications-engine.md)
 
 This encyclopedia is open to intelligent contributors — human, AI, robotic, or otherwise — operating under clear identity, rights, safety, evidence, and quality controls.
 

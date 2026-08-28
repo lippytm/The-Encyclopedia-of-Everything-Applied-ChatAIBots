@@ -196,8 +196,8 @@ Each book is synthesized from:
 | B-096 | *What Is Web3 + AI?* | Intersection of AI and blockchain | Diagram + explainer | CBSLL L1 |
 | B-097 | *CI/CD for Beginners* | GitHub Actions: first workflow | Passing CI pipeline | CCSLL L1 |
 | B-098 | *The Privacy Engineer's Mindset* | GDPR, consent, PII, no-secrets rule | Privacy checklist | CCSLL L1 |
-| B-099 | *Fable 5: The Clone Who Wouldn't Stop Learning* | Fictional synthesis of all Beginner concepts | Written reflection + quiz | CCSLL L1 |
-| B-100 | *Beginner Graduation: Build Your Portfolio* | Compile all B-series artifacts | Complete portfolio PR + 3 credentials | CCSLL L1 + CLL L1 + CBSLL L1 |
+| B-099 | *Welcome to GESN — The Gamer Educational Systems Network* | GESN platform advertising + tour | Complete GESN onboarding mission | GESN-B099 SkillBadge |
+| B-100 | *Earn Your First GESN Badge* | GESN Beginner graduation mission | Deployed smart contract + portfolio + GESN credential | CCSLL L1 + CBSLL L1 + GESN-B100 |
 
 ---
 
@@ -216,9 +216,19 @@ Each book is synthesized from:
 | **Solidity → DeFi** | I-041 → I-060 | ERC-20/721/1155, AMMs, lending, auditing, ZK intro |
 | **AI → RAG + Fine-Tune** | I-061 → I-075 | LangChain, Qdrant, AMIL, fine-tuning basics |
 | **Full-Stack Blockchain App** | I-076 → I-090 | Frontend + contract + indexer + CI/CD |
-| **ACSS Integration** | I-091 → I-100 | Hermes, Fabric, Slack CRM, P011 engines |
+| **ACSS Integration** | I-091 → I-096 | Hermes, Fabric, Slack CRM, P011 engines |
+| **GESN Platform Series** | **I-097 → I-100** | **GESN advertising, platform building, node launch** |
 
-*(Full title-by-title list in `P011-EBOOK-INTERMEDIATE.md` — to be created in Phase 2)*
+### 3.2 Intermediate GESN Books (I-097 → I-100)
+
+| # | Title | Core Topic | Build Artifact | Type |
+|---|---|---|---|---|
+| I-097 | *Inside GESN: How the Platform Works* | GESN architecture, HDVG, Engine 4+5+6+7 | Architecture diagram + explainer video | **GESN Advertising** |
+| I-098 | *The GESN Economy: Credentials, Teaching, and Earning* | SkillBadge economics, teaching bounties, DAO | GESN token economy model + blog post | **GESN Advertising** |
+| I-099 | *Build a GESN Mission Module* | Create + submit a real GESN mission | Full mission passing 13 quality gates | **GESN Build** |
+| I-100 | *Launch Your GESN Node* | Franchise licensing, node deployment, community | Running GESN node + operator handbook | **GESN Network** |
+
+*(Remaining intermediate titles I-001 → I-096 detailed in `P011-EBOOK-INTERMEDIATE.md` — to be created in Phase 5)*
 
 ---
 
@@ -237,10 +247,23 @@ Each book is synthesized from:
 | **Protocol Design** | A-031 → A-050 | AMM math, MEV, Cosmos SDK, Substrate, cross-chain |
 | **ACSS Architecture** | A-051 → A-065 | Building Fabric modules, Hermes extensions, AMIL fine-tuning |
 | **Autonomous Systems** | A-066 → A-080 | ACD self-evolution, multi-agent coordination, AI safety |
-| **Humanoid AI + Robotics** | A-081 → A-095 | ROS2 advanced, humanoid dev stack, EEEP platform |
-| **ACSS Contributor** | A-096 → A-100 | Quality Evidence Packets, Charles review process |
+| **Humanoid AI + Robotics** | A-081 → A-092 | ROS2 advanced, humanoid dev stack, EEEP platform |
+| **GESN Networks Series** | **A-093 → A-100** | **GESN network architecture, DAO, AI missions, franchise** |
 
-*(Full title-by-title list in `P011-EBOOK-ADVANCED.md` — to be created in Phase 3)*
+### 4.2 Advanced GESN Books (A-093 → A-100)
+
+| # | Title | Core Topic | Build Artifact | Type |
+|---|---|---|---|---|
+| A-093 | *GESN Network Architecture: Distributed Learning at Scale* | Multi-node GESN, P2P coordination, Hermes topology | Multi-node GESN deployment diagram | **GESN Networks** |
+| A-094 | *GESN DAO: On-Chain Governance for the Learning Network* | DAO contracts, voting, curriculum governance on-chain | Deployed GESN DAO on Sepolia | **GESN Networks** |
+| A-095 | *Build the AI Mission Generator* | HDVG + Engine 4 pipeline from scratch | Working AI video generation pipeline | **GESN Networks** |
+| A-096 | *Cross-Chain GESN Credentials* | Bridge SkillBadges across EVM chains; CCIP/LayerZero | Cross-chain badge bridge deployed | **GESN Networks** |
+| A-097 | *GESN Trading Bot Integration* | Autonomous revenue engine for GESN network nodes | Backtested trading bot integrated to GESN | **GESN Networks** |
+| A-098 | *Humanoid AI as GESN Teachers* | EEEP + GESN + ROS2: robots that teach programming | ROS2 GESN teaching node | **GESN Networks** |
+| A-099 | *The GESN Franchise System* | Licensing, quality gates, node operator handbook | Full franchise documentation + QEP | **GESN Networks** |
+| A-100 | *GESN Network Genesis* | Deploy the first full GESN network; Charles review | Live GESN network + Charles approval | **GESN Networks (Charles)** |
+
+*(Remaining advanced titles A-001 → A-092 detailed in `P011-EBOOK-ADVANCED.md` — to be created in Phase 7)*
 
 ---
 
