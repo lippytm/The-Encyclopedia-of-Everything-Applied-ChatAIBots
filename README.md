@@ -15,7 +15,10 @@
 7. [Blockchain Technology Development](#blockchain-technology-development)
 8. [AI Brainkits](#ai-brainkits)
 9. [AI Clone Engine Swarms Systems](#ai-clone-engine-swarms-systems)
-10. [Contributing](#contributing)
+10. [AI Agents Upgrade Manifest](#ai-agents-upgrade-manifest)
+11. [AI Model Intelligence Layer](#ai-model-intelligence-layer)
+12. [AI Trading Bots Intelligence](#ai-trading-bots-intelligence)
+13. [Contributing](#contributing)
 
 ---
 
@@ -202,6 +205,59 @@ Key concepts explored:
 - **AI Conglomerate Swarms System (ACSS)** — all eight systems in continuous integration, enabling autonomous learning under human oversight.
 
 📄 Deep dive → [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md)
+
+---
+
+## AI Agents Upgrade Manifest
+
+> *"An agent that cannot upgrade itself is a tool. An agent that can is a collaborator."*
+
+The **AI Agents Upgrade Manifest** is the living registry of every AI agent type operating within the ACSS — with defined upgrade tiers, performance gates, and integration points.
+
+Key concepts explored:
+
+- **Six agent categories** — Coding, Knowledge, Teaching, Builder, Creative, and Trading agents, each with Tier 0–4 upgrade paths.
+- **Upgrade gates** — Performance Gate, Safety Gate, Evidence Gate, Human Review Gate, and Rollback Plan required for every tier promotion.
+- **Agent integration map** — how Hermes, Fabric, CCSLL, CBSLL, and CSEL connect to every agent type.
+- **Tier 4 autonomy** — the conditions, safeguards, and human oversight required before any agent reaches full autonomous operation.
+
+📄 Deep dive → [`docs/ai-agents-upgrade-manifest.md`](docs/ai-agents-upgrade-manifest.md)
+
+---
+
+## AI Model Intelligence Layer
+
+> *"The model is not the mind. The mind is the system that knows which model to call, when, and why."*
+
+The **AI Model Intelligence Layer (AMIL)** governs which AI models are used for which tasks across all ACSS clone agents — from inline code completion to full codebase analysis to real-time trading signal generation.
+
+Key concepts explored:
+
+- **Model selection matrix** — Claude, GPT-4o, Gemini, Llama, Mistral, DeepSeek, Codestral matched to task types, latency needs, and privacy requirements.
+- **Fabric-driven selection** — live model performance scoreboard updated after every significant agent task; automatic model swap protocol when performance degrades.
+- **RAG architecture** — three-tier Brainkit injection, vector store configuration (Qdrant), embedding model selection, and context assembly pipeline.
+- **Fine-tuning protocols** — when to fine-tune vs. RAG, dataset structure, training infrastructure (Axolotl, Unsloth, OpenAI fine-tuning API), and model version control.
+- **Multi-model pipelines** — ensemble patterns, chain-of-thought pipelines, and agent collaboration patterns (Researcher + Writer, Coder + Reviewer, etc.).
+
+📄 Deep dive → [`docs/ai-model-intelligence-layer.md`](docs/ai-model-intelligence-layer.md)
+
+---
+
+## AI Trading Bots Intelligence
+
+> *"A trading bot without intelligence is a hammer. A trading bot with intelligence is a chess grandmaster who never sleeps and never tilts."*
+
+The **AI Trading Bots Intelligence** document defines the complete machine learning and autonomous execution architecture for all lippytm.ai trading systems — the Perpetual Revenue Engine of the Earn-while-you-Learn ecosystem.
+
+Key concepts explored:
+
+- **Signal generation** — classical ML (XGBoost/LightGBM), deep learning (LSTM, Temporal Fusion Transformer), and LLM-enhanced signals (GPT-4o news analysis).
+- **Reinforcement learning** — custom `CryptoTradingEnv` (Gymnasium-compatible), PPO training pipeline, paper trading gate, and live deployment with defined risk limits.
+- **Risk engine** — Kelly Criterion position sizing, Value at Risk (VaR) monitoring, hard drawdown limits, and daily loss circuit breakers.
+- **Execution layer** — CEX (CCXT, slippage protection) and DEX (Uniswap v3, MEV-protected routing) execution with Hermes trade logging.
+- **Earn-while-you-Learn integration** — on-chain CBSLL trading credentials issued at each verified skill milestone.
+
+📄 Deep dive → [`docs/ai-trading-bots-intelligence.md`](docs/ai-trading-bots-intelligence.md)
 
 ---
 
