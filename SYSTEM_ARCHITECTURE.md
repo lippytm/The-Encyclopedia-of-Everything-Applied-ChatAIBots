@@ -30,6 +30,8 @@ The `AI Clone Engine Swarms Systems (ACESS)` provides the continuous self-learni
 - **Fabric** — knowledge graph and pattern synthesis engine
 - **CCSLL** — Complete Computer Software Language Library
 - **CBSLL** — Complete Blockchain Software Language Library
+- **CLL** — Complete Linux Library (kernel, shell, sysadmin, containers, security)
+- **OMARCHY** — Opinionated Arch Linux developer workstation standard (Hyprland, Neovim, Zsh, Ghostty, Zellij)
 
 See [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md) for full architecture.
 

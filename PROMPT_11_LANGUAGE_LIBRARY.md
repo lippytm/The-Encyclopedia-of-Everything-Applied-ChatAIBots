@@ -24,6 +24,8 @@ This repo is linked to two comprehensive language libraries maintained by the AI
 
 - **Complete Computer Software Language Library (CCSLL)** — full-stack coverage from HTML/CSS/JS to Rust, Python, Go, AI agent frameworks, and infrastructure-as-code.
 - **Complete Blockchain Software Language Library (CBSLL)** — on-chain coverage from Solidity and Vyper to Rust/Anchor (Solana), Cairo (StarkNet), ink! (Polkadot), ZK circuits (Circom, Noir), and cross-chain protocols (CCIP, LayerZero, IBC).
+- **Complete Linux Library (CLL)** — deep systems coverage from kernel internals, shell scripting (Bash/Zsh/Fish), and systemd to container runtimes (Docker/Podman), networking, security hardening, and package management across Arch, Ubuntu, NixOS, and Alpine.
+- **OMARCHY** — opinionated Arch Linux developer workstation layer built on Hyprland, Neovim, Zsh+Starship, Ghostty, Zellij, paru (AUR), and GPG/SSH. The sovereign, distraction-free environment where all lippytm clone agents build and ship.
 
 Both libraries are live, evolving modules maintained by the Fabric knowledge engine and accessible to all Clone Engine agents via Hermes.
 

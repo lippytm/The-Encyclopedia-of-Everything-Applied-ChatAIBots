@@ -185,6 +185,8 @@ The **AI Clone Engine Swarms Systems (ACESS)** is the unified, continuously self
 | **Fabric** | Pattern extraction, knowledge weaving, and context synthesis across all sources |
 | **Complete Computer Software Language Library (CCSLL)** | Full-stack language intelligence across all programming paradigms |
 | **Complete Blockchain Software Language Library (CBSLL)** | On-chain language intelligence across all chains, protocols, and smart contract frameworks |
+| **Complete Linux Library (CLL)** | Deep Linux systems knowledge spanning kernel, distributions, shell environments, and system administration |
+| **OMARCHY** | Opinionated Arch Linux developer workstation layer — the sovereign, distraction-free environment where all clone builds run |
 
 Key concepts explored:
 
@@ -193,7 +195,9 @@ Key concepts explored:
 - **Fabric Self-Improvement Loop** — extract → weave → serve → feedback → extract, running continuously across all repos.
 - **CCSLL** — full-stack language proficiency tracking from web to systems programming to AI agent frameworks.
 - **CBSLL** — blockchain language proficiency from Solidity to ZK circuits to cross-chain messaging.
-- **AI Conglomerate Swarms System (ACSS)** — all five systems in continuous integration, enabling autonomous learning under human oversight.
+- **CLL (Complete Linux Library)** — deep Linux systems knowledge from kernel internals to package management, networking, and security, covering Arch, Ubuntu, NixOS, and container environments.
+- **OMARCHY** — opinionated Arch Linux developer workstation stack (Hyprland, Neovim, Zsh, Ghostty, Zellij, paru) with 6-stage Earn-while-you-Learn track from installation to teaching.
+- **AI Conglomerate Swarms System (ACSS)** — all seven systems in continuous integration, enabling autonomous learning under human oversight.
 
 📄 Deep dive → [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md)
 

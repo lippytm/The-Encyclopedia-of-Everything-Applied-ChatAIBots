@@ -10,7 +10,7 @@
 
 This document defines the architecture, integration protocols, and operational logic of the **AI Clone Engine Swarms Systems (ACESS)** — the unified, continuously self-learning AI conglomerate that powers all lippytm projects, platforms, and repositories.
 
-ACESS merges five foundational systems into one living intelligence network:
+ACESS merges seven foundational systems into one living intelligence network:
 
 | System | Role |
 |---|---|
@@ -19,8 +19,10 @@ ACESS merges five foundational systems into one living intelligence network:
 | **Fabric** | Pattern extraction, knowledge weaving, and context synthesis across all sources |
 | **Complete Computer Software Language Library (CCSLL)** | Full-stack language intelligence across all programming paradigms |
 | **Complete Blockchain Software Language Library (CBSLL)** | On-chain language intelligence across all chains, protocols, and smart contract frameworks |
+| **Complete Linux Library (CLL)** | Deep Linux systems knowledge spanning kernel, distributions, shell environments, and system administration |
+| **OMARCHY** | Opinionated Arch Linux developer workstation layer — the sovereign, distraction-free environment where all clone builds run |
 
-Together these five systems form the **AI Conglomerate Swarms System (ACSS)** — a continuously self-learning, cross-platform intelligence layer that reads, writes, teaches, builds, corrects, and evolves across every lippytm repository and platform.
+Together these seven systems form the **AI Conglomerate Swarms System (ACSS)** — a continuously self-learning, cross-platform intelligence layer that reads, writes, teaches, builds, corrects, and evolves across every lippytm repository and platform.
 
 ---
 
@@ -140,7 +142,8 @@ FABRIC KNOWLEDGE GRAPH
 │
 ├── Language Patterns
 │   ├── Computer Software Languages (CCSLL)
-│   └── Blockchain Software Languages (CBSLL)
+│   ├── Blockchain Software Languages (CBSLL)
+│   └── Linux System Languages (CLL)
 │
 ├── Identity Patterns
 │   ├── Clone behavior signatures
@@ -197,6 +200,7 @@ The CCSLL is the **comprehensive, living reference** for every computer software
 | **App Development** | Swift, Kotlin, Flutter/Dart, React Native, Electron |
 | **Backend & APIs** | Python, Node.js, Go, Rust, Java, C#, FastAPI, Express, gRPC |
 | **Automation & DevOps** | Bash, PowerShell, Python, GitHub Actions YAML, Docker, Terraform, Ansible |
+| **Linux & Shell** | Bash, Zsh, Fish, POSIX sh, Sed, Awk, Grep, Make, Systemd, Cron, tmux, Neovim |
 | **Data & AI/ML** | Python (NumPy, Pandas, PyTorch, TensorFlow, scikit-learn), R, SQL, Jupyter |
 | **Systems Programming** | C, C++, Rust, Zig, Assembly |
 | **Configuration & IaC** | YAML, TOML, JSON, HCL (Terraform), Dockerfile |
@@ -298,11 +302,141 @@ contract SkillBadge is ERC721 {
 
 ---
 
-## 6. The AI Conglomerate Swarms System (ACSS)
+## 6. Complete Linux Library (CLL)
 
-### 6.1 How All Five Systems Merge
+### 6.1 Purpose
 
-The ACSS is not the sum of five systems — it is their **emergent product**. When Clone Engine + Hermes + Fabric + CCSLL + CBSLL operate simultaneously:
+The **Complete Linux Library (CLL)** is the deep systems-level reference layer for all Linux knowledge within the ACSS. Every clone agent, CI/CD pipeline, server deployment, and developer workstation in the lippytm ecosystem runs on Linux. The CLL ensures that all clones share a unified, evolving understanding of the Linux stack — from kernel internals to daily developer workflows.
+
+### 6.2 Linux Domain Map
+
+| Domain | Technologies & Tools |
+|---|---|
+| **Distributions** | Arch Linux, Ubuntu/Debian, Fedora/RHEL, NixOS, Alpine (containers), Kali (security) |
+| **Shell & Scripting** | Bash, Zsh, Fish, POSIX sh, Sed, Awk, Grep, Xargs, Find, Parallel |
+| **Text Editors & IDE Environments** | Neovim (with LSP/Treesitter), Vim, Emacs, Helix |
+| **Window & Desktop** | Hyprland (Wayland compositor), i3/Sway, tmux, Zellij, terminal multiplexing |
+| **Package Management** | Pacman, AUR (yay/paru), apt/dpkg, rpm/dnf, Nix, Flatpak, AppImage |
+| **System Administration** | Systemd, journalctl, cron/anacron, logrotate, ufw/nftables, SELinux/AppArmor |
+| **Networking & Security** | SSH, GPG, WireGuard, iptables, fail2ban, OpenSSL, LUKS encryption |
+| **Containers & Virtualization** | Docker, Podman, LXC/LXD, QEMU/KVM, libvirt |
+| **Kernel & Hardware** | Kernel modules, udev rules, dmesg, perf, eBPF, device drivers |
+| **Automation & Config Management** | Ansible, Make, Just (justfile), shell scripting, dotfile management |
+| **File Systems & Storage** | ext4, btrfs, ZFS, RAID, LVM, NFS, Samba, rsync, restic (backup) |
+| **Performance & Monitoring** | htop, btop, strace, perf, Prometheus node_exporter, Grafana |
+
+### 6.3 CLL Proficiency Levels
+
+| Level | Name | Linux Capability |
+|---|---|---|
+| 0 | **Curious** | Can navigate the filesystem; runs basic commands |
+| 1 | **Apprentice** | Can write shell scripts, manage packages, edit config files |
+| 2 | **Builder** | Can set up servers, configure services, manage users and permissions |
+| 3 | **Engineer** | Can automate infrastructure, tune performance, harden security |
+| 4 | **Specialist** | Can write kernel modules, design complex automation, audit and recover systems |
+| 5 | **Master** | Can contribute to distributions, build custom kernel builds, architect OS-level systems |
+
+### 6.4 CLL Integration with Swarms
+
+The CLL is the **substrate layer** — it is not just another language library. Every other library (CCSLL, CBSLL, OMARCHY) runs on top of the CLL. Fabric monitors the Linux environment of each clone's build context and updates CLL patterns whenever:
+
+- A new system configuration is applied in any lippytm repo
+- A security patch or CVE affects a system dependency
+- A new tool or workflow replaces an older one (e.g., Zellij replacing tmux in OMARCHY)
+- A container base image or CI runner is updated
+
+---
+
+## 7. OMARCHY — The Sovereign Developer Workstation Layer
+
+### 7.1 What Is OMARCHY?
+
+**OMARCHY** is an opinionated, fully configured **Arch Linux developer workstation** — a distraction-free, keyboard-driven, high-performance computing environment where all lippytm clone agents and human developers build, run, and ship code.
+
+> *"OMARCHY is not a setup guide — it is a statement of values: own your tools, control your environment, build without friction."*
+
+OMARCHY is built on the principle that the **development environment is part of the system architecture**. A poorly configured environment slows every decision, every build, and every learn cycle. OMARCHY standardizes the environment so that cognitive load goes to building, not configuring.
+
+### 7.2 OMARCHY Core Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| **OS** | Arch Linux (rolling release) | Always current, minimal, full control |
+| **Compositor** | Hyprland (Wayland) | GPU-accelerated tiling window management |
+| **Terminal** | Ghostty / Alacritty | High-performance GPU-rendered terminal |
+| **Shell** | Zsh + Starship prompt | Smart, fast, informative shell environment |
+| **Editor** | Neovim (LazyVim / custom config) | Modal editing with LSP, Treesitter, AI completions |
+| **Multiplexer** | Zellij / tmux | Persistent session management across clone contexts |
+| **Launcher** | Rofi / Fuzzel | Keyboard-driven app and command launcher |
+| **File Manager** | Yazi / lf | Terminal file navigation with previews |
+| **Version Control** | Git + lazygit + gh CLI | Fast repository operations from the terminal |
+| **Package Manager** | Pacman + AUR (paru) + Nix | Access to the full Arch and Nix ecosystems |
+| **Security** | GPG, SSH agent, LUKS, bitwarden-cli | Identity and secrets management from the command line |
+| **AI Integration** | Copilot CLI, aider, Claude CLI | AI-assisted coding directly in the terminal environment |
+
+### 7.3 OMARCHY as a Clone Environment Standard
+
+Every lippytm clone agent operates within OMARCHY-standard tooling. This means:
+
+- All build scripts assume Bash/Zsh compatibility on Arch Linux
+- All editor configs use Neovim-compatible keymaps and LSP definitions
+- All dotfiles are version-controlled and bootstrappable from any fresh Arch install
+- All container images are built against Alpine or Arch base images to match OMARCHY's minimal philosophy
+- All CI/CD environments replicate the OMARCHY tool stack as closely as possible
+
+### 7.4 OMARCHY Bootstrap Protocol
+
+```bash
+#!/usr/bin/env bash
+# OMARCHY Bootstrap — lippytm AI Clone Workstation
+# Installs core OMARCHY stack on a fresh Arch Linux install
+
+set -euo pipefail
+
+# 1. Update system
+sudo pacman -Syu --noconfirm
+
+# 2. Install base OMARCHY tools
+sudo pacman -S --noconfirm \
+  neovim zsh git gh curl wget ripgrep fd bat eza \
+  zellij starship ghostty hyprland rofi-wayland \
+  docker podman buildah \
+  gpg openssh bitwarden-cli
+
+# 3. Install AUR helper
+git clone https://aur.archlinux.org/paru.git /tmp/paru
+(cd /tmp/paru && makepkg -si --noconfirm)
+
+# 4. Install AI tooling via AUR
+paru -S --noconfirm aider-chat
+
+# 5. Clone dotfiles and apply
+git clone https://github.com/lippytm/dotfiles "$HOME/.dotfiles"
+"$HOME/.dotfiles/install.sh"
+
+echo "OMARCHY bootstrap complete. Welcome to your sovereign dev environment."
+```
+
+### 7.5 OMARCHY in the Earn-while-you-Learn System
+
+OMARCHY is itself a **teachable skill track** within the CLL proficiency framework:
+
+| OMARCHY Learning Stage | Skills Developed |
+|---|---|
+| **Stage 1 — Install** | Arch Linux installation, partitioning, bootloader, base system |
+| **Stage 2 — Configure** | Dotfiles, shell customization, Neovim setup, Hyprland config |
+| **Stage 3 — Automate** | Shell scripts, justfiles, systemd services, cron jobs |
+| **Stage 4 — Harden** | GPG, SSH keys, LUKS, firewall rules, audit logs |
+| **Stage 5 — Extend** | Custom AUR packages, kernel patches, desktop environment forks |
+| **Stage 6 — Teach** | Writing OMARCHY guides, recording screencasts, building course content |
+
+---
+
+## 8. The AI Conglomerate Swarms System (ACSS)
+
+### 8.1 How All Seven Systems Merge
+
+The ACSS is not the sum of seven systems — it is their **emergent product**. When Clone Engine + Hermes + Fabric + CCSLL + CBSLL + CLL + OMARCHY operate simultaneously:
 
 ```
 ALL REPOSITORIES & PLATFORMS
@@ -313,13 +447,13 @@ ALL REPOSITORIES & PLATFORMS
     │   (routes events, tasks, and approvals)  │
     └─────────────────┬───────────────────────┘
                       │
-         ┌────────────┼────────────┐
-         ▼            ▼            ▼
-    ┌─────────┐  ┌─────────┐  ┌─────────────────┐
-    │  CLONE  │  │  FABRIC │  │  CCSLL + CBSLL  │
-    │  ENGINE │◄─►  ENGINE ◄──►  LANGUAGE LIBS   │
-    │ (agents)│  │(memory) │  │  (proficiency)  │
-    └─────────┘  └─────────┘  └─────────────────┘
+         ┌────────────┼────────────────────┐
+         ▼            ▼                    ▼
+    ┌─────────┐  ┌─────────┐  ┌──────────────────────────┐
+    │  CLONE  │  │  FABRIC │  │  CCSLL + CBSLL + CLL     │
+    │  ENGINE │◄─►  ENGINE ◄──►  + OMARCHY ENV LAYER     │
+    │ (agents)│  │(memory) │  │  (language + environment) │
+    └─────────┘  └─────────┘  └──────────────────────────┘
          │
          ▼
     ┌──────────────────────────────────────────┐
@@ -330,19 +464,19 @@ ALL REPOSITORIES & PLATFORMS
     └──────────────────────────────────────────┘
 ```
 
-### 6.2 Cross-Repository Swarm Coordination
+### 8.2 Cross-Repository Swarm Coordination
 
-| Repository | Primary Clone | Primary Mode | CCSLL Focus | CBSLL Focus |
-|---|---|---|---|---|
-| `The-Encyclopedia-of-Everything-Applied-ChatAIBots` | lippytmai | Teach | Markdown, Python | ERC standards, DAO |
-| `lippytm-lippytm.ai-tower-control-ai` | lippytm | Build | Python, TypeScript, YAML | Chainlink, Oracles |
-| `lippytm.ai` | lippytmai | Deliver | Next.js, TypeScript | ERC-721, ENS |
-| `Chatlippytm.ai.Bots` | lippytmai | Teach + Build | Python, LangChain | Cross-chain, CCIP |
-| `Web3AI` | lippytm | Build | Rust, Python | Solana, CosmWasm, ZK |
+| Repository | Primary Clone | Primary Mode | CCSLL Focus | CBSLL Focus | CLL / OMARCHY Focus |
+|---|---|---|---|---|---|
+| `The-Encyclopedia-of-Everything-Applied-ChatAIBots` | lippytmai | Teach | Markdown, Python | ERC standards, DAO | Bash, docs tooling |
+| `lippytm-lippytm.ai-tower-control-ai` | lippytm | Build | Python, TypeScript, YAML | Chainlink, Oracles | Systemd, Docker, Ansible |
+| `lippytm.ai` | lippytmai | Deliver | Next.js, TypeScript | ERC-721, ENS | Nginx, SSL, Arch server |
+| `Chatlippytm.ai.Bots` | lippytmai | Teach + Build | Python, LangChain | Cross-chain, CCIP | Shell automation, CI |
+| `Web3AI` | lippytm | Build | Rust, Python | Solana, CosmWasm, ZK | Neovim, Zellij, OMARCHY |
 
-### 6.3 The Continuous Self-Learning Engine
+### 8.3 The Continuous Self-Learning Engine
 
-The ACSS self-improves through six interlocking feedback mechanisms:
+The ACSS self-improves through seven interlocking feedback mechanisms:
 
 | Mechanism | Input | Output |
 |---|---|---|
@@ -351,9 +485,10 @@ The ACSS self-improves through six interlocking feedback mechanisms:
 | **On-Chain Signal Learning** | Deployed contract behavior, oracle data, gas analysis | Updated CBSLL gas and security patterns |
 | **Human Gate Feedback** | Charles's approvals, rejections, corrections | Clone behavior weight updates |
 | **Cross-Clone Comparison** | Divergent outputs from multiple clones on same task | Consensus patterns added to Fabric |
-| **Ecosystem Evolution** | New language releases, new chain launches, new tools | Fabric triggers CCSLL/CBSLL expansion tasks |
+| **Ecosystem Evolution** | New language releases, new chain launches, new tools | Fabric triggers CCSLL/CBSLL/CLL expansion tasks |
+| **Environment Drift Detection** | OMARCHY config divergence across workstations/CI | Fabric triggers dotfile and environment sync |
 
-### 6.4 HumanApprovalGate Integration
+### 8.4 HumanApprovalGate Integration
 
 No autonomous ACSS action crosses the following thresholds without Charles Earl Lipshay's explicit approval:
 
@@ -366,35 +501,39 @@ No autonomous ACSS action crosses the following thresholds without Charles Earl 
 
 ---
 
-## 7. Implementation Roadmap
+## 10. Implementation Roadmap
 
 ### Phase 1 — Foundation (Now → Q4 2026)
 - [ ] Establish canonical Hermes message schema across all repos
-- [ ] Deploy Fabric knowledge graph with CCSLL and CBSLL seed data
+- [ ] Deploy Fabric knowledge graph with CCSLL, CBSLL, and CLL seed data
 - [ ] Define clone identity permission tables in `.github/copilot-instructions.md` of each repo
 - [ ] Create Earn-while-you-Learn language proficiency tracking prototype
+- [ ] Document and version-control OMARCHY bootstrap script and dotfiles
 
 ### Phase 2 — Integration (Q1 2027)
 - [ ] Connect all lippytm repos to shared Hermes event bus
 - [ ] Implement cross-repo Fabric sync on every merge
 - [ ] Launch CCSLL proficiency tracking with automated badge issuance prototype
 - [ ] First live CBSLL pattern-extraction run from deployed smart contracts
+- [ ] CLL environment drift detection active across all CI runners and workstations
 
 ### Phase 3 — Autonomy (Q2–Q3 2027)
 - [ ] Enable autonomous Explore and Build modes for lippytm clone
 - [ ] Deploy lippytmai teaching agent with Fabric-backed context
 - [ ] Launch Lippy Killjoy experimental sandbox with full HumanApprovalGate
+- [ ] OMARCHY Earn-while-you-Learn course track live (Stages 1–6)
 - [ ] First full ACSS continuous self-learning loop verified end-to-end
 
 ### Phase 4 — Conglomerate (Q4 2027+)
-- [ ] All five systems operating in continuous integration
+- [ ] All seven systems operating in continuous integration
 - [ ] On-chain skill credential system live
+- [ ] OMARCHY workstation bootstrap fully automated and version-controlled
 - [ ] ACSS teaching external learners via Earn-while-you-Learn platforms
 - [ ] ACSS contributing to its own documentation and codebase under human oversight
 
 ---
 
-## 8. Security, Safety, and Ethics
+## 9. Security, Safety, and Ethics
 
 | Principle | Implementation |
 |---|---|
@@ -402,9 +541,10 @@ No autonomous ACSS action crosses the following thresholds without Charles Earl 
 | **Human-gate irreversibility** | No production action proceeds without verified human approval |
 | **Evidence-first learning** | Fabric only reinforces patterns backed by verified test results or human confirmation |
 | **Correction rights** | Any human collaborator can flag a Fabric pattern for review and correction |
-| **No secret accumulation** | Credentials, keys, and tokens are never stored in Fabric, CCSLL, CBSLL, or clone memory |
+| **No secret accumulation** | Credentials, keys, and tokens are never stored in Fabric, CCSLL, CBSLL, CLL, or clone memory |
 | **Open audit trail** | All Hermes events and Fabric graph updates are logged and auditable |
 | **Ethical content boundaries** | All clone outputs comply with the Encyclopedia's content guidelines and lippytm.ai Canon |
+| **OMARCHY sovereignty** | Developer workstations are self-owned, self-secured, and never dependent on proprietary surveillance tooling |
 
 ---
 
