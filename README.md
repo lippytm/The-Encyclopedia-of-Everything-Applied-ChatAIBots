@@ -583,6 +583,36 @@ Key concepts explored:
 
 ---
 
+## AI Deployment Activations (ADA)
+
+Every approved ebook and audiobook in the Earn-while-you-Learn series ships with an **AI Deployment Activation** — a software layer that transforms the book from a reading experience into a **runnable application**.
+
+| Component | Description |
+|---|---|
+| **`ada.yaml` Manifest** | Machine-readable deployment spec per book |
+| **Docker Package** | Pre-built container image — zero-install launch |
+| **Audiobook Pipeline** | ElevenLabs TTS → chaptered M4B audiobook |
+| **FastAPI Web App** | Live endpoints: `/run/:id`, `/quiz/:id`, `/audiobook/:id`, `/credential/:id` |
+| **`lippytmai-launch` CLI** | One command to run any book's application |
+| **`ada-registry.json`** | Unified registry of all 300 books and their deployment status |
+
+**Quick start:**
+```bash
+pip install -e .                    # install lippytmai-launch CLI
+cp .env.example .env                # configure ElevenLabs + Base keys
+lippytmai-launch --list             # see all approved books
+lippytmai-launch B-001              # run the Terminal Explorer artifact
+lippytmai-launch B-001 --audio      # generate the B-001 audiobook (M4B)
+lippytmai-launch B-001 --quiz       # interactive chapter quiz
+docker compose -f docker-compose.ada.yml up -d  # full platform on :8000
+```
+
+**Current ADA status:** 20 books ACTIVE (B-001–B-020) · 280 pending G13 approval
+
+📄 Deep dive → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
+
+---
+
 ## Contributing
 
 This encyclopedia is open to intelligent contributors — human, AI, robotic, or otherwise — operating under clear identity, rights, safety, evidence, and quality controls.
