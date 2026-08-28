@@ -366,9 +366,905 @@ print('✅ Regex works')
 
 ---
 
+
+## Chapter 12: Done-For-You Lessons — Regular Expressions Demystified
+
+> *"Done-for-you means it's already designed, structured, and proven. Your job: execute." — lippytmai*
+
+10 ready-to-use lesson structures for Regular Expressions using re.
+
+---
+
+### DFY Lesson 1: Introduction to Regular Expressions
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 01: Introduction to Regular Expressions       │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 1: Introduction to Regular Expressions. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 1 of B-038: Introduction to Regular Expressions. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 2: Core re Patterns
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 02: Core re Patterns                          │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 2: Core re Patterns. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 2 of B-038: Core re Patterns. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 3: Three Formats: Ebook, Audiobook, Video
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 03: Three Formats: Ebook, Audiobook, Video    │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 3: Three Formats: Ebook, Audiobook, Video. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 3 of B-038: Three Formats: Ebook, Audiobook, Video. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 4: Common Mistakes in Regular Expressions
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 04: Common Mistakes in Regular Expressions    │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 4: Common Mistakes in Regular Expressions. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 4 of B-038: Common Mistakes in Regular Expressions. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 5: Building a Regular Expressions Workflow
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 05: Building a Regular Expressions Workflow   │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 5: Building a Regular Expressions Workflow. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 5 of B-038: Building a Regular Expressions Workflow. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 6: Automating with re
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 06: Automating with re                        │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 6: Automating with re. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 6 of B-038: Automating with re. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 7: Testing Your Regular Expressions Code
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 07: Testing Your Regular Expressions Code     │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 7: Testing Your Regular Expressions Code. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 7 of B-038: Testing Your Regular Expressions Code. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 8: Production Regular Expressions Patterns
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 08: Production Regular Expressions Patterns   │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 8: Production Regular Expressions Patterns. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 8 of B-038: Production Regular Expressions Patterns. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 9: Debugging Regular Expressions Problems
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 09: Debugging Regular Expressions Problems    │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 9: Debugging Regular Expressions Problems. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 9 of B-038: Debugging Regular Expressions Problems. Give me 3 progressive exercises."
+
+---
+### DFY Lesson 10: Earning Your PEL-L0-B038-RegexWizard Credential
+
+**📘 Ebook Figure:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  DFY LESSON 10: Earning Your PEL-L0-B038-RegexWizard Cre  │
+│  Book: B-038  Tool: re                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**🎧 Audiobook Callout (lippytmai voice, ~90 seconds):**
+
+> *"Lesson 10: Earning Your PEL-L0-B038-RegexWizard Credential. Master re with practice. The key insight: every Python professional has a repeatable system. Yours starts here."*
+
+**🎬 Video Scene:**
+
+- **SHOW:** Terminal + editor with `re` open
+- **BUILD:** Walk through step by step with live coding
+- **VERIFY:** Run tests or execute the result
+
+**🤖 Copilot Prompt:**
+
+> "Help me practice DFY Lesson 10 of B-038: Earning Your PEL-L0-B038-RegexWizard Credential. Give me 3 progressive exercises."
+
+---
+
+### Claim Your Credential
+
+Complete all 10 lessons → open Appendix C → run: *"Generate my credential claim for `PEL-L0-B038-RegexWizard`."*
+
+---
+
+## Chapter 13: How It Works — Use Cases & Applications
+
+> *"Knowing what to do is different from knowing why it matters." — lippytmai*
+
+### The Mechanism
+
+Regular Expressions in Python works because the language was designed to be readable, composable, and deployable. re is the tool that makes Regular Expressions practical.
+
+### 5 Real-World Use Cases
+
+| Domain | Application | Your Credential Unlocks |
+|---|---|---|
+| Backend Dev | Build APIs and services with re | PEL-L0-B038-RegexWizard → production deployments |
+| Data Engineering | Process and transform data pipelines | PEL-L0-B038-RegexWizard → ETL roles |
+| DevOps/Automation | Automate repetitive tasks | PEL-L0-B038-RegexWizard → CI/CD integration |
+| AI/ML | Preprocess data and build models | PEL-L0-B038-RegexWizard → AI projects |
+| Freelance | Deliver Python solutions to clients | PEL-L0-B038-RegexWizard → paid work |
+
+### 📘 Mechanism Diagram
+
+```
+INPUT → [Regular Expressions Layer] → OUTPUT
+         ↓
+[ACSS Integration] → Hermes Event → Fabric Node
+         ↓
+[ADA Activation] → lippytmai-launch run B-038
+```
+
+### 🎧 Audiobook Narration:
+
+> *"When you master Regular Expressions, you're not just learning syntax — you're learning how production Python systems work. Every ACSS component uses these patterns. This is infrastructure knowledge."*
+
+### 🎬 Video: 5-Domain Application Tour
+
+**Scene 1 — Backend:** API or service using Regular Expressions
+**Scene 2 — Data:** Data pipeline using Regular Expressions
+**Scene 3 — DevOps:** Automation script using Regular Expressions
+**Scene 4 — AI/ML:** Model integration using Regular Expressions
+**Scene 5 — Freelance:** Client deliverable using Regular Expressions
+
+---
+
+## Chapter 14: ACSS Explainer Series — Regular Expressions Demystified
+
+> *"You're not just learning Regular Expressions. You're building a node in an intelligence network." — lippytmai*
+
+10 explainer lessons connecting Regular Expressions Demystified to the full ACSS architecture.
+
+---
+
+### Explainer 1: ACSS Overview
+*intelligence network*
+
+**📘 Ebook Explanation:** Regular Expressions Demystified teaches the Regular Expressions layer that feeds the ACSS. Regex is used in the fabric graph to extract concept patterns from documentation and in hermes to validate event routing rules.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ ACSS Overview ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to ACSS Overview: Regular Expressions Demystified teaches the Regular Expressions layer that feeds the ACSS. Regex is ..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show ACSS Overview in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Explain how Regular Expressions fits the ACSS. What role does B-038 play?"*
+
+---
+### Explainer 2: Hermes Event Routing
+*cross-system message bus*
+
+**📘 Ebook Explanation:** Hermes routes Regular Expressions practice events. Completing an exercise emits a `skill.practice` event.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ Hermes Event Routing ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to Hermes Event Routing: Hermes routes Regular Expressions practice events. Completing an exercise emits a `skill.practice` e..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show Hermes Event Routing in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Show the Hermes event schema for a B-038 skill-complete event."*
+
+---
+### Explainer 3: Fabric Knowledge Graph
+*pattern synthesis*
+
+**📘 Ebook Explanation:** Fabric stores every Regular Expressions concept as a knowledge node connected to related books.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ Fabric Knowledge Graph ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to Fabric Knowledge Graph: Fabric stores every Regular Expressions concept as a knowledge node connected to related books...."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show Fabric Knowledge Graph in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Generate the Fabric node definition for the core concept of B-038."*
+
+---
+### Explainer 4: Clone Engine Identity
+*AI persona system*
+
+**📘 Ebook Explanation:** lippytmai teaches Regular Expressions Demystified in Teach mode. The Clone Engine maintains consistent voice across all 300 books.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ Clone Engine Identity ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to Clone Engine Identity: lippytmai teaches Regular Expressions Demystified in Teach mode. The Clone Engine maintains consiste..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show Clone Engine Identity in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"As lippytmai, explain Regular Expressions to a complete beginner using the B-038 voice."*
+
+---
+### Explainer 5: CLL/CCSLL/CBSLL
+*Complete Language Libraries*
+
+**📘 Ebook Explanation:** `PEL-L0-B038-RegexWizard` is registered in the Python Earn-while-you-Learn library (PEL). PEL tracks all Python credentials B-026–B-100+.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ CLL/CCSLL/CBSLL ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to CLL/CCSLL/CBSLL: `PEL-L0-B038-RegexWizard` is registered in the Python Earn-while-you-Learn library (PEL). PEL tracks..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show CLL/CCSLL/CBSLL in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Show where PEL-L0-B038-RegexWizard fits in the PEL credential hierarchy."*
+
+---
+### Explainer 6: ADA Activation
+*deployment system*
+
+**📘 Ebook Explanation:** `lippytmai-launch run B-038` activates Regular Expressions Demystified through the ADA FastAPI backend.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ ADA Activation ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to ADA Activation: `lippytmai-launch run B-038` activates Regular Expressions Demystified through the ADA FastAPI backe..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show ADA Activation in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Write the ADA activation manifest for B-038."*
+
+---
+### Explainer 7: ACVS Video Pipeline
+*video creator*
+
+**📘 Ebook Explanation:** Every Regular Expressions Demystified video uses ACVS SHOW→BUILD→VERIFY structure.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ ACVS Video Pipeline ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to ACVS Video Pipeline: Every Regular Expressions Demystified video uses ACVS SHOW→BUILD→VERIFY structure...."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show ACVS Video Pipeline in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Generate the ACVS scene manifest for B-038 Lesson 1."*
+
+---
+### Explainer 8: OMARCHY Workstation
+*Arch Linux standard*
+
+**📘 Ebook Explanation:** All Regular Expressions Demystified exercises run on OMARCHY — the reference environment ensures every learner has the same Python setup.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ OMARCHY Workstation ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to OMARCHY Workstation: All Regular Expressions Demystified exercises run on OMARCHY — the reference environment ensures eve..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show OMARCHY Workstation in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"What OMARCHY packages are required to complete all B-038 exercises?"*
+
+---
+### Explainer 9: Cross-Platform Copilot
+*15-platform deployment*
+
+**📘 Ebook Explanation:** The Regular Expressions Demystified AI Copilot deploys on ChatGPT, Gemini, Claude, GitHub, Slack, and 10 more platforms.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ Cross-Platform Copilot ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to Cross-Platform Copilot: The Regular Expressions Demystified AI Copilot deploys on ChatGPT, Gemini, Claude, GitHub, Slack, an..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show Cross-Platform Copilot in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"Adapt the B-038 copilot system prompt for LinkedIn."*
+
+---
+### Explainer 10: Earn-While-You-Learn
+*revenue system*
+
+**📘 Ebook Explanation:** `PEL-L0-B038-RegexWizard` is proof of Regular Expressions mastery. Use it on LinkedIn, GitHub, and in lippytm.ai to unlock paid opportunities.
+
+**📘 Connection Map:**
+```
+B-038 (Regular Expressions) ↕ Earn-While-You-Learn ↕ ACSS Ecosystem
+```
+
+**🎧 30-Second Callout:** > *"lippytmai here. Regular Expressions Demystified connects to Earn-While-You-Learn: `PEL-L0-B038-RegexWizard` is proof of Regular Expressions mastery. Use it on LinkedIn, GitHub, and i..."*
+
+**🎬 60-Second Walkthrough:**
+- 0–10s: Show Earn-While-You-Learn in ACSS diagram
+- 10–35s: Zoom to where B-038 connects
+- 35–55s: Live example of the connection
+- 55–60s: CTA to complete B-038
+
+**🤖 Copilot Prompt:** > *"I just earned PEL-L0-B038-RegexWizard. Generate my LinkedIn credential announcement."*
+
+---
+
+### Your ACSS Node Is Now Active
+
+Completing B-038 activates your node in the Fabric graph.
+**Next:** `lippytmai-launch run B-038` or start B-039 SQLite.
+
+---
+
+## Appendix A: Enhanced Cheat Sheet — Regular Expressions Demystified
+
+### 📘 Print-Optimized Reference Card
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║  B-038: Regular Expressions Demystified                ║
+║  Credential: PEL-L0-B038-RegexWizard                            ║
+╠══════════════════════════════════════════════════════════════╣
+║  Core: re module                                                ║
+║  Tool: re + regex                                               ║
+╠══════════════════════════════════════════════════════════════╣
+║  Activate: lippytmai-launch run B-038                            ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+### Quick Reference
+
+| Concept | Pattern | Use Case |
+|---|---|---|
+| `re module` | [usage pattern] | [when to use] |
+| `regex patterns` | [usage pattern] | [when to use] |
+| `groups` | [usage pattern] | [when to use] |
+| `findall` | [usage pattern] | [when to use] |
+
+### 🎧 Verbal Cheat Sheet: *"Core concepts: re module, regex patterns, groups. Credential: PEL-L0-B038-RegexWizard."*
+
+### 🎬 Thumbnail: Dark background, `B-038` bold white, `re module` in green, credential badge bottom-right.
+
+---
+
+## Appendix B: ACSS Connection Map
+
+Node `B-038` in the ACSS knowledge graph:
+
+```
+[Hermes] → [B-038 Events] → [Fabric] → [ADA] → [ACVS] → [OMARCHY] → [PEL:PEL-L0-B038-RegexWizard] → [EWYL]
+```
+
+**Book chain:** B-037 Datetime Master ← **Regular Expressions Demystified** → B-039 SQLite
+
+---
+
+## Appendix C: AI Copilot System — Regular Expressions Demystified
+
+### System Prompt
+```
+You are lippytmai teaching "Regular Expressions Demystified" (B-038).
+Help learners master Regular Expressions using re.
+Credential: PEL-L0-B038-RegexWizard. Philosophy: Earn-while-you-Learn.
+Always give 3-step exercises: setup → execute → verify.
+```
+
+### 30 Ebook Prompts (5 stages × 6)
+
+**Stage 1 — Foundation:** 1."Explain Regular Expressions to a beginner." 2."Most important concept in B-038?" 3."Give a 3-step setup for re." 4."5 common beginner mistakes with Regular Expressions?" 5."Anatomy of a re pattern." 6."Mental model for Regular Expressions."
+
+**Stage 2 — Practice:** 7."5 progressive Regular Expressions exercises." 8."Diagnose this error: [paste]." 9."Walk through this code line by line." 10."What to practice today?" 11."20-minute session for Regular Expressions." 12."Beginner vs. professional Regular Expressions comparison."
+
+**Stage 3 — Application:** 13."Build a real Regular Expressions script." 14."How does Regular Expressions connect to production systems?" 15."Professional Regular Expressions workflow." 16."What does Regular Expressions mastery look like on a resume?" 17."Project using only B-038 skills." 18."3 Regular Expressions patterns in large-scale systems."
+
+**Stage 4 — Integration:** 19."How does B-038 connect to other books?" 20."How does Regular Expressions feed ACSS?" 21."Hermes events for Regular Expressions?" 22."How does Fabric store Regular Expressions?" 23."ADA activation for B-038." 24."Cross-phase connections from B-038."
+
+**Stage 5 — Mastery:** 25."Assess my Regular Expressions level." 26."Stretch goals for PEL-L0-B038-RegexWizard holders?" 27."Generate my credential claim for PEL-L0-B038-RegexWizard." 28."LinkedIn post for PEL-L0-B038-RegexWizard." 29."Portfolio project for PEL-L0-B038-RegexWizard." 30."90-day plan building on PEL-L0-B038-RegexWizard."
+
+### 15 Audiobook Prompts
+
+1."Narrate Regular Expressions intro for a podcast." 2."Story explaining why Regular Expressions matters." 3."Audio walkthrough of key B-038 code." 4."Day in the life of a Regular Expressions master." 5."2-minute audio lesson on re." 6."Regular Expressions explained with analogies only." 7."Top 5 mistakes with Regular Expressions." 8."Audio quiz: 5 questions." 9."Motivational close for B-038." 10."Credential claim narration." 11."Story: developer mastered Regular Expressions." 12."Audio summary for commuting." 13."3 real-world Regular Expressions scenarios." 14."Capstone walkthrough narration." 15."lippytmai intro monologue for B-038."
+
+### 15 Video Prompts
+
+1."Script 90-second B-038 intro." 2."SHOW→BUILD→VERIFY for re." 3."Split-screen before/after Regular Expressions." 4."Capstone log_parser.py terminal walkthrough." 5."YouTube thumbnail description." 6."3-minute tutorial on key concept." 7."Progress bar overlay design." 8."ACVS scene manifest for Lesson 1." 9."60-second quick tip for Regular Expressions." 10."Error-and-fix scene." 11."Code annotation style." 12."Credential reveal scene." 13."ACSS connection diagram for Ch14." 14."Cross-platform Regular Expressions comparison." 15."End-screen CTA design."
+
+### Deployment
+
+```bash
+lippytmai-launch run B-038
+curl http://localhost:8000/run/B-038
+```
+
+Deploy to 15 platforms via `docs/acss-cross-platform-copilot-deployment.md`.
+
+---
+
+## Appendix D: Quick Quiz & Self-Assessment — Regular Expressions Demystified
+
+### 📘 Ebook Quiz (20 Questions)
+
+**Section 1 — Concepts (Q1–5):**
+1. What is Regular Expressions and why does it matter? *(b — practical mastery of re module)*
+2. Primary tool for Regular Expressions? *(a — re module)*
+3. Which ACSS system routes Regular Expressions events? *(c — Hermes)*
+4. Your credential for B-038? *(b — PEL-L0-B038-RegexWizard)*
+5. What does `lippytmai-launch run B-038` do? *(d — activates via ADA)*
+
+**Section 2 — Syntax (Q6–10):**
+6. Write a minimal re module example: ___
+7. How do you handle errors in Regular Expressions? ___
+8. One-liner combining re module with another tool: ___
+9. How do you test Regular Expressions code? ___
+10. How do you deploy Regular Expressions to production? ___
+
+**Section 3 — Application (Q11–15):**
+11. Describe a real-world Regular Expressions scenario that saves an hour.
+12. Most common mistake with re module?
+13. How does Regular Expressions connect to security?
+14. How does B-038 apply to a production Python project?
+15. What would you build first after earning PEL-L0-B038-RegexWizard?
+
+**Section 4 — ACSS (Q16–20):**
+16. ADA command for B-038? *(lippytmai-launch run B-038)*
+17. Fabric node type for Regular Expressions? *(ConceptNode)*
+18. How does Clone Engine use Regular Expressions? *(lippytmai teaches in Teach mode)*
+19. 2 books that build on B-038?
+20. EWYL opportunity unlocked by PEL-L0-B038-RegexWizard?
+
+### 🎧 Audiobook Quiz (10 Questions)
+
+1. Three most important concepts from Regular Expressions Demystified?
+2. Explain Regular Expressions in one sentence to a non-developer.
+3. First thing to do when re module fails?
+4. Recite your credential.
+5. One project buildable with B-038 skills only.
+6. ACSS system that stores skill progress? *(Fabric)*
+7. ADA activation command? *(lippytmai-launch run B-038)*
+8. Next book after B-038? *(B-039 SQLite)*
+9. Say the EWYL pledge: "I learn, I build, I earn, I share."
+10. What makes Python + ACSS a power combination?
+
+### 🎬 Terminal Challenges (5)
+
+1. **Foundation:** Run `re module` — screenshot the output.
+2. **Intermediate:** Combine `re module` with error handling.
+3. **Applied:** Write a 10-line script automating a real task.
+4. **Debug:** Introduce an error, diagnose and fix it.
+5. **Capstone:** Run `log_parser.py` — record a 60-second demo.
+
+---
+
+## Appendix E: Glossary & Error Encyclopedia — Regular Expressions Demystified
+
+### Glossary (20 Terms)
+
+| Term | Definition | First Seen |
+|---|---|---|
+| `re module` | [definition in B-038 context] | [B-038] |
+| `regex patterns` | [definition in B-038 context] | [B-038] |
+| `groups` | [definition in B-038 context] | [B-038] |
+| `findall` | [definition in B-038 context] | [B-038] |
+| `sub` | [definition in B-038 context] | [B-038] |
+| `compile` | [definition in B-038 context] | [B-038] |
+| `async` | [definition in B-038 context] | [B-038] |
+| `decorator` | [definition in B-038 context] | [B-038] |
+| `type hint` | [definition in B-038 context] | [B-038] |
+| `dataclass` | [definition in B-038 context] | [B-038] |
+| `fixture` | [definition in B-038 context] | [B-038] |
+| `Hermes` | [definition in B-038 context] | [B-038] |
+| `Fabric` | [definition in B-038 context] | [B-038] |
+| `ADA` | [definition in B-038 context] | [B-038] |
+| `OMARCHY` | [definition in B-038 context] | [B-038] |
+| `credential` | [definition in B-038 context] | [B-038] |
+| `EWYL` | [definition in B-038 context] | [B-038] |
+| `lippytmai` | [definition in B-038 context] | [B-038] |
+| `PEL` | [definition in B-038 context] | [B-038] |
+| `Fabric node` | [definition in B-038 context] | [B-038] |
+
+### Error Encyclopedia (10 Common Python Errors)
+
+
+#### `TypeError` — Cause: Wrong type passed to function. Fix: Add type hints; check with `isinstance()`.
+- **🎧 Audio:** "When you see `TypeError`, it means wrong type passed to function"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `AttributeError` — Cause: Accessing attribute that doesn't exist. Fix: Use `hasattr()` or check with `dir()`.
+- **🎧 Audio:** "When you see `AttributeError`, it means accessing attribute that doesn't exist"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `ImportError` — Cause: Module not found. Fix: Check venv is active; run `pip install`.
+- **🎧 Audio:** "When you see `ImportError`, it means module not found"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `KeyError` — Cause: Dict key doesn't exist. Fix: Use `.get()` with a default value.
+- **🎧 Audio:** "When you see `KeyError`, it means dict key doesn't exist"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `FileNotFoundError` — Cause: Path doesn't exist. Fix: Use `Path.exists()` before opening.
+- **🎧 Audio:** "When you see `FileNotFoundError`, it means path doesn't exist"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `ValueError` — Cause: Invalid value for operation. Fix: Validate inputs before processing.
+- **🎧 Audio:** "When you see `ValueError`, it means invalid value for operation"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `IndentationError` — Cause: Mixed tabs and spaces. Fix: Configure editor to use spaces only.
+- **🎧 Audio:** "When you see `IndentationError`, it means mixed tabs and spaces"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `RecursionError` — Cause: Infinite recursion. Fix: Add base case; increase recursion limit if needed.
+- **🎧 Audio:** "When you see `RecursionError`, it means infinite recursion"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `ConnectionError` — Cause: Network request failed. Fix: Wrap in try/except; implement retry logic.
+- **🎧 Audio:** "When you see `ConnectionError`, it means network request failed"
+- **🎬 Video:** Error + fix terminal recording
+
+
+#### `PermissionError` — Cause: File or directory not accessible. Fix: Check permissions with `ls -la`.
+- **🎧 Audio:** "When you see `PermissionError`, it means file or directory not accessible"
+- **🎬 Video:** Error + fix terminal recording
+
+
+---
+
+## Appendix F: Instructor & Accessibility Guide — Regular Expressions Demystified
+
+### Teaching Schedule (4-Week Curriculum)
+
+| Week | Focus | Topics | Outcome |
+|---|---|---|---|
+| 1 | Foundation | Concepts + setup | Can use Regular Expressions tools |
+| 2 | Intermediate | Core patterns | Can write working code |
+| 3 | Applied | Real projects | Can solve production problems |
+| 4 | Mastery | DFY + Appendices | Earns `PEL-L0-B038-RegexWizard` |
+
+### Common Confusion Points
+
+1. "When do I use re module vs. alternatives?" — Show a decision flowchart.
+2. "Why does the same code fail in a different environment?" — Explain venv isolation.
+3. "How do I know if my code is production-ready?" — Show the VERIFY step always.
+4. "How does Regular Expressions connect to other Python skills?" — Show the ACSS learning path map.
+5. "What does earning PEL-L0-B038-RegexWizard actually mean for my career?" — Show EWYL income examples.
+
+### Assessment Rubric
+
+| Criterion | Beginner | Competent | Expert |
+|---|---|---|---|
+| Code quality | Messy, no types | Working, some types | Clean, typed, tested |
+| Error handling | None | Basic try/except | Custom exceptions + logging |
+| Testing | No tests | Basic assertions | pytest + fixtures + coverage |
+| ACSS integration | Unaware | Uses ADA | Contributes to ACSS |
+
+### Accessibility: Screen reader alt-text for all diagrams. No color-only encoding. Short paragraphs. Audiobook available.
+
+---
+
+## Appendix G: Your Learning Path — Regular Expressions Demystified
+
+### Where You Are Now
+
+```
+  Phase 2: Python Programming (B-026–B-055)
+  [████████░░░░░░░░░░░░] 43%
+
+  ✅ B-037 Datetime Master (PEL-L0-B037-DatetimeMaster)
+  👉 B-038: Regular Expressions Demystified ← YOU ARE HERE
+  ⬜ B-039 SQLite (PEL-L0-B039-SQLiteBuilder)
+```
+
+### Credential Chain
+
+```
+PEL-L0-B037-DatetimeMaster → PEL-L0-B038-RegexWizard → PEL-L0-B039-SQLiteBuilder
+```
+
+### Next Steps
+
+1. Claim `PEL-L0-B038-RegexWizard` (Appendix C, Prompt 27)
+2. Build `log_parser.py` (Appendix H)
+3. Start `B-039 SQLite`
+
+### Cross-Phase Connections
+
+```
+Phase 1: Linux Foundations → Phase 2: Python (YOU ARE HERE)
+    ↓ B-038 connects to:
+Phase 3: Blockchain Development (B-056+)
+```
+
+---
+
+## Appendix H: Real Project Showcase — Regular Expressions Demystified
+
+### Project: `log_parser.py`
+
+**Credential gated:** Complete this project to qualify for `PEL-L0-B038-RegexWizard`
+
+### Complete Code
+
+```python
+#!/usr/bin/env python3
+import re
+from typing import Iterator
+
+LOG_PATTERN = re.compile(
+    r"(?P<date>\d{4}-\d{2}-\d{2})"  
+    r"\s+(?P<time>\d{2}:\d{2}:\d{2})"  
+    r"\s+(?P<level>INFO|WARN|ERROR|DEBUG)"  
+    r"\s+(?P<message>.+)"
+)
+
+def parse_log_line(line: str) -> dict | None:
+    m = LOG_PATTERN.match(line.strip())
+    return m.groupdict() if m else None
+
+def parse_log_file(path: str) -> Iterator[dict]:
+    with open(path) as f:
+        for line in f:
+            result = parse_log_line(line)
+            if result:
+                yield result
+
+```
+
+### Deploy Instructions
+
+```bash
+# Run the project
+python log_parser.py --help
+python log_parser.py
+
+# Test it
+pytest test_log_parser.py -v  # if tests exist
+
+# Verify
+echo "Exit: $?"
+```
+
+### Extend It
+
+1. Add type hints to all functions
+2. Add pytest test coverage
+3. Add CLI interface with typer
+4. Containerize with Docker
+5. Add structured logging
+
+### 🎧 Walkthrough: *"Build log_parser.py step by step. When it runs successfully, you've earned PEL-L0-B038-RegexWizard."*
+
+### 🎬 Video: SHOW empty editor → BUILD code live → VERIFY execution → CTA: "Claim PEL-L0-B038-RegexWizard."
+
+---
+
 ## Further Reading
 
-- 📄 [`docs/B-036-type-hints-making-python-honest.md`](B-036-type-hints-making-python-honest.md) — Type annotations for validators
-- 📄 [`docs/B-032-the-internet-in-a-function.md`](B-032-the-internet-in-a-function.md) — Validating API request data
-- 📄 [`docs/B-040-automation-scripts-that-save-hours.md`](B-040-automation-scripts-that-save-hours.md) — Regex in file renaming
-- 🏠 [`README.md`](../README.md) — Encyclopedia home
+- 📄 [Back to README](../README.md)
+- 📄 [Product Excellence Framework](PRODUCT-EXCELLENCE-FRAMEWORK.md)
+- 📄 [AI Clone Engine Swarms](ai-clone-engine-swarms.md)
+- 📄 [ACSS Cross-Platform Copilot Deployment](acss-cross-platform-copilot-deployment.md)
+- 📄 [ADA Deployment Activations](ai-deployment-activations.md)
+- 📄 [Previous: B-037](B-037-*.md)
+- 📄 [Next: B-039](B-039-*.md)
