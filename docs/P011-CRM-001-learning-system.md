@@ -73,3 +73,15 @@ Each learning product needs measurable objectives, prerequisites, worked example
 ## Current boundary
 
 This Q2 mirror defines the curriculum and product architecture. Finished commercial courses, ebooks, audiobooks, videos, credentials, and franchise programs require separate Q3/Q4 evidence and approval.
+
+## Slack CRM Integration
+
+The AI Slack CRM Systems integration extends this learning system into Slack as the primary learner interaction surface. Key connection points:
+
+- **Party Passport** maps to `LearnerProfile` in the Slack CRM database (PostgreSQL)
+- **Learner journey** tracked via `LearningInteraction` records, synced to Fabric every 5 minutes
+- **Support cases** use AI-triage (GPT-4o classification) matching the support SLA monitor Build Mode project
+- **Provider adapter** for Slack is implemented via Slack Bolt for Python with Socket Mode
+- **On-chain credential issuance** fulfills the blockchain provenance proof Build Mode project
+
+📄 Full Slack CRM architecture → [`docs/slack-ai-crm-integration.md`](slack-ai-crm-integration.md)

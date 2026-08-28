@@ -18,7 +18,8 @@
 10. [AI Agents Upgrade Manifest](#ai-agents-upgrade-manifest)
 11. [AI Model Intelligence Layer](#ai-model-intelligence-layer)
 12. [AI Trading Bots Intelligence](#ai-trading-bots-intelligence)
-13. [Contributing](#contributing)
+13. [AI Slack CRM Systems](#ai-slack-crm-systems)
+14. [Contributing](#contributing)
 
 ---
 
@@ -258,6 +259,27 @@ Key concepts explored:
 - **Earn-while-you-Learn integration** — on-chain CBSLL trading credentials issued at each verified skill milestone.
 
 📄 Deep dive → [`docs/ai-trading-bots-intelligence.md`](docs/ai-trading-bots-intelligence.md)
+
+---
+
+## AI Slack CRM Systems
+
+> *"Slack is not just a chat tool — it is the nervous system of every modern team. When your CRM lives inside that nervous system, every conversation becomes a learning event."*
+
+The **AI Slack CRM Systems** integration turns Slack into a fully AI-powered customer relationship management and learning enhancement platform — directly connected to the ACSS via Hermes and Fabric.
+
+Key concepts explored:
+
+- **Slack App Architecture** — Bolt for Python app with Socket Mode, Slack App Manifest (YAML), slash commands (`/learn`, `/ask`, `/progress`, `/support`, `/badge`), and event listeners for messages, reactions, mentions, and member joins.
+- **CRM Data Model** — `LearnerProfile` Party Passports, `LearningInteraction` logs, and `SupportCase` records backed by PostgreSQL, with full SQL schema including indexes for learner journey queries.
+- **AI-Powered Commands** — `/ask` generates Claude-powered teaching responses in Slack Block Kit; `/learn` delivers personalized lessons from Fabric RAG context; `/support` uses GPT-4o to auto-triage and classify every support case.
+- **Intelligent Event Listeners** — passive learning signal detection in channel messages; reaction-based AI feedback collection (✅👍👀❓❌ mapped to quality scores 1–5 that feed the lippytmai fine-tuning loop); automated onboarding DM on member join.
+- **ACSS Integration** — Hermes CRM event schema, Fabric sync service that boosts teaching pattern weights for high-quality interactions, and AMIL-integrated `AIService` class for model selection per task type.
+- **Earn-while-you-Learn Workflows** — automated badge issuance pipeline (milestone check → auto-quiz → on-chain ERC-721 SkillBadge mint → Slack notification with basescan.org link), interactive quiz Block Kit, and shareable badge cards.
+- **CRM Analytics** — weekly Slack report with learner stats, AI quality metrics published to Fabric, and threshold-based auto-triggers for curriculum adjustment and lippytmai fine-tuning.
+- **OMARCHY-Standard Deployment** — Dockerfile with non-root security, `docker-compose.yml` with PostgreSQL + Redis, and full environment variable table (all secrets injected by Hermes at runtime).
+
+📄 Deep dive → [`docs/slack-ai-crm-integration.md`](docs/slack-ai-crm-integration.md)
 
 ---
 

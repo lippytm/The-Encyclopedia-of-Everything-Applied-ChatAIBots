@@ -61,5 +61,14 @@ Beyond the eight ACSS systems, three additional AI intelligence documents govern
 - strong cross-linking to learning and product hubs
 - every agent action logged, every model output evaluated, every upgrade human-gated
 
+## Slack CRM & Platform Surfaces
+The Slack AI CRM integration is the primary learner-facing surface of the ACSS teaching system. Key components:
+- **Slack Bolt bot** (`slack_bolt` for Python, Socket Mode) with 6 slash commands and 4 event listeners
+- **PostgreSQL CRM** — `LearnerProfile`, `LearningInteraction`, `SupportCase` tables with Fabric sync
+- **AMIL model routing** — Claude for teaching, GPT-4o for classification/triage, GPT-4o-mini for fast signal detection
+- **Earn-while-you-Learn** — automated badge issuance pipeline → on-chain ERC-721 SkillBadge on Base
+
+See [`docs/slack-ai-crm-integration.md`](docs/slack-ai-crm-integration.md) for full architecture.
+
 ## Notes
-Use this repo to support diversified AI learning, concept integration, and educational storytelling across the ecosystem. The Copilot Brainkit (`copilot-instructions.md`) is the AI Brainkit v2.0 for this repository — read it before making any significant changes.
+Use this repo to support diversified AI learning, concept integration, and educational storytelling across the ecosystem. The Copilot Brainkit (`.github/copilot-instructions.md`) is the AI Brainkit v2.0 for this repository — read it before making any significant changes.
