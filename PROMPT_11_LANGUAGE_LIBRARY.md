@@ -54,6 +54,24 @@ Connected engines:
 5. Review progress.
 6. Record the next action.
 
+## Stack Profile
+
+The full technology stack for this repository — every language, framework, AI model, and infrastructure tool mapped to CSEL environment type, CCSLL/CBSLL proficiency level, Prompt #11 engine, and ACSS system.
+
+📄 → [`docs/P011-STACK-001-repo-stack-profile.md`](docs/P011-STACK-001-repo-stack-profile.md)
+
+## Applied Chatbot Knowledge-Base Learning Path
+
+The complete 6-level earn-while-you-learn journey from first prompt to autonomous teaching agent and ACSS Fabric contributor — with working code, tests, and on-chain credential issuance at every level.
+
+📄 → [`docs/P011-BOT-001-chatbot-knowledge-base-learning-path.md`](docs/P011-BOT-001-chatbot-knowledge-base-learning-path.md)
+
+## Prompt #11 Engines
+
+All 8 engines (Intake, Classification, Planning, Documentation, Quality Review, Awareness, Repo Communication, CRM Support) — architecture, triggers, inputs, outputs, ACSS integration, and Python implementations.
+
+📄 → [`docs/P011-ENGINE-001-prompt11-engines.md`](docs/P011-ENGINE-001-prompt11-engines.md)
+
 ## Next Action
 
-Add a repo-specific stack profile and applied chatbot knowledge-base learning path.
+Implement Engine 3 (Planning) full curriculum planner backed by Fabric, and build the Awareness engine real-time learner engagement dashboard.

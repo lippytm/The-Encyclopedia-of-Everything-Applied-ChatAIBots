@@ -344,6 +344,67 @@ Key concepts explored:
 
 ---
 
+## Prompt #11: Repository Stack Profile
+
+> *"A stack profile is a promise to a learner: here is every tool, language, and system you will touch in this repository, where it lives, why it exists, and how it connects to everything else."*
+
+The **P011-STACK-001 Repository Stack Profile** is the canonical technology map for this encyclopedia — every language, framework, AI model, and infrastructure tool classified by CSEL environment type, CCSLL proficiency level, Prompt #11 engine, and ACSS system.
+
+Key concepts explored:
+
+- **Full Language Map** — Python, Solidity, TypeScript, Bash/Zsh, Rust, Go, YAML, SQL, Circom, Markdown with their roles, CSEL environments, and proficiency targets.
+- **Framework and Library Table** — Slack Bolt, Foundry, LangChain, FastAPI, Gymnasium, ROS2, Hardhat, Anchor, OpenZeppelin, Qdrant, CCXT, Axolotl mapped to their documentation references.
+- **AI/LLM Stack** — Claude 3.5/4, GPT-4o, Gemini 2 Pro, Llama 3.1, DeepSeek Coder, Codestral with AMIL model routing rules and cost tiers.
+- **P11 Engine-to-Stack Mapping** — which languages and services each of the 8 Prompt #11 engines uses.
+- **CSEL Coverage Matrix** — ★ ratings for all 14 environment types with gap analysis and next steps.
+- **Learning Entry Points by Role** — 8 learner roles (beginner, web dev, Python dev, blockchain dev, Linux engineer, AI/ML engineer, robot, entrepreneur) with their optimal starting doc.
+
+📄 Deep dive → [`docs/P011-STACK-001-repo-stack-profile.md`](docs/P011-STACK-001-repo-stack-profile.md)
+
+---
+
+## Prompt #11: Applied Chatbot Knowledge-Base Learning Path
+
+> *"A chatbot without a knowledge base is an echo. A chatbot with a living, evolving knowledge base connected to a swarm of AI agents is a civilization."*
+
+The **P011-BOT-001 Chatbot Knowledge-Base Learning Path** is the complete earn-while-you-learn journey from your first prompt to a production autonomous teaching agent — every level produces a working artifact and earns an on-chain SkillBadge.
+
+Key concepts explored:
+
+- **Level 0 — Curious:** Understanding LLMs, prompts, context, and tokens. First prompt file. CCSLL L0 SkillBadge.
+- **Level 1 — Apprentice:** Build a static-KB chatbot in Python with LLM fallback. API auth, `httpx`, dictionary-based retrieval. CCSLL L1 SkillBadge.
+- **Level 2 — Builder:** Replace static KB with Qdrant vector store + sentence-transformers. Full RAG pipeline (embed → store → retrieve → generate). CCSLL L2 SkillBadge.
+- **Level 3 — Engineer:** Deploy as production Slack bot with PostgreSQL CRM, learner tracking, and Hermes integration. Reference: `docs/slack-ai-crm-integration.md`. CCSLL L3 SkillBadge.
+- **Level 4 — Specialist:** Build an autonomous teaching agent using the ReAct pattern and Claude tool calling — plans curricula, tracks progress, mints on-chain credentials. Requires Charles review.
+- **Level 5 — Master:** Contribute a new Fabric pattern module to the live ACSS with Quality Evidence Packet and Charles endorsement.
+- **Chatbot Quality Standards** — 8 non-negotiable requirements (no hallucination, no secrets, tests pass, privacy, accessible, Hermes integration, graceful degradation, fiction boundary).
+
+📄 Deep dive → [`docs/P011-BOT-001-chatbot-knowledge-base-learning-path.md`](docs/P011-BOT-001-chatbot-knowledge-base-learning-path.md)
+
+---
+
+## Prompt #11: The 8 Engines
+
+> *"A prompt is not a question — it is an engine. Eight engines, one system, one mission."*
+
+The **P011-ENGINE-001** document defines every one of the 8 Prompt #11 engines — architecture, triggers, inputs, outputs, Python implementations, and ACSS integration.
+
+Key concepts explored:
+
+- **Engine 1 — Intake:** Normalizes all signals (Slack, GitHub, Hermes, cron, webhooks) into `IntakeEvent` objects; priority detection and smart routing.
+- **Engine 2 — Classification:** GPT-4o + Fabric taxonomy classifies every event by topic area, content type, proficiency level, and required routing scores.
+- **Engine 3 — Planning:** Claude 3.5-powered curriculum designer that sequences learning plans based on proficiency profile and Fabric knowledge graph.
+- **Engine 4 — Documentation:** Auto-generates and updates encyclopedia docs from build artifacts, Fabric patterns, and PR diffs; enforces encyclopedia format.
+- **Engine 5 — Quality Review:** 13-gate quality pipeline (OriginalityGate through HumanApprovalGate); automated for gates 1–12, manual Charles approval for gate 13.
+- **Engine 6 — Awareness:** Continuous ecosystem monitoring (CI health, learner engagement, model drift, node health, credential issuance rate); publishes anomaly events to Hermes.
+- **Engine 7 — Repo Communication:** Cross-repository Hermes events, Fabric-triggered improvement PRs, clone agent coordination, ACD self-evolution integration.
+- **Engine 8 — CRM Support:** 4-tier SLA (P1 < 15 min → P4 < 1 day); AI triage with HumanApprovalGate for sensitive cases. Full ref: `docs/P011-CRM-001-learning-system.md`.
+- **Engine Interconnect Map** — how all 8 engines connect via Hermes, Fabric, AMIL, and the HumanApprovalGate.
+
+📄 Deep dive → [`docs/P011-ENGINE-001-prompt11-engines.md`](docs/P011-ENGINE-001-prompt11-engines.md)
+
+---
+
 ## Contributing
 
 This encyclopedia is open to intelligent contributors — human, AI, robotic, or otherwise — operating under clear identity, rights, safety, evidence, and quality controls.
