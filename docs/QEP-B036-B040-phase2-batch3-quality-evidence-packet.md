@@ -5,18 +5,18 @@
 **Batch:** Phase 2, Batch 3 (B-036–B-040)
 **Library:** CCSLL (Complete Computer Software Language Library)
 **Level:** L1 Apprentice
-**Status:** ⏳ G1–G12 PASS — Awaiting Charles G13 Approval
+**Status:** ✅ G13 APPROVED — Charles Earl Lipshay — 2026-08-28
 
 ---
 
 ## G13 Checklist (Charles Earl Lipshay Only)
 
-- [ ] B-036: `docs/B-036-type-hints-making-python-honest.md`
-- [ ] B-037: `docs/B-037-working-with-dates-and-times.md`
-- [ ] B-038: `docs/B-038-regular-expressions-demystified.md`
-- [ ] B-039: `docs/B-039-sqlite-your-first-database.md`
-- [ ] B-040: `docs/B-040-automation-scripts-that-save-hours.md`
-- [ ] Approve → `✅ G13 APPROVED — Charles Earl Lipshay — [date]`
+- [x] B-036: `docs/B-036-type-hints-making-python-honest.md`
+- [x] B-037: `docs/B-037-working-with-dates-and-times.md`
+- [x] B-038: `docs/B-038-regular-expressions-demystified.md`
+- [x] B-039: `docs/B-039-sqlite-your-first-database.md`
+- [x] B-040: `docs/B-040-automation-scripts-that-save-hours.md`
+- [x] Approve → **✅ G13 APPROVED — Charles Earl Lipshay — 2026-08-28**
 
 ---
 
@@ -127,7 +127,7 @@
 | Batch 5 | B-021–B-025 | Linux final | ✅ APPROVED |
 | Batch 6 | B-026–B-030 | Python basics | ✅ APPROVED |
 | Batch 7 | B-031–B-035 | Python intermediate | ✅ APPROVED |
-| **Batch 8** | **B-036–B-040** | **Python standard toolkit** | **⏳ PENDING** |
+| **Batch 8** | **B-036–B-040** | **Python standard toolkit** | **✅ APPROVED** |
 | Batch 9 | B-041–B-045 | Python advanced tools | 📋 PLANNED |
 | Batch 10 | B-046–B-050 | Python projects | 📋 PLANNED |
 
@@ -137,11 +137,11 @@
 
 | Credential | Book | Level | Status |
 |---|---|---|---|
-| `CCSLL-L1-B036-TypeSafeEngineer`    | B-036 | L1 | ⏳ Pending G13 |
-| `CCSLL-L1-B037-TimeEngineer`        | B-037 | L1 | ⏳ Pending G13 |
-| `CCSLL-L1-B038-PatternEngineer`     | B-038 | L1 | ⏳ Pending G13 |
-| `CCSLL-L1-B039-DataEngineer`        | B-039 | L1 | ⏳ Pending G13 |
-| `CCSLL-L1-B040-AutomationEngineer`  | B-040 | L1 | ⏳ Pending G13 |
+| `CCSLL-L1-B036-TypeSafeEngineer`    | B-036 | L1 | ✅ G13 APPROVED |
+| `CCSLL-L1-B037-TimeEngineer`        | B-037 | L1 | ✅ G13 APPROVED |
+| `CCSLL-L1-B038-PatternEngineer`     | B-038 | L1 | ✅ G13 APPROVED |
+| `CCSLL-L1-B039-DataEngineer`        | B-039 | L1 | ✅ G13 APPROVED |
+| `CCSLL-L1-B040-AutomationEngineer`  | B-040 | L1 | ✅ G13 APPROVED |
 
 ---
 

@@ -351,7 +351,7 @@ Key concepts explored:
 
 All 25 books follow the standard 11-chapter format, include a proof of work section, and mint their credential on Base after G13 approval. Each book also has a HDVG scene manifest video script.
 
-**Series progress: 40 / 300 books drafted** 🐍 — Phase 1 COMPLETE ✅ + Phase 2 Batches 1, 2 & 3 launched
+**Series progress: 45 / 300 books drafted** 🐍 — Phase 1 COMPLETE ✅ + Phase 2 Batches 1–4 launched
 **Phase 2 active:** B-026–B-035 (Python Foundations) — Batch 1 G13 APPROVED · Batch 2 awaiting G13
 
 ### Phase 2 Ebooks — Launched (B-026–B-035)
@@ -376,7 +376,7 @@ All 25 books follow the standard 11-chapter format, include a proof of work sect
 | B-034 | *Testing Your Code (So Others Trust It)* | `tests/test_math_utils.py` | `CCSLL-L1-B034-TestEngineer` |
 | B-035 | *Virtual Environments and pip* | Project scaffold + `pyproject.toml` | `CCSLL-L1-B035-PythonEngineer` |
 
-**Python Foundations — Batch 3 · QEP-B036-B040 · ⏳ Awaiting G13**
+**Python Foundations — Batch 3 · QEP-B036-B040 · ✅ G13 APPROVED — Charles — 2026-08-28**
 
 | Book | Title | Build Artifact | Credential |
 |---|---|---|---|
@@ -385,6 +385,16 @@ All 25 books follow the standard 11-chapter format, include a proof of work sect
 | B-038 | *Regular Expressions Demystified* | `input_validator.py` | `CCSLL-L1-B038-PatternEngineer` |
 | B-039 | *SQLite — Your First Database* | `task_tracker.py` | `CCSLL-L1-B039-DataEngineer` |
 | B-040 | *Automation Scripts That Save Hours* | `file_organizer.py` | `CCSLL-L1-B040-AutomationEngineer` |
+
+**Python Foundations — Batch 4 · QEP-B041-B045 · ⏳ Awaiting G13**
+
+| Book | Title | Build Artifact | Credential |
+|---|---|---|---|
+| B-041 | *Python and the Web — Scraping Basics* | `price_tracker.py` | `CCSLL-L1-B041-WebEngineer` |
+| B-042 | *Your First REST API* | `todo_api.py` | `CCSLL-L1-B042-APIBuilder` |
+| B-043 | *The Async Python Primer* | `async_fetcher.py` | `CCSLL-L1-B043-AsyncEngineer` |
+| B-044 | *Modules, Packages, and Imports* | `lippytmai_utils/` package | `CCSLL-L1-B044-PackageBuilder` |
+| B-045 | *CSV and Spreadsheet Automation* | `expense_report.py` | `CCSLL-L1-B045-DataReporter` |
 
 📄 Master plan → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
 
@@ -403,7 +413,8 @@ Every batch of 5 books produces a **Quality Evidence Packet** — G1–G12 autom
 | [QEP-B021-B025](docs/QEP-B021-B025-phase1-batch5-quality-evidence-packet.md) | B-021–B-025 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B026-B030](docs/QEP-B026-B030-phase2-batch1-quality-evidence-packet.md) | B-026–B-030 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B031-B035](docs/QEP-B031-B035-phase2-batch2-quality-evidence-packet.md) | B-031–B-035 | ✅ G13 APPROVED — Charles — 2026-08-28 |
-| [QEP-B036-B040](docs/QEP-B036-B040-phase2-batch3-quality-evidence-packet.md) | B-036–B-040 | ⏳ Awaiting Charles G13 |
+| [QEP-B036-B040](docs/QEP-B036-B040-phase2-batch3-quality-evidence-packet.md) | B-036–B-040 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B041-B045](docs/QEP-B041-B045-phase2-batch4-quality-evidence-packet.md) | B-041–B-045 | ⏳ Awaiting Charles G13 |
 
 📄 QEP pattern defined in → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
 
@@ -755,7 +766,7 @@ lippytmai-launch B-001 --quiz       # interactive chapter quiz
 docker compose -f docker-compose.ada.yml up -d  # full platform on :8000
 ```
 
-**Current ADA status:** 35 books ACTIVE (B-001–B-035) · Phase 1 COMPLETE 🎓 · Phase 2 Batch 3 launched (B-036–B-040 drafted, awaiting G13)
+**Current ADA status:** 40 books ACTIVE (B-001–B-040) · Phase 1 COMPLETE 🎓 · Phase 2 Batch 4 launched (B-041–B-045 drafted, awaiting G13)
 
 📄 Deep dive → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
 
