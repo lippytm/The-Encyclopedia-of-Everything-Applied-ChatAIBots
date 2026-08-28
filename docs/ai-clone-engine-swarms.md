@@ -796,9 +796,68 @@ The **AI Copilot Video Explainer / Tutorial / Video Sandbox Creator (ACVS)** is 
 
 ---
 
+## 13. Cross-Platform Deployment — The Distributed AI Copilot
+
+The ACSS operates not just within repositories — it deploys as a **native AI copilot across every platform** in the lippytm.ai ecosystem. One intelligence, fifteen voices.
+
+### 13.1 Platform Deployment Registry
+
+| Platform | Clone Identity | Deployment Type | Primary Function |
+|---|---|---|---|
+| ChatGPT (Personal) | lippytmai | Custom GPT | Ebook teacher, quiz generator, DFY builder |
+| ChatGPT Business | lippytmai + lippytm | Custom GPT + Team | Organizational learning delivery |
+| Google Gemini | lippytmai | Gem (Custom AI) | Research synthesis, Fabric bridge |
+| NotebookLM | Fabric adapter | Notebook source upload | Knowledge graph ingestion |
+| Claude | lippytmai | Project + System Prompt | Deep writing, code review, architecture |
+| GitHub Copilot | lippytm | `.github/copilot-instructions.md` | Code builds, CI/CD, automation |
+| Slack | Hermes agent | Slack AI + Bot | CRM events, learner alerts, team relay |
+| Facebook | lippytmai | Page + AI Assistant | Community education, brand voice |
+| Instagram | lippytmai | Profile + AI content | Short-form lessons, credential showcase |
+| LinkedIn | lippytmai | Newsletter + AI drafts | Professional teaching, thought leadership |
+| YouTube | lippytmai | Channel + ACVS pipeline | Full video lessons, DFY walkthroughs |
+| Substack | lippytmai | Publication + AI drafts | Long-form newsletter, course distribution |
+| Threads | Lippy Killjoy | Profile + AI content | Disruptive ideas, creative challenges |
+| OMARCHY Workstation | lippytm | Local ollama agent | Private offline AI, sovereign builds |
+| ADA API | lippytm + lippytmai | FastAPI endpoints | Programmatic access to all 300 books |
+
+### 13.2 The Universal System Prompt
+
+Every platform deployment starts from the same core identity — the **Master System Prompt** — then adapts to the platform's native format. This ensures consistent voice and knowledge across all 15+ deployments while allowing each platform to surface the right clone identity for its context.
+
+See [`docs/acss-cross-platform-copilot-deployment.md`](acss-cross-platform-copilot-deployment.md) for the full Master System Prompt, per-platform setup instructions, content calendars, and Hermes event schemas.
+
+### 13.3 The Cross-Platform Learning Loop
+
+Every platform is both an **output channel** (teaching) and a **learning sensor** (feedback). The loop:
+
+```
+Platform engagement (questions, errors, builds, reactions)
+  → Hermes classifies + routes the signal
+  → Fabric extracts the pattern
+  → lippytmai drafts the improvement
+  → Charles reviews (G13)
+  → Updated content activates in ADA
+  → All platforms receive updated content
+  → Loop repeats — system continuously improves ∞
+```
+
+This is the mechanism by which the ACSS becomes a **continuously self-learning AI Conglomerate** — not a static tool, but an evolving intelligence that improves with every learner interaction across every platform.
+
+---
+
 ## Further Reading
 
+- 📄 [`docs/acss-cross-platform-copilot-deployment.md`](acss-cross-platform-copilot-deployment.md) — **Full cross-platform deployment guide** (15 platforms, Master System Prompt, content calendar, Hermes events)
 - 📄 [`docs/ai-copilot-video-sandbox-creator.md`](ai-copilot-video-sandbox-creator.md) — ACVS: Hermes+Fabric integrated video creation system
+- 📄 [`docs/P011-VIDEO-001-hd-video-generator.md`](P011-VIDEO-001-hd-video-generator.md) — HDVG production pipeline (renders ACVS output)
+- 📄 [`docs/ai-brainkits.md`](ai-brainkits.md) — AI Brainkit design, Copilot agent instructions, and memory architecture
+- 📄 [`docs/self-improvement.md`](self-improvement.md) — Evolutionary learning loops and AI self-improvement systems
+- 📄 [`docs/intergalactic-network.md`](intergalactic-network.md) — Multi-agent coordination and decentralized governance
+- 📄 [`SYSTEM_ARCHITECTURE.md`](../SYSTEM_ARCHITECTURE.md) — Ecosystem position and connected repositories
+- 📄 [`PROMPT_11_LANGUAGE_LIBRARY.md`](../PROMPT_11_LANGUAGE_LIBRARY.md) — Language library foundations
+- 📄 [`CIVILIZATION_BLUEPRINT.md`](../CIVILIZATION_BLUEPRINT.md) — The master lippytm.ai civilization architecture
+- 🏠 [`README.md`](../README.md) — Encyclopedia home and Table of Contents
+
 - 📄 [`docs/P011-VIDEO-001-hd-video-generator.md`](P011-VIDEO-001-hd-video-generator.md) — HDVG production pipeline (renders ACVS output)
 - 📄 [`docs/ai-brainkits.md`](ai-brainkits.md) — AI Brainkit design, Copilot agent instructions, and memory architecture
 - 📄 [`docs/self-improvement.md`](self-improvement.md) — Evolutionary learning loops and AI self-improvement systems

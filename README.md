@@ -51,7 +51,8 @@
 **10-Layer Product Excellence System**
 33. [AI Copilot System (3-Format)](#ai-copilot-system-3-format)
 34. [Product Excellence Framework](#product-excellence-framework)
-35. [Creative Building Process](#creative-building-process)
+35. [Cross-Platform AI Copilot Deployment](#cross-platform-ai-copilot-deployment)
+36. [Creative Building Process](#creative-building-process)
 
 **Contributing**
 36. [Contributing](#contributing)
@@ -872,9 +873,39 @@ The **10-Layer Product Excellence Framework** defines the complete architecture 
 
 ---
 
+## Cross-Platform AI Copilot Deployment
 
+The ACSS deploys as a **native AI Copilot across every platform** in the lippytm.ai ecosystem — one intelligence, fifteen voices. The same Hermes routing and Fabric knowledge, expressed in each platform's native format.
 
-The **Creative Building Process** (CBP) is the unified methodology that governs how all lippytm.ai content is conceived, created, quality-reviewed, published, and continuously improved. It merges Hermes event routing, Fabric knowledge context, ACVS video production, and ADA deployment into a single repeatable loop:
+**Platform deployment grid (15 platforms):**
+
+| Platform | Clone | Type | Use |
+|---|---|---|---|
+| ChatGPT Personal | lippytmai | Custom GPT | Daily teacher, DFY builder, quiz |
+| ChatGPT Business | lippytmai + lippytm | Team GPT | Organizational learning |
+| Google Gemini | lippytmai | Gem | Research synthesis, Fabric bridge |
+| NotebookLM | Fabric adapter | Source upload | Knowledge ingestion |
+| Claude | lippytmai | Project | Deep writing, code review |
+| GitHub Copilot | lippytm | Copilot instructions | Code + CI/CD automation |
+| Slack | Hermes agent | Bot + AI | CRM events, alerts, relay |
+| Facebook | lippytmai | Page AI | Community education |
+| Instagram | lippytmai | AI content | Short lessons, credential showcase |
+| LinkedIn | lippytmai | Newsletter | Professional teaching |
+| YouTube | lippytmai | ACVS pipeline | Full video lessons |
+| Substack | lippytmai | Publication | Long-form newsletter |
+| Threads | Lippy Killjoy | AI content | Disruptive ideas (HAG required) |
+| OMARCHY Workstation | lippytm | Local ollama | Private offline AI |
+| ADA API | lippytm + lippytmai | FastAPI | All 300 books programmatically |
+
+**The cross-platform learning loop:** Every platform is both an output channel (teaching) and a learning sensor (feedback) — engagement signals route via Hermes → Fabric extracts patterns → books improve → all platforms receive updated content → loop repeats ∞
+
+📄 Deep dive → [`docs/acss-cross-platform-copilot-deployment.md`](docs/acss-cross-platform-copilot-deployment.md)
+
+---
+
+## Creative Building Process
+
+ is the unified methodology that governs how all lippytm.ai content is conceived, created, quality-reviewed, published, and continuously improved. It merges Hermes event routing, Fabric knowledge context, ACVS video production, and ADA deployment into a single repeatable loop:
 
 **8-Stage Creative Loop:**
 1. **INTENT** — Charles defines topic via P011-PLAN-001
