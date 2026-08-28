@@ -12,22 +12,26 @@ A completed book is not just chapters and code. It is a **10-layer product** tha
 
 ---
 
-## The 10-Layer Book Product Architecture
+## The 11-Layer Book Product Architecture
 
 ```
-LAYER  NAME                          FORMAT COVERAGE
-────────────────────────────────────────────────────────────────
-  1    Core Content                  📘 ebook · 🎧 audio · 🎬 video
-  2    Done-For-You Lessons (Ch 12)  📘 · 🎧 · 🎬 · 🤖 copilot assist
-  3    Use Cases & Applications      📘 · 🎧 · 🎬  (Ch 13)
-  4    AI Copilot System             📘 · 🎧 · 🎬  (Appendix C)
-  5    Quick Quiz & Self-Assessment  📘 · 🎧 · 🎬  (Appendix D)
-  6    Glossary & Error Encyclopedia 📘 reference  (Appendix E)
-  7    Cheat Sheet & Reference Card  📘 · 🎧 audio card · 🎬 thumbnail
-  8    Real Project Showcase         📘 · 🎬 build video
-  9    Instructor & Accessibility    📘 guide  (Appendix F)
- 10    Learning Path & Progress Map  📘 · 🎬 visual  (Appendix G)
+LAYER  NAME                            FORMAT COVERAGE
+──────────────────────────────────────────────────────────────────
+  1    Core Content                    📘 ebook · 🎧 audio · 🎬 video
+  2    Done-For-You Lessons (Ch 12)    📘 · 🎧 · 🎬 · 🤖 copilot assist
+  3    Use Cases & Applications        📘 · 🎧 · 🎬  (Ch 13)
+  4    AI Copilot System               📘 · 🎧 · 🎬  (Appendix C)
+  5    Quick Quiz & Self-Assessment    📘 · 🎧 · 🎬  (Appendix D)
+  6    Glossary & Error Encyclopedia   📘 reference  (Appendix E)
+  7    Cheat Sheet & Reference Card    📘 · 🎧 audio card · 🎬 thumbnail
+  8    Real Project Showcase           📘 · 🎬 build video  (Appendix H)
+  9    Instructor & Accessibility      📘 guide  (Appendix F)
+ 10    Learning Path & Progress Map    📘 · 🎬 visual  (Appendix G)
+ 11    ACSS Explainer Series (Ch 14)   📘 · 🎧 · 🎬  (10 explainers × 3 formats)
 ```
+
+> **Note:** B-001–B-005 have Layers 1–10. B-006+ have all 11 layers including Chapter 14.
+> B-001–B-005 will receive the Chapter 14 ACSS Explainer upgrade in the next pass.
 
 ---
 
@@ -363,7 +367,39 @@ Every learner needs to see where they are, where they came from, and where they'
 
 ---
 
-## Complete Book Structure (Full 10 Layers)
+## Layer 11 — ACSS Explainer Series — Chapter 14 ⬅ NEW (B-006+)
+
+### Purpose:
+Connect every book directly to the ACSS architecture — so learners understand not just the skill, but the entire system their learning feeds into. This chapter transforms isolated knowledge into connected intelligence.
+
+### 10 Explainer Lessons (per book):
+
+Each lesson covers one ACSS system and shows exactly how the current book's content connects to it:
+
+| Lesson | ACSS System | What It Explains |
+|---|---|---|
+| 1 | Overview | What the ACSS is and how this book fits |
+| 2 | Hermes | How learning events from this book are routed |
+| 3 | Fabric | How concepts from this book map to the knowledge graph |
+| 4 | Clone Engine | Which clone identity teaches this book and why |
+| 5 | CLL/CCSLL/CBSLL | How this book's credential fits the library system |
+| 6 | ADA | How to activate this book as a live application |
+| 7 | ACVS | How the video lessons for this book were produced |
+| 8 | OMARCHY | The reference environment for every exercise |
+| 9 | Cross-Platform | How the book's copilot deploys across 15 platforms |
+| 10 | EWYL | How this book contributes to earnings and career growth |
+
+### Three formats per explainer:
+- **📘 Ebook:** 2–3 paragraph explanation with connection map
+- **🎧 Audiobook:** 30-second callout script (lippytmai voice)
+- **🎬 Video:** 60-second architecture diagram walkthrough
+
+### Copilot Prompt per explainer:
+Each explainer ends with a `🤖 Copilot Prompt` connecting the ACSS concept to the specific chapter content.
+
+---
+
+## Complete Book Structure (Full 11 Layers)
 
 Every completed book follows this exact structure:
 
@@ -380,6 +416,11 @@ Every completed book follows this exact structure:
 
   Chapter 13: How It Works — Use Cases & Applications (Layer 3)
     [📘 mechanism · 🎧 narration · 🎬 5-domain video]
+
+  Chapter 14: ACSS Explainer Series (Layer 11) ← NEW (B-006+)
+    10 explainers × [📘 explanation · 🎧 30-sec callout · 🎬 60-sec walkthrough · 🤖 copilot]
+    Topics: ACSS Overview, Hermes, Fabric, Clone Engine, CLL/CCSLL/CBSLL,
+            ADA, ACVS, OMARCHY, Cross-Platform Copilot, EWYL Loop
 
   Appendix A: Enhanced Cheat Sheet (Layer 7)
     [📘 print-optimized · 🎧 60-second verbal · 🎬 thumbnail spec]
@@ -430,7 +471,7 @@ Every completed book follows this exact structure:
 
 **Phase A — Template (B-001):** Build all 6 new appendices (D, E, F, G, H + enhanced A) for B-001. This is the gold-standard template all other books follow.
 
-**Phase B — Phase 1 (B-002–B-025):** Apply all 6 new appendices. DFY lessons already merged for B-002–B-005; continue B-006–B-025.
+**Phase B — Phase 1 (B-002–B-025):** Apply all Layers 1–11. DFY lessons already merged for B-002–B-005; continue B-006–B-025. Chapter 14 ACSS Explainers added from B-006 onward; B-001–B-005 will receive Chapter 14 in a follow-up pass.
 
 **Phase C — Phase 2 (B-026–B-055):** Apply all layers. Python-specific content.
 
