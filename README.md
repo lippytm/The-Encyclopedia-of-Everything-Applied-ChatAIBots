@@ -351,8 +351,20 @@ Key concepts explored:
 
 All 25 books follow the standard 11-chapter format, include a proof of work section, and mint their credential on Base after G13 approval. Each book also has a HDVG scene manifest video script.
 
-**Series progress: 25 / 300 books drafted — Phase 1 COMPLETE** 🎓  
-**Next:** B-026–B-050 (Python Foundations — begins after QEP-B021-B025 G13 approval)
+**Series progress: 30 / 300 books drafted** 🐍 — Phase 1 COMPLETE ✅ + Phase 2 Batch 1 launched  
+**Phase 2 active:** B-026–B-030 (Python Foundations Batch 1) — QEP-B026-B030 awaiting G13
+
+### Phase 2 Ebooks — Launched (B-026–B-030)
+
+**Python Foundations — Batch 1 · QEP-B026-B030 G1–G12 PASS · Awaiting Charles G13**
+
+| Book | Title | Build Artifact | Credential |
+|---|---|---|---|
+| B-026 | *Your First Python Program* | `hello-lippytmai.py` | `CCSLL-L0-B026-PythonApprentice` |
+| B-027 | *Lists, Loops, and Logic* | `grade-calculator.py` | `CCSLL-L0-B027-LogicBuilder` |
+| B-028 | *Functions That Do One Thing Well* | `math_utils.py` | `CCSLL-L1-B028-FunctionCrafter` |
+| B-029 | *Dictionaries: The Data Swiss Army Knife* | `config_reader.py` | `CCSLL-L1-B029-DataEngineer` |
+| B-030 | *Reading and Writing Files* | `log_processor.py` | `CCSLL-L1-B030-FileEngineer` |
 
 📄 Master plan → [`docs/P011-EBOOK-000-course-series-master-plan.md`](docs/P011-EBOOK-000-course-series-master-plan.md)
 
@@ -368,7 +380,8 @@ Every batch of 5 books produces a **Quality Evidence Packet** — G1–G12 autom
 | [QEP-B006-B010](docs/QEP-B006-B010-phase1-batch2-quality-evidence-packet.md) | B-006–B-010 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B011-B015](docs/QEP-B011-B015-phase1-batch3-quality-evidence-packet.md) | B-011–B-015 | ✅ G13 APPROVED — Charles — 2026-08-28 |
 | [QEP-B016-B020](docs/QEP-B016-B020-phase1-batch4-quality-evidence-packet.md) | B-016–B-020 | ✅ G13 APPROVED — Charles — 2026-08-28 |
-| [QEP-B021-B025](docs/QEP-B021-B025-phase1-batch5-quality-evidence-packet.md) | B-021–B-025 | ⏳ Awaiting Charles G13 |
+| [QEP-B021-B025](docs/QEP-B021-B025-phase1-batch5-quality-evidence-packet.md) | B-021–B-025 | ✅ G13 APPROVED — Charles — 2026-08-28 |
+| [QEP-B026-B030](docs/QEP-B026-B030-phase2-batch1-quality-evidence-packet.md) | B-026–B-030 | ⏳ Awaiting Charles G13 |
 
 📄 QEP pattern defined in → [`docs/P011-QR-001-quality-review-engine.md`](docs/P011-QR-001-quality-review-engine.md)
 
@@ -720,7 +733,7 @@ lippytmai-launch B-001 --quiz       # interactive chapter quiz
 docker compose -f docker-compose.ada.yml up -d  # full platform on :8000
 ```
 
-**Current ADA status:** 20 books ACTIVE (B-001–B-020) · 280 pending G13 approval
+**Current ADA status:** 25 books ACTIVE (B-001–B-025) · Phase 1 COMPLETE 🎓 · Phase 2 Batch 1 launched (B-026–B-030 drafted, awaiting G13)
 
 📄 Deep dive → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
 

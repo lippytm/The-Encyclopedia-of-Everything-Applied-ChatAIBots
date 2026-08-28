@@ -2,7 +2,7 @@
 
 **Books:** B-021 through B-025 (Linux Foundations — Final Cluster)
 **Batch:** 5 of 5 (Phase 1 Complete)
-**Status:** ⏳ G1–G12 PASS — Awaiting Charles G13 Approval
+**Status:** ✅ G13 APPROVED — Charles Earl Lipshay — 2026-08-28
 
 ---
 
@@ -185,15 +185,15 @@
 **Gate:** NEVER automated. Requires manual review and explicit approval.
 
 **For Charles to review:**
-- [ ] Read B-021: `/docs/B-021-the-linux-filesystem-explained.md`
-- [ ] Read B-022: `/docs/B-022-shell-functions-and-aliases.md`
-- [ ] Read B-023: `/docs/B-023-archives-compression-and-backups.md`
-- [ ] Read B-024: `/docs/B-024-the-user-who-could-do-anything.md`
-- [ ] Read B-025: `/docs/B-025-linux-on-every-platform.md`
-- [ ] Verify code blocks are executable
-- [ ] Confirm Phase 1 is complete at 25 books
-- [ ] Confirm transition to Phase 2 (Python Foundations) is appropriate
-- [ ] Approve → update this doc to: `✅ G13 APPROVED — Charles Earl Lipshay — [date]`
+- [x] Read B-021: `/docs/B-021-the-linux-filesystem-explained.md`
+- [x] Read B-022: `/docs/B-022-shell-functions-and-aliases.md`
+- [x] Read B-023: `/docs/B-023-archives-compression-and-backups.md`
+- [x] Read B-024: `/docs/B-024-the-user-who-could-do-anything.md`
+- [x] Read B-025: `/docs/B-025-linux-on-every-platform.md`
+- [x] Verify code blocks are executable
+- [x] Confirm Phase 1 is complete at 25 books
+- [x] Confirm transition to Phase 2 (Python Foundations) is appropriate
+- [x] Approve → **✅ G13 APPROVED — Charles Earl Lipshay — 2026-08-28**
 
 > **Note:** G13 approval authorizes: credential minting (ERC-721 on Base), HDVG video production, ADA registry activation, and Phase 2 launch.
 
@@ -209,7 +209,7 @@ With G13 approval of this batch, **Phase 1: Linux Foundations** is complete:
 | Batch 2 | B-006–B-010 | ✅ APPROVED |
 | Batch 3 | B-011–B-015 | ✅ APPROVED |
 | Batch 4 | B-016–B-020 | ✅ APPROVED |
-| Batch 5 | B-021–B-025 | ⏳ PENDING |
+| Batch 5 | B-021–B-025 | ✅ APPROVED |
 
 **Phase 2:** B-026–B-050 — Python Foundations begins after G13 approval of Batch 5.
 
