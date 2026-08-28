@@ -23,6 +23,16 @@ Control Tower
 - `Chatlippytm.ai.Bots`
 - `Web3AI`
 
+## AI Conglomerate Swarms Layer
+The `AI Clone Engine Swarms Systems (ACESS)` provides the continuous self-learning intelligence layer across all connected repositories. It integrates:
+- **Clone Engine** — Charles, lippytm, lippytmai, Lippy Killjoy identity-aware agents
+- **Hermes** — cross-repo message routing and human-gate relay
+- **Fabric** — knowledge graph and pattern synthesis engine
+- **CCSLL** — Complete Computer Software Language Library
+- **CBSLL** — Complete Blockchain Software Language Library
+
+See [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md) for full architecture.
+
 ## Design Principles
 - broad but structured knowledge mapping
 - educational clarity

@@ -18,6 +18,17 @@ The-Encyclopedia-of-Everything-Applied-ChatAIBots supports learning, documentati
 - knowledge-base systems
 - CRM and support systems
 
+## Complete Language Libraries
+
+This repo is linked to two comprehensive language libraries maintained by the AI Clone Engine Swarms Systems:
+
+- **Complete Computer Software Language Library (CCSLL)** — full-stack coverage from HTML/CSS/JS to Rust, Python, Go, AI agent frameworks, and infrastructure-as-code.
+- **Complete Blockchain Software Language Library (CBSLL)** — on-chain coverage from Solidity and Vyper to Rust/Anchor (Solana), Cairo (StarkNet), ink! (Polkadot), ZK circuits (Circom, Noir), and cross-chain protocols (CCIP, LayerZero, IBC).
+
+Both libraries are live, evolving modules maintained by the Fabric knowledge engine and accessible to all Clone Engine agents via Hermes.
+
+See [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md) for full CCSLL and CBSLL architecture.
+
 ## Prompt #11 Engines
 
 Connected engines:
