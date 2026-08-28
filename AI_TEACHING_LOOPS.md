@@ -1,9 +1,9 @@
 # AI Teaching Loops
 
-This document defines practical teaching loops for AI educational systems inside the wider `lippytm` repository ecosystem.
+This document defines practical teaching loops for AI educational systems inside the wider `lippytm` repository ecosystem. It has been upgraded to integrate with the AI Conglomerate Swarms System (ACSS) — specifically the lippytmai teaching clone, Fabric knowledge graph, and Earn-while-you-Learn proficiency tracking.
 
 ## Purpose
-Create repeatable loops where ideas become lessons, lessons become experiments, experiments become reusable patterns, and reusable patterns become stronger educational applications.
+Create repeatable loops where ideas become lessons, lessons become experiments, experiments become reusable patterns, and reusable patterns become stronger educational applications — continuously improved by AI feedback.
 
 ## Core Teaching Loop
 1. Define the concept clearly
@@ -12,6 +12,7 @@ Create repeatable loops where ideas become lessons, lessons become experiments, 
 4. Document what worked and what failed
 5. Turn the result into a reusable template or checklist
 6. Teach the improved version again
+7. **[AI Upgrade]** Feed outcomes back to Fabric → lippytmai teaching clone improves
 
 ## Teaching Loop Types
 
@@ -20,30 +21,66 @@ Use for:
 - Git and GitHub habits
 - repo navigation
 - markdown writing
-- environment setup
-- command-line basics
+- environment setup (OMARCHY / Linux / CSEL)
+- command-line basics (CLL proficiency Level 0→1)
+
+**AI Upgrade:** lippytmai identifies which foundations learners struggle with most by analyzing quiz error patterns in Fabric. It auto-generates supplementary micro-lessons for the highest-error concepts.
 
 ### 2. Builder Loop
 Use for:
-- coding practice
+- coding practice (CCSLL proficiency progression)
 - workflow design
 - debugging habits
 - documentation discipline
 - reflective improvement
 
+**AI Upgrade:** Copilot coding agent (Tier 2) scaffolds practice projects from CSEL environment profiles. Fabric tracks which scaffolds produce the most completed projects and promotes those templates.
+
 ### 3. Agent Loop
 Use for:
-- agent patterns
-- workflow orchestration
-- prompt refinement
+- agent patterns (ACSS architecture)
+- workflow orchestration (Hermes message patterns)
+- prompt refinement (AMIL prompt engineering standards)
 - evaluation notes
 - safer experimentation
+
+**AI Upgrade:** lippytmai teaching clone uses the AI Model Intelligence Layer (AMIL) to select the best LLM for explaining each agent concept. Gemini handles architecture overviews; Claude handles nuanced agent safety explanations.
 
 ### 4. Productization Loop
 Use for:
 - turning lessons into kits
-- turning patterns into templates
+- turning patterns into templates (Fabric pattern library)
 - turning experiments into reusable starter systems
+- turning strategies into trading bots (AI Trading Bot Intelligence layer)
+
+**AI Upgrade:** Fabric monitors which Productization Loop outputs get forked, starred, or deployed most often. High-performing outputs are promoted to the official lippytm.ai Kit Registry.
+
+### 5. AI Self-Improvement Loop *(New)*
+Use for:
+- improving the teaching agent itself
+- fine-tuning lippytmai on high-rated explanations
+- updating CCSLL/CBSLL/CSEL proficiency benchmarks
+- identifying gaps in the knowledge graph and requesting Knowledge Agent research
+
+**Process:**
+1. Learner completes lesson → rates explanation (1–5 stars)
+2. High-rated explanations (≥ 4 stars) → added to fine-tuning dataset
+3. Dataset curated by human panel → lippytmai fine-tuned quarterly
+4. Low-rated explanations → flagged in Fabric for rewrite
+5. Teaching agent rewrite → human review → Fabric update → re-teach
+
+### 6. On-Chain Credential Loop *(New)*
+Use for:
+- verifying genuine skill acquisition
+- issuing tamper-proof Earn-while-you-Learn credentials
+- building learner reputation across the ecosystem
+
+**Process:**
+1. Learner completes verified project or passes automated benchmark
+2. Teaching agent submits credential issuance request to Hermes
+3. Hermes routes to on-chain issuer smart contract (ERC-721 SkillBadge)
+4. HumanApprovalGate for Level 4+ credentials (Charles review)
+5. Credential minted on-chain → learner reputation updated in Fabric
 
 ## Best Practices
 - keep each lesson small enough to repeat
@@ -52,13 +89,68 @@ Use for:
 - connect each lesson to a repo role
 - use GitHub issues to track learning improvements
 - turn repeated solutions into reusable materials
+- **[AI Upgrade]** tag all lessons with CCSLL / CBSLL / CLL / CSEL proficiency level so Fabric can build accurate learner progression maps
+
+## AI Model Assignments for Teaching
+
+| Lesson Type | Recommended Model | Why |
+|---|---|---|
+| Foundational concepts | Claude 3.5 (lippytmai fine-tune) | Best explanation quality |
+| Code walkthroughs | GPT-4o + Copilot inline | Real-time completion assistance |
+| Architecture diagrams → explanation | Gemini 2 Pro (multimodal) | Can read diagrams and explain |
+| Blockchain / on-chain | Claude + DeepSeek Coder | Nuanced + code-accurate |
+| Trading bot lessons | GPT-4o (tool mode) | Live data integration |
+| Local / private lessons | Llama 3.1 (Ollama) | Privacy-safe, offline capable |
+| ACVS scene manifest generation | GPT-4o (JSON mode) | Structured scene output |
+| Sandbox challenge design | Claude 3.5 | Pedagogically sound challenge sequencing |
+
+## 7. ACVS Teaching Loop *(v2 — Hermes + Fabric Integrated)*
+
+Use for:
+- generating video explainers, tutorials, and sandbox missions
+- personalizing script content to a learner's Fabric profile
+- continuously improving video content based on GESN analytics
+
+**Process:**
+1. Creative request enters Hermes as `CREATE_VIDEO_REQUEST { mode, book_id, audience }`
+2. `ACVSScriptAgent` (lippytmai, Teach mode) queries Fabric for related nodes and learner weak spots
+3. GPT-4o generates scene manifest JSON with narration, visual prompts, code blocks, interactive overlays
+4. Hermes dispatches `VIDEO_SCRIPT_READY` → production pipeline starts (HDVG renderer)
+5. Video passes 13-gate QEP → G13 Charles approval → Hermes `VIDEO_PUBLISHED` event
+6. GESN tracks learner engagement — drop-off scenes and quiz failures fed back to Fabric
+7. Fabric detects weak spots → Hermes `IMPROVEMENT_REQUIRED` → ACVSScriptAgent rewrites affected scenes only
+8. Revised scenes re-submitted to G13 → published → cycle continues
+
+**Sandbox sub-loop:**
+1. Learner enters ACVS Sandbox — receives progressive challenges from Fabric-personalized mission
+2. Completes challenges → Build Gate checks artifact hash
+3. Hash match → credential mint on Base → `LEARNER_MILESTONE` event → Fabric progress update
+
+## 8. ADA Deployment Loop *(v2)*
+
+Use for:
+- shipping every approved ebook as a runnable application
+- generating audiobooks via ElevenLabs
+- serving book artifacts as FastAPI endpoints for GESN integration
+
+**Process:**
+1. G13 approval triggers ADA pipeline for the batch
+2. `lippytmai-launch` CLI registers the book in `ada-registry.json`
+3. Docker image built and pushed → FastAPI endpoints live at `/run/:id`, `/quiz/:id`, `/audiobook/:id`, `/credential/:id`
+4. ElevenLabs audiobook generated → chaptered M4B file available
+5. GESN registers book as interactive mission module
+6. Hermes broadcasts `ADA_BOOK_ACTIVE` → Fabric updates ADA status node
+
+📄 ACVS full spec → [`docs/ai-copilot-video-sandbox-creator.md`](docs/ai-copilot-video-sandbox-creator.md)  
+📄 ADA system → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)  
+📄 HDVG pipeline → [`docs/P011-VIDEO-001-hd-video-generator.md`](docs/P011-VIDEO-001-hd-video-generator.md)
 
 ## Connected Repositories
-- `lippytm-lippytm.ai-tower-control-ai`
-- `Web3AI`
-- `MyClaw.lippytm.AI-`
-- `OpenClaw-lippytm.AI-`
-- `Factory.ai`
+- `lippytm-lippytm.ai-tower-control-ai` — control tower and shared standards hub
+- `Web3AI` — AI and blockchain education / development hub
+- `MyClaw.lippytm.AI-` — bot product delivery
+- `OpenClaw-lippytm.AI-` — open-source bot patterns
+- `Factory.ai` — reusable kit production
 
 ## Guiding Principle
-Strong AI educational systems improve by cycling between teaching, building, reflecting, and packaging what was learned.
+Strong AI educational systems improve by cycling between teaching, building, reflecting, and packaging what was learned — with AI agents at every stage collecting signal, synthesizing patterns, and proposing improvements for human review.

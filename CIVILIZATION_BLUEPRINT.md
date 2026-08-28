@@ -13,11 +13,14 @@ Building everything from the ground up — with AI leading and learning the way.
 🌌 FLOOR 4 — THE INFINITE
    Space · Quantum Universes · The Great Departure
           ↑
-🤖 FLOOR 3 — ROBOTICS  
+🤖 FLOOR 3 — ROBOTICS
    Robots Teaching Robots Teaching People
           ↑
-🎓 FLOOR 2 — EDUCATION & TRAINING
-   AI-Led · Earn-While-You-Learn · 6 Levels
+🎓 FLOOR 2 — EDUCATION & TRAINING (ACSS-Powered)
+   AI-Led · Earn-While-You-Learn · 300 Books · GESN · ADA · ACVS
+          ↑
+🧠 FLOOR 1.5 — AI CONGLOMERATE SWARMS SYSTEM (ACSS v2)
+   Clone Engine · Hermes · Fabric · CCSLL · CBSLL · CLL · OMARCHY · CSEL
           ↑
 ⚖️ FLOOR 1 — LEGAL & FINANCIAL FOUNDATION
    Business Law · Living Trusts · LLCs · Copyright
@@ -97,64 +100,71 @@ One LLC for each pillar of the empire:
 
 ### The Core Principle
 AI does not just assist education — AI LEADS it.
-Marvin teaches humans. Marvin teaches other Marvins.
-The student becomes a Marvin. The Marvin teaches the next student.
-The loop is self-sustaining and self-improving.
+The ACSS (AI Conglomerate Swarms System) powers every content creation, delivery, quality review, credential mint, and CRM event. lippytmai teaches. Hermes routes. Fabric remembers. GESN delivers. ADA ships.
+
+The student becomes a teacher. The teacher earns. The loop is self-sustaining and self-improving.
 
 ### The Three Pillars
 1. 🎓 **EdTech** — Educational Technologies Development
-2. 🎬 **EntTech** — Entertainment Technologies Development  
+2. 🎬 **EntTech** — Entertainment Technologies Development
 3. 💼 **BizTech** — Business of Businesses Technologies Development
 
-### The Marvin Academy Curriculum — 6 Levels
+### The ACSS Infrastructure (v2 — August 2026)
 
-**Level 0 — The Hitchhiker's Orientation**
-*"Don't Panic."*
-- What is AI? What is blockchain? What is programming?
-- Why the answer keeps being 42
-- Meet your Marvin — your personal AI teacher
-- Business Law 101 — before you build anything, know your rights
+The AI Conglomerate Swarms System powers all of Floor 2:
 
-**Level 1 — The Library of Congress**
-*"Everything humanity knows — now yours."*
-- Reading documentation like a professional
-- GitHub fundamentals — your first repository
-- Understanding APIs and system connections
-- Your first bot — built, deployed, and earning
+| System | Educational Role |
+|---|---|
+| **lippytmai** (Teach mode) | Writes ebooks, video scripts, quiz questions, sandbox challenges |
+| **Hermes** | Routes all creative requests; surfaces G13 gates; broadcasts completions |
+| **Fabric** | Remembers what every learner knows; detects weak spots; guides next content |
+| **HDVG** | Renders scene manifests into MP4/WebM/HLS educational videos |
+| **ACVS** | Generates Explainer + Tutorial + Sandbox video scripts; runs sandbox sessions |
+| **GESN** | Delivers interactive missions; tracks XP; unlocks on-chain credentials |
+| **ADA** | Ships every book as `lippytmai-launch <ID>` — Docker + FastAPI + M4B audiobook |
+| **Engine 5 / QEP** | 13-gate quality review — G1–G12 automated, G13 Charles manual |
 
-**Level 2 — The Vatican Archives**
-*"Secret knowledge, now revealed."*
-- Advanced programming patterns and architecture
-- Smart contracts and blockchain fundamentals
-- AI prompt engineering and agent building
-- Your first affiliate system — earning while learning
+📄 Full ACSS architecture → [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md)  
+📄 ACVS creative pipeline → [`docs/ai-copilot-video-sandbox-creator.md`](docs/ai-copilot-video-sandbox-creator.md)  
+📄 ADA deployment system → [`docs/ai-deployment-activations.md`](docs/ai-deployment-activations.md)
 
-**Level 3 — The House of Wisdom**
-*"Mathematics, logic, and the golden age of creation."*
-- Data structures, algorithms, and system design
-- DeFi, Web3 development, and decentralized apps
-- Building your first AI agent (your first Marvin)
-- Monetizing your skills — the BizTech layer activates
+### The ACSS Curriculum — 6 Levels (300 Books)
 
-**Level 4 — The Library of Alexandria**
-*"The dream of all knowledge, rebuilt and fireproof."*
-- Full-stack AI development
-- Building and deploying your own Superagent Swarm
-- Launching a bot business on AllBots.com
-- The Earn-While-You-Learn business model fully activated
+**Live Progress (August 2026):** 20 / 300 books complete · 15 credentials minted · 20 ADA books ACTIVE
 
-**Level 5 — The New Testament**
-*"You are now writing the next chapter."*
-- Building your own Marvin Multiverse
-- Contributing to the lippytm.ai universe
-- Teaching others — you ARE a Marvin now
-- Preparing the Human Race to leave the planet
+**Level 0 — Curious (B-001–B-010: Linux Basics)**
+*Terminal, commands, permissions, scripting, packages, processes, networking, Git, text tools, systemd*
+- Credentials: `CLL-L0`, `CLL-L1`, `CCSLL-L0-B008-GitPilot` ✅ MINTED
 
-### The Earn-While-You-Learn Loop
+**Level 1 — Apprentice (B-011–B-020: Modern Dev Stack)**
+*Env vars, Docker, SSH, cron, Neovim, pipes, Arch Linux, logs, security, disk*
+- Credentials: `CLL-L1`, `CSEL-L0`, `CCSLL-L0`, `CLL-L2-B019-ServerGuardian` ✅ B-011–B-015 MINTED
+
+**Level 2 — Builder (B-021–B-055: Python + Blockchain Basics)**
+*Python fundamentals → FastAPI, Git workflows, Solidity basics, ERC-20/721*
+
+**Level 3 — Engineer (B-056–B-080: AI + DeFi)**
+*AI agents, RAG, fine-tuning, DeFi protocols, full-stack Web3*
+
+**Level 4 — Specialist (B-081–B-098: ACSS + Advanced Systems)**
+*RL trading bots, ZK proofs, autonomous AI systems — Charles review required*
+
+**Level 5 — Master (B-099–B-100 + Contributions)**
+*GESN platform node operation, Fabric module contributions, teaching bounties*
+
+### The Earn-While-You-Learn Loop (ACSS v2)
 ```
-LEARN the skill → ENJOY the process → EARN from the skill
-       ↑                                        ↓
-  Next Level ← REINVEST into growth ← Scale the income
+LEARN (ebook + ACVS video/sandbox)
+    ↓
+BUILD (ADA lippytmai-launch artifact)
+    ↓
+PASS BUILD GATE (GESN credential unlock)
+    ↓
+EARN CREDENTIAL (Base ERC-721 mint)
+    ↓
+EARN INCOME (bounties + GESN node + affiliate)
+    ↓
+REINVEST → Next Level
 ```
 
 ---
@@ -264,28 +274,42 @@ The commercial vehicle that funds the entire civilization:
 
 ## MILESTONES
 
-### Phase 1 — Foundation (Now)
+### Phase 1 — Foundation *(In Progress — August 2026)*
 - [x] 24 GitHub repos documented and AI-integrated
-- [x] CANON.md, MARVIN_MULTIVERSE.md, EARN_WHILE_YOU_LEARN.md published
-- [x] Command Center live at cloner-app-711fc8b7.base44.app
-- [ ] Spin up 13 base Marvin agents on Base44
+- [x] CANON.md, CIVILIZATION_BLUEPRINT.md, EARN_WHILE_YOU_LEARN.md published
+- [x] **ACSS v2 Live** — 8 systems (Clone Engine, Hermes, Fabric, CCSLL, CBSLL, CLL, OMARCHY, CSEL)
+- [x] **AI Brainkit v2.0** — `.github/copilot-instructions.md` updated
+- [x] **20 ebooks published** — B-001–B-020 (Linux foundations cluster, 80% complete)
+- [x] **20 HDVG video scripts** — all 4 batches produced
+- [x] **20 ADA deployments ACTIVE** — `lippytmai-launch` CLI operational
+- [x] **ACVS Live** — Hermes+Fabric integrated Explainer/Tutorial/Sandbox creator
+- [x] **15 on-chain credentials minted** — Base ERC-721 (B-001–B-015 approved)
+- [x] 4 QEPs produced — 3 G13 approved, 1 pending
+- [x] P011 all 8 engines documented and implemented
+- [x] GESN platform architecture designed
+- [ ] B-021–B-025 (final Linux foundations)
+- [ ] B-026–B-055 (Python foundations)
 - [ ] Establish legal entities (LLCs and Living Trust)
 - [ ] Register core IP with Library of Congress
 
 ### Phase 2 — Education Launch
-- [ ] Marvin Academy Level 0 content complete
-- [ ] First 100 students in Earn-While-You-Learn
+- [ ] 100 Beginner books complete (B-001–B-100)
+- [ ] First 100 students earning credentials
+- [ ] GESN interactive platform live with missions
 - [ ] EdTech + EntTech + BizTech all generating revenue
-- [ ] Upgrade to Base44 Enterprise tier
+- [ ] ACVS Sandbox fully deployed for learner use
 
 ### Phase 3 — Robotics Integration
-- [ ] First Humanoid Robotic training system live
+- [ ] First Humanoid Robotic training system live (EEEP + ROS2)
 - [ ] Robots training robots protocol established
+- [ ] Intermediate series complete (100 books)
 - [ ] Intergalactic Zoological Society database launched
 
 ### Phase 4 — The Infinite
+- [ ] Advanced series complete (100 books)
 - [ ] The Great Departure preparations begin
 - [ ] Time Machines Management Systems as Intergalactic Government
+
 - [ ] 117 Marvins fully operational across all quantum variants
 - [ ] The sky is no longer the limit — it's the beginning
 
