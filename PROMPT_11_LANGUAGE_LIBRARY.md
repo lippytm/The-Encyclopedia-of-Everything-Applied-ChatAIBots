@@ -26,6 +26,7 @@ This repo is linked to two comprehensive language libraries maintained by the AI
 - **Complete Blockchain Software Language Library (CBSLL)** — on-chain coverage from Solidity and Vyper to Rust/Anchor (Solana), Cairo (StarkNet), ink! (Polkadot), ZK circuits (Circom, Noir), and cross-chain protocols (CCIP, LayerZero, IBC).
 - **Complete Linux Library (CLL)** — deep systems coverage from kernel internals, shell scripting (Bash/Zsh/Fish), and systemd to container runtimes (Docker/Podman), networking, security hardening, and package management across Arch, Ubuntu, NixOS, and Alpine.
 - **OMARCHY** — opinionated Arch Linux developer workstation layer built on Hyprland, Neovim, Zsh+Starship, Ghostty, Zellij, paru (AUR), and GPG/SSH. The sovereign, distraction-free environment where all lippytm clone agents build and ship.
+- **Complete Software Environments Library (CSEL)** — environment-layer reference for every software system type: web app (Node/Vite/Vercel), mobile (Flutter/RN/Expo), desktop (Tauri/Electron), backend API (FastAPI/NestJS/gRPC), cloud/serverless (AWS/GCP/Cloudflare Workers), containers/K8s, data engineering (Spark/dbt/Airflow), AI/ML/LLM (PyTorch/LangChain/Ollama), embedded/IoT (FreeRTOS/ESP32/Zephyr), game dev (Unity/Godot/Bevy), cybersecurity (Kali/Metasploit/Wazuh), enterprise (Salesforce/Temporal/n8n), Web3 (Hardhat/Foundry/The Graph), and CI/CD (GitHub Actions/Terraform/OpenTelemetry).
 
 Both libraries are live, evolving modules maintained by the Fabric knowledge engine and accessible to all Clone Engine agents via Hermes.
 

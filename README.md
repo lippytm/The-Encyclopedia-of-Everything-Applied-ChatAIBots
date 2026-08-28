@@ -187,6 +187,7 @@ The **AI Clone Engine Swarms Systems (ACESS)** is the unified, continuously self
 | **Complete Blockchain Software Language Library (CBSLL)** | On-chain language intelligence across all chains, protocols, and smart contract frameworks |
 | **Complete Linux Library (CLL)** | Deep Linux systems knowledge spanning kernel, distributions, shell environments, and system administration |
 | **OMARCHY** | Opinionated Arch Linux developer workstation layer — the sovereign, distraction-free environment where all clone builds run |
+| **Complete Software Environments Library (CSEL)** | Every development, runtime, testing, and deployment environment for every category of software system |
 
 Key concepts explored:
 
@@ -197,7 +198,8 @@ Key concepts explored:
 - **CBSLL** — blockchain language proficiency from Solidity to ZK circuits to cross-chain messaging.
 - **CLL (Complete Linux Library)** — deep Linux systems knowledge from kernel internals to package management, networking, and security, covering Arch, Ubuntu, NixOS, and container environments.
 - **OMARCHY** — opinionated Arch Linux developer workstation stack (Hyprland, Neovim, Zsh, Ghostty, Zellij, paru) with 6-stage Earn-while-you-Learn track from installation to teaching.
-- **AI Conglomerate Swarms System (ACSS)** — all seven systems in continuous integration, enabling autonomous learning under human oversight.
+- **CSEL (Complete Software Environments Library)** — development, runtime, testing, and deployment environments for every software system type: web, mobile, desktop, backend/API, cloud/serverless, containers, data engineering, AI/ML, embedded/IoT, game dev, cybersecurity, enterprise, Web3, and CI/CD.
+- **AI Conglomerate Swarms System (ACSS)** — all eight systems in continuous integration, enabling autonomous learning under human oversight.
 
 📄 Deep dive → [`docs/ai-clone-engine-swarms.md`](docs/ai-clone-engine-swarms.md)
 
