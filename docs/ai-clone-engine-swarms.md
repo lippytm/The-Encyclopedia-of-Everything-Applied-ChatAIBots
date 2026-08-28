@@ -766,8 +766,40 @@ No autonomous ACSS action crosses the following thresholds without Charles Earl 
 
 ---
 
+## 12. Hermes + Fabric in the Creative Building Process
+
+Hermes and Fabric are not passive infrastructure — they are **active participants** in every piece of content the ACSS creates.
+
+### 12.1 Hermes as Creative Director
+
+Every creative request (ebook, video, sandbox, audiobook) enters the system as a typed Hermes event. Hermes routes it to the right agent (lippytmai for Teach mode, lippytm for Build mode, Lippy Killjoy for experimental), surfaces it to the right human gate (Charles for G13), and broadcasts completion to every downstream consumer (GitHub PR, Slack, GESN, Fabric).
+
+Without Hermes, the ACSS has nine isolated systems. With Hermes, it has one living creative pipeline.
+
+### 12.2 Fabric as Creative Memory
+
+Fabric stores what has been taught, how well learners learned it, and what to teach next. When the ACVS Script Agent writes a new video script, it queries Fabric first — to avoid repetition, to find weak spots, to surface cross-references, and to personalize for the current learner's credential history.
+
+Without Fabric, every video starts from zero. With Fabric, every video builds on the accumulated knowledge of every video before it.
+
+### 12.3 The AI Copilot Video Sandbox Creator
+
+The **AI Copilot Video Explainer / Tutorial / Video Sandbox Creator (ACVS)** is the primary consumer of Hermes + Fabric in the creative build process. It produces three video modes:
+
+| Mode | Hermes Trigger | Fabric Input | Output |
+|---|---|---|---|
+| **Explainer** | `CREATE_VIDEO_REQUEST { mode: "explainer" }` | Related concept nodes, prior explainers | Animated concept video |
+| **Tutorial** | `CREATE_VIDEO_REQUEST { mode: "tutorial" }` | Ebook content, quiz failure patterns | Step-by-step build video |
+| **Sandbox** | `CREATE_VIDEO_REQUEST { mode: "sandbox" }` | Learner credential history, weak spots | Interactive build mission |
+
+📄 Full specification: [`docs/ai-copilot-video-sandbox-creator.md`](ai-copilot-video-sandbox-creator.md)
+
+---
+
 ## Further Reading
 
+- 📄 [`docs/ai-copilot-video-sandbox-creator.md`](ai-copilot-video-sandbox-creator.md) — ACVS: Hermes+Fabric integrated video creation system
+- 📄 [`docs/P011-VIDEO-001-hd-video-generator.md`](P011-VIDEO-001-hd-video-generator.md) — HDVG production pipeline (renders ACVS output)
 - 📄 [`docs/ai-brainkits.md`](ai-brainkits.md) — AI Brainkit design, Copilot agent instructions, and memory architecture
 - 📄 [`docs/self-improvement.md`](self-improvement.md) — Evolutionary learning loops and AI self-improvement systems
 - 📄 [`docs/intergalactic-network.md`](intergalactic-network.md) — Multi-agent coordination and decentralized governance
