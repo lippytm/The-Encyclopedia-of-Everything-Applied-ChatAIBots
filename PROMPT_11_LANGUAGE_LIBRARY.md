@@ -120,6 +120,12 @@ The broadcast and coordination layer: `RepoCommsEngine` Python class, 10-message
 
 📄 → [`docs/P011-REPOCOMMS-001-repo-communications-engine.md`](docs/P011-REPOCOMMS-001-repo-communications-engine.md)
 
+## CRM Support Engine (Engine 8)
+
+The learner relationship intelligence layer: `LearnerProfile` data model, PostgreSQL schema (learners, learner_badges, learner_completions, crm_events), `CRMSupportEngine` Python class (badge/ebook/at-risk event handlers, upgrade evaluation, nightly churn scan), Slack outreach templates, integration map, and G11 Revenue Integrity enforcement.
+
+📄 → [`docs/P011-CRM-EVO-002-crm-support-engine.md`](docs/P011-CRM-EVO-002-crm-support-engine.md)
+
 ## Next Action
 
 Phase 1 execution: produce the first 5 Beginner ebook/video drafts (B-001 through B-005, Linux foundations) through the AI synthesis pipeline → 13-gate quality review → Charles approval gate.

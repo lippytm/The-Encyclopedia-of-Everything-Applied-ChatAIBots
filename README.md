@@ -561,6 +561,30 @@ Key concepts explored:
 
 📄 Deep dive → [`docs/P011-REPOCOMMS-001-repo-communications-engine.md`](docs/P011-REPOCOMMS-001-repo-communications-engine.md)
 
+---
+
+## Prompt #11: CRM Support Engine (Engine 8)
+
+> *"A great teacher never forgets a student — Engine 8 never forgets a learner."*
+
+The **P011-CRM-EVO-002 CRM Support Engine** is Engine 8 — the learner relationship intelligence layer that maintains longitudinal learner profiles, fires personalized outreach, evaluates curriculum upgrades, and enforces revenue integrity across every lippytm.ai platform.
+
+Key concepts explored:
+
+- **`LearnerProfile` data model** — `wallet_address`, `slack_user_id`, `current_level`, `completed_ebook_ids`, `badges`, `ccsll_level` / `cbsll_level` / `cll_level`, `streak_days`, `quiz_pass_rate`, `lifetime_value`, `upsell_eligible`, `gesn_node_operator`.
+- **PostgreSQL schema** — 4-table design: `learners`, `learner_badges`, `learner_completions`, `crm_events`; indexed for status, level, and upsell queries.
+- **`CRMSupportEngine` Python class** — `on_badge_minted()`, `on_ebook_completed()`, `on_at_risk_detected()`, `_evaluate_upgrade()`, `run_nightly_churn_scan()`, `report_cohort_metrics_to_fabric()`.
+- **Level upgrade thresholds** — Beginner→Intermediate (10 ebooks, 3 badges, 70% pass rate), Intermediate→Advanced (30 ebooks, 8 badges, 75%), Advanced→Graduate (60 ebooks, 15 badges, 80%).
+- **8 outreach templates** — badge congratulations, level upgrade, at-risk re-engagement, 30-day churn email, upsell, GESN node application, graduation (Charles personal message).
+- **Integration map** — Engine 5 → Engine 7 → Engine 8; GESN Push → Engine 8; Base on-chain events → Engine 8; Engine 6 at-risk signals → Engine 8.
+- **G11 Revenue Integrity** — no learner data sold; revenue events ≥ $500 require G13 HumanApprovalGate (Charles); all revenue events traceable to source ebook/badge event.
+
+📄 Deep dive → [`docs/P011-CRM-EVO-002-crm-support-engine.md`](docs/P011-CRM-EVO-002-crm-support-engine.md)
+
+---
+
+## Contributing
+
 This encyclopedia is open to intelligent contributors — human, AI, robotic, or otherwise — operating under clear identity, rights, safety, evidence, and quality controls.
 
 1. Fork the repository.
