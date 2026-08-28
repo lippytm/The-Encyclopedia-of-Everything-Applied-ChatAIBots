@@ -420,6 +420,29 @@ All 25 books follow the standard 11-chapter format, include a proof of work sect
 
 ---
 
+## Done-For-You (DFY) Lesson System — Back-Build Layer
+
+Every book ships with **10 Done-For-You lessons** — working, deployable artifacts that turn teaching into doing. Each DFY lesson is illustrated in **three synchronized formats**:
+
+| Format | Illustration | What Learners Get |
+|---|---|---|
+| 📘 **Ebook** | Annotated diagrams, ASCII maps, before/after splits, flow charts | Visual anchored to the written chapter |
+| 🎧 **Audiobook** | "Done-For-You Moment" narrated callout + mental model analogy | 90-second spoken scene — vivid without a screen |
+| 🎬 **Video Tutorial** | SHOW→BUILD→VERIFY terminal recording | Build the artifact live, watch it work |
+
+**Current DFY stats (Phases 1–2):** 550 lessons · 1,650 illustration specs · ~117 hours of build content
+
+| File | Coverage | Items |
+|---|---|---|
+| [DFY-LESSONS-SYSTEM.md](docs/DFY-LESSONS-SYSTEM.md) | Framework | Standards doc |
+| [DFY-ILLUSTRATION-SYSTEM.md](docs/DFY-ILLUSTRATION-SYSTEM.md) | Framework | Illustration standards |
+| [DFY-B001-B025-phase1-linux.md](docs/DFY-B001-B025-phase1-linux.md) | B-001–B-025 | 250 lessons |
+| [DFY-B026-B055-phase2-python.md](docs/DFY-B026-B055-phase2-python.md) | B-026–B-055 | 300 lessons |
+| [DFY-ILLUSTRATIONS-B001-B025-phase1.md](docs/DFY-ILLUSTRATIONS-B001-B025-phase1.md) | B-001–B-025 | 750 illustration specs |
+| [DFY-ILLUSTRATIONS-B026-B055-phase2.md](docs/DFY-ILLUSTRATIONS-B026-B055-phase2.md) | B-026–B-055 | 900 illustration specs |
+
+---
+
 ## Quality Evidence Packets (QEPs)
 
 Every batch of 5 books produces a **Quality Evidence Packet** — G1–G12 automated review evidence submitted to Charles for G13 HumanApprovalGate approval before credentials are minted and videos are published.
