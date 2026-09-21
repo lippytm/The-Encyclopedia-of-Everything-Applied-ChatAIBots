@@ -69,7 +69,7 @@ This pairing creates a dual-control model: one role protects engineering integri
 
 ---
 
-## 5. Further Reading
+## Further Reading
 
 - [AI Brainkits](ai-brainkits.md) — context, instruction layers, and memory architecture for repository-aware AI agents.
 - [Teaching People & Robots to Be Better Programmers](robotics-programming.md) — learning systems for human-AI engineering growth.
