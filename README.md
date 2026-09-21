@@ -14,7 +14,8 @@
 6. [Teaching People & Robots to Be Better Programmers](#teaching-people--robots-to-be-better-programmers)
 7. [Blockchain Technology Development](#blockchain-technology-development)
 8. [AI Brainkits](#ai-brainkits)
-9. [Contributing](#contributing)
+9. [AI Jarvis Assistant Engineer Manager and Communications Engineer Manager](#ai-jarvis-assistant-engineer-manager-and-communications-engineer-manager)
+10. [Contributing](#contributing)
 
 ---
 
@@ -168,6 +169,21 @@ Key concepts explored:
 - **Brainkits in the Earn-while-you-Learn ecosystem** — documented, testable, quality-controlled contributions that create reusable value.
 
 📄 Deep dive → [`docs/ai-brainkits.md`](docs/ai-brainkits.md)
+
+---
+
+## AI Jarvis Assistant Engineer Manager and Communications Engineer Manager
+
+> *"A builder without coordination ships chaos; coordination without builders ships nothing."*
+
+This section adds two operational AI roles to the encyclopedia's collaboration model:
+
+- **AI Jarvis Assistant Engineer Manager** — coordinates engineering execution quality, safety, and correction loops.
+- **Communications Engineer Manager** — coordinates technical communication quality, documentation clarity, and stakeholder alignment.
+
+Together, they pair implementation integrity with communication integrity so contributions remain both technically sound and educationally useful.
+
+📄 Deep dive → [`docs/ai-jarvis-assistant-engineer-manager-and-communications-engineer-manager.md`](docs/ai-jarvis-assistant-engineer-manager-and-communications-engineer-manager.md)
 
 ---
 
