@@ -73,5 +73,5 @@ This pairing creates a dual-control model: one role protects engineering integri
 
 - [AI Brainkits](ai-brainkits.md) — context, instruction layers, and memory architecture for repository-aware AI agents.
 - [Teaching People & Robots to Be Better Programmers](robotics-programming.md) — learning systems for human-AI engineering growth.
-- [Character–Ecosystem Educational Entertainment Delivery System](encyclopedia-character-ecosystem-delivery-system.md) — delivery architecture for educational outputs.
+- [Intergalactic Networks](intergalactic-network.md) — coordination and governance models for distributed multi-agent systems.
 - Back to [README](../README.md)
