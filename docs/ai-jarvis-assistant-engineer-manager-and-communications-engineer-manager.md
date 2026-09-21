@@ -11,7 +11,7 @@ This guide defines two applied AI roles for the encyclopedia ecosystem:
 1. **AI Jarvis Assistant Engineer Manager** — coordinates engineering execution quality across planning, implementation, review, and correction loops.
 2. **Communications Engineer Manager** — coordinates technical communication quality across documentation, release messaging, stakeholder updates, and multi-agent handoffs.
 
-Together, these roles strengthen the Earn-while-you-Learn model by making technical work both reliable and understandable.
+Together, these roles strengthen the Earn-while-you-Learn model by making technical work both reliable and understandable, and by operationalizing the context-and-governance principles outlined in [AI Brainkits](ai-brainkits.md).
 
 ---
 
