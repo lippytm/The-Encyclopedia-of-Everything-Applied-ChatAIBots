@@ -74,4 +74,6 @@ This pairing creates a dual-control model: one role protects engineering integri
 - [AI Brainkits](ai-brainkits.md) — context, instruction layers, and memory architecture for repository-aware AI agents.
 - [Teaching People & Robots to Be Better Programmers](robotics-programming.md) — learning systems for human-AI engineering growth.
 - [Intergalactic Networks](intergalactic-network.md) — coordination and governance models for distributed multi-agent systems.
+- [Self-Improvement & Evolutionary Evolution](self-improvement.md) — continuous improvement loops for human and AI contributors.
+- [Time Travelers & Time Machines](time-travelers.md) — versioned correction and auditability models for evolving systems.
 - Back to [README](../README.md)
